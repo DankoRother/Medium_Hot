@@ -15,7 +15,7 @@
             </div>
         </header>
         <header>                                                    <!--Nav Header-->
-            <a href="header.php" class="boximg"><img class="logo" src="LogoAuto.PNG" alt="logo" width=125px height=125px></a>   <!--Logo-->
+            <a href="index.php" class="boximg"><img class="logo" src="LogoAuto.PNG" alt="logo" width=125px height=125px></a>   <!--Logo-->
             <nav id="f1">
                 <ul class="nav__links">
                     <li class="boxtext"><a href="#">Fahrzeuge</a></li>
