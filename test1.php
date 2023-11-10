@@ -1,10 +1,10 @@
 asdfsrgsrg
 // hallo team medium hot
 
-<htmml>
+<html>
     <body>
         <?php
             echo "Hello World";
         ?>
     </body>
-</htmml>
+</html>
