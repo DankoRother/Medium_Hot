@@ -96,16 +96,16 @@ header {
 }
  
 #float {
-    height: 30px;
+    height: 40px;
     width: 100%;                            /*formatierung vom oberen header mit floating element */
-    background-color: white;
+    background-image: url(Bilder/Highway.png);
 }
 
 #band  {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 15px;                            /* formatierung vom schwebenden Text */
-    color: black;
+    font-size: 18px;                            /* formatierung vom schwebenden Text */
+    color: white;
     text-decoration: none;
 }
 /* ENDE Styling Header */
