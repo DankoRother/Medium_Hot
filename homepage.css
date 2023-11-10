@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Anfang Styling Header */
+
+li, a, button {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px 5%;
+    align-items: center;
+    background-color: #595959;
+   
+}
+
+.logo {
+    cursor:pointer;
+}
+
+.nav__links {
+    list-style: none;
+}
+
+.nav__links li {
+    display: inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+    color:#a6a6a6;
+}
+
+.log button {
+    padding: 8px 18px;
+    background-color: rgba(64,64,64,1);
+    border: none;
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.log button:hover {
+    background-color: rgba(64,64,64,0.7);
+}
+
+#autoleft {
+    margin-left: auto;
+}
+
+#f1 {
+    margin-left:20px;
+}
+
+.boximg {
+    transition:0.5s;
+}
+.boximg:hover{
+    transform:scale(1.08);
+    z-index:1;
+}
+
+.boxtext {
+    transition: all .2s ease-in-out;
+}
+.boxtext:hover{
+    transform: scale(1.08);
+}
+
+/* Das ist dein normales Styling für das Band-Element */
+@keyframes moveText {
+    0% { left: 0; }
+    100% { left: 100%; }
+  }
+  
+#myText {
+   position: absolute;
+   white-space: nowrap;
+   font-size: 20px;
+   animation: moveText 5s linear infinite; /* animation-name | animation-duration | animation-timing-function | animation-iteration-count */
+  }
+ 
+/* ENDE Styling Header */
