@@ -1,8 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap'); /*Import schriftart*/
 
 *{
     margin: 0;
-    padding: 0;
+    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
     box-sizing: border-box;
 }
 
@@ -11,7 +11,7 @@
 li, a, button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 18px;
+    font-size: 18px;                                    /*Schriftformatierung */
     color: #edf0f1;
     text-decoration: none;
 }
@@ -19,21 +19,21 @@ li, a, button {
 header {
     display: flex;
     justify-content: flex-start;
-    padding: 10px 5%;
+    padding: 10px 5%;                                       /*Formatierung Hauptheader*/
     align-items: center;
     background-color: #595959;
    
 }
 
 .logo {
-    cursor:pointer;
+    cursor:pointer;                                 /* Wenn man auf Logo geht kommt pointer */
 }
 
 .nav__links {
     list-style: none;
 }
 
-.nav__links li {
+.nav__links li {                                    /* formatierung Links */
     display: inline-block;
     padding: 0px 20px;
 }
@@ -41,7 +41,7 @@ header {
 .nav__links li a {
     transition: all 0.3s ease 0s;
 }
-
+                                                    /* Hover Effekt für die Nav Links */
 .nav__links li a:hover {
     color:#a6a6a6;
 }
@@ -49,7 +49,7 @@ header {
 .log button {
     padding: 8px 18px;
     background-color: rgba(64,64,64,1);
-    border: none;
+    border: none;                               /* Login Button Hover Effekt */
     border-radius: 35px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
@@ -60,39 +60,52 @@ header {
 }
 
 #autoleft {
-    margin-left: auto;
+    margin-left: auto;                  /*Packt Meine Buchungen und Login auf die Rechteseite */
 }
 
 #f1 {
-    margin-left:20px;
+    margin-left:20px;                   /*Formatierung für Nav Links*/
 }
 
 .boximg {
     transition:0.5s;
-}
+}                                           /*Vergrößerungs Hover Effekt für IMG */
 .boximg:hover{
     transform:scale(1.08);
     z-index:1;
 }
 
 .boxtext {
-    transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;        /* Vergößerungs Hover Effekt für Text */
 }
 .boxtext:hover{
     transform: scale(1.08);
 }
-
-/* Das ist dein normales Styling für das Band-Element */
-@keyframes moveText {
-    0% { left: 0; }
-    100% { left: 100%; }
-  }
   
-#myText {
-   position: absolute;
-   white-space: nowrap;
-   font-size: 20px;
-   animation: moveText 5s linear infinite; /* animation-name | animation-duration | animation-timing-function | animation-iteration-count */
-  }
+                                                        /* Das ist dein normales Styling für das Band-Element */
+.band {
+    position: relative;
+    width: 100%;
+    animation: moveBand 15s linear infinite;        /* Hier wird die Animation angewendet (Dauer, Verlauf, wiederholen) */
+}
  
+@keyframes moveBand {
+    to {
+      transform: translateX(100%);               /* Bewege das Element um 100% der eigenen Breite nach rechts */
+    }
+}
+ 
+#float {
+    height: 30px;
+    width: 100%;                            /*formatierung vom oberen header mit floating element */
+    background-color: white;
+}
+
+#band  {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;                            /* formatierung vom schwebenden Text */
+    color: black;
+    text-decoration: none;
+}
 /* ENDE Styling Header */
