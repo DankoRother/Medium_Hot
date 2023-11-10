@@ -11,7 +11,7 @@
     <body>
         <header id="float">
             <div id="band" class="band">
-                <h2>2 Autos mieten zum Preis von 3</h2>             <!--Floating Headerzeile -->
+                <h3>2 Autos mieten zum Preis von 3</h3>             <!--Floating Headerzeile -->
             </div>
         </header>
         <header>                                                    <!--Nav Header-->
