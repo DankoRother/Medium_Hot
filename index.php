@@ -1,6 +1,3 @@
-<<<<<<< HEAD
-
-=======
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -36,4 +33,4 @@
     </body>
 
 </html>
->>>>>>> Luis-Header/Footer
+
