@@ -1,4 +1,3 @@
-asdfsrgsrg
 // hallo team medium hot
  // Hallo Team Medium Hot
 

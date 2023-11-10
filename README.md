@@ -1,1 +1,0 @@
-# Medium_Hot
