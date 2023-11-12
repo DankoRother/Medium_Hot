@@ -10,7 +10,7 @@
 <!-- Beginn der Webseite -->
     <body>
         <header id="float">
-            <div id="band" class="band">
+            <div id="band" class="fly">
                 <h3>2 Autos mieten zum Preis von 3</h3>             <!--Floating Headerzeile -->
             </div>
         </header>

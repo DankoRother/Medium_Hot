@@ -83,16 +83,18 @@ header {
 }
   
                                                         /* Das ist dein normales Styling für das Band-Element */
-.band {
-    position: relative;
-    width: 100%;
-    animation: moveBand 15s linear infinite;        /* Hier wird die Animation angewendet (Dauer, Verlauf, wiederholen) */
+@keyframes fly {
+   0% {
+      transform: translateX(-100%);
+   }
+   100% {
+      transform: translateX(100%);
+   }
 }
- 
-@keyframes moveBand {
-    to {
-      transform: translateX(100%);               /* Bewege das Element um 100% der eigenen Breite nach rechts */
-    }
+
+.fly {
+   position: relative;
+   animation: fly 3s linear infinite;
 }
  
 #float {
@@ -109,10 +111,6 @@ header {
     text-decoration: none;
 }
 
-
-#test {
-    background-image: url(Bilder/Highway.png);
-}
 
 /*Ende Header Styling*/
 
