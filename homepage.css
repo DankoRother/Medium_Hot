@@ -108,4 +108,18 @@ header {
     color: white;
     text-decoration: none;
 }
-/* ENDE Styling Header */
+
+
+#test {
+    background-image: url(Bilder/Highway.png);
+}
+
+/*Ende Header Styling*/
+
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+}

@@ -31,6 +31,12 @@
                 </ul>
             </nav>
         </header>
+
+        <div style="background-image: url(Bilder/Highway.png); width: 100%; height: 600px;">
+            <div style="background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 600px;">
+                <h1>Test</h1>
+            </div>
+        </div>
         
     </body>
 
