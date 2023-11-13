@@ -10,7 +10,7 @@
 <!-- Beginn der Webseite -->
     <body>
         <header id="float">
-            <div id="band" class="fly">
+            <div id="band" class="">
                 <h3>2 Autos mieten zum Preis von 3</h3>             <!--Floating Headerzeile -->
             </div>
         </header>
@@ -32,11 +32,15 @@
             </nav>
         </header>
 
-        <div style="background-image: url(Bilder/Highway.png); width: 100%; height: 600px;">
-            <div style="background-color: rgba(0, 0, 0, 0.7); width: 100%; height: 600px;">
-                <h1>Test</h1>
+        <div class="image">
+            <div class="image-overlay">
+                <h1 align="center">144 Autos in 14 verschiedenen Städten!</h1>
             </div>
         </div>
+
+        <footer>
+           
+        </footer>
         
     </body>
 
