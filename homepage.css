@@ -12,7 +12,7 @@
 li, a, button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 20px;                                    /*Schriftformatierung */
+    font-size: 19px;                                    /*Schriftformatierung */
     color: #edf0f1;
     text-decoration: none;
 }
@@ -22,7 +22,7 @@ header {
     justify-content: flex-start;
     padding: 10px 5%;                                       /*Formatierung Hauptheader*/
     align-items: center;
-    background-color: #595959;
+    background-color: #24252a;
    
 }
 
@@ -44,12 +44,12 @@ header {
 }
                                                     /* Hover Effekt für die Nav Links */
 .nav__links li a:hover {
-    color:#a6a6a6;
+    color:#0088a9;
 }
 
 .log button {
     padding: 8px 18px;
-    background-color: rgba(64,64,64,1);
+    background-color: rgba(0,134,169,1);
     border: none;                               /* Login Button Hover Effekt */
     border-radius: 35px;
     cursor: pointer;
@@ -57,7 +57,7 @@ header {
 }
 
 .log button:hover {
-    background-color: rgba(64,64,64,0.7);
+    background-color: rgba(0,134,160,0.7);
 }
 
 #autoleft {
@@ -95,7 +95,7 @@ header {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 18px;                            /* formatierung vom schwebenden Text */
-    color: white;
+    color: #edf0f1;
     text-decoration: none;
 }
 
@@ -124,3 +124,130 @@ h1 {
 }
 
 /* Styling Footer*/
+
+.footer {
+    background-color: #0b0c0e;
+    padding: 60px 0;
+}
+
+.footer_container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;                                  /*Schriftformatierung */
+    color: #edf0f1;
+    margin-bottom: 35px;
+    position:  relative;
+}
+
+.footer-col h4::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #0088a9;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;                    /*Abstand zwischen links*/
+}
+
+
+.footer-col ul li a{
+    font-size: 16px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    text-decoration: none;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover{
+    color: #0088a9;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255,255,255,0.2);
+    margin:0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #edf0f1;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color:black;
+    background-color: #edf0f1;
+}
+
+.footer2 {
+    width: 100%;
+    background-color: black;
+}
+
+.pay-img {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: center;
+    padding: 0;
+}
+
+.pay-img img{
+    height: 50px;
+    width:  50px;
+    margin-right: 5px;
+}
+
+.pay-text {
+    text-align: center;
+    width: 100%;
+    height: 35px;
+    padding: 8px 0;
+}
+
+.pay-text h4 {
+    font-size: 18px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;                                  /*Schriftformatierung */
+    color: #edf0f1;
+}
+
+.stylep {
+    height: 25px;
+    text-align: center;
+}
+
+.stylep p {
+    font-size: 12px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+}
