@@ -251,3 +251,27 @@ ul {
     font-weight: 500;
     color: #edf0f1;
 }
+
+.googlemaps {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.divheading2 {
+    height: 150px;
+    width: 1920px;
+    padding-top: 50px;
+}
+
+.headinggooglemaps {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /*Schriftformatierung */
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
