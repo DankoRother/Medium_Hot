@@ -5,3 +5,50 @@
     padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
     box-sizing: border-box;
 }
+
+table {
+    border-collapse: collapse;
+    border-top: 10;
+    border-left: 0;
+    border-right: 0;
+    border-color: #0088a9;
+    border-style: solid;
+}
+
+div.dividiediv{
+    text-align: left;
+    padding-left: 15%; 
+    padding-right:15%;
+}
+h1 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 30px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 18px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+
+}
+
+p {
+    font-size: 12px;
+    line-height: 2;
+    font-family: "Poppins", sans-serif;                 /*Styling Text*/
+    font-weight: 500;
+    color: #edf0f1;
+}
