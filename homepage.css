@@ -263,7 +263,7 @@ ul {
 
 .divheading2 {                                          /* Div für die Überschrift */
     height: 150px;                                      
-    width: 1920px;
+    width: 100%;
     padding-top: 50px;
 }
 
