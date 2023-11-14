@@ -11,11 +11,11 @@
     <body>
         <header id="float">
             <div id="band" class="">
-                <h3>2 Autos mieten zum Preis von 3</h3>             <!--Floating Headerzeile -->
+                <h3>2 Autos mieten zum Preis von 3</h3>                             <!--Floating Headerzeile -->
             </div>
         </header>
 
-        <header>                                                    <!--Nav Header-->
+        <header>                                                                    <!--Nav Header-->
             <a href="index.php" class="boximg"><img class="logo" src="Bilder/LogoAuto.PNG" alt="logo" width=100px height=100px></a>   <!--Logo-->
             <nav id="f1">
                 <ul class="nav__links">
@@ -27,7 +27,7 @@
             </nav>
             <nav id="autoleft">
                 <ul class="nav__links">
-                    <li class="boxtext"><a href="#">Meine Buchungen</a></li>            <!--Meine Buchungen + Login erstellt-->
+                    <li class="boxtext"><a href="#">Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->
                     <li class="log"><a href="#"><button>Login</button></a></li>
                 </ul>
             </nav>
