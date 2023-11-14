@@ -17,6 +17,67 @@
             </div>
         </div>
 
+    <div class="div6">
+        <h3 class="h3">Wer wir sind</h3>
+      <div class="contact">
+        <div class="contact-box">
+          <div>
+            <img src="Bilder/lambo.png" alt="Profilfoto">
+          </div>
+          <ul>
+            <li><b>Jason Wagner</b></li>
+            <li class="li_space">CEO - Chief Executive Officer</li>
+            <li><p>jason.wagner<br>@myhsba.de</p></li>
+          </ul>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <img src="Bilder/lambo.png" alt="Profilfoto">
+          </div>
+          <ul>
+            <li><b>Luis Loeck</b></li>
+            <li class="li_space">CFO - Chief Financial Officer</li>
+            <li><p>luis.loeck<br>@myhsba.de</p></li>
+          </ul>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <img src="Bilder/lambo.png" alt="Profilfoto">
+          </div>
+          <ul>
+            <li><b>Danko Rother</b></li>
+            <li class="li_space">CMO - Chief Marketing Officer</li>
+            <li><p>danko.rother<br>@myhsba.de</p></li>
+          </ul>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <img src="Bilder/lambo.png" alt="Profilfoto">
+          </div>
+          <ul>
+            <li><b>Gerion Gutzeit</b></li>
+            <li class="li_space">CBDO - Chief Business Development Officer</li>
+            <li><p>gerion.gutzeit<br>@myhsba.de</p></li>
+          </ul>
+        </div>
+
+        <div class="contact-box">
+          <div>
+            <img src="Bilder/lambo.png" alt="Profilfoto">
+          </div>
+          <ul>
+            <li><b>Linus Karanikas</b></li>
+            <li class="li_space">CHRO - Chief Human Resources Officer</li>
+            <li><p>linus.karanikas <br>@myhsba.de</p></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    </div>
+
 
         <div class="divheading2">                                                               
             <p class="mainheading2">Unser Hauptsitz</p>

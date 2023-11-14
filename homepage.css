@@ -274,3 +274,80 @@ ul {
     justify-content: center;
     align-items: center;
 }
+.divForContactBox {
+    background-color: white;
+  }
+
+/* Kontaktbox */
+.contact{
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    -webkit-appearance:none;
+    padding-top: 30px;
+    padding-bottom: 100px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  
+  /* Box für jedes Teammitglied */
+  .contact-box{
+    background-color: #32383d;
+    width: 40%;
+    border-radius: 5px;
+    padding: 15px 15px;
+    box-shadow: 4px 4px 0px 0px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  /* Container mit Bild */
+  .contact-box div{
+    display: block;
+  }
+  
+  /* Container mit zusätzlichen Informationen über die Person */
+  .contact-box ul{
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .contact-box li{
+    list-style-type: none;
+    color: white;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: center;
+    font-weight: 200;
+  }
+  
+  .contact p{
+    hyphens: auto;
+    padding: 0;
+    margin: 0;
+  }
+  
+  /* Bild */
+  .contact-box img{
+    display: block;
+    width: 100px;
+    height: auto;
+    border-radius:50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid white 2px;
+    object-fit: cover;
+  }
+  
+  /* Abstand zwischen Text und E-Mail */
+  .li_space{
+    height:130px;
+  }
+  .h3 {
+    color: black;
+    padding-top: 50px ;
+    padding-left: 103px;
+    font-size: 30px;
+  }
