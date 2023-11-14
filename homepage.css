@@ -252,15 +252,6 @@ ul {
     color: #edf0f1;
 }
 
-.googlemaps {                                           /* Google Maps Fenster */
-    height: 100%;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-
 .divheading2 {                                          /* Div für die Überschrift */
     height: 150px;                                      
     width: 100%;
@@ -274,4 +265,12 @@ ul {
     color: #000000;
     text-decoration: none;
     text-align: center;
+}
+
+.googlemaps {                                           /* Google Maps Fenster */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
