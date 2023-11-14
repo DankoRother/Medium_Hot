@@ -19,9 +19,7 @@
 
 
         <div class="divheading2">                                                               
-            <p class="mainheading2">
-                Unser Hauptsitz
-            </p>
+            <p class="mainheading2">Unser Hauptsitz</p>
         </div>
 
         <div class="googlemaps">                                                               <!-- Einfügen der Karte von Google Maps -->
