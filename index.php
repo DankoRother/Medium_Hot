@@ -27,6 +27,7 @@
             </nav>
             <nav id="autoleft">
                 <ul class="nav__links">
+                    <li class="boxtext"><a href="#">Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->
                     <li class="boxtext"><a href="#">Meine Buchungen</a></li>                    <!--Meine Buchungen + Login erstellt-->
                     <li class="log"><a href="#"><button>Login</button></a></li>
                 </ul>
