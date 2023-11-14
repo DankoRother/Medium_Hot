@@ -27,7 +27,7 @@
           <ul>
             <li><b>Jason Wagner</b></li>
             <li class="li_space">CEO - Chief Executive Officer</li>
-            <li><p>jason.wagner<br>@myhsba.de</p></li>
+            <li><p>jason.wagner<br>@carsba.de</p></li>
           </ul>
         </div>
 
@@ -38,7 +38,7 @@
           <ul>
             <li><b>Luis Loeck</b></li>
             <li class="li_space">CFO - Chief Financial Officer</li>
-            <li><p>luis.loeck<br>@myhsba.de</p></li>
+            <li><p>luis.loeck<br>@carsba.de</p></li>
           </ul>
         </div>
 
@@ -49,7 +49,7 @@
           <ul>
             <li><b>Danko Rother</b></li>
             <li class="li_space">CMO - Chief Marketing Officer</li>
-            <li><p>danko.rother<br>@myhsba.de</p></li>
+            <li><p>danko.rother<br>@carsba.de</p></li>
           </ul>
         </div>
 
@@ -60,7 +60,7 @@
           <ul>
             <li><b>Gerion Gutzeit</b></li>
             <li class="li_space">CBDO - Chief Business Development Officer</li>
-            <li><p>gerion.gutzeit<br>@myhsba.de</p></li>
+            <li><p>gerion.gutzeit<br>@carsba.de</p></li>
           </ul>
         </div>
 
@@ -71,7 +71,7 @@
           <ul>
             <li><b>Linus Karanikas</b></li>
             <li class="li_space">CHRO - Chief Human Resources Officer</li>
-            <li><p>linus.karanikas <br>@myhsba.de</p></li>
+            <li><p>linus.karanikas <br>@carsba.de</p></li>
           </ul>
         </div>
       </div>
