@@ -252,7 +252,7 @@ ul {
     color: #edf0f1;
 }
 
-.googlemaps {
+.googlemaps {                                           /* Google Maps Fenster */
     height: 100%;
     margin: 0;
     display: flex;
@@ -261,8 +261,8 @@ ul {
 }
 
 
-.divheading2 {
-    height: 150px;
+.divheading2 {                                          /* Div für die Überschrift */
+    height: 150px;                                      
     width: 1920px;
     padding-top: 50px;
 }
@@ -270,7 +270,7 @@ ul {
 .headinggooglemaps {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /*Schriftformatierung */
+    font-size: 50px;                                    /* Schriftformatierung */
     color: #000000;
     text-decoration: none;
     text-align: center;
