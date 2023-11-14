@@ -345,9 +345,12 @@ ul {
   .li_space{
     height:130px;
   }
-  .h3 {
-    color: black;
-    padding-top: 50px ;
-    padding-left: 103px;
-    font-size: 30px;
-  }
+  .headingforcontact {
+    padding-top: 20px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /* Schriftformatierung */
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}

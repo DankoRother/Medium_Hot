@@ -18,7 +18,7 @@
         </div>
 
     <div class="div6">
-        <h3 class="h3">Wer wir sind</h3>
+        <h3 class="headingforcontact">Wer wir sind</h3>
       <div class="contact">
         <div class="contact-box">
           <div>
