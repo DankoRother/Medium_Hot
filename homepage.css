@@ -3,7 +3,7 @@
 
 *{
     margin: 0;
-    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                                         /*generelle Formatierung für keine überflüssigen Ränder */
     box-sizing: border-box;
 }
 
@@ -112,14 +112,14 @@ h1 {
 
 .image {
     background-image: url(Bilder/lambo.png);
-    width: 100%; 
+    width: 100%;                                
     height: 600px;
 }
 
 .image-overlay {
     background-color: rgba(0, 0, 0, 0.6); 
     width: 100%; 
-    height: 600px;
+    height: 600px;                              /*Tranzperentes Overlay für Mainpage IMG*/
     padding: 20px;
 }
 
@@ -127,32 +127,32 @@ h1 {
 
 .footer {
     background-color: #0b0c0e;
-    padding: 60px 0;
+    padding: 60px 0;                            /*Main Footer styling*/
 }
 
 .footer_container {
-    max-width: 1170px;
+    max-width: 1170px;                          /*Größe vom Inhalt des Footers*/
     margin: auto;
 }
 
 ul {
-    list-style: none;
+    list-style: none;                           /*Entfernen vom Link Styling*/
 }
 
 .footer-row {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: wrap;                            /*Alle Elemente werden nebeneinander dargestellt*/
 }
 
 .footer-col {
-    width: 25%;
+    width: 25%;                                 /*Größe der einzelnen Blöcke im Footer*/
     padding: 0 15px;
 }
 
 .footer-col h4 {
     font-size: 18px;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;                                  /*Schriftformatierung */
+    font-weight: 500;                             /*Schriftformatierung */
     color: #edf0f1;
     margin-bottom: 35px;
     position:  relative;
@@ -163,14 +163,14 @@ ul {
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: #0088a9;
+    background-color: #0088a9;                   /*Strich unter Überschriften im Footer*/
     height: 2px;
     box-sizing: border-box;
     width: 50px;
 }
 
 .footer-col ul li:not(:last-child) {
-    margin-bottom: 10px;                    /*Abstand zwischen links*/
+    margin-bottom: 10px;                            /*Abstand zwischen links*/
 }
 
 
@@ -178,15 +178,15 @@ ul {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    color: #edf0f1;
+    color: #edf0f1;                                /*Schriftformatierung*/
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
 }
 
 .footer-col ul li a:hover{
-    color: #0088a9;
-    padding-left: 8px;
+    color: #0088a9;                                 
+    padding-left: 8px;                              /*Blauer Hover Effekt im Footer*/
 }
 
 .footer-col .social-links a {
@@ -194,7 +194,7 @@ ul {
     height: 40px;
     width: 40px;
     background-color: rgba(255,255,255,0.2);
-    margin:0 10px 10px 0;
+    margin:0 10px 10px 0;                               /*Formatierung Social Links Icons*/
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
@@ -204,31 +204,31 @@ ul {
 
 .footer-col .social-links a:hover {
     color:black;
-    background-color: #edf0f1;
+    background-color: #edf0f1;                         /*Hover effekt social media icons*/
 }
 
 .footer2 {
-    width: 100%;
+    width: 100%;                                        /*Unterer Footer*/
     background-color: black;
 }
 
 .pay-img {
     display: flex;
-    width: 100%;
-    height: 50px;
+    width: 100%;                                    
+    height: 50px;                                       /*Positionierung Zahlungsmöglichkeiten Bilder*/
     justify-content: center;
     padding: 0;
 }
 
 .pay-img img{
     height: 50px;
-    width:  50px;
+    width:  50px;                                       /*Größe der Bilder Zahlungsmethoden */
     margin-right: 5px;
 }
 
 .pay-text {
     text-align: center;
-    width: 100%;
+    width: 100%;                                        /*Zentrierung Zahlungsmöglichkeiten Headline*/
     height: 35px;
     padding: 8px 0;
 }
@@ -242,14 +242,36 @@ ul {
 
 .stylep {
     height: 25px;
-    text-align: center;
+    text-align: center;                                 /*Rechte Text*/
 }
 
 .stylep p {
     font-size: 12px;
-    font-family: "Poppins", sans-serif;
+    font-family: "Poppins", sans-serif;                 /*Styling Text*/
     font-weight: 500;
     color: #edf0f1;
 }
 
+.googlemaps {                                           /* Google Maps Fenster */
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+
+.divheading2 {                                          /* Div für die Überschrift */
+    height: 150px;                                      
+    width: 100%;
+    padding-top: 50px;
+}
+
+.headinggooglemaps {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /* Schriftformatierung */
+    color: #000000;
+    text-decoration: none;
+    text-align: center;
+}
