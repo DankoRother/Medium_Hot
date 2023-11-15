@@ -16,8 +16,6 @@
        <!-- <td width="10%" style="background-color: #ffffff;"></td> -->
         <td width="50%" style="background-color: #24252a;">
             <div align="center" class="dividiediv">
-            <br>
-            <br>
                 <h1>Impressum</h1>
                 <br>
                 <h2> CarSBA GmbH </h2>
@@ -51,8 +49,6 @@
                 <h2>Rechtlicher Hinweis</h2><br>
                 <h3>Die Texte, Bilder, Grafiken, Animationen, Video- und Audiodateien sowie alle weiteren Inhalte auf dieser Webseite unterliegen den gesetzlichen Bestimmungen des Urheberrechts und ggf. weiteren Rechten des geistigen Eigentums. Der geschützte Inhalt dieser Webseite darf ohne Einwilligung des Rechtsinhabers nicht vervielfältigt, verbreitet, wiedergegeben, öffentlich zugänglich gemacht oder sonst verwertet werden.
                 Änderungen von Konstruktion, Ausstattung und Lieferumfang sowie Abweichungen im Farbton sowie Irrtümer bleiben vorbehalten. Alle angegebenen Preise sind unverbindlich.</h3>
-                <br>
-                <br>
             </div>
         </td>
            <!-- <td width="10%" style="background-color: #ffffff;"></td>-->
