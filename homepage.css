@@ -306,9 +306,9 @@ ul {
 }
 
 .member {
-    width: 200px;
-    height: 400px;
-    margin: 0px 30px;
+    width: 225px;
+    height: 450px;
+    margin: 0px 40px;
 }
 
 .member img {
@@ -327,5 +327,9 @@ ul {
     color: black;
 }
 
-
-
+.member h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: black;
+    
+}
