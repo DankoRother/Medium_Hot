@@ -124,7 +124,21 @@ h1 {
     background-color: rgba(0, 0, 0, 0.6); 
     width: 100%; 
     height: 600px;                              /*Tranzperentes Overlay für Mainpage IMG*/
-    padding: 20px;
+
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: solid;
+}
+
+.suchfilter {
+    border: solid;
+    height: 150px;
+    width: 80%;
+    margin: 70px 0px;
+    border-radius: 25px;
 }
 
 /* Styling Footer*/
@@ -295,6 +309,9 @@ ul {
     width: 225px;
     height: 450px;
     margin: 0px 40px;
+    width: 225px;
+    height: 450px;
+    margin: 0px 40px;
 }
 
 .member img {
@@ -322,3 +339,6 @@ ul {
     text-align: center;
     padding-top: 10px;
 }
+
+
+    
