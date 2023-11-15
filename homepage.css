@@ -333,3 +333,9 @@ ul {
     color: black;
     
 }
+
+.suchfilter {
+    border: solid;
+    height: 100px;
+    width: 80%;
+}
