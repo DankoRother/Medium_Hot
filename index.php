@@ -31,18 +31,23 @@
           <div class="small_mem">
             <div class="member">
               <img src="Bilder/luis.JPG">
+              <h4>Luis Loeck</h4>
             </div>
             <div class="member">
               <img src="Bilder/luis.JPG">
+              <h4>Linus Karanikas</h4>
             </div>
             <div class="member">
               <img src="Bilder/luis.JPG">
+              <h4>Jason Wagner</h4>
             </div>
             <div class="member">
               <img src="Bilder/luis.JPG">
+              <h4>Danko Rother</h4>
             </div>
             <div class="member">
               <img src="Bilder/luis.JPG">
+              <h4>Gerion Gutzeit</h4>
             </div>
           </div>
         </div>

@@ -312,3 +312,10 @@ ul {
     padding-top: 30px;
     color: black;
 }
+
+.member h4 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: black;
+    
+}
