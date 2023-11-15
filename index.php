@@ -26,26 +26,25 @@
             </iframe>
         </div>
 
-        <div class="headdiv"><h1 align="center">Unser Team</h1></div>
-        <div class="container">
-            <div class="small-container">
-                <div class="member">
-                    <img src="Bilder/luis.JPG">
-                    <h3>Luis Loeck</h3>
-                </div>
-                <div class="member">
-                    <img src="Bilder/luis.JPG">
-                </div>
-                <div class="member">
-                    <img src="Bilder/luis.JPG">
-                </div>
-                <div class="member">
-                    <img src="Bilder/luis.JPG">
-                </div>
-                <div class="member">
-                    <img src="Bilder/luis.JPG">
-                </div>
+        <div class="headmem"><h1 align="center">Unser Team</h1></div>
+        <div class="mem_container">
+          <div class="small_mem">
+            <div class="member">
+              <img src="Bilder/luis.JPG">
             </div>
+            <div class="member">
+              <img src="Bilder/luis.JPG">
+            </div>
+            <div class="member">
+              <img src="Bilder/luis.JPG">
+            </div>
+            <div class="member">
+              <img src="Bilder/luis.JPG">
+            </div>
+            <div class="member">
+              <img src="Bilder/luis.JPG">
+            </div>
+          </div>
         </div>
 
     <?php include 'footer.php'; ?>

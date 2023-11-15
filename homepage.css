@@ -17,6 +17,10 @@ li, a, button {
     text-decoration: none;
 }
 
+body {
+    background-color: #edf0f1;
+}
+
 header {
     display: flex;
     justify-content: flex-start;
@@ -274,43 +278,37 @@ ul {
     justify-content: center;
     align-items: center;
 }
-.divForContactBox {
-    background-color: white;
-  }
 
-.container {
+.mem_container {
     width: 100%;
     height: 500px;
-    padding: 50px 0;
-    
+    padding: 100px 0;
 }
 
-.small-container {
+.small_mem {
     display: flex;
-    height: 500px;
     justify-content: center;
+    height: 500px;
 }
 
 .member {
-    width: 250px;
-    height: 500px;
-    background-color: grey;
+    width: 200px;
+    height: 400px;
     margin: 0px 30px;
 }
 
 .member img {
-    height: 50%;
     width: 100%;
+    height: 50%;
     border-radius: 50%;
 }
 
-.member h3 {
-    text-align: center;
-    padding-top: 20px;
-    color: black; 
+.headmem {
+    width: 100%;
+    height: 40px;
 }
 
-.headdiv {
-    width: 100%;
-    height: 30px;
+.headmem h1 {
+    padding-top: 30px;
+    color: black;
 }
