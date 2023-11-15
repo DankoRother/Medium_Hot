@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+ *{
+    margin: 0;
+    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    box-sizing: border-box;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border-top: 10;
+    border-left: 0;
+    border-right: 0;
+    border-color: #0088a9;
+    border-style: solid;
+}
+
+td {
+    text-align: center;
+    width: 33%;
+    /*background-color: antiquewhite;*/
+}
+td.center {
+    align-content: right;
+    width: 33%;
+    /* background-color: aqua;*/
+}
+
+div.dividiediv{
+    text-align: left;
+    padding-left: 15%; 
+    padding-right:15%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+h1 {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+}
+form.formm {
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: #0088a9;
+    text-align: left;
+    padding-left: 10%;
+}
+input[type=submit] {
+    background-color: #0088a9;
+    border: none;
+    color: white;
+    padding: 8px 20px;
+    font-family: "Poppins";
+    font-size: 24px;
+    cursor: pointer;
+}
+
+div.roundedcorners {
+    display: flex;
+    margin-left: 10%;
+    margin-right: 10%;
+    border: 5px solid #0088a9;
+    border-radius: 5%;
+    margin-bottom: 100px;
+    text-align: left;
+}
+form input {
+    margin-left: 10%;
+    align-self: left;
+}
