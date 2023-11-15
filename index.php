@@ -26,7 +26,7 @@
             </iframe>
         </div>
 
-        <div class="headmem"><h1 align="center">Unser Team</h1></div>
+        <div class="headmem"><h1>Unser Team</h1></div>
         <div class="mem_container">
           <div class="small_mem">
             <div class="member">

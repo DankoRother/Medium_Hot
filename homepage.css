@@ -311,11 +311,14 @@ ul {
 .headmem h1 {
     padding-top: 30px;
     color: black;
+    text-align: center;
 }
 
 .member h4 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     color: black;
-    
+    font-size: 22px;
+    text-align: center;
+    padding-top: 10px;
 }
