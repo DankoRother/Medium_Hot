@@ -28,7 +28,7 @@ $dbname = "account";
     <td></td>
     <td class="center">
     <div class="roundedcorners">
-    <form class="formm" align="center" action="login.php" method="post">
+    <form class="formm" action="login.php" method="post">
         <br>
         Vorname: <input type="text" name="vorname"><br>
         Nachname: <input type="text" name="nachname"><br>
