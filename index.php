@@ -88,7 +88,7 @@
               <h4>Gerion Gutzeit</h4>
             </div>
             <div class="member">
-              <img src="Bilder/jason.png">
+              <img src="Bilder">
               <div class="memoverlay">
                 <h5>jasonwagner<br>@carsba.de</h5>
               </div>

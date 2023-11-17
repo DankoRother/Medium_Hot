@@ -9,12 +9,6 @@
     </head>
 <!-- Beginn der Webseite -->
     <body>
-        <header id="float">
-            <div id="band" class="">
-                <h3>2 Autos mieten zum Preis von 3</h3>                                         <!--Floating Headerzeile -->
-            </div>
-        </header>
-
         <header>                                                                                <!--Nav Header-->
             <a href="index.php" class="boximg"><img class="logo" src="Bilder/LogoAuto.PNG" alt="logo" width=100px height=100px></a>   <!--Logo-->
             <nav id="f1">
