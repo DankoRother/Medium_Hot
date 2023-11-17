@@ -60,14 +60,14 @@
         <div class="mem_container">
           <div class="small_mem">
             <div class="member">
-              <img src="Bilder/luis.JPG">
+              <img src="Bilder/luis.jpg">
               <div class="memoverlay">
                 <h5>luisloeck<br>@carsba.de</h5>
               </div>
               <h4>Luis Loeck</h4>
             </div>
             <div class="member">
-              <img src="Bilder/luis.JPG">
+              <img src="Bilder/linus.png">
               <div class="memoverlay">
                 <h5>linuskaranikas<br>@carsba.de</h5>
               </div>
@@ -88,7 +88,7 @@
               <h4>Gerion Gutzeit</h4>
             </div>
             <div class="member">
-              <img src="Bilder/luis.JPG">
+              <img src="Bilder/jason.png">
               <div class="memoverlay">
                 <h5>jasonwagner<br>@carsba.de</h5>
               </div>
