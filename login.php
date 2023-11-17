@@ -5,7 +5,17 @@
     <title></title>                                                         <!-- Standart HTML Settings -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="login.css">        
+    <link rel="stylesheet" href="login.css">      
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="script.js"></script>  
+    <script>
+        function preventFormSubmission(event) {
+            event.preventDefault(); // Prevents the default form submission
+            loadNewContent(); // Call your function to load new content
+            return false;
+        }
+        
+    </script>
 </head>
 
 <body>
@@ -24,27 +34,27 @@ $username = "Danko1";
 $password = "031520";
 $dbname = "account";
 ?>
-<tr>
-    <td></td>
-    <td class="center">
-    <div class="roundedcorners">
-    <form class="formm" action="login.php" method="post">
-        <br>
-        Vorname: <input type="text" name="vorname"><br>
-        Nachname: <input type="text" name="nachname"><br>
-        Geburtsdatum: <input type="text" name="geburtsdatum"><br><br>
-        E-mail: <input type="text" name="e-mail"><br>
-        Passwort: <input type="text" name="passwort"><br>
-        <input type="submit">
-        <br>
-        <br>
-    </form>
 
-    </div>
-    </td>
-    <td></td>
-</tr>
 
+<div>
+    <!-- Content will be updated dynamically here -->
+    <tr>
+        <td></td>
+        <td class="center">
+            <div id="contentContainer" class="roundedcorners">
+                <form onsubmit="preventFormSubmission(event)">
+                    <br>
+                    Username:<br> <input type="text" name="username"><br><br>
+                    E-Mail:<br> <input type="text" name="e-mail"><br><br>
+                    Passwort:<br><input type="text" name="passwort"><br><br>
+                    <button onclick="loadNewContent()">Weiter</button>
+                    <br>
+                </form>
+            </div>
+        </td>
+        <td></td>
+    </tr>
+</div>
 <?php
     /*
 try {
