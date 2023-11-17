@@ -11,14 +11,19 @@
     <body>
         <?php include 'header.php'; ?>
 
-        <div class="image">
-            <div class="image-overlay">
-                <h1>144 Autos in 14 verschiedenen Städten!</h1>
-                <div class="suchfilter">
-                    akljshdfpaishfpiuh
-                </div>
-            </div>
+        <div class="video-container">
+          <video autoplay muted loop>
+            <source src="Bilder/videohead.mp4" type="video/mp4">
+          </video>
+          <div class="vid_heading">
+            <h1>Test</h1>
+          </div>
+          <div class="suchfilter">
+            Test
+          </div>
         </div>
+
+
 
 <div class="divoffer">
   <div class="divfortable">
