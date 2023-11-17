@@ -81,7 +81,7 @@
               <h4>Danko Rother</h4>
             </div>
             <div class="member">
-              <img src="Bilder/luis.JPG">
+              <img src="Bilder/kopf_gerion.jpeg">
               <div class="memoverlay">
                 <h5>geriongutzeit<br>@carsba.de</h5>
               </div>
