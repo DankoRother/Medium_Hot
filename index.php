@@ -15,11 +15,12 @@
           <video autoplay muted loop>
             <source src="Bilder/videohead.mp4" type="video/mp4">
           </video>
+          <div class="overlay"></div>
           <div class="vid_heading">
-            <h1>Test</h1>
+            <h1>144 Autos in 14 Standorten!</h1>
           </div>
           <div class="suchfilter">
-            Test
+            <h2>Jetzt Mieten:</h2>
           </div>
         </div>
 
@@ -93,7 +94,7 @@
               <h4>Gerion Gutzeit</h4>
             </div>
             <div class="member">
-              <img src="Bilder">
+              <img src="Bilder/jason.png">
               <div class="memoverlay">
                 <h5>jasonwagner<br>@carsba.de</h5>
               </div>
