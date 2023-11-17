@@ -20,6 +20,33 @@
             </div>
         </div>
 
+<div class="divoffer">
+  <div class="divfortable">
+    <table style="width: 100%;">
+        <tr>
+            <td  class="td" style="width: 50%;">
+                <h3 class="h3"> Diverse Vielfalt </h3>
+                <P class="p">Wir werden garantiert das passende Auto für Sie dabei haben!</P>
+            </td>
+            <td class="td" style="width: 50%;">
+                <h3 class="h3">Limitierte Sonderangebote </h3>
+                <p class="p">Gelegentlich bieten wir attraktive Sonderangebote an. <br> Also schnappen Sie zu!</p>
+            </td>
+        </tr>
+ 
+        <tr>
+            <td class="td">
+                <h3 class="h3"> Vollkaskoschutz</h3>
+                <p class="p">Natürlich besitzt jedes Kfz einen Vollkaskoschutz, <br> welcher Sie und das Fahrzeug schützt!</p>
+            </td>
+            <td class="td">
+                <h3 class="h3"> 24 Stunden Service </h3>
+                <p class="p">Damit Sie jederzeit zuverlässig <br> Ihr Ziel erreichen!</p>
+            </td>
+        </tr>
+    </table>
+  </div>
+</div>
         <div class="divheading2">                                                               
             <p class="mainheading2">Unser Hauptsitz</p>
         </div>
