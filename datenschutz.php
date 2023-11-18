@@ -16,14 +16,14 @@
        <!-- <td width="10%" style="background-color: #ffffff;"></td> -->
         <td width="50%" style="background-color: #24252a;">
             <div align="center" class="dividiediv">
-                <h1>Allgemeine Geschäftsbedingungen</h1><br>
+                <h1>Datenschutz</h1>
                 
             </div>
         </td>
            <!-- <td width="10%" style="background-color: #ffffff;"></td>-->
     </tr>
 </table>
-<?php include 'footer.php'; ?>                                                  <!--Footer-->
+<?php include 'footer.php'; ?>      
 </body>
 
 </html>

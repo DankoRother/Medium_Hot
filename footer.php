@@ -15,8 +15,8 @@
                         <h4>Unternehmen</h4>
                         <ul>
                             <li><a href="impressum.php">Impressum</a></li>
-                            <li><a href="#">AGB</a></li>
-                            <li><a href="#">Datenschutz</a></li>
+                            <li><a href="agb.php">AGB</a></li>
+                            <li><a href="datenschutz.php">Datenschutz</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">
