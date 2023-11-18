@@ -14,7 +14,7 @@
             <nav id="f1">
                 <ul class="nav__links">
                     <li class="boxtext"><a href="#">Fahrzeuge</a></li>
-                    <li class="boxtext"><a href="#">Standorte</a></li>              
+                    <li class="boxtext"><a href="standorte.php">Standorte</a></li>              
                     <li class="boxtext"><a href="#">Mieten</a></li>                             <!--Navigation Links erstellt--> 
                     <li class="boxtext"><a href="#">Kontakt</a></li>
                 </ul>
