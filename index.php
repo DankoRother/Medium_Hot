@@ -19,7 +19,8 @@
           <div class="vid_heading">
             <h1>144 Autos in 14 Standorten!</h1>
           </div>
-          <div class="suchfilter">
+
+          <div class="suchfilter">                                                                 <!--Suchfilter-->
             <form action="" method="GET">
               <div class="filter_row">
                 <div class="filter_bar">
@@ -97,7 +98,7 @@
             </iframe>
         </div>
 
-        <div class="headmem"><h1>Unser Team</h1></div>
+        <div class="headmem"><h1>Unser Team</h1></div>                                        <!--Unser Team Sektion-->
         <div class="mem_container">
           <div class="small_mem">
             <div class="member">

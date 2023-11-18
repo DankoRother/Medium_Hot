@@ -152,6 +152,8 @@ h1 {
     padding-bottom: 70px;
 }
 
+/*Styling von Unser Team Sektion*/
+
 .mem_container {
     width: 100%;
     height: 450px;
@@ -224,7 +226,10 @@ h1 {
 
 .memoverlay:hover {
     opacity: 1;
+    cursor: pointer;
 }
+
+/*Ende vom Unser Team Styling Sektor*/
 
 /* Dieser Abschnitt bildet die Grundlage für die Div "Divfortable"*/
 .divoffer{
