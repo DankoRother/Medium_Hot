@@ -20,16 +20,18 @@
             <h1>144 Autos in 14 Standorten!</h1>
           </div>
           <div class="suchfilter">
-            <h2>Jetzt Mieten:</h2>
             <form action="" method="GET">
               <div class="filter_row">
                 <div class="filter_bar">
+                  <h2>Start:</h2>
                   <input type="date" class="form-control">
                 </div>
                 <div class="filter_bar">
+                  <h2>Ende:</h2>
                   <input type="date" class="form-control">
                 </div>
                 <div class="filter_bar">
+                    <h2>Wo?</h2>
                     <select name="ort" class="form-select">
                         <option value="">Hamburg</option>
                         <option value="">Hamburg</option>
