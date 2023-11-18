@@ -21,6 +21,39 @@
           </div>
           <div class="suchfilter">
             <h2>Jetzt Mieten:</h2>
+            <form action="" method="GET">
+              <div class="filter_row">
+                <div class="filter_bar">
+                  <input type="date" class="form-control">
+                </div>
+                <div class="filter_bar">
+                  <input type="date" class="form-control">
+                </div>
+                <div class="filter_bar">
+                    <select name="ort" class="form-select">
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                        <option value="">Hamburg</option>
+                    </select>
+                </div>
+                <div class="filter_bar">
+                    <button type="submit" class="button_filter">Filter</button>
+                    <a href="index.php" class="button_reset">Reset</a>
+                </div>
+              </div>
+              
+            </form>
           </div>
         </div>
 

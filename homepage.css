@@ -143,6 +143,8 @@ h1 {
     font-size: 60px;
 }
 
+/*Styling vom Suchfilter Homepage*/
+
 .suchfilter {
     border: solid;
     height: 125px;
@@ -250,6 +252,8 @@ ul {
     width: 100%;                                        /*Unterer Footer*/
     background-color: black;
 }
+
+/*Ende Styling Footer*/
 
 .pay-img {
     display: flex;
