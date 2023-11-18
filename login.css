@@ -6,6 +6,10 @@
     box-sizing: border-box;
 }
 
+body {
+    background-image: url(Bilder/loginback.jpg)
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -89,7 +93,7 @@ form {
 input[type=submit] {
     background-color: #0088a9;
     border: none;
-    color: white;
+    color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
     font-size: 24px;
@@ -102,7 +106,7 @@ input[type=submit] {
 button {
     background-color: #0088a9;
     border: none;
-    color: white;
+    color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
     font-size: 24px;
