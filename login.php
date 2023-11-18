@@ -5,7 +5,7 @@
     <title></title>                                                         <!-- Standart HTML Settings -->
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="login.css">      
+    <link rel="stylesheet" href="CSS/login.css">      
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script.js"></script>  
     <script>

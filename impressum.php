@@ -5,7 +5,7 @@
         <title></title>                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="impressum.css">        
+        <link rel="stylesheet" href="CSS/impressum.css">        
 
 </head>
 
