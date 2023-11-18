@@ -47,10 +47,35 @@ h3 {
 
 }
 
+
+
 p {
-    font-size: 12px;
+    font-size: 16px;
     line-height: 2;
     font-family: "Poppins", sans-serif;                 /*Styling Text*/
     font-weight: 500;
     color: #edf0f1;
+}
+
+.agb {
+    padding-left: 15%; 
+    padding-right:15%;
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+td {
+    background-color: #24252a;
+}
+
+.agb_2 {
+    text-align: left;
+    width: 50%;
+    padding-left: 5%;
+    padding-bottom: 40px;
+}
+
+.center_text {
+    display: flex;
+    justify-content: center;
 }
