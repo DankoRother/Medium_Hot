@@ -83,10 +83,18 @@ h1 {
 
 .form-control {
     height:40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0 8px;
 }
 
 .form-select {
     height: 40px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0 8px;
 }
 
 .button_filter {
