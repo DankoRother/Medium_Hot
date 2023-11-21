@@ -17,7 +17,7 @@
           </video>
           <div class="overlay"></div>
           <div class="vid_heading">
-            <h1>144 Autos in 14 Standorten!</h1>
+            <h1>230 Autos in 14 Standorten!</h1>
           </div>
 
           <div class="suchfilter">                                                                 <!--Suchfilter-->
