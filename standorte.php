@@ -22,8 +22,41 @@
             <div class="pin berlin">
                 <span>Berlin</span>
             </div>
-            <div class="pin hannover">
-                <span>Hannover</span>
+            <div class="pin paderborn">
+                <span>Paderborn</span>
+            </div>
+            <div class="pin rostock">
+                <span>Rostock</span>
+            </div>
+            <div class="pin bielefeld">
+                <span>Bielefeld</span>
+            </div>
+            <div class="pin bochum">
+                <span>Bochum</span>
+            </div>
+            <div class="pin bremen">
+                <span>Bremen</span>
+            </div>
+            <div class="pin dortmund">
+                <span>Dortmund</span>
+            </div>
+            <div class="pin dresden">
+                <span>Dresden</span>
+            </div>
+            <div class="pin freiburg">
+                <span>Freiburg</span>
+            </div>
+            <div class="pin köln">
+                <span>Köln</span>
+            </div>
+            <div class="pin leipzig">
+                <span>Leipzig</span>
+            </div>
+            <div class="pin münchen">
+                <span>München</span>
+            </div>
+            <div class="pin nürnberg">
+                <span>Nürnberg</span>
             </div>
         </div>
     </div>
