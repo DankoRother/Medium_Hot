@@ -9,7 +9,7 @@
 body {
     background-image: url(CSS_Bilder/loginback.jpg)
 }
-
+/*
 table {
     width: 100%;
     border-collapse: collapse;
@@ -23,22 +23,14 @@ table {
 td {
     text-align: center;
     width: 33%;
-    /*background-color: antiquewhite;*/
+    /*background-color: antiquewhite;
 }
 td.center {
     align-content: right;
     width: 33%;
-    /* background-color: aqua;*/
+    /* background-color: aqua;
 }
-
-div.dividiediv{
-    text-align: left;
-    padding-left: 15%; 
-    padding-right:15%;
-    padding-top: 20px;
-    padding-bottom: 50px;
-}
-
+*/
 h1 {
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -48,62 +40,70 @@ h1 {
     text-decoration: none;
 }
 
+container.flex {
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    padding-top: 8%;
+}
+
 div.roundedcorners {
     box-sizing: border-box;
-    width: 50%;
+    width: 20%;
     background-color: white;
-    margin-left: 22%;
-    margin-right: 10%;
+    margin-left: 40%;
+    margin-right: 40%;
     border: 2px solid #0088a9;
     border-radius: 5%;
     margin-bottom: 100px;
-    align-content: center;
 }
 
-form input[type=text] {
-    padding-right: 10%;
-    align-self: right;
-    font-size: 22px;
-    border: 2px solid #0088a9;
-    border-radius: 5px;
-}
-form input[type=text].inputt {
-    padding-right: 10%;
-    align-self: right;
-    font-size: 22px;
-    border: 2px solid #0088a9;
-    border-radius: 5px;
-}
-form label {
-    align-self: left;
-}
+
 form {
     box-sizing: border-box;
-    width: 70%;
+    width: 100%;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 24px;
     color: #000000;
-    padding-left: 5%;
-    padding-right: 15%;
     text-align: left;
 }
 
-
-input[type=submit] {
-    background-color: #0088a9;
-    border: none;
-    color: #edf0f1;
-    padding: 8px 20px;
-    font-family: "Poppins";
-    font-size: 24px;
-    cursor: pointer;
-    margin: 10 auto; /* Add margin:auto to center the submit button horizontally */
-    display: block; /* Ensure the button takes the full width */
-    margin-left: 35%;
-    border-radius: 5px;
+label.label1 {
+    order: 7;
 }
-button {
+label.label2 {
+    order: 5;
+}
+label.label3 {
+    order: 3;
+}
+
+form input[type=text].input1 {
+    padding-right: 10%;
+    font-size: 22px;
+    border: 2px solid #0088a9;
+    border-radius: 5px;
+    order: 6;
+    align-self: right;
+}
+form input[type=text].input2 {
+    padding-right: 10%;
+    font-size: 22px;
+    border: 2px solid #0088a9;
+    border-radius: 5px;
+    order: 4;
+}
+form input[type=text].input3 {
+    font-size: 22px;
+    border: 2px solid #0088a9;
+    border-radius: 5px;
+    order: 2;
+}
+
+input[type=submit].registration {
     background-color: #0088a9;
     border: none;
     color: #edf0f1;
@@ -111,8 +111,19 @@ button {
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
-    margin: 10 auto; /* Add margin:auto to center the submit button horizontally */
-    display: block; /* Ensure the button takes the full width */
-    margin-left: 60%;
+}
+
+button.registrationbutton {
+    text-align: center;
+    background-color: #0088a9;
+    border: none;
+    margin-top: 10%;
+    color: #edf0f1;
+    padding: 8px 20px;
+    font-family: "Poppins";
+    font-size: 24px;
+    cursor: pointer;
     border-radius: 5px;
+    align-self: center;
+    order: 1;
 }

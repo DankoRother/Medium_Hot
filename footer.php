@@ -32,7 +32,6 @@
                         <ul>
                             <li><a href="index.php">Home</a></li>
                             <li><a href="#">FAQ</a></li>
-                            <li><a href="#">Test</a></li>
                         </ul>
                     </div>
                     <div class="footer-col">

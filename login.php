@@ -20,41 +20,29 @@
 
 <body>
 <?php include 'header.php'?>
-<table>
-    <tr>
-        <td></td><td>
         <div align="center" class="dividiediv">
             <h1> Registrierung </h1>
         </div>
-        </td><td></td>
-    </tr>
 <?php
 $servername = "localhost";
 $username = "Danko1";
 $password = "031520";
 $dbname = "account";
 ?>
-
-
-<div>
-    <!-- Content will be updated dynamically here -->
-    <tr>
-        <td></td>
-        <td class="center">
             <div id="contentContainer" class="roundedcorners">
                 <form onsubmit="preventFormSubmission(event)">
-                    <br>
-                    Username:<br> <input type="text" name="username"><br><br>
-                    E-Mail:<br> <input type="text" name="e-mail"><br><br>
-                    Passwort:<br><input type="text" name="passwort"><br><br>
-                    <button onclick="loadNewContent()">Weiter</button>
+                    <container class="flex">
+                    <input class="input1" type="text" id="username" name="username">
+                    <label class="label1" for="Username">Username:</label>
+                    <input class="input2"  type="text" id="email" name="email">
+                    <label class="label2" for="email">E-Mail:</label>
+                    <input class="input3"  type="text" id="passwort" name="passwort">
+                    <label class="label3" for="passwort">Passwort:</label>
+                    <button class="registrationbutton" onclick="loadNewContent()">Weiter</button>
+                    </container>
                     <br>
                 </form>
             </div>
-        </td>
-        <td></td>
-    </tr>
-</div>
 <?php
     /*
 try {
@@ -75,7 +63,7 @@ catch(PDOException $e){
 }
 $conn = null;
 */
-?></table>
+?>
 
 <?php include 'footer.php'?>
 

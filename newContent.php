@@ -17,7 +17,7 @@ echo "<tr>
     Vorname:<br><input type="."text"." name="."vorname1"."><br><br>
     Nachname:<br><input type="."text"." name="."nachname1"."><br><br>
     Geburtsdatum:<br><input type="."text"." name="."geburtsdatum"."><br><br>
-    <input type="."submit".">
+    <input class="."registration "."type="."submit".">
     <br>
 </form> 
 </td>

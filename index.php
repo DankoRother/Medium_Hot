@@ -116,7 +116,7 @@
               <h4>Linus Karanikas</h4>
             </div>
             <div class="member">
-              <img src="Bilder/luis.JPG">
+              <img src="Bilder/Danko.png">
               <div class="memoverlay">
                 <h5>dankorother<br>@carsba.de</h5>
               </div>
