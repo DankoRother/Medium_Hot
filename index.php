@@ -2,7 +2,7 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
-        <title></title>                                                                         <!-- Standart HTML Settings -->
+        <title>CarSBA Homepage</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/homepage.css">                                             <!-- CSS Datei Import -->
@@ -15,7 +15,6 @@
           <video autoplay muted loop>
             <source src="Bilder/videodark.mp4" type="video/mp4">
           </video>
-          <div class="overlay"></div>
           <div class="vid_heading">
             <h1>230 Autos in 14 Standorten!</h1>
           </div>
@@ -51,7 +50,7 @@
                     </select>
                 </div>
                 <div class="filter_bar">
-                    <button type="submit" class="button_filter">Filter</button>
+                    <button type="submit" class="button_filter">Suchen</button>
                     <a href="index.php" class="button_reset">Reset</a>
                 </div>
               </div>
