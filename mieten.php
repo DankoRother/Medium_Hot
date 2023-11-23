@@ -11,6 +11,8 @@
 <body>
 <?php include 'header.php'; ?>
 
+<div class="img-container">
+    
 <div class="filter-heading">
     <h2>Unsere Angebote</h2>
 </div>
@@ -61,6 +63,7 @@
             
         </form>
     </div>
+</div>
 </div>
 
 

@@ -13,7 +13,6 @@
             <a href="index.php" class="boximg"><img class="logo" src="Bilder/LogoAuto.PNG" alt="logo" width=100px height=100px></a>   <!--Logo-->
             <nav id="f1">
                 <ul class="nav__links">
-                    <li class="boxtext"><a href="#">Fahrzeuge</a></li>
                     <li class="boxtext"><a href="standorte.php">Standorte</a></li>              
                     <li class="boxtext"><a href="mieten.php">Mieten</a></li>                             <!--Navigation Links erstellt--> 
                 </ul>

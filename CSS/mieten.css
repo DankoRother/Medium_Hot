@@ -118,20 +118,26 @@
     
 }
 
-body {
+.img-container {
     background-image: url(CSS_Bilder/Mieten_IMG.jpg);
     background-repeat: no-repeat;
-    background-size: 1920px 1080px;
+    background-size: cover;
+    background-position: center;
+    height: 600px;
+    overflow: hidden;
 }
+
 
 .filter-heading {
     text-align: center;
+    padding-top:20px;
 }
 
 .filter-heading h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 50px;                                    /* Schriftformatierung */
-    color: #000000;
-    text-decoration: none
+    color: #edf0f1;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
