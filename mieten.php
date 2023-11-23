@@ -32,6 +32,7 @@
                 <div class="filter_bar">
                     <h2>Wo?</h2>
                     <select name="ort" class="form-select">
+                        <option value=""></option>
                         <option value="">Hamburg</option>
                         <option value="">Bielefeld</option>
                         <option value="">Rostock</option>
@@ -63,7 +64,8 @@
             <div class="filter-row-2">
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
-                    <select name="ort" class="form-select-2">
+                    <select name="vendor" class="form-select-2">
+                        <option value=""></option>
                         <option value="">Audi</option>
                         <option value="">BMW</option>
                         <option value="">Volkswagen</option>
@@ -77,7 +79,107 @@
                         <option value="">Skoda</option>
                     </select>
                 </div>
+                <div class="filter-bar-2">
+                    <h3>Typ</h3>
+                    <select name="type" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">SUV</option>
+                        <option value="">Cabrio</option>
+                        <option value="">Coupe</option>
+                        <option value="">Mehrsitzer</option>
+                        <option value="">Limosine</option>
+                        <option value="">Combi</option>
+                    </select>
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Sitze</h3>
+                    <select name="seats" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">2</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                        <option value="">7</option>
+                        <option value="">8</option>
+                        <option value="">9</option>
+                    </select>
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Türen</h3>
+                    <select name="doors" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">2</option>
+                        <option value="">4</option>
+                        <option value="">5</option>
+                    </select>
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Getriebe</h3>
+                    <select name="gear" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">manually</option>
+                        <option value="">automatic</option>
+                    </select>
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Antrieb</h3>
+                    <select name="drive" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">Verbrenner</option>
+                        <option value="">Elektro</option>
+                    </select>
+                </div>
+                
             </div>
+            <div class="filter-row-2">
+                <div class="filter-bar-2">
+                    <h3>Kofferraum</h3>
+                    <select name="doors" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">0</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+                        <option value="">4</option>
+                    </select>
+                    <h3>L</h3>
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Klima</h3>
+                    <input name="air_condition" type="checkbox">
+                </div>
+                <div class="filter-bar-2">
+                    <h3>GPS</h3>
+                    <input name="gps" type="checkbox">
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Alter ab</h3>
+                    <select name="min_age" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">18</option>
+                        <option value="">21</option>
+                        <option value="">25</option>
+                    </select>
+                    <h3>Jahren</h3>
+                </div>
+                <div class="filter-bar-2">
+                    <h3>Preis bis</h3>
+                    <select name="price" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">100</option>
+                        <option value="">150</option>
+                        <option value="">200</option>
+                        <option value="">300</option>
+                        <option value="">400</option>
+                        <option value="">500</option>
+                        <option value="">600</option>
+                        <option value="">700</option>
+                        <option value="">800</option>
+                        <option value="">900</option>
+                    </select>
+                    <h3>€/Tag</h3>
+                </div>
+            </div>
+            
         </form>
     </div>
 </div>
