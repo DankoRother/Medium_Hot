@@ -21,48 +21,30 @@
 <body>
 <?php include 'header.php'?>
         <div align="center" class="dividiediv">
-            <h1> Registrierung </h1>
+            <h1> Registrierung </h1><br>
         </div>
 <?php
 $servername = "localhost";
 $username = "Danko1";
 $password = "031520";
-$dbname = "account";
+$dbname = "carsba";
 ?>
             <div id="contentContainer" class="roundedcorners">
-                <form onsubmit="preventFormSubmission(event)">
+                <form onsubmit="submitForm(event)">
                     <container class="flex">
                     <input class="input1" type="text" id="username" name="username">
                     <label class="label1" for="Username">Username:</label>
-                    <input class="input2"  type="text" id="email" name="email">
+                    <input class="input2" type="text" id="email" name="email">
                     <label class="label2" for="email">E-Mail:</label>
-                    <input class="input3"  type="text" id="passwort" name="passwort">
+                    <input class="input3" type="text" id="passwort" name="passwort">
                     <label class="label3" for="passwort">Passwort:</label>
-                    <button class="registrationbutton" onclick="loadNewContent()">Weiter</button>
+                    <button id="weiterButton" class="first" onclick="loadNewContent()">Weiter</button>
                     </container>
                     <br>
                 </form>
             </div>
 <?php
-    /*
-try {
-    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "<br> " . "Connected Successfully";
 
-$val_vorname = $_GET["vorname"];
-$val_nachname = $_GET["nachname"];
-$val_email = $_GET["e-mail"];
-$val_passwort = $_GET["passwort"];
-$val_geburtsdatum = $_GET["geburtsdatum"];
-$stmt = $conn->exec("INSERT INTO user_data (vorname, nachname, email, passwort, geburtsdatum) VALUES ('".$val_vorname."','".$val_nachname."','".$val_email."','".$val_passwort."','".$val_geburtsdatum."')");
-echo "New user created successfully by SQL";
-}
-catch(PDOException $e){
-    echo "Error: ". $e->getMessage();
-}
-$conn = null;
-*/
 ?>
 
 <?php include 'footer.php'?>
