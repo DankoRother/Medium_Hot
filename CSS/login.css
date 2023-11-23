@@ -9,7 +9,7 @@
 body {
     background-image: url(CSS_Bilder/loginback.jpg)
 }
-/*
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -23,14 +23,14 @@ table {
 td {
     text-align: center;
     width: 33%;
-    /*background-color: antiquewhite;
+    background-color: antiquewhite;
 }
 td.center {
     align-content: right;
     width: 33%;
-    /* background-color: aqua;
+    background-color: aqua;
 }
-*/
+
 h1 {
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -50,6 +50,7 @@ container.flex {
 }
 
 div.roundedcorners {
+
     box-sizing: border-box;
     width: 20%;
     background-color: white;
@@ -103,27 +104,38 @@ form input[type=text].input3 {
     order: 2;
 }
 
-input[type=submit].registration {
+button.first {
     background-color: #0088a9;
-    border: none;
+    border: none;                                                                                                                                           
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
+    border-radius: 50px;
+    margin-top: 5%;
 }
 
-button.registrationbutton {
-    text-align: center;
+input[type=submit].final {
     background-color: #0088a9;
-    border: none;
-    margin-top: 10%;
+    border: none;                                                                                                                                           
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
-    border-radius: 5px;
-    align-self: center;
-    order: 1;
+    border-radius: 50px;
+    margin-top: 5%;
+}
+button.first:disabled {
+    background-color: #7ea2ab;
+    border: none;                                                                                                                                           
+    color: #edf0f1;
+    padding: 8px 20px;
+    font-family: "Poppins";
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-top: 5%;
+    cursor: not-allowed;
 }

@@ -7,21 +7,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/login.css">      
 </head>
+<form action="login.php" method="post"> 
+    <container class="flex">
+            <input class="input1" type="text" id="vorname" name="vorname">
+            <label class="label1" for="vorname">Vorname:</label>
+            <input class="input2"  type="text" id="nachname" name="nachname">
+            <label class="label2" for="nachname">Nachname:</label>
+            <input class="input3"  type="text" id="geburtsdatum" name="geburtsdatum">
+            <label class="label3" for="geburtsdatum">Geburtsdatum:</label>
+            <input type="submit" name="submit" value="Submit" class="final">
+    </container>
+    <br>
+</form>
+
 <?php
-// This is a simple example; you can include dynamic content based on your requirements
-echo "<tr>
-<td></td>
-<td>
-<form action="."login.php"." method="."post".">
-    <br>
-    Vorname:<br><input type="."text"." name="."vorname1"."><br><br>
-    Nachname:<br><input type="."text"." name="."nachname1"."><br><br>
-    Geburtsdatum:<br><input type="."text"." name="."geburtsdatum"."><br><br>
-    <input class="."registration "."type="."submit".">
-    <br>
-</form> 
-</td>
-<td></td>
-</tr>";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Get form data
+    $username = isset($_POST['username']) ? $_POST['username'] : '';
+    $email = isset($_POST['email']) ? $_POST['email'] : '';
+    $passwort = isset($_POST['passwort']) ? $_POST['passwort'] : '';
+
+    // Now you can use $username, $email, and $passwort as needed
+    // For example, you can echo them:
+    echo "Username: $username, Email: $email, Passwort: $passwort";
+}
 ?>
 </html>
