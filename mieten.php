@@ -11,6 +11,10 @@
 <body>
 <?php include 'header.php'; ?>
 
+<div class="filter-heading">
+    <h2>Unsere Angebote</h2>
+</div>
+
 <div class="filter-container">
     <div class="suchfilter">                                                                 <!--Suchfilter-->
         <form action="" method="GET">
@@ -27,19 +31,19 @@
                     <h2>Wo?</h2>
                     <select name="ort" class="form-select">
                         <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
-                        <option value="">Hamburg</option>
+                        <option value="">Bielefeld</option>
+                        <option value="">Rostock</option>
+                        <option value="">Bochum</option>
+                        <option value="">Dortmund</option>
+                        <option value="">Muenchen</option>
+                        <option value="">Berlin</option>
+                        <option value="">Dresden</option>
+                        <option value="">Freiburg</option>
+                        <option value="">Leipzig</option>
+                        <option value="">Koeln</option>
+                        <option value="">Nuernberg</option>
+                        <option value="">Bremen</option>
+                        <option value="">Paderborn</option>
                     </select>
                 </div>
                 <div class="filter_bar">
@@ -50,9 +54,12 @@
     </div>
 </div>
 
+
 <div class="filter-container-2">
     <div class="suchfilter-extended">
-
+        <form action="" method="GET">
+            
+        </form>
     </div>
 </div>
 

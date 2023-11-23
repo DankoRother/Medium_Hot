@@ -12,7 +12,7 @@
 .filter-container {
     display: flex;
     justify-content: center;
-    padding-top: 20px;
+    padding-top: 30px;
 }
 
 .suchfilter {
@@ -99,7 +99,7 @@
 .filter-container-2 {
     display: flex;
     justify-content: center;
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 
 .suchfilter-extended {
@@ -107,7 +107,7 @@
     width: 70%;
     border-radius: 25px;
     z-index: 2;
-    background-color: rgb(36, 37, 42, 1)
+    background-color: rgb(36, 37, 42, 0.95)
 }
 
 .filter-row-2 {
@@ -118,3 +118,20 @@
     
 }
 
+body {
+    background-image: url(CSS_Bilder/Mieten_IMG.jpg);
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px;
+}
+
+.filter-heading {
+    text-align: center;
+}
+
+.filter-heading h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /* Schriftformatierung */
+    color: #000000;
+    text-decoration: none
+}
