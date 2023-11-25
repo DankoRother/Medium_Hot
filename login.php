@@ -6,48 +6,54 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/login.css">      
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="script.js"></script>  
-    <script>
-        function preventFormSubmission(event) {
-            event.preventDefault(); // Prevents the default form submission
-            loadNewContent(); // Call your function to load new content
-            return false;
-        }
-        
-    </script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
 </head>
-
 <body>
 <?php include 'header.php'?>
-        <div align="center" class="dividiediv">
-            <h1> Registrierung </h1><br>
-        </div>
+
 <?php
 $servername = "localhost";
 $username = "Danko1";
 $password = "031520";
 $dbname = "carsba";
 ?>
-            <div id="contentContainer" class="roundedcorners">
-                <form onsubmit="submitForm(event)">
-                    <container class="flex">
-                    <input class="input1" type="text" id="username" name="username">
-                    <label class="label1" for="Username">Username:</label>
-                    <input class="input2" type="text" id="email" name="email">
-                    <label class="label2" for="email">E-Mail:</label>
-                    <input class="input3" type="text" id="passwort" name="passwort">
-                    <label class="label3" for="passwort">Passwort:</label>
-                    <button id="weiterButton" class="first" onclick="loadNewContent()">Weiter</button>
-                    </container>
-                    <br>
-                </form>
-            </div>
-<?php
-
-?>
+<br>
+<br>
+<br>
+<br>
+<div align="center" class="dividiediv">
+<h1> Registrierung </h1><br>
+</div>
+<br>
+<br>
+<br>
+<div id="contentContainer" class="roundedcorners">
+    <form onsubmit="submitForm(event)">
+        <container class="flex">
+        <input class="input" type="text" id="username" name="username" style="order: 6">
+        <label class="label" for="Username" style="order: 7">Username:</label>
+        <input class="input" type="text" id="email" name="email" style="order: 4">
+        <label class="label" for="email" style="order: 5">E-Mail:</label>
+        <input class="input" type="text" id="passwort" name="passwort" style="order: 2">
+        <label class="label" for="passwort" style="order: 3">Passwort:</label>
+        <button id="weiterButton" class="first" onclick="loadNewContent()" style="order: 1" disabled>Weiter</button>
+        </container>
+        <br>
+    </form>
+    <div class="errorHandlingMajor"> 
+    <div class="errorHandlingMinor" id="error1" style="margin-top: 14%; order: 1">Username darf nicht leer sein</div>
+    <div class="errorHandlingMinor" id="error2" style="margin-top: 12%; order: 2; margin-right: 5%">Geben Sie eine gültige E-Mail ein</div>
+    <div class="errorHandlingMinor" id="error3" style="margin-top: 6%; order: 3">Passwort muss mindestens 8 Zeichen haben</div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 
 <?php include 'footer.php'?>
-
 </body>
+<script src="script.js"></script> 
 </html>

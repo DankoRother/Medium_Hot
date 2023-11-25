@@ -7,7 +7,9 @@
 }
 
 body {
-    background-image: url(CSS_Bilder/loginback.jpg)
+    background-image: url(CSS_Bilder/loginhafen.jpg);
+    width: 100%;
+    background-size: cover;
 }
 
 table {
@@ -38,8 +40,23 @@ h1 {
     font-size: 50px;                                    /*Schriftformatierung */
     color: #edf0f1;
     text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
-
+div.errorHandlingMajor {
+    padding-top: 4%;
+    box-sizing: border-box;
+    width: 50%;
+    order: 2;
+    display: flex;
+    flex-direction: column;
+}
+div.errorHandlingMinor {
+    text-align: left;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;                                    /*Schriftformatierung */
+    color: #ff974d;
+}
 container.flex {
     margin-left: 20%;
     margin-right: 20%;
@@ -50,58 +67,40 @@ container.flex {
 }
 
 div.roundedcorners {
-
-    box-sizing: border-box;
-    width: 20%;
-    background-color: white;
-    margin-left: 40%;
-    margin-right: 40%;
-    border: 2px solid #0088a9;
+    width: 28%;
+    background-color: #24252a;
+    margin-left: 36%;
     border-radius: 5%;
     margin-bottom: 100px;
+    display: flex;
+    flex-direction: row;
 }
+
 
 
 form {
     box-sizing: border-box;
-    width: 100%;
+    width: 50%;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 24px;
     color: #000000;
     text-align: left;
+    order: 1;
 }
 
-label.label1 {
-    order: 7;
-}
-label.label2 {
-    order: 5;
-}
-label.label3 {
-    order: 3;
+label.label {
+    color: white;
 }
 
-form input[type=text].input1 {
-    padding-right: 10%;
-    font-size: 22px;
-    border: 2px solid #0088a9;
+form input[type=text].input {
+    box-sizing: border-box;
+    width: 120%;
+    padding-right: 5%;
+    font-size: 22px;    
+    border: 2px solid #ff974d;
     border-radius: 5px;
-    order: 6;
     align-self: right;
-}
-form input[type=text].input2 {
-    padding-right: 10%;
-    font-size: 22px;
-    border: 2px solid #0088a9;
-    border-radius: 5px;
-    order: 4;
-}
-form input[type=text].input3 {
-    font-size: 22px;
-    border: 2px solid #0088a9;
-    border-radius: 5px;
-    order: 2;
 }
 
 button.first {
@@ -113,7 +112,8 @@ button.first {
     font-size: 24px;
     cursor: pointer;
     border-radius: 50px;
-    margin-top: 5%;
+    margin-top: 10%;
+    margin-left: 20%;
 }
 
 input[type=submit].final {
@@ -126,7 +126,9 @@ input[type=submit].final {
     cursor: pointer;
     border-radius: 50px;
     margin-top: 5%;
+    margin-left: 20%;
 }
+
 button.first:disabled {
     background-color: #7ea2ab;
     border: none;                                                                                                                                           
