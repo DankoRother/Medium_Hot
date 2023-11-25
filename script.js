@@ -13,28 +13,27 @@ function submitForm(event) {
     formData.append("username", username);
     formData.append("email", email);
     formData.append("passwort", passwort);
-
-    // Create an XMLHttpRequest object
+    // Create a new XMLHttpRequest object
     var xhr = new XMLHttpRequest();
 
-    // Open a POST request to newContent.php
-    xhr.open("POST", "newContent.php", true);
+    // Configure it to make a GET request to newContent.php
+    xhr.open("GET", "newContent.php", true);
 
-    // Set up the onload function
+    // Define the function to handle the response
     xhr.onload = function () {
         if (xhr.status == 200) {
-            // ContentContainer replace or update logic goes here
-            document.getElementById("contentContainer").innerHTML = xhr.responseText;
+            // Update the content of the 'registrationForm' div with the response
+            document.getElementById("registrationForm").innerHTML = xhr.responseText;
+            
+            // Reattach the event listeners after updating the content
+            document.getElementById("username").addEventListener("input", updateValidationStatus);
+            document.getElementById("email").addEventListener("input", updateValidationStatus);
+            document.getElementById("passwort").addEventListener("input", updateValidationStatus);
         }
-    };
+    }
 
-    // Send the form data
-    xhr.send(formData);
-}
-function preventFormSubmission(event) {
-    event.preventDefault(); // Prevents the default form submission
-    loadNewContent(); // Call your function to load new content
-    return false;
+    // Send the request
+    xhr.send();
 }
   // Function to check and update validation status
  // Function to check and update validation status
@@ -55,6 +54,7 @@ function updateValidationStatus() {
     var usernameElement = document.getElementById("username");
     var emailElement = document.getElementById("email");
     var passwordElement = document.getElementById("passwort");
+    var vornameElement = document.getElementById("vorname");
 
     // Validate username
     if (username === "") {
@@ -100,3 +100,4 @@ function updateValidationStatus() {
 document.getElementById("username").addEventListener("input", updateValidationStatus);
 document.getElementById("email").addEventListener("input", updateValidationStatus);
 document.getElementById("passwort").addEventListener("input", updateValidationStatus);
+

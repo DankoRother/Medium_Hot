@@ -27,8 +27,8 @@ $dbname = "carsba";
 <br>
 <br>
 <br>
-<div id="contentContainer" class="roundedcorners">
-    <form onsubmit="submitForm(event)">
+<div class="roundedcorners" id="registrationForm">
+    <form onsubmit="submitform(event)">
         <container class="flex">
         <input class="input" type="text" id="username" name="username" style="order: 6">
         <label class="label" for="Username" style="order: 7">Username:</label>
@@ -36,7 +36,7 @@ $dbname = "carsba";
         <label class="label" for="email" style="order: 5">E-Mail:</label>
         <input class="input" type="text" id="passwort" name="passwort" style="order: 2">
         <label class="label" for="passwort" style="order: 3">Passwort:</label>
-        <button id="weiterButton" class="first" onclick="loadNewContent()" style="order: 1" disabled>Weiter</button>
+        <button id="weiterButton" class="first" onclick="submitForm(event)" style="order: 1" disabled>Weiter</button>
         </container>
         <br>
     </form>
