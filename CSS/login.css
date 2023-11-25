@@ -138,6 +138,6 @@ button.first:disabled {
     font-size: 24px;
     cursor: pointer;
     border-radius: 50px;
-    margin-top: 5%;
+    margin-top: 10%;
     cursor: not-allowed;
 }
