@@ -50,8 +50,8 @@
                     </select>
                 </div>
                 <div class="filter_bar">
-                    <button type="submit" class="button_filter">Suchen</button>
-                    <a href="index.php" class="button_reset">Reset</a>
+                    <input type="submit" value="Suchen" class="button_filter">
+                    <input type="submit" class="button_reset" value="Zurücksetzen">
                 </div>
               </div>
               

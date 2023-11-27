@@ -116,14 +116,21 @@ h1 {
 }
 
 .button_reset {
+    padding: 5px 18px;
+    background-color: rgba(255, 151, 77, 1);
+    border: none;                               /* Login Button Hover Effekt */
     border-radius: 35px;
-    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 20px;                                    /*Schriftformatierung */
     color: #edf0f1;
     text-decoration: none;
-    background-color: #ff974d;
+}
+
+.button_reset:hover {
+    background-color: rgba(255, 151, 77, 0.7);
 }
 
 /* Ende vom Suchfilter*/

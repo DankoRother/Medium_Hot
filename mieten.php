@@ -50,8 +50,8 @@
                     </select>
                 </div>
                 <div class="filter_bar">
-                    <button type="submit" class="button_filter">Suchen</button>
-                    <a href="index.php" class="button_reset">Reset</a>
+                    <input type="submit" value="Suchen" class="button_filter">
+                    <input type="reset" class="button_reset" value="Zurücksetzen">
                 </div>
             </div>
     </div>
@@ -177,6 +177,12 @@
                         <option value="">900</option>
                     </select>
                     <h3>€/Tag</h3>
+                </div>
+            </div>
+            <div class="filter-row-2">
+                <div class="filter_bar">
+                    <input type="submit" value="Filter" class="button_filter">
+                    <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset">
                 </div>
             </div>
             
