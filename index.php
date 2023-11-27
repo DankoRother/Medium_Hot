@@ -34,6 +34,7 @@
                 <div class="filter_bar">
                     <h2>Wo?</h2>
                     <select name="ort" class="form-select">
+                        <option value=""></option>
                         <option value="">Hamburg</option>
                         <option value="">Bielefeld</option>
                         <option value="">Rostock</option>
