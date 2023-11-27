@@ -5,7 +5,7 @@
         <title>Mieten</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/mieten.css">                                             <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/mieten.css">                                            <!-- CSS Datei Import -->
     </head>
 
 <body>
@@ -60,7 +60,7 @@
 
 <div class="filter-container-2">
     <div class="suchfilter-extended">
-        <form action="" method="GET">
+        <form id="filter" action="" method="GET">
             <div class="filter-row-2">
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
@@ -83,7 +83,7 @@
                     <h3>Typ</h3>
                     <select name="type" class="form-select-2">
                         <option value=""></option>
-                        <option value="">SUV</option>
+                        <option value="SUV">SUV</option>
                         <option value="">Cabrio</option>
                         <option value="">Coupe</option>
                         <option value="">Mehrsitzer</option>
