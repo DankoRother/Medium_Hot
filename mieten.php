@@ -19,7 +19,7 @@
 
 <div class="filter-container">
     <div class="suchfilter">                                                                 <!--Suchfilter-->
-        <form action="" method="GET">
+        <form id="filter1" action="" method="GET">
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
@@ -51,7 +51,7 @@
                 </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
-                    <input type="reset" class="button_reset" value="Zurücksetzen">
+                    <input type="reset" class="button_reset" value="Zurücksetzen" onclick="document.getElementById('filter1').selectedIndex = 0">
                 </div>
             </div>
     </div>
@@ -60,7 +60,7 @@
 
 <div class="filter-container-2">
     <div class="suchfilter-extended">
-        <form id="filter" action="" method="GET">
+        <form id="filter2" action="" method="GET">
             <div class="filter-row-2">
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
@@ -84,11 +84,11 @@
                     <select name="type" class="form-select-2">
                         <option value=""></option>
                         <option value="SUV">SUV</option>
-                        <option value="">Cabrio</option>
-                        <option value="">Coupe</option>
-                        <option value="">Mehrsitzer</option>
-                        <option value="">Limosine</option>
-                        <option value="">Combi</option>
+                        <option value="cabrio">Cabrio</option>
+                        <option value="coupe">Coupe</option>
+                        <option value="mehrsitzer">Mehrsitzer</option>
+                        <option value="limosine">Limosine</option>
+                        <option value="combi">Combi</option>
                     </select>
                 </div>
                 <div class="filter-bar-2">
@@ -182,7 +182,7 @@
             <div class="filter-row-2">
                 <div class="filter_bar">
                     <input type="submit" value="Filter" class="button_filter">
-                    <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset">
+                    <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
                 </div>
             </div>
             
