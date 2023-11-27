@@ -5,7 +5,8 @@
         <title>CarSBA Homepage</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/homepage.css">                                             <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/homepage.css">
+        <script language="javascript" type="text/javascript" src="homepage.js"></script>                                            <!-- CSS Datei Import -->
     </head>
 <!-- Beginn der Webseite -->
     <body>
@@ -20,7 +21,7 @@
           </div>
 
           <div class="suchfilter">                                                                 <!--Suchfilter-->
-            <form action="" method="GET">
+            <form action="mieten.php" method="GET">
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
@@ -51,7 +52,7 @@
                 </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
-                    <input type="submit" class="button_reset" value="Zurücksetzen">
+                    <input type="reset" class="button_reset" value="Zurücksetzen">
                 </div>
               </div>
               
@@ -88,6 +89,41 @@
     </table>
   </div>
 </div>
+
+<!-- Auto Slider -->
+<div class="slide-heading">                                                               
+    <p class="mainheading2">Unsere Autos</p>
+</div>
+<div class="big-container">
+  <div class="container">
+    <div class="slider-wrapper">
+        <button id="prev-slide" class="slide-button material-symbols-rounded">
+          chevron_left
+        </button>
+        <ul class="image-list">
+          <img class="image-item" src="Bilder/Caprio.jpg" alt="img-1" />
+          <img class="image-item" src="Bilder/combi.jpg" alt="img-2" />
+          <img class="image-item" src="Bilder/Coupe.jpg" alt="img-3" />
+          <img class="image-item" src="Bilder/Limousine.jpg" alt="img-4" />
+          <img class="image-item" src="Bilder/SUV.jpg" alt="img-5" />
+          <img class="image-item" src="Bilder/van.jpg" alt="img-6" />
+        </ul>
+        <button id="next-slide" class="slide-button material-symbols-rounded">
+          chevron_right
+        </button>
+    </div>
+      <div class="slider-scrollbar">
+        <div class="scrollbar-track">
+          <div class="scrollbar-thumb">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+
+
+
+
         <div class="divheading2">                                                               
             <p class="mainheading2">Unser Hauptsitz</p>
         </div>
