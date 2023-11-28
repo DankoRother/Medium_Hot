@@ -9,6 +9,18 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/mieten.css">                                                   <!-- CSS file import -->
         <script language="javascript" type="text/javascript" src="mieten.js"></script>   
+
+        <script>
+            function show_hide() {
+            var x = document.getElementById("filter2");
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+        </script>
+
     </head>
 
 <body>
@@ -115,11 +127,11 @@
 
             <div class="filter-row-button">
                 <div class="filter-bar-2">
-                    <button id="toggleButton" onclick = "show_hide()">Mehr Anzeigen</button>
+                    <button onclick="show_hide()">Toggle Filter 2</button>
                 </div>
             </div>
 
-            <div id="hide" style="display: none;">
+            <div id="filter2" style="display:none">
                 <div class="filter-row-3">
                     <div class="filter-bar-2">
                         <h3>Sitze</h3>
