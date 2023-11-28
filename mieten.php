@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -5,7 +7,7 @@
         <title>Mieten</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/mieten.css">                                             <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/mieten.css">                                            <!-- CSS Datei Import -->
     </head>
 
 <body>
@@ -19,7 +21,7 @@
 
 <div class="filter-container">
     <div class="suchfilter">                                                                 <!--Suchfilter-->
-        <form action="" method="GET">
+        <form id="filter1" action="" method="GET">
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
@@ -50,8 +52,8 @@
                     </select>
                 </div>
                 <div class="filter_bar">
-                    <button type="submit" class="button_filter">Suchen</button>
-                    <a href="index.php" class="button_reset">Reset</a>
+                    <input type="submit" value="Suchen" class="button_filter">
+                    <input type="reset" class="button_reset" value="Zurücksetzen" onclick="document.getElementById('filter1').selectedIndex = 0">
                 </div>
             </div>
     </div>
@@ -60,7 +62,7 @@
 
 <div class="filter-container-2">
     <div class="suchfilter-extended">
-        <form action="" method="GET">
+        <form id="filter2" action="" method="GET">
             <div class="filter-row-2">
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
@@ -83,12 +85,12 @@
                     <h3>Typ</h3>
                     <select name="type" class="form-select-2">
                         <option value=""></option>
-                        <option value="">SUV</option>
-                        <option value="">Cabrio</option>
-                        <option value="">Coupe</option>
-                        <option value="">Mehrsitzer</option>
-                        <option value="">Limosine</option>
-                        <option value="">Combi</option>
+                        <option value="SUV">SUV</option>
+                        <option value="cabrio">Cabrio</option>
+                        <option value="coupe">Coupe</option>
+                        <option value="mehrsitzer">Mehrsitzer</option>
+                        <option value="limosine">Limosine</option>
+                        <option value="combi">Combi</option>
                     </select>
                 </div>
                 <div class="filter-bar-2">
@@ -177,6 +179,12 @@
                         <option value="">900</option>
                     </select>
                     <h3>€/Tag</h3>
+                </div>
+            </div>
+            <div class="filter-row-2">
+                <div class="filter_bar">
+                    <input type="submit" value="Filter" class="button_filter">
+                    <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
                 </div>
             </div>
             

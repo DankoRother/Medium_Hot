@@ -82,14 +82,21 @@
 }
 
 .button_reset {
+    padding: 5px 18px;
+    background-color: rgba(255, 151, 77, 1);
+    border: none;                               /* Login Button Hover Effekt */
     border-radius: 35px;
-    padding: 5px 15px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 20px;                                    /*Schriftformatierung */
     color: #edf0f1;
     text-decoration: none;
-    background-color: #ff974d;
+}
+
+.button_reset:hover {
+    background-color: rgba(255, 151, 77, 0.7);
 }
 
 /* Ende vom Suchfilter*/
@@ -104,7 +111,7 @@
 }
 
 .suchfilter-extended {
-    height: 250px;
+    height: 210px;
     width: 71%;
     border-radius: 25px;
     z-index: 2;
@@ -153,7 +160,7 @@
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 50px;                                    /* Schriftformatierung */
-    color: #edf0f1;
+    color: white;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }

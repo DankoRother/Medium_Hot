@@ -7,19 +7,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/login.css">      
 </head>
-<form action="login.php" method="post"> 
-    <container class="flex">
-            <input class="input1" type="text" id="vorname" name="vorname">
-            <label class="label1" for="vorname">Vorname:</label>
-            <input class="input2"  type="text" id="nachname" name="nachname">
-            <label class="label2" for="nachname">Nachname:</label>
-            <input class="input3"  type="text" id="geburtsdatum" name="geburtsdatum">
-            <label class="label3" for="geburtsdatum">Geburtsdatum:</label>
-            <input type="submit" name="submit" value="Submit" class="final">
-    </container>
-    <br>
-</form>
 
+    <form>
+        <container class="flex">
+        <input class="input" type="text" id="vorname" name="vorname" style="order: 6">
+        <label class="label" for="vorname" style="order: 7">Vorname:</label>
+        <input class="input" type="text" id="nachname" name="nachname" style="order: 4">
+        <label class="label" for="nachname" style="order: 5">Nachname:</label>
+        <input class="input" type="text" id="geburtsdatum" name="geburtsdatum" style="order: 2">
+        <label class="label" for="Geburtsdatum" style="order: 3">Geburtsdatum:</label>
+        <button id="weiterButton" class="first" onclick="loadNewContent()" style="order: 1" disabled>Weiter</button>
+        </container>
+        <br>
+    </form>
+    <div class="errorHandlingMajor"> 
+    <div class="errorHandlingMinor" id="error1" style="margin-top: 14%; order: 1">Vorname darf nicht leer sein</div>
+    <div class="errorHandlingMinor" id="error2" style="margin-top: 15%; order: 2; margin-right: 5%">Nachname darf nicht leer sein</div>
+    <div class="errorHandlingMinor" id="error3" style="margin-top: 12%; margin-right: 5%; order: 3">Geben Sie ein gültiges Datum ein</div>
+    </div>
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Get form data
