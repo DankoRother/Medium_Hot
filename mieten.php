@@ -94,6 +94,23 @@
                     </select>
                 </div>
                 <div class="filter-bar-2">
+                    <h3>Preis bis</h3>
+                    <select name="price" class="form-select-2">
+                        <option value=""></option>
+                        <option value="">100</option>
+                        <option value="">150</option>
+                        <option value="">200</option>
+                        <option value="">300</option>
+                        <option value="">400</option>
+                        <option value="">500</option>
+                        <option value="">600</option>
+                        <option value="">700</option>
+                        <option value="">800</option>
+                        <option value="">900</option>
+                    </select>
+                    <h3>€/Tag</h3>
+                </div>
+                <!-- <div class="filter-bar-2">
                     <h3>Sitze</h3>
                     <select name="seats" class="form-select-2">
                         <option value=""></option>
@@ -162,24 +179,7 @@
                         <option value="">25</option>
                     </select>
                     <h3>Jahren</h3>
-                </div>
-                <div class="filter-bar-2">
-                    <h3>Preis bis</h3>
-                    <select name="price" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">100</option>
-                        <option value="">150</option>
-                        <option value="">200</option>
-                        <option value="">300</option>
-                        <option value="">400</option>
-                        <option value="">500</option>
-                        <option value="">600</option>
-                        <option value="">700</option>
-                        <option value="">800</option>
-                        <option value="">900</option>
-                    </select>
-                    <h3>€/Tag</h3>
-                </div>
+                </div>  -->
             </div>
             <div class="filter-row-2">
                 <div class="filter_bar">
