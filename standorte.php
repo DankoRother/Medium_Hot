@@ -46,16 +46,16 @@
             <div class="pin freiburg">
                 <span>Freiburg</span>
             </div>
-            <div class="pin köln">
+            <div class="pin koeln">
                 <span>Köln</span>
             </div>
             <div class="pin leipzig">
                 <span>Leipzig</span>
             </div>
-            <div class="pin münchen">
+            <div class="pin muenchen">
                 <span>München</span>
             </div>
-            <div class="pin nürnberg">
+            <div class="pin nuernberg">
                 <span>Nürnberg</span>
             </div>
         </div>
