@@ -17,6 +17,7 @@
             <div class="flex-container">                                                     <!-- Creating a div container for the following div 'divforheading'  -->
                 <div class="divForHeading">                                                  <!-- Creating a div for the heading  -->
                      <h3> Das Fahrzeug ist vom DD.MM.YYYY bis zum DD.MM.YYYY am ausgewählten Standort verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
+                     <hr class="line1">
                 </div>
             </div>
             <div class="flex-container2">                                                     <!-- Creating a div container which includes two divs and a table for structuring  -->
@@ -50,6 +51,7 @@
             </div>
             <div class="flex-container3">                                                       <!-- Creating a div container which includes one div. The div is used for structuring and styling the h3 text -->
                 <div class="divDesignForPrice"> <h3 class="h3ForPrice"> 00,00€/Tag</h3></div>
+            <hr class="line2">
                 
             </div>
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
