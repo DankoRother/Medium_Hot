@@ -1,13 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* import font style */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
 *{
     margin: 0;
-    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                                                                                     /* general formating für keine überflüssigen Ränder */
     box-sizing: border-box;
 }
 
-/*Styling vom Suchfilter Standort und Zeit*/
+/* styling of search filter for location and time */
 
 .filter-container {
     display: flex;
@@ -26,7 +26,7 @@
 .suchfilter h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 25px;                                    /*Schriftformatierung */
+    font-size: 25px;                                                                                /* font styling */
     color: #edf0f1;
     text-decoration: none;
 }
@@ -66,13 +66,13 @@
 .button_filter {
     padding: 5px 18px;
     background-color: rgba(0,134,169,1);
-    border: none;                               /* Login Button Hover Effekt */
+    border: none;                                                                                   /* login button hover effect */
     border-radius: 35px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 20px;                                    /*Schriftformatierung */
+    font-size: 20px;                                                                                /* font styling */
     color: #edf0f1;
     text-decoration: none;
 }
@@ -84,13 +84,13 @@
 .button_reset {
     padding: 5px 18px;
     background-color: rgba(255, 151, 77, 1);
-    border: none;                               /* Login Button Hover Effekt */
+    border: none;                                                                                   /* login button hover effect */
     border-radius: 35px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 20px;                                    /*Schriftformatierung */
+    font-size: 20px;                                                                                /* font styling */
     color: #edf0f1;
     text-decoration: none;
 }
@@ -99,9 +99,9 @@
     background-color: rgba(255, 151, 77, 0.7);
 }
 
-/* Ende vom Suchfilter*/
+/* end of search filter */
 
-/*Beginn Großer Filter*/
+/* begin of big filter */
 
 .filter-container-2 {
     display: flex;
@@ -111,7 +111,7 @@
 }
 
 .suchfilter-extended {
-    height: 210px;
+    height: auto;
     width: 71%;
     border-radius: 25px;
     z-index: 2;
@@ -123,6 +123,14 @@
     display: flex;
     gap: 50px;
     width: 100%;
+    height: 45px;
+    justify-content: center;
+}
+
+.filter-row-filter {
+    display: flex;
+    gap: 50px;
+    width: 100%;
     height: 60px;
     justify-content: center;
 }
@@ -130,7 +138,7 @@
 .filter-bar-2 h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 20px;                                    /*Schriftformatierung */
+    font-size: 20px;                                                                                /* font styling */
     color: #edf0f1;
     text-decoration: none;
 }
@@ -159,7 +167,7 @@
 .filter-heading h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /* Schriftformatierung */
+    font-size: 50px;                                                                                /* font styling */
     color: white;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
@@ -173,3 +181,51 @@
     padding: 0 8px;
     text-align: center;
 }
+
+.form-input-2 {
+    height: 30px;
+    width: 60px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    text-align: center;
+}
+
+.filter-bar-2 button {
+    color: black;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px; 
+}
+
+.filter-row-button {
+    display: flex;
+    width: 100%;
+    height: 40px;
+    justify-content: center;
+}
+
+.filter-row-3 {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    background-color: rgb(36, 37, 42, 1);
+    border-top-style: solid;
+    border-top-color: rgba(0,134,169,1);
+    border-width: 2px;
+}
+
+.filter-row-4 {
+    display: flex;
+    gap: 50px;
+    width: 100%;
+    height: 60px;
+    justify-content: center;
+    background-color: rgb(36, 37, 42, 1);
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0,134,169,1);
+    border-width: 2px;
+}
+

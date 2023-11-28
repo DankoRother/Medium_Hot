@@ -100,7 +100,7 @@
 
 .paderborn {
     top: 44%;
-    left: 30.5%;
+    left: 31.5%;
 }
 
 .rostock {
@@ -115,12 +115,12 @@
 
 .bochum {
     top: 47.5%;
-    left: 14%;
+    left: 13.5%;
 }
 
 .dortmund {
-    top: 47%;
-    left: 15%; 
+    top: 44.5%;
+    left: 14%; 
 }
 .nuernberg {
     top: 70%;
@@ -138,4 +138,15 @@
     top: 52%;
     left: 15%; 
 }
-
+.freiburg {
+    top: 92%;
+    left: 21%;
+}
+.dresden {
+    top: 53%;
+    left: 87%;
+}
+.bremen {
+    top: 26%;
+    left: 32%;
+}
