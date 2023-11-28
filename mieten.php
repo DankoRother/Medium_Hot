@@ -8,6 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/mieten.css">                                                   <!-- CSS file import -->
+        <script language="javascript" type="text/javascript" src="mieten.js"></script>   
     </head>
 
 <body>
@@ -110,78 +111,84 @@
                     </select>
                     <h3>€/Tag</h3>
                 </div>
-                <!-- <div class="filter-bar-2">
-                    <h3>Sitze</h3>
-                    <select name="seats" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">2</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                        <option value="">7</option>
-                        <option value="">8</option>
-                        <option value="">9</option>
-                    </select>
-                </div>
-                <div class="filter-bar-2">
-                    <h3>Türen</h3>
-                    <select name="doors" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">2</option>
-                        <option value="">4</option>
-                        <option value="">5</option>
-                    </select>
-                </div>
-                <div class="filter-bar-2">
-                    <h3>Getriebe</h3>
-                    <select name="gear" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">manually</option>
-                        <option value="">automatic</option>
-                    </select>
-                </div>
-                <div class="filter-bar-2">
-                    <h3>Antrieb</h3>
-                    <select name="drive" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">Verbrenner</option>
-                        <option value="">Elektro</option>
-                    </select>
-                </div>
-                
             </div>
-            <div class="filter-row-2">
+
+            <div class="filter-row-button">
                 <div class="filter-bar-2">
-                    <h3>Kofferraum</h3>
-                    <select name="doors" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">0</option>
-                        <option value="">1</option>
-                        <option value="">2</option>
-                        <option value="">3</option>
-                        <option value="">4</option>
-                    </select>
-                    <h3>m³</h3>
+                    <button id="toggleButton" onclick = "show_hide()">Mehr Anzeigen</button>
                 </div>
-                <div class="filter-bar-2">
-                    <h3>Klima</h3>
-                    <input name="air_condition" type="checkbox">
-                </div>
-                <div class="filter-bar-2">
-                    <h3>GPS</h3>
-                    <input name="gps" type="checkbox">
-                </div>
-                <div class="filter-bar-2">
-                    <h3>Alter ab</h3>
-                    <select name="min_age" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">18</option>
-                        <option value="">21</option>
-                        <option value="">25</option>
-                    </select>
-                    <h3>Jahren</h3>
-                </div>  -->
             </div>
-            <div class="filter-row-2">
+
+            <div id="hide">
+                <div class="filter-row-3">
+                    <div class="filter-bar-2">
+                        <h3>Sitze</h3>
+                        <select name="seats" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">2</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                            <option value="">7</option>
+                            <option value="">8</option>
+                            <option value="">9</option>
+                        </select>
+                    </div>
+                    <div class="filter-bar-2">
+                        <h3>Getriebe</h3>
+                        <select name="gear" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">manually</option>
+                            <option value="">automatic</option>
+                        </select>
+                    </div>
+                    <div class="filter-bar-2">
+                        <h3>Türen</h3>
+                        <select name="doors" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">2</option>
+                            <option value="">4</option>
+                            <option value="">5</option>
+                        </select>
+                    </div>
+                    <div class="filter-bar-2">
+                        <h3>Alter ab</h3>
+                        <input type="number" name="min_age" class="form-input-2">
+                        <h3>Jahren</h3>
+                    </div> 
+                </div>
+                <div class="filter-row-4">
+                    <div class="filter-bar-2">
+                        <h3>Antrieb</h3>
+                        <select name="drive" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">Verbrenner</option>
+                            <option value="">Elektro</option>
+                        </select>
+                    </div>
+                    <div class="filter-bar-2">
+                        <h3>Klima</h3>
+                        <input name="air_condition" type="checkbox">
+                    </div>
+                    <div class="filter-bar-2">
+                        <h3>GPS</h3>
+                        <input name="gps" type="checkbox">
+                    </div>
+                    <div class="filter-bar-2">
+                        <h3>Kofferraum</h3>
+                        <select name="doors" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">0</option>
+                            <option value="">1</option>
+                            <option value="">2</option>
+                            <option value="">3</option>
+                            <option value="">4</option>
+                        </select>
+                        <h3>m³</h3>
+                    </div>
+                </div>    
+            </div>    
+
+            <div class="filter-row-filter">
                 <div class="filter_bar">
                     <input type="submit" value="Filtern" class="button_filter">
                     <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
