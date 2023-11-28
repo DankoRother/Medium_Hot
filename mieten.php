@@ -4,10 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
-        <title>Mieten</title>                                                                         <!-- Standart HTML Settings -->
+        <title>Mieten</title>                                                                           <!-- standart HTML settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/mieten.css">                                            <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/mieten.css">                                                   <!-- CSS file import -->
     </head>
 
 <body>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="filter-container">
-    <div class="suchfilter">                                                                 <!--Suchfilter-->
+    <div class="suchfilter">                                                                            <!-- search filter -->
         <form id="filter1" action="" method="GET">
             <div class="filter_row">
                 <div class="filter_bar">
