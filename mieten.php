@@ -143,7 +143,7 @@
                         <option value="">3</option>
                         <option value="">4</option>
                     </select>
-                    <h3>L</h3>
+                    <h3>m³</h3>
                 </div>
                 <div class="filter-bar-2">
                     <h3>Klima</h3>
@@ -183,7 +183,7 @@
             </div>
             <div class="filter-row-2">
                 <div class="filter_bar">
-                    <input type="submit" value="Filter" class="button_filter">
+                    <input type="submit" value="Filtern" class="button_filter">
                     <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
                 </div>
             </div>
