@@ -42,46 +42,45 @@
     color: white;
     position: relative;
 }
-
-
-.divForHeading h3::before{
-    content: '';
+.line1 {
     position: absolute;
-    bottom: -25px;
-    background-color: #0088a9;                   /*Creating a line bollow the heading*/
-    height: 2px;
-    width: 1000px;
-    margin-left: 50px;
-    margin-right: 100px;
-}
+    bottom: -10px;
+    left: 5%;
+    width: 90%;
+    border: 1px solid;
+    border-color: #0088a9;
+  }
+
 
   .flex-container2 {                                /* Creating a flexbox for designing and dtructuring*/
     display: flex;
     background-color: rgb(36, 37, 42, 0.9);
     width: 80%;
-    height: 380px;
+    height: 320px;
     margin-left: 10%;
     margin-right: 10px;
   }
 
   .divDesignForImage {                              /* Creating a div for the image inside the flexbox for structuring and designing */
-    margin-left: 30px;
+    margin-left: 100px;
     margin-top: 10px;
     margin-bottom: 25px;
-    width: 570px;
-    height: 350px;
+    width: 475px;
+    height: 300px;
     float: left;
   }
 .divDesignForImage img{                             /* Structuring the image*/
-    width: 570px;
-    height: 350px;
+    width: 475px;
+    height: 300px;
+    position: relative;
 }
+
 
 
 .divDesignForDescription{                           /* Creating a div inside the flexbox for structuring the description*/
     
     margin-left: 70px;
-    margin-top: 40px;
+    margin-top: 30px;
     margin-bottom: 25px;
     width: 800px;
     height: 285px;
@@ -110,34 +109,36 @@
     height: 100px;
     margin-left: 10%;
     margin-right: 10px;
+    position: relative;
   }
 
 .divDesignForPrice {                                /* Creating a div for Structuring inside the flexbox */
     width: 200px;
     height: 50px;
-    margin-left: 180px;
+    margin-top: 20px;
+    margin-left: 830px;
     position: relative;
+    
 }
 
 .divDesignForPrice h3{                              /* Structuring and designing the Price*/
     font-family: "Poppins", sans-serif;
     font-size: 20px;
     font-weight: 800;
-    text-align: center;
+    text-align: left;
     vertical-align: top;
     color: white;
-    position: relative;
 }
-
-.divDesignForPrice h3::before{                      /*Creating a line bollow the Price*/
-    content: '';
+.line2 {
     position: absolute;
-    bottom: -25px;
-    background-color: #0088a9;                   
-    height: 2px;
-    width: 1000px;
-    margin-right: 100px;
-}
+    bottom: 30px;
+    left: 5%;
+    width: 90%;
+    border: 1px solid;
+    border-color: #0088a9;
+  }
+
+
 
 .flex-container4 {                                  /* Creating a flexbox for designing and structuring */
     display: flex;
@@ -170,8 +171,8 @@
 .divDesignForLogin {                                /*Creating a line bollow the heading*/
     height: 80px;
     width: 130px;
-    margin-top: 10px;
-    margin-left: 550px;
+    margin-top: 0px;
+    margin-left: 1000px;
 }
 .button {
 
