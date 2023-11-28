@@ -4,10 +4,10 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
-        <title>Mieten</title>                                                                         <!-- Standart HTML Settings -->
+        <title>Mieten</title>                                                                           <!-- standart HTML settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/mieten.css">                                            <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/mieten.css">                                                   <!-- CSS file import -->
     </head>
 
 <body>
@@ -20,7 +20,7 @@
 </div>
 
 <div class="filter-container">
-    <div class="suchfilter">                                                                 <!--Suchfilter-->
+    <div class="suchfilter">                                                                            <!-- search filter -->
         <form id="filter1" action="" method="GET">
             <div class="filter_row">
                 <div class="filter_bar">
@@ -143,7 +143,7 @@
                         <option value="">3</option>
                         <option value="">4</option>
                     </select>
-                    <h3>L</h3>
+                    <h3>m³</h3>
                 </div>
                 <div class="filter-bar-2">
                     <h3>Klima</h3>
@@ -183,7 +183,7 @@
             </div>
             <div class="filter-row-2">
                 <div class="filter_bar">
-                    <input type="submit" value="Filter" class="button_filter">
+                    <input type="submit" value="Filtern" class="button_filter">
                     <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
                 </div>
             </div>
