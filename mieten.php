@@ -119,7 +119,7 @@
                 </div>
             </div>
 
-            <div id="hide">
+            <div id="hide" style="display: none;">
                 <div class="filter-row-3">
                     <div class="filter-bar-2">
                         <h3>Sitze</h3>
