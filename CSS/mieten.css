@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* import font style */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
 *{
     margin: 0;
@@ -229,3 +230,25 @@
     border-width: 2px;
 }
 
+.button-more {
+    width: 40px;
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer;
+}
+
+.fa-chevron-down {
+    font-size: 25px;
+    color: rgba(0,134,169,1);
+    transition:0.5s;
+}
+
+.fa-chevron-down:hover {
+    transform:scale(1.4);
+    z-index:1;
+}
+
+#filter2 {
+    display: none;
+}

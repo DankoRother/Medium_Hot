@@ -9,11 +9,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/mieten.css">                                                   <!-- CSS file import -->
         <script language="javascript" type="text/javascript" src="mieten.js"></script>   
-
-        <script>
-            
-        </script>
-
     </head>
 
 <body>
@@ -120,7 +115,7 @@
 
             
 
-            <div id="filter2" style="display:none">
+            <div id="filter2">
                 <div class="filter-row-3">
                     <div class="filter-bar-2">
                         <h3>Sitze</h3>
@@ -199,7 +194,7 @@
         </form>
         <div class="filter-row-button">
                 <div class="filter-bar-2">
-                    <button onclick="show_hide()">Toggle Filter 2</button>
+                    <button onclick="show_hide()" class="button-more"><i id="chevron" class="fa fa-chevron-down"></i></button>
                 </div>
             </div>
     </div>
