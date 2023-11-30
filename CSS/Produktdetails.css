@@ -42,7 +42,7 @@
     color: white;
     position: relative;
 }
-.line1 {
+.line1 {                                            /* Creating a horizontal line for design purposes */
     position: absolute;
     bottom: -10px;
     left: 5%;
@@ -129,7 +129,7 @@
     vertical-align: top;
     color: white;
 }
-.line2 {
+.line2 {                                            /* Creating a horizontal line for design purposes */
     position: absolute;
     bottom: 30px;
     left: 5%;
