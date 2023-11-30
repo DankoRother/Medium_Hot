@@ -252,3 +252,14 @@
 #filter2 {
     display: none;
 }
+
+.fa-chevron-up {
+    font-size: 25px;
+    color: rgba(0,134,169,1);
+    transition:0.5s;
+}
+
+.fa-chevron-up:hover {
+    transform:scale(1.4);
+    z-index:1;
+}
