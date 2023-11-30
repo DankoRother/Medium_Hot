@@ -93,7 +93,7 @@ label.label {
     color: white;
 }
 
-form input[type=text].input {
+input[type=text].input {
     box-sizing: border-box;
     width: 120%;
     padding-right: 5%;
@@ -101,6 +101,19 @@ form input[type=text].input {
     border: 2px solid #ff974d;
     border-radius: 5px;
     align-self: right;
+}
+
+input[type=date].datum {
+    box-sizing: border-box;
+    width: 120%;
+    padding-right: 5%;    
+    border: 2px solid #ff974d;
+    border-radius: 5px;
+    align-self: right;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    order: 2;
 }
 
 button.first {
