@@ -11,6 +11,15 @@
 
     <body>
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
+    <?php include 'dbConfig.php'; ?> 
+    <?php
+        $vehiclesSql = "SELECT * FROM cardetails LEFT JOIN vendordetails ON vendordetails.vendorId = cardetails.vendorId WHERE carId = 1";
+        $stmt = $conn->prepare($vehiclesSql);
+
+        $stmt->execute();
+        $result = $stmt->fetchAll();
+
+    ?>
 
         <div class="divForBackground">                                                       <!-- Creating a div for the background  -->
             <div class="divDesignForHeader"> <h3> Produktdetails </h3></div>                 <!-- Creating a div structure for the Heading  -->
@@ -21,12 +30,12 @@
                 </div>
             </div>
             <div class="flex-container2">                                                     <!-- Creating a div container which includes two divs and a table for structuring  -->
-                <div class="divDesignForImage"> <img src= Bilder\lambo.png alt="">
+                <div class="divDesignForImage"> <img src="Bilder\<?php echo $result[0]['img']; ?>" alt="">
                 </div>
                 <div class="divDesignForDescription"> 
                     <table style="width: 100%;">
                         <tr>
-                            <td class="td">  <h3 class="h3ForDescription "> Hersteller: </h3></td>
+                            <td class="td">  <h3 class="h3ForDescription "> Hersteller: <?php echo $result[0]['vendor_name']; ?></h3></td>
                             <td class="td"> <h3 class="h3ForDescription "> Sitzplätze:</h3></td>           
                         </tr>
                         <tr>
