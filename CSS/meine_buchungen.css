@@ -9,16 +9,99 @@
 
 /*Styling von Meine Buchungen*/
 
-.filter-container-2 {
-    display: flex;
-    justify-content: center;
-    padding-bottom: 20px;
+.img-container {
+    background-image: url(CSS_Bilder/Leonardo_Diffusion_XL_car_rental_with_sun_in_the_background_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom 28%;
+    height: 505px;
 }
 
-.suchfilter-extended {
-    height: 250px;
-    width: 70%;
+.filter-container {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 30px;
+    padding-top: 30px;
+}
+
+.suchfilter {
+    height: 445px;
+    width: 71%;
     border-radius: 25px;
     z-index: 2;
-    background-color: rgb(36, 37, 42, 1)
+    background: rgba(36, 37, 42, 0.90);   
+}
+
+.filter-heading {
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+.filter-heading h2 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /* Schriftformatierung */
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    position: relative;
+}
+
+.filter-heading h2::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10px;
+    background-color: #0088a9;                  /* Strich unter Überschrift */
+    height: 2px;
+    box-sizing: border-box;
+    width: 250px;
+}
+
+.booking-table {
+    margin-top: 50px; /* Add spacing between the heading and table */
+}
+
+.booking-table table {
+    width: 100%; /* Table occupies the full width of its container */
+    border-collapse: collapse; /* Merge cell borders */
+}
+
+.booking-table th,
+.booking-table td {
+    border: none; /* Add borders to cells */
+    padding: 8px; /* Add padding for cell content */
+    text-align: left; /* Align cell content to the left */
+}
+
+.booking-table th {
+    background-color: transparent;
+}
+
+/* Dropdown button styles */
+.booking-table .dropdown-btn {
+    padding: 6px 12px;
+    border: none;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+
+.booking-table .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: transparent;
+    padding: 8px;
+    border: 1px solid #ccc;
+    z-index: 1;
+}
+
+.booking-table td {
+    position: relative;
+}
+
+.booking-table td:hover .dropdown-content {
+    display: block; /* Show dropdown content on hover */
 }
