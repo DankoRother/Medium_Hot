@@ -9,47 +9,116 @@ var condition3;
 var vornameCondition;
 var nachnameCondition;
 var geburtstagCondition;
+var usernameInput;
+var emailInput;
+var passwordInput;
+var vornameInput;
+var nachnameInput;
+var geburtsdatumInput;
+var inputElement = "";
+
+//needed for registration and login, so separate function to hash password
+function hashPassword() {
+    var password = loadInput("passwort");
+    // Make an AJAX request to the server to hash the password
+    $.ajax({
+        type: 'POST',
+        url: 'login.php', // Use the same file for password hashing
+        data: { password: password },
+        success: function(response) {
+            // Use the hashed password returned from the server
+            console.log('Hashed Password:', response);
+        },
+        error: function(error) {
+            console.error('Error:', error.responseText);
+        }
+    });
+}
 
 
 function loadNewContent() {
     event.preventDefault();
-    console.log(loadInput("email"));
-    document.getElementById("registrationForm").innerHTML = `
-    <?php
-    $inputUsername = loadInput("username");
-    $inputEmail = loadInput("email");
-    $inputPassword = loadInput("passwort");
-    ?>
-    <form onsubmit="registerphp()">
-        <container class="flex">
-        <input class="input" type="text" id="vorname" name="vorname" style="order: 6">
-        <label class="label" for="vorname" style="order: 7">Vorname:</label>
-        <input class="input" type="text" id="nachname" name="nachname" style="order: 4">
-        <label class="label" for="nachname" style="order: 5">Nachname:</label>
-        <input class="datum" type="date" id="geburtsdatum" name="geburtsdatum">
-        <label class="label" for="geburtsdatum" style="order: 3">Geburtsdatum:</label>
-        <button id="finalButton" class="first" onclick="registerphp()" style="order: 1" disabled>Weiter</button>
-        </container>
-        <br>
-    </form>
-    <div class="errorHandlingMajor"> 
-        <div class="errorHandlingMinor" id="vornameError" style="margin-top: 14%; order: 1">Vorname darf nicht leer sein</div>
-        <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 15%; order: 2; margin-right: 5%">Nachname darf nicht leer sein</div>
-        <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 12%; margin-right: 5%; order: 3">Geben Sie ein gültiges Datum ein</div>
-    </div>`;
+    
+    // Assuming loadInput is a JavaScript function
+    usernameInput = loadInput("username");
+    emailInput = loadInput("email");
+    // hash password
+    passwordInput = hashPassword();
+    // Form elements
+    var formContent = `
+        <form onsubmit="event.preventDefault(); loadIntoPHP()">
+            <container class="flex">
+                <input class="input" type="text" id="vorname" name="vorname" style="order: 6">
+                <label class="label" for="vorname" style="order: 7">Vorname:</label>
+                <input class="input" type="text" id="nachname" name="nachname" style="order: 4">
+                <label class="label" for="nachname" style="order: 5">Nachname:</label>
+                <input class="datum" type="date" id="geburtsdatum" name="geburtsdatum">
+                <label class="label" for="geburtsdatum" style="order: 3">Geburtsdatum:</label>
+                <button id="finalButton" class="first" onclick="loadIntoPHP()" style="order: 1" disabled>Weiter</button>
+            </container>
+            <br>
+        </form>
+    `;
+
+    // Error handling elements
+    var errorHandlingContent = `
+        <div class="errorHandlingMajor"> 
+            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 14%; order: 1">Vorname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 15%; order: 2; margin-right: 5%">Nachname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 12%; margin-right: 5%; order: 3">Geben Sie ein gültiges Datum ein</div>
+        </div>
+    `;
+
+    // Update the registrationForm content
+    document.getElementById("registrationForm").innerHTML = formContent + errorHandlingContent;
 
     // Add event listeners for input event
     document.getElementById("vorname").addEventListener("input", validateVorname);
     document.getElementById("nachname").addEventListener("input", validateNachname);
     document.getElementById("geburtsdatum").addEventListener("keyup", validateGeburtsdatum);
-    console.log("loaded");
+
+    // Assign secondButtonId after updating the DOM
     secondButtonId = document.getElementById("finalButton");
-    document.getElementById("finalButton").addEventListener(input, preventDefault);
+    console.log("loaded");
 }
-var inputElement;
-function loadInput(inputElement){
-    var loadedInput = document.getElementById("inputElement").value;
-    return loadedInput;
+
+
+
+function loadInput(inputElement) {
+    var element = document.getElementById(inputElement);
+    if (element) {
+        return element.value;
+    } else {
+        console.error("Element with ID '" + inputElement + "' not found.");
+        return null;
+    }
+}
+
+function loadIntoPHP() {
+    vornameInput = loadInput("vorname");
+    nachnameInput = loadInput("nachname");
+    geburtsdatumInput = loadInput("geburtsdatum");
+    // Make an AJAX request to the server with the data
+    $.ajax({
+        type: 'POST',
+        url: 'login.php', // Update with your PHP script URL
+        data: {
+            usernameInput: usernameInput,
+            emailInput: emailInput,
+            passwordInput: passwordInput,
+            vornameInput: vornameInput,
+            nachnameInput: nachnameInput,
+            geburtsdatumInput: geburtsdatumInput
+            // Add more data as needed
+        },
+        success: function(response) {
+            // Handle the response from the PHP script
+            console.log(response);
+        },
+        error: function(error) {
+            console.error('Error:', error.responseText);
+        }
+    });
 }
 
 function validateUsername() {
@@ -183,13 +252,6 @@ else{
     secondButtonId.disabled = true;
 }
 }
-function registerphp(){
-    event.preventDefault();
-    inputElement = "vorname";
-    var inputVorname = loadInput(inputElement);
-    inputElement = "nachname";
-    var inputNachname = loadInput(inputElement);
-    inputElement = "geburtstag";
-    var inputGeburtstag = loadInput(inputElement);
-    console.log(inputGeburtstag);
+function consolelog(input){
+    console.log(input);
 }
