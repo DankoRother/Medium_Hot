@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">       
     <title>Sign Up</title>                                                         <!-- Standart HTML Settings -->
@@ -7,24 +8,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="CSS/login.css">      
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
-    <?php
-        $servername = "localhost";
-        $username = "Danko1";
-        $password = "031520";
-        $dbname = "CarSBA";
-
-        $conn = new mysqli($servername, $username, $password, $dbname);
-
-        // Check the connection
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
-        }
-        ?>
 </head>
 <body>
-<?php include 'header.php'?>
-
-            
+<?php include 'header.php'?>            
 <br>
 <br>
 <br>
@@ -36,7 +22,7 @@
 <br>
 <br>
 <div class="roundedcorners" id="registrationForm">
-    <form onsubmit="loadNewContent()">
+    <form onsubmit="loadNewContent()" method="POST">
         <container class="flex">
         <input class="input" type="text" id="username" name="username" style="order: 6">
         <label class="label" for="Username" style="order: 7">Username:</label>
@@ -59,23 +45,10 @@
 <br>
 <br>
 <br>
-<br>
-<?php
-// Function to sanitize input and prevent SQL injection
-function sanitizeInput($input) {
-    global $conn;
-    return mysqli_real_escape_string($conn, $input);
-// Check if the form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Get form data and sanitize
-    $userrnameinput = sanitizeInput($_POST['username']);
-    $emailinput = sanitizeInput($_POST['email']);
-    $passwordinput = password_hash($_POST['password'], PASSWORD_BCRYPT); // Hash the password
-}
-}
-?>  
+<br>  
+<script src="script.js"></script> 
 <?php include 'footer.php'?>
 </body>
-<script src="script.js"></script> 
+
 
 </html>
