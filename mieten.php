@@ -207,15 +207,15 @@
 <div class="container-output">
 <?php 
 
-if (isset($_POST['searchOrt'])) {
+if (isset($_POST['searchOrt'])) {           //location and date filter
 
-    $start_date = $_POST['start_date'];
+    $start_date = $_POST['start_date'];        //set variables
     $end_date = $_POST['end_date'];
     $location = $_POST['location'];
 
-    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";
-    $result = $conn->query($sqlLocation);
-    $resultCheck = $result->rowCount();
+    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";       //prepared sql statement
+    $result = $conn->query($sqlLocation);                                                   //sql statemnt ausführen in datenbank
+    $resultCheck = $result->rowCount();                                                 //count results
 
     if ($resultCheck > 0) {
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
@@ -239,9 +239,9 @@ if (isset($_POST['searchOrt'])) {
 
 <?php 
 
-if (isset($_POST['filtern'])) {
+if (isset($_POST['filtern'])) {  // extented filter function
 
-    $start_date = $_POST['start_date'];
+    $start_date = $_POST['start_date'];         // setting filter variables 
     $end_date = $_POST['end_date'];
     $location = $_POST['location'];
     $vendor = $_POST['vendor'];
@@ -256,24 +256,24 @@ if (isset($_POST['filtern'])) {
     $gps = $_POST['gps'];
     $trunk = $_POST['trunk'];
 
-    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";
-    $result = $conn->query($sqlLocation);
-    $resultCheck = $result->rowCount();
+    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";  //prepared sql statement
+    $result = $conn->query($sqlLocation);                                                   //sql statemnt ausführen in datenbank
+    $resultCheck = $result->rowCount();                                                 //count results
 
-    if ($resultCheck > 0) {
+    if ($resultCheck > 0) {                                     //if results is > 0 show the results
         while($row = $result->fetch(PDO::FETCH_ASSOC)){
             ?><div class="output">
                 <div class="output_img">
-                    <img src="<?php echo $row['img'];?>">
+                    <img src="<?php echo $row['img'];?>">             <!-- get IMG from Database -->
                 </div>
                 <div class="output_text">
-                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extention'] . "<br>" . $row['price'] . " €/Tag"; ?>
+                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extention'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
                 </div>
             </div>
             <?php 
         }
-    } else {
-        echo "Keine Treffer";
+    } else {                                                
+        echo "Keine Treffer";  //no results message
     }
 
 }
