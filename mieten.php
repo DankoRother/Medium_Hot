@@ -1,7 +1,20 @@
-<?php session_start(); ?>
 
 <!DOCTYPE html>
     <head>
+    <?php
+    session_start();
+
+    // Überprüfen, ob die Session-Variablen existieren
+    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+        // Die Werte in separaten PHP-Variablen laden
+        $start_date = $_GET['start_date'] ?? "";
+        $end_date = $_GET['end_date'] ?? "";
+        $location = $_GET['location'] ?? "";
+    } else {
+        // Standardwerte setzen, falls keine Session existiert
+        $start_date = $end_date = $location = "";
+    }
+    ?>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
         <title>Mieten</title>                                                                           <!-- standart HTML settings -->
@@ -26,30 +39,31 @@
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control"  name="start_date" value="<?php echo $start_date; ?>">
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" name="end_date" value="<?php echo $end_date; ?>">
                 </div>
                 <div class="filter_bar">
                     <h2>Wo?</h2>
-                    <select name="ort" class="form-select">
-                        <option value=""></option>
-                        <option value="">Hamburg</option>
-                        <option value="">Bielefeld</option>
-                        <option value="">Rostock</option>
-                        <option value="">Bochum</option>
-                        <option value="">Dortmund</option>
-                        <option value="">Muenchen</option>
-                        <option value="">Berlin</option>
-                        <option value="">Dresden</option>
-                        <option value="">Freiburg</option>
-                        <option value="">Leipzig</option>
-                        <option value="">Koeln</option>
-                        <option value="">Nuernberg</option>
-                        <option value="">Bremen</option>
-                        <option value="">Paderborn</option>
+                    <select name="location" class="form-select">
+                    <option value="<?php echo $location; ?>" selected><?php echo $location; ?></option>
+                    <option value="">Bitte wählen</option>
+                    <option value="Hamburg">Hamburg</option>
+                    <option value="Bielefeld">Bielefeld</option>
+                    <option value="Rostock">Rostock</option>
+                    <option value="Bochum">Bochum</option>
+                    <option value="Dortmund">Dortmund</option>
+                    <option value="Muenchen">München</option>
+                    <option value="Berlin">Berlin</option>
+                    <option value="Dresden">Dresden</option>
+                    <option value="Freiburg">Freiburg</option>
+                    <option value="Leipzig">Leipzig</option>
+                    <option value="Koeln">Köln</option>
+                    <option value="Nuernberg">Nürnberg</option>
+                    <option value="Bremen">Bremen</option>
+                    <option value="Paderborn">Paderborn</option>  
                     </select>
                 </div>
                 <div class="filter_bar">

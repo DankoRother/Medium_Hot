@@ -1,5 +1,8 @@
 <!DOCTYPE html>
     <head>
+    <?php
+    session_start();
+    ?>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
         <title>CarSBA Homepage</title>                                                                         <!-- Standart HTML Settings -->
@@ -25,32 +28,32 @@
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" name="start_date">
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="date" class="form-control">
+                  <input type="date" class="form-control" name="end_date">
                 </div>
                 <div class="filter_bar">
-                    <h2>Wo?</h2>
-                    <select name="ort" class="form-select">
-                        <option value=""></option>
-                        <option value="">Hamburg</option>
-                        <option value="">Bielefeld</option>
-                        <option value="">Rostock</option>
-                        <option value="">Bochum</option>
-                        <option value="">Dortmund</option>
-                        <option value="">Muenchen</option>
-                        <option value="">Berlin</option>
-                        <option value="">Dresden</option>
-                        <option value="">Freiburg</option>
-                        <option value="">Leipzig</option>
-                        <option value="">Koeln</option>
-                        <option value="">Nuernberg</option>
-                        <option value="">Bremen</option>
-                        <option value="">Paderborn</option>
-                    </select>
-                </div>
+                  <h2>Wo?</h2>
+                  <select name="location" class="form-select">
+                  <option value="">Bitte wählen</option>
+                  <option value="Hamburg">Hamburg</option>
+                  <option value="Bielefeld">Bielefeld</option>
+                  <option value="Rostock">Rostock</option>
+                  <option value="Bochum">Bochum</option>
+                  <option value="Dortmund">Dortmund</option>
+                  <option value="Muenchen">München</option>
+                  <option value="Berlin">Berlin</option>
+                  <option value="Dresden">Dresden</option>
+                  <option value="Freiburg">Freiburg</option>
+                  <option value="Leipzig">Leipzig</option>
+                  <option value="Koeln">Köln</option>
+                  <option value="Nuernberg">Nürnberg</option>
+                  <option value="Bremen">Bremen</option>
+                  <option value="Paderborn">Paderborn</option>
+              </select>
+            </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
                     <input type="reset" class="button_reset" value="Zurücksetzen">
