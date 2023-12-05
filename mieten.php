@@ -68,7 +68,7 @@
                     </select>
                 </div>
                 <div class="filter_bar">
-                    <input type="submit" value="Suchen" class="button_filter">
+                    <input type="submit" value="Suchen" class="button_filter" name="searchOrt">
                     <input type="reset" class="button_reset" value="Zurücksetzen" onclick="">
                 </div>
             </div>
@@ -78,7 +78,7 @@
 
 <div class="filter-container-2">
     <div class="suchfilter-extended">
-        <form id="filter2" action="" method="GET">
+        <form id="filter2" action="" method="POST">
             <div class="filter-row-2">
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
@@ -111,7 +111,7 @@
                 </div>
                 <div class="filter-bar-2">
                     <h3>Preis bis</h3>
-                    <input type="number" name="min_age" class="form-input-2">
+                    <input type="number" name="price" class="form-input-2">
                     <h3>€/Tag</h3>
                 </div>
             </div>
@@ -174,7 +174,7 @@
                     </div>
                     <div class="filter-bar-2">
                         <h3>Kofferraum</h3>
-                        <select name="doors" class="form-select-2">
+                        <select name="trunk" class="form-select-2">
                             <option value=""></option>
                             <option value="">0</option>
                             <option value="">1</option>
@@ -189,7 +189,7 @@
 
             <div class="filter-row-filter">
                 <div class="filter_bar">
-                    <input type="submit" value="Filtern" class="button_filter">
+                    <input type="submit" value="Filtern" class="button_filter" name="filtern">
                     <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
                 </div>
             </div>
@@ -202,6 +202,83 @@
             </div>
     </div>
 </div>
+</div>
+
+<div class="container-output">
+<?php 
+
+if (isset($_POST['searchOrt'])) {
+
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+    $location = $_POST['location'];
+
+    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";
+    $result = $conn->query($sqlLocation);
+    $resultCheck = $result->rowCount();
+
+    if ($resultCheck > 0) {
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            ?><div class="output">
+                <div class="output_img">
+                    <img src="<?php echo $row['img'];?>">
+                </div>
+                <div class="output_text">
+                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extention'] . "<br>" . $row['price'] . " €/Tag"; ?>
+                </div>
+            </div>
+            <?php 
+        }
+    } else {
+        echo "Keine Treffer";
+    }
+
+}
+
+?>
+
+<?php 
+
+if (isset($_POST['filtern'])) {
+
+    $start_date = $_POST['start_date'];
+    $end_date = $_POST['end_date'];
+    $location = $_POST['location'];
+    $vendor = $_POST['vendor'];
+    $type = $_POST['type'];
+    $price = $_POST['price'];
+    $seats = $_POST['seats'];
+    $gear = $_POST['gear'];
+    $doors = $_POST['doors'];
+    $min_age = $_POST['min_age'];
+    $drive = $_POST['drive'];
+    $air_condition = $_POST['air_condition'];
+    $gps = $_POST['gps'];
+    $trunk = $_POST['trunk'];
+
+    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";
+    $result = $conn->query($sqlLocation);
+    $resultCheck = $result->rowCount();
+
+    if ($resultCheck > 0) {
+        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+            ?><div class="output">
+                <div class="output_img">
+                    <img src="<?php echo $row['img'];?>">
+                </div>
+                <div class="output_text">
+                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extention'] . "<br>" . $row['price'] . " €/Tag"; ?>
+                </div>
+            </div>
+            <?php 
+        }
+    } else {
+        echo "Keine Treffer";
+    }
+
+}
+
+?>
 </div>
 
 
