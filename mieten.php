@@ -5,11 +5,11 @@
     session_start();
 
     // Überprüfen, ob die Session-Variablen existieren
-    if ($_SERVER["REQUEST_METHOD"] == "GET") {
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Die Werte in separaten PHP-Variablen laden
-        $start_date = $_GET['start_date'] ?? "";
-        $end_date = $_GET['end_date'] ?? "";
-        $location = $_GET['location'] ?? "";
+        $start_date = $_POST['start_date'] ?? "";
+        $end_date = $_POST['end_date'] ?? "";
+        $location = $_POST['location'] ?? "";
     } else {
         // Standardwerte setzen, falls keine Session existiert
         $start_date = $end_date = $location = "";
@@ -27,6 +27,8 @@
 <body>
 <?php include 'header.php'; ?>
 
+<?php include 'dbConfig.php'?>
+
 <div class="img-container">
 
 <div class="filter-heading">
@@ -35,7 +37,7 @@
 
 <div class="filter-container">
     <div class="suchfilter">                                                                            <!-- search filter -->
-        <form id="filter1" action="" method="GET">
+        <form id="filter1" action="" method="POST">
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
@@ -48,27 +50,26 @@
                 <div class="filter_bar">
                     <h2>Wo?</h2>
                     <select name="location" class="form-select">
-                    <option value="<?php echo $location; ?>" selected><?php echo $location; ?></option>
-                    <option value="">Bitte wählen</option>
+                    <option value="<?php echo $location; ?>"><?php echo $location; ?></option>
                     <option value="Hamburg">Hamburg</option>
                     <option value="Bielefeld">Bielefeld</option>
                     <option value="Rostock">Rostock</option>
                     <option value="Bochum">Bochum</option>
                     <option value="Dortmund">Dortmund</option>
-                    <option value="Muenchen">München</option>
+                    <option value="Muenchen">Muenchen</option>
                     <option value="Berlin">Berlin</option>
                     <option value="Dresden">Dresden</option>
                     <option value="Freiburg">Freiburg</option>
                     <option value="Leipzig">Leipzig</option>
-                    <option value="Koeln">Köln</option>
-                    <option value="Nuernberg">Nürnberg</option>
+                    <option value="Koeln">Koeln</option>
+                    <option value="Nuernberg">Nuernberg</option>
                     <option value="Bremen">Bremen</option>
                     <option value="Paderborn">Paderborn</option>  
                     </select>
                 </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
-                    <input type="reset" class="button_reset" value="Zurücksetzen" onclick="document.getElementById('filter1').selectedIndex = 0">
+                    <input type="reset" class="button_reset" value="Zurücksetzen" onclick="">
                 </div>
             </div>
     </div>
@@ -110,19 +111,7 @@
                 </div>
                 <div class="filter-bar-2">
                     <h3>Preis bis</h3>
-                    <select name="price" class="form-select-2">
-                        <option value=""></option>
-                        <option value="">100</option>
-                        <option value="">150</option>
-                        <option value="">200</option>
-                        <option value="">300</option>
-                        <option value="">400</option>
-                        <option value="">500</option>
-                        <option value="">600</option>
-                        <option value="">700</option>
-                        <option value="">800</option>
-                        <option value="">900</option>
-                    </select>
+                    <input type="number" name="min_age" class="form-input-2">
                     <h3>€/Tag</h3>
                 </div>
             </div>

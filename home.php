@@ -24,7 +24,7 @@
           </div>
 
           <div class="suchfilter">                                                                 <!--Suchfilter-->
-            <form action="mieten.php" method="GET">
+            <form action="mieten.php" method="POST">
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
