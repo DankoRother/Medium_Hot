@@ -299,7 +299,7 @@ if (isset($_POST['filtern'])) {  // extented filter function
         foreach ($result as $row) {
             ?><div class="output">
                 <div class="output_img">
-                    <img src="<?php echo $row['img'];?>">             <!-- get IMG from Database -->
+                    <img src="Bilder/bilder_db/?php echo $row['img'];?>">             <!-- get IMG from Database -->
                 </div>
                 <div class="output_text">
                     <?php echo $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
