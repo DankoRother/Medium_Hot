@@ -5,7 +5,7 @@
         <title>Standorte</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/standorte.css">                                             <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/standorte.css">                                                 <!-- CSS Datei Import -->
     </head>
 
     <body>

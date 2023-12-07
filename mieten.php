@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
     <head>
+    <?php include 'dbConfig.php'?>
     <?php
     session_start();
 
@@ -27,7 +28,7 @@
 <body>
 <?php include 'header.php'; ?>
 
-<?php include 'dbConfig.php'?>
+
 
 <div class="img-container">
 
@@ -252,8 +253,8 @@ if (isset($_POST['filtern'])) {  // extented filter function
     $doors = $_POST['doors'];
     $min_age = $_POST['min_age'];
     $drive = $_POST['drive'];
-    $air_condition = $_POST['air_condition'];
-    $gps = $_POST['gps'];
+    $air_condition = isset($_POST['air_condition']) ? $_POST['air_condition'] : '0';
+    $gps = isset($_POST['gps']) ? $_POST['gps'] : '0';
     $trunk = $_POST['trunk'];
 
     $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";  //prepared sql statement
