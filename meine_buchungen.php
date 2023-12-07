@@ -34,12 +34,6 @@
                                     <td>Manufacturer and Model</td>
                                     <td>Price</td>
                                     <td>Start Date - End Date at Location</td>
-                                    <td>
-                                        <button class="dropdown-btn">Show Details</button>          <!-- Dropdown content for additional information (hidden by default) -->
-                                        <div class="dropdown-content">                              <!-- Additional car information here -->
-                                        Test Test, Test
-                                        </div>
-                                    </td>
                                 </tr>                                                   <!-- You can dynamically generate rows for each booking -->
                             </tbody>
                         </table>
