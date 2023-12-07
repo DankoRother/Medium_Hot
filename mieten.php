@@ -106,7 +106,7 @@
                         <option value="Cabrio">Cabrio</option>
                         <option value="Coupe">Coupe</option>
                         <option value="Mehrsitzer">Mehrsitzer</option>
-                        <option value="Limosine">Limosine</option>
+                        <option value="Limousine">Limousine</option>
                         <option value="Combi">Combi</option>
                     </select>
                 </div>
