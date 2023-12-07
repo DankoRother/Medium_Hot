@@ -279,7 +279,7 @@ if (isset($_POST['filtern'])) {  // extented filter function
                     <img src="<?php echo $row['img'];?>">             <!-- get IMG from Database -->
                 </div>
                 <div class="output_text">
-                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
+                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
                 </div>
             </div>
             <?php 
