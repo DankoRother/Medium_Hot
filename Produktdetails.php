@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -64,7 +65,7 @@
                 
             </div>
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
-                <div class="divDesignForBackToSelection"> <a href="#" style="text-decoration: none;"> <h3> Zurück zur Auswahl </h3></a></div>
+                <div class="divDesignForBackToSelection"> <a href="mieten.php" style="text-decoration: none;"> <h3> Zurück zur Auswahl </h3></a></div>
                 <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
             </div>
         </div>
