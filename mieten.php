@@ -42,11 +42,11 @@
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="date" class="form-control"  name="start_date" value="<?php echo $start_date; ?>">
+                  <input type="text" class="form-control"  name="start_date" value="<?php echo $start_date; ?>">
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="date" class="form-control" name="end_date" value="<?php echo $end_date; ?>">
+                  <input type="text" class="form-control" name="end_date" value="<?php echo $end_date; ?>">
                 </div>
                 <div class="filter_bar">
                     <h2>Wo?</h2>
@@ -183,7 +183,7 @@
                             <option value="">3</option>
                             <option value="">4</option>
                         </select>
-                        <h3>m³</h3>
+                        <h3>Koffer</h3>
                     </div>
                 </div>    
             </div>    

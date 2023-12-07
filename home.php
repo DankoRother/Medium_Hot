@@ -9,6 +9,29 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/homepage.css">
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>                                    <!-- Verlinkung zu Jquery -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>                                                                                              
+  $(function() {
+    $("#start_date").datepicker({                                                                               //Codeabschnitt von Jquery: Eingabe von Datumswerten unter Berücksichitigung, dass zum Beispiel das Startdatum nicht größer als das Enddatum sein darf.
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function(selectedDate) {
+        $("#end_date").datepicker("option", "minDate", selectedDate);
+      }
+    });
+    $("#end_date").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function(selectedDate) {
+        $("#start_date").datepicker("option", "maxDate", selectedDate);
+      }
+    });
+  });
+</script>
         <script language="javascript" type="text/javascript" src="homepage.js"></script>                                            <!-- CSS Datei Import -->
     </head>
 <!-- Beginn der Webseite -->
@@ -28,11 +51,11 @@
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="date" class="form-control" name="start_date">
+                  <input type="text" class="form-control" name="start_date" id="start_date">
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="date" class="form-control" name="end_date">
+                  <input type="text" class="form-control" name="end_date" id="end_date">
                 </div>
                 <div class="filter_bar">
                   <h2>Wo?</h2>
