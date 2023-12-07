@@ -1,9 +1,9 @@
 
 <!DOCTYPE html>
-    <head>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>                                    <!-- Verlinkung zu Jquery -->
+    <head>                                 <!-- Verlinkung zu Jquery -->
         <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
         <script>                                                                                              
   $(function() {
     $("#start_date").datepicker({                                                                               //Codeabschnitt von Jquery: Eingabe von Datumswerten unter Berücksichitigung, dass zum Beispiel das Startdatum nicht größer als das Enddatum sein darf.
@@ -150,6 +150,25 @@
 
             <div id="filter2">
                 <div class="filter-row-3">
+
+                    <div class="filter-bar-2">
+                        <h3>Getriebe</h3>
+                        <select name="gear" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">manually</option>
+                            <option value="">automatic</option>
+                        </select>
+                    </div>
+
+                    <div class="filter-bar-2">
+                        <h3>Antrieb</h3>
+                        <select name="drive" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">Verbrenner</option>
+                            <option value="">Elektro</option>
+                        </select>
+                    </div>
+
                     <div class="filter-bar-2">
                         <h3>Sitze</h3>
                         <select name="seats" class="form-select-2">
@@ -163,14 +182,7 @@
                             <option value="9">9</option>
                         </select>
                     </div>
-                    <div class="filter-bar-2">
-                        <h3>Getriebe</h3>
-                        <select name="gear" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">manually</option>
-                            <option value="">automatic</option>
-                        </select>
-                    </div>
+                    
                     <div class="filter-bar-2">
                         <h3>Türen</h3>
                         <select name="doors" class="form-select-2">
@@ -179,30 +191,21 @@
                             <option value="">4</option>
                             <option value="">5</option>
                         </select>
-                    </div>
-                    <div class="filter-bar-2">
-                        <h3>Alter ab</h3>
-                        <input type="number" name="min_age" class="form-input-2">
-                        <h3>Jahren</h3>
-                    </div> 
+                    </div>  
                 </div>
+
                 <div class="filter-row-4">
-                    <div class="filter-bar-2">
-                        <h3>Antrieb</h3>
-                        <select name="drive" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">Verbrenner</option>
-                            <option value="">Elektro</option>
-                        </select>
-                    </div>
+                    <input type="hidden" name="air_condition" value="0">
                     <div class="filter-bar-2">
                         <h3>Klima</h3>
-                        <input name="air_condition" type="checkbox">
+                        <input name="air_condition" type="checkbox" value="1" <?php echo isset($_POST['air_condition']) && $_POST['air_condition'] == '1' ? 'checked' : ''; ?>>
                     </div>
+
                     <div class="filter-bar-2">
                         <h3>GPS</h3>
                         <input name="gps" type="checkbox">
                     </div>
+
                     <div class="filter-bar-2">
                         <h3>Kofferraum</h3>
                         <select name="trunk" class="form-select-2">
@@ -215,6 +218,17 @@
                         </select>
                         <h3>Koffer</h3>
                     </div>
+
+                    <div class="filter-bar-2">
+                        <h3>Alter ab</h3>
+                        <select name="min_age" class="form-select-2">
+                            <option value=""></option>
+                            <option value="">18</option>
+                            <option value="">21</option>
+                            <option value="">25</option>
+                        </select>
+                        <h3>Jahren</h3>
+                    </div> 
                 </div>    
             </div>    
 
@@ -239,7 +253,7 @@
 
 if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt'])) {  // extented filter function
 
-    ?><div class="container-output"><?php
+    ?><div class="output_background"><div class="container-output"><?php
 
         $start_date = $_POST['start_date'];         // setting filter variables 
         $end_date = $_POST['end_date'];
@@ -252,7 +266,7 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         $doors = $_POST['doors'];
         $min_age = $_POST['min_age'];
         $drive = $_POST['drive'];
-        $air_condition = isset($_POST['air_condition']) ? $_POST['air_condition'] : '0';
+        $air_condition = isset($_POST['air_condition']) ? true : false;
         $gps = isset($_POST['gps']) ? $_POST['gps'] : '0';
         $trunk = $_POST['trunk'];
     
@@ -278,6 +292,11 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
     if (!empty($location)) {
         $conditions[] = "location.location = :location";
     }
+    if (!empty($air_condition)) {
+        $conditions[] = "cardetails.air_condition = :air_condition";
+    }
+
+    
 
     $whereClause = (!empty($conditions)) ? "WHERE " . implode(" AND ", $conditions) : "";
 
@@ -286,7 +305,8 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
                     INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
                     INNER JOIN carlocation ON carlocation.carId = cardetails.carId
                     INNER JOIN location ON location.locationId = carlocation.locationId
-                    $whereClause";
+                    $whereClause
+                    ORDER BY cardetails.price DESC";
 
         $stmt = $conn->prepare($sqlLocation);
 
@@ -305,6 +325,10 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         if (!empty($location)) {
             $stmt->bindParam(':location', $location);
         }
+        if (!empty($air_condition)) {
+            $stmt->bindParam(':air_condition', $air_condition, PDO::PARAM_BOOL);
+        }
+
 
         $stmt->execute();
 
@@ -327,7 +351,7 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         echo "Keine Treffer";
         var_dump($_POST);  //no results message
     }
-    ?></div><?php
+    ?></div></div><?php
 }
     
 ?>
