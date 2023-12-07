@@ -12,5 +12,16 @@ function show_hide() {
             chevronIcon.classList.remove('fa-chevron-up');
             chevronIcon.classList.add('fa-chevron-down');
         }
+
+        localStorage.setItem('filterBarStatus', x.style.display);
+    }
+}
+
+window.onload = function () {
+    var x = document.getElementById('filter2');
+    var storedStatus = localStorage.getItem('filterBarStatus');
+
+    if (storedStatus) {
+        x.style.display = storedStatus;
     }
 }
