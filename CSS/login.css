@@ -11,28 +11,6 @@ body {
     width: 100%;
     background-size: cover;
 }
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    border-top: 10;
-    border-left: 0;
-    border-right: 0;
-    border-color: #0088a9;
-    border-style: solid;
-}
-
-td {
-    text-align: center;
-    width: 33%;
-    background-color: antiquewhite;
-}
-td.center {
-    align-content: right;
-    width: 33%;
-    background-color: aqua;
-}
-
 h1 {
     text-align: center;
     font-family: "Poppins", sans-serif;
@@ -41,6 +19,21 @@ h1 {
     color: #edf0f1;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+a {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 30px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
 }
 div.errorHandlingMajor {
     padding-top: 4%;
@@ -74,6 +67,7 @@ div.roundedcorners {
     margin-bottom: 100px;
     display: flex;
     flex-direction: row;
+    height: 340px;
 }
 
 
@@ -112,11 +106,26 @@ input[type=date].datum {
     align-self: right;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 20px;
-    order: 2;
+    font-size: 16px;
 }
 
-button.first {
+input.back {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    background-color: #ff974d;
+    border: none;                                                                                                                                           
+    color: #edf0f1;
+    cursor: pointer;
+    order: 2;
+    margin-top: 3%;
+    margin-left: 30%;
+    padding: 6px 16px;
+    border-radius: 50px;
+    height: fit-content;
+}
+
+input.first {
     background-color: #0088a9;
     border: none;                                                                                                                                           
     color: #edf0f1;
@@ -129,20 +138,22 @@ button.first {
     margin-left: 20%;
 }
 
-input[type=submit].final {
+input.final {
+    text-align: center;
     background-color: #0088a9;
-    border: none;                                                                                                                                           
+    border: none;
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
     border-radius: 50px;
-    margin-top: 5%;
-    margin-left: 20%;
+    margin: 10% auto;
+    margin-left: 3%; 
+    display: block; 
 }
 
-button.first:disabled {
+input.first:disabled {
     background-color: #7ea2ab;
     border: none;                                                                                                                                           
     color: #edf0f1;
@@ -152,5 +163,21 @@ button.first:disabled {
     cursor: pointer;
     border-radius: 50px;
     margin-top: 10%;
+    cursor: not-allowed;
+}
+
+input.final:disabled {
+    text-align: center;
+    background-color: #7ea2ab;
+    border: none;
+    color: #edf0f1;
+    padding: 8px 20px;
+    font-family: "Poppins";
+    font-size: 24px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin: 10% auto;
+    margin-left: 3%; 
+    display: block; 
     cursor: not-allowed;
 }
