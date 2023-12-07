@@ -1,8 +1,11 @@
 document.getElementById("username").addEventListener("input", validateUsername);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passwort").addEventListener("input", validatePassword);
+document.getElementById("vorname").addEventListener("input", validateVorname);
+document.getElementById("nachname").addEventListener("input", validateNachname);
+document.getElementById("geburtsdatum").addEventListener("keyup", validateGeburtsdatum);
 var firstButtonId = document.getElementById("weiterButton");
-var secondButtonId;
+var secondButtonId = document.getElementById("submitButton");
 var condition1;
 var condition2;
 var condition3;
@@ -17,71 +20,43 @@ var nachnameInput;
 var geburtsdatumInput;
 var inputElement = "";
 
-//needed for registration and login, so separate function to hash password
-function hashPassword() {
-    var password = loadInput("passwort");
-    // Make an AJAX request to the server to hash the password
-    $.ajax({
-        type: 'POST',
-        url: 'login.php', // Use the same file for password hashing
-        data: { password: password },
-        success: function(response) {
-            // Use the hashed password returned from the server
-            console.log('Hashed Password:', response);
-        },
-        error: function(error) {
-            console.error('Error:', error.responseText);
-        }
+function hideFirstShowSecond() {
+    var geburtsdatumElement = document.getElementById("geburtsdatum");
+    document.getElementById("weiterButton").style.display = 'none';
+    secondButtonId.style.display = 'block';
+    geburtsdatumElement.style.display = 'block';
+    document.getElementById("firstErrors").style.display = 'none';
+    document.getElementById("secondErrors").style.display = 'block';
+    document.getElementById("backButton").style.display = 'block';
+    //document.getElementById("backButtonText").style.display = 'block';
+    // Hide "Username, E-Mail, and Passwort" labels, inputs, and errorhandlers
+    document.querySelectorAll('.label[for^="username"], .input[name="username"], .label[for^="email"], .input[name="email"], .label[for^="passwort"], .input[name="passwort"], .errorHandlingMajor#firstErrors .button[name="weiterButton"]').forEach(function (element){
+        element.style.display = 'none';
+    });
+    // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and errorhandlers
+    document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtsdatum"], .input.date[name="geburtsdatum"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
+        element.style.display = 'block';
     });
 }
+function hideSecondShowFirst() {
+    var geburtsdatumElement = document.getElementById("geburtsdatum");
+    document.getElementById("weiterButton").style.display = 'block';
+    secondButtonId.style.display = 'none';  // Corrected this line
+    geburtsdatumElement.style.display = 'none';
+    document.getElementById("firstErrors").style.display = 'block';
+    document.getElementById("secondErrors").style.display = 'none';
+    document.getElementById("backButton").style.display = 'none';
 
+    // Hide "Username, E-Mail, and Passwort" labels, inputs, and errorhandlers
+    document.querySelectorAll('.label[for^="username"], .input[name="username"], .label[for^="email"], .input[name="email"], .label[for^="passwort"], .input[name="passwort"], .errorHandlingMajor#firstErrors .button[name="weiterButton"]').forEach(function (element){
+        element.style.display = 'block';
+    });
 
-function loadNewContent() {
-    event.preventDefault();
-    
-    // Assuming loadInput is a JavaScript function
-    usernameInput = loadInput("username");
-    emailInput = loadInput("email");
-    // hash password
-    passwordInput = hashPassword();
-    // Form elements
-    var formContent = `
-        <form onsubmit="event.preventDefault(); loadIntoPHP()">
-            <container class="flex">
-                <input class="input" type="text" id="vorname" name="vorname" style="order: 6">
-                <label class="label" for="vorname" style="order: 7">Vorname:</label>
-                <input class="input" type="text" id="nachname" name="nachname" style="order: 4">
-                <label class="label" for="nachname" style="order: 5">Nachname:</label>
-                <input class="datum" type="date" id="geburtsdatum" name="geburtsdatum">
-                <label class="label" for="geburtsdatum" style="order: 3">Geburtsdatum:</label>
-                <button id="finalButton" class="first" onclick="loadIntoPHP()" style="order: 1" disabled>Weiter</button>
-            </container>
-            <br>
-        </form>
-    `;
-
-    // Error handling elements
-    var errorHandlingContent = `
-        <div class="errorHandlingMajor"> 
-            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 14%; order: 1">Vorname darf nicht leer sein</div>
-            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 15%; order: 2; margin-right: 5%">Nachname darf nicht leer sein</div>
-            <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 12%; margin-right: 5%; order: 3">Geben Sie ein gültiges Datum ein</div>
-        </div>
-    `;
-
-    // Update the registrationForm content
-    document.getElementById("registrationForm").innerHTML = formContent + errorHandlingContent;
-
-    // Add event listeners for input event
-    document.getElementById("vorname").addEventListener("input", validateVorname);
-    document.getElementById("nachname").addEventListener("input", validateNachname);
-    document.getElementById("geburtsdatum").addEventListener("keyup", validateGeburtsdatum);
-
-    // Assign secondButtonId after updating the DOM
-    secondButtonId = document.getElementById("finalButton");
-    console.log("loaded");
+    // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and errorhandlers
+    document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtsdatum"], .input.date[name="geburtsdatum"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
+        element.style.display = 'none';
+    });
 }
-
 
 
 function loadInput(inputElement) {
@@ -94,32 +69,6 @@ function loadInput(inputElement) {
     }
 }
 
-function loadIntoPHP() {
-    vornameInput = loadInput("vorname");
-    nachnameInput = loadInput("nachname");
-    geburtsdatumInput = loadInput("geburtsdatum");
-    // Make an AJAX request to the server with the data
-    $.ajax({
-        type: 'POST',
-        url: 'login.php', // Update with your PHP script URL
-        data: {
-            usernameInput: usernameInput,
-            emailInput: emailInput,
-            passwordInput: passwordInput,
-            vornameInput: vornameInput,
-            nachnameInput: nachnameInput,
-            geburtsdatumInput: geburtsdatumInput
-            // Add more data as needed
-        },
-        success: function(response) {
-            // Handle the response from the PHP script
-            console.log(response);
-        },
-        error: function(error) {
-            console.error('Error:', error.responseText);
-        }
-    });
-}
 
 function validateUsername() {
     var username = document.getElementById("username").value;
@@ -154,14 +103,6 @@ function validateEmail() {
     }
     enablebutton();
 }
-
-/*include('dbConfig.php');
-$result=array();
-$stmt = $conn->MediaQueryList("SELECT...");
-$row = $stmt->fetch();
-$result[''];
-return;*/
-
 function validatePassword() {
     var password = document.getElementById("passwort").value;
     var errorElement = document.getElementById("error3");
@@ -178,6 +119,7 @@ function validatePassword() {
     }
     enablebutton();
 }
+
 function enablebutton() {
     if(condition1 && condition2 && condition3) {
     firstButtonId.disabled = false;
@@ -244,6 +186,7 @@ function validateGeburtsdatum() {
     
     enablesecondbutton();
 }
+
 function enablesecondbutton() {
     if(vornameCondition && nachnameCondition && geburtstagCondition) {
     secondButtonId.disabled = false;
@@ -252,6 +195,163 @@ else{
     secondButtonId.disabled = true;
 }
 }
-function consolelog(input){
-    console.log(input);
+
+function submitForm(event) {
+    console.log('Submit form function called'); // Add this line
+    event.preventDefault(); // Prevent the default form submission
+    // Your existing code to handle the form submission
+    // For example, you can use AJAX to send the form data to your PHP script asynchronously
+    $.ajax({
+        url: 'register.php',
+        method: 'POST',
+        data: $('#registrationForm').serialize(),
+        success: function(response) {
+            console.log('AJAX success:', response);
+            // Check if the response is defined
+            if (response) {
+                // Check the response status
+                if (response.status === 'success') {
+                    // Handle success (e.g., show a success message)
+                    console.log('Data inserted successfully');
+                } else {
+                    // Handle error (e.g., show an error message)
+                    console.error('Error inserting data:', response.message);
+                }
+            } else {
+                // Handle undefined response
+                console.error('Undefined response from the server');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.error('AJAX error:', status, error);
+            console.log(xhr.responseText); // Log the responseText for more details
+        }
+    });
 }
+
+
+/*
+function loadIntoPHP() {
+    var vornameInput = loadInput("vorname");
+    var nachnameInput = loadInput("nachname");
+    var geburtsdatumInput = loadInput("geburtsdatum");
+
+    // Make an AJAX request to the server with the data
+    $.ajax({
+        type: 'POST',
+        url: 'login.php',
+        data: {
+            submit: true,
+            usernameInput: usernameInput,
+            emailInput: emailInput,
+            passwordInput: passwordInput,
+            vornameInput: vornameInput,
+            nachnameInput: nachnameInput,
+            geburtsdatumInput: geburtsdatumInput
+        },
+        success: function(response) {
+            // Extract JSON part of the response
+            var jsonStartIndex = response.indexOf('{');
+            var jsonEndIndex = response.lastIndexOf('}');
+            
+            if (jsonStartIndex !== -1 && jsonEndIndex !== -1) {
+                var jsonResponse = response.substring(jsonStartIndex, jsonEndIndex + 1);
+
+                try {
+                    var parsedJson = JSON.parse(jsonResponse);
+                    console.log(parsedJson);
+                } catch (error) {
+                    console.error('Error parsing JSON response:', error);
+                }
+            } else {
+                console.error('Invalid JSON response:', response);
+            }
+        },
+    });
+}
+
+function loadNewContent() {
+    event.preventDefault();
+    // Assuming loadInput is a JavaScript function
+    usernameInput = loadInput("username");
+    emailInput = loadInput("email");
+    // hash password
+    passwordInput = hashPassword();
+    // Form elements
+    var formContent = `
+        <form onsubmit="event.preventDefault(); loadIntoPHP()"  method="POST" name="submit">
+            <container class="flex">
+                <input class="input" type="text" id="vorname" name="vorname" style="order: 6">
+                <label class="label" for="vorname" style="order: 7">Vorname:</label>
+                <input class="input" type="text" id="nachname" name="nachname" style="order: 4">
+                <label class="label" for="nachname" style="order: 5">Nachname:</label>
+                <input class="datum" type="date" id="geburtsdatum" name="geburtsdatum">
+                <label class="label" for="geburtsdatum" style="order: 3">Geburtsdatum:</label>
+                <input id="finalButton" class="first" type="submit" style="order: 1 name="submit"" disabled>Weiter</button>
+            </container>
+            <br>
+        </form>
+    `;
+
+    // Error handling elements
+    var errorHandlingContent = `
+        <div class="errorHandlingMajor"> 
+            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 14%; order: 1">Vorname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 15%; order: 2; margin-right: 5%">Nachname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 12%; margin-right: 5%; order: 3">Geben Sie ein gültiges Datum ein</div>
+        </div>
+    `;
+
+    // Update the registrationForm content
+    document.getElementById("registrationForm").innerHTML = formContent + errorHandlingContent;
+
+    // Add event listeners for input event
+    document.getElementById("vorname").addEventListener("input", validateVorname);
+    document.getElementById("nachname").addEventListener("input", validateNachname);
+    document.getElementById("geburtsdatum").addEventListener("keyup", validateGeburtsdatum);
+
+    // Assign secondButtonId after updating the DOM
+    secondButtonId = document.getElementById("finalButton");
+    console.log("loaded");
+}
+
+//needed for registration and login, so separate function to hash password
+function hashPassword() {
+    var password = loadInput("passwort");
+
+    // Create a synchronous XMLHttpRequest
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'hashpassword.php', false); // Third parameter set to false for synchronous request
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+
+    // Send the password as a POST parameter
+    xhr.send('password=' + encodeURIComponent(password));
+
+    // Check the status and parse the response
+    if (xhr.status === 200) {
+        try {
+            var response = JSON.parse(xhr.responseText);
+            console.log('Response:', response);
+
+            if (response.status === 'success') {
+                // Use the hashed password returned from the server
+                console.log('Hashed Password:', response.hashedPassword);
+                return response.hashedPassword;
+            } else {
+                // Handle other cases (if needed)
+                console.error('Error:', response.message);
+                return null;
+            }
+        } catch (error) {
+            // Handle JSON parsing error (if needed)
+            console.error('JSON Parsing Error:', error);
+            return null;
+        }
+    } else {
+        // Handle HTTP error (if needed)
+        console.error('HTTP Error:', xhr.status, xhr.statusText);
+        return null;
+    }
+}
+
+*/
