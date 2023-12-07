@@ -85,17 +85,17 @@
                     <h3>Hersteller</h3>
                     <select name="vendor" class="form-select-2">
                         <option value=""></option>
-                        <option value="">Audi</option>
-                        <option value="">BMW</option>
-                        <option value="">Volkswagen</option>
-                        <option value="">Mercedes-Benz</option>
-                        <option value="">Ford</option>
-                        <option value="">Range Rover</option>
-                        <option value="">Mercedes-AMG</option>
-                        <option value="">Opel</option>
-                        <option value="">Jaguar</option>
-                        <option value="">Maserati</option>
-                        <option value="">Skoda</option>
+                        <option value="Audi">Audi</option>
+                        <option value="BMW">BMW</option>
+                        <option value="Volkswagen">Volkswagen</option>
+                        <option value="Mercedes-Benz">Mercedes-Benz</option>
+                        <option value="Ford">Ford</option>
+                        <option value="Range Rover">Range Rover</option>
+                        <option value="Mercedes-AMG">Mercedes-AMG</option>
+                        <option value="Opel">Opel</option>
+                        <option value="Jaguar">Jaguar</option>
+                        <option value="Maserati">Maserati</option>
+                        <option value="Skoda">Skoda</option>
                     </select>
                 </div>
                 <div class="filter-bar-2">
@@ -103,11 +103,11 @@
                     <select name="type" class="form-select-2">
                         <option value=""></option>
                         <option value="SUV">SUV</option>
-                        <option value="cabrio">Cabrio</option>
-                        <option value="coupe">Coupe</option>
-                        <option value="mehrsitzer">Mehrsitzer</option>
-                        <option value="limosine">Limosine</option>
-                        <option value="combi">Combi</option>
+                        <option value="Cabrio">Cabrio</option>
+                        <option value="Coupe">Coupe</option>
+                        <option value="Mehrsitzer">Mehrsitzer</option>
+                        <option value="Limosine">Limosine</option>
+                        <option value="Combi">Combi</option>
                     </select>
                 </div>
                 <div class="filter-bar-2">
@@ -257,12 +257,23 @@ if (isset($_POST['filtern'])) {  // extented filter function
     $gps = isset($_POST['gps']) ? $_POST['gps'] : '0';
     $trunk = $_POST['trunk'];
 
-    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";  //prepared sql statement
-    $result = $conn->query($sqlLocation);                                                   //sql statemnt ausführen in datenbank
-    $resultCheck = $result->rowCount();                                                 //count results
+    $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.img, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
+                        FROM vendordetails
+                        INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
+                        INNER JOIN carlocation ON carlocation.carId = cardetails.carId
+                        WHERE vendordetails.vendor_name = :vendor AND cardetails.type = :type AND cardetails.price <= :price";
 
-    if ($resultCheck > 0) {                                     //if results is > 0 show the results
-        while($row = $result->fetch(PDO::FETCH_ASSOC)){
+        $stmt = $conn->prepare($sqlLocation);
+        $stmt->bindParam(':vendor', $vendor);
+        $stmt->bindParam(':type', $type);
+        $stmt->bindParam(':price', $price);
+        $stmt->execute();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $resultCount = count($result);                                                //count results
+
+    if ($resultCount > 0) {
+        foreach ($result as $row) {
             ?><div class="output">
                 <div class="output_img">
                     <img src="<?php echo $row['img'];?>">             <!-- get IMG from Database -->
@@ -274,7 +285,8 @@ if (isset($_POST['filtern'])) {  // extented filter function
             <?php 
         }
     } else {                                                
-        echo "Keine Treffer";  //no results message
+        echo "Keine Treffer";
+        var_dump($_POST);  //no results message
     }
 
 }
