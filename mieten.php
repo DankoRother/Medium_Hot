@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
     <head>                                 <!-- Verlinkung zu Jquery -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>                                    <!-- Verlinkung zu Jquery -->
@@ -26,7 +26,7 @@
 </script>
     <?php include 'dbConfig.php'?>
     <?php
-    session_start();
+    
 
     // Überprüfen, ob die Session-Variablen existieren
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
