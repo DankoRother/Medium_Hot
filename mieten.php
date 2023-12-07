@@ -258,10 +258,10 @@ if (isset($_POST['filtern'])) {  // extented filter function
     $trunk = $_POST['trunk'];
 
     $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.img, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
-                        FROM vendordetails
-                        INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
-                        INNER JOIN carlocation ON carlocation.carId = cardetails.carId
-                        WHERE vendordetails.vendor_name = :vendor AND cardetails.type = :type AND cardetails.price <= :price";
+                    FROM vendordetails
+                    INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
+                    INNER JOIN carlocation ON carlocation.carId = cardetails.carId
+                    WHERE vendordetails.vendor_name = :vendor AND cardetails.type = :type AND cardetails.price <= :price";
 
         $stmt = $conn->prepare($sqlLocation);
         $stmt->bindParam(':vendor', $vendor);
@@ -279,7 +279,7 @@ if (isset($_POST['filtern'])) {  // extented filter function
                     <img src="<?php echo $row['img'];?>">             <!-- get IMG from Database -->
                 </div>
                 <div class="output_text">
-                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extention'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
+                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
                 </div>
             </div>
             <?php 
