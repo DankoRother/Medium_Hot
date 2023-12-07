@@ -24,17 +24,33 @@
                                     <th>Buchungsnummer</th>
                                     <th>Hersteller und Modell</th>
                                     <th>Preis</th>
-                                    <th>Stardatum bis Enddatum in Standort</th>
-                                    <th></th> <!-- Empty th for the dropdown button column -->
+                                    <th>Startdatum bis Enddatum in Standort</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                <?php
+                                // Beispiel-Datenquelle - Hier könntest du deine tatsächliche Datenquelle einfügen
+                                    $bookings = array(
+                                        array("Booking Number 1", "Manufacturer and Model 1", "Price 1", "Start Date - End Date at Location 1"),
+                                        array("Booking Number 2", "Manufacturer and Model 2", "Price 2", "Start Date - End Date at Location 2")
+                                        // Füge weitere Buchungsdaten hier hinzu, basierend auf deiner Datenquelle
+                                    );
+
+                                    // Iteriere durch die Buchungsdaten und fülle die Tabelle
+                                    foreach ($bookings as $booking) {
+                                        echo "<tr>";
+                                        foreach ($booking as $data) {
+                                            echo "<td>$data</td>";
+                                        }
+                                        echo "</tr>";
+                                    }
+                                ?>
                                 <tr>
-                                    <td>Booking Number 1</td>
+                                    <td>Booking Number</td>
                                     <td>Manufacturer and Model</td>
                                     <td>Price</td>
                                     <td>Start Date - End Date at Location</td>
-                                </tr>                                                   <!-- You can dynamically generate rows for each booking -->
+                                </tr>
                             </tbody>
                         </table>
                     </div>
