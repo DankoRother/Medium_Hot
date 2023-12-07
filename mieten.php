@@ -182,7 +182,7 @@
                             <option value="">3</option>
                             <option value="">4</option>
                         </select>
-                        <h3>m³</h3>
+                        <h3>Koffer</h3>
                     </div>
                 </div>    
             </div>    
