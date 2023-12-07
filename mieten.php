@@ -1,6 +1,29 @@
 
 <!DOCTYPE html>
     <head>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>                                    <!-- Verlinkung zu Jquery -->
+        <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+        <script>                                                                                              
+  $(function() {
+    $("#start_date").datepicker({                                                                               //Codeabschnitt von Jquery: Eingabe von Datumswerten unter Berücksichitigung, dass zum Beispiel das Startdatum nicht größer als das Enddatum sein darf.
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function(selectedDate) {
+        $("#end_date").datepicker("option", "minDate", selectedDate);
+      }
+    });
+    $("#end_date").datepicker({
+      defaultDate: "+1w",
+      changeMonth: true,
+      numberOfMonths: 3,
+      onClose: function(selectedDate) {
+        $("#start_date").datepicker("option", "maxDate", selectedDate);
+      }
+    });
+  });
+</script>
     <?php include 'dbConfig.php'?>
     <?php
     session_start();
@@ -8,13 +31,16 @@
     // Überprüfen, ob die Session-Variablen existieren
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Die Werte in separaten PHP-Variablen laden
-        $start_date = $_POST['start_date'] ?? "";
-        $end_date = $_POST['end_date'] ?? "";
-        $location = $_POST['location'] ?? "";
+        $_SESSION['start_date'] = $_POST['start_date'] ?? "";
+        $_SESSION['end_date'] = $_POST['end_date'] ?? "";
+        $_SESSION['location'] = $_POST['location'] ?? "";
+
     } else {
         // Standardwerte setzen, falls keine Session existiert
-        $start_date = $end_date = $location = "";
+        $_SESSION['start_date'] = $_SESSION['end_date'] = $_SESSION['location'] = "";
     }
+    
+
     ?>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
@@ -42,16 +68,17 @@
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="text" class="form-control"  name="start_date" value="<?php echo $start_date; ?>">
+                  <input type="text" class="form-control"  name="start_date" id="start_date" value="<?php echo $_SESSION['start_date']; ?>">
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="text" class="form-control" name="end_date" value="<?php echo $end_date; ?>">
+                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php echo $_SESSION['end_date']; ?>">
                 </div>
                 <div class="filter_bar">
                     <h2>Wo?</h2>
                     <select name="location" class="form-select">
-                    <option value="<?php echo $location; ?>"><?php echo $location; ?></option>
+                    <option value="<?php echo $_SESSION['location']; ?>"><?php echo $_SESSION['location']; ?></option>
+                    <option value="">Alle anzeigen</option>
                     <option value="Hamburg">Hamburg</option>
                     <option value="Bielefeld">Bielefeld</option>
                     <option value="Rostock">Rostock</option>
@@ -84,7 +111,8 @@
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
                     <select name="vendor" class="form-select-2">
-                        <option value=""></option>
+                        <option value="<?php if (isset($_POST['vendor'])) {echo $_POST['vendor'];} ?>"><?php if (isset($_POST['vendor'])) {echo $_POST['vendor'];} ?></option>
+                        <option value="">Alle anzeigen</option>
                         <option value="Audi">Audi</option>
                         <option value="BMW">BMW</option>
                         <option value="Volkswagen">Volkswagen</option>
@@ -101,7 +129,8 @@
                 <div class="filter-bar-2">
                     <h3>Typ</h3>
                     <select name="type" class="form-select-2">
-                        <option value=""></option>
+                        <option value="<?php if (isset($_POST['type'])) {echo $_POST['type'];} ?>"><?php if (isset($_POST['type'])) {echo $_POST['type'];} ?></option>
+                        <option value="">Alle anzeigen</option>
                         <option value="SUV">SUV</option>
                         <option value="Cabrio">Cabrio</option>
                         <option value="Coupe">Coupe</option>
@@ -124,13 +153,14 @@
                     <div class="filter-bar-2">
                         <h3>Sitze</h3>
                         <select name="seats" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">2</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">7</option>
-                            <option value="">8</option>
-                            <option value="">9</option>
+                            <option value="<?php if (isset($_POST['seats'])) {echo $_POST['seats'];} ?>"><?php if (isset($_POST['seats'])) {echo $_POST['seats'];} ?></option>
+                            <option value="">/</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
                         </select>
                     </div>
                     <div class="filter-bar-2">
@@ -200,62 +230,33 @@
                 <div class="filter-bar-2">
                     <button onclick="show_hide()" class="button-more"><i id="chevron" class="fa fa-chevron-down"></i></button>
                 </div>
-            </div>
+        </div>
     </div>
 </div>
 </div>
 
-<div class="container-output">
 <?php 
 
-if (isset($_POST['searchOrt'])) {           //location and date filter
+if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt'])) {  // extented filter function
 
-    $start_date = $_POST['start_date'];        //set variables
-    $end_date = $_POST['end_date'];
-    $location = $_POST['location'];
+    ?><div class="container-output"><?php
 
-    $sqlLocation = "SELECT vendor_name, cardetails.type, name_extenstion FROM location;";       //prepared sql statement
-    $result = $conn->query($sqlLocation);                                                   //sql statemnt ausführen in datenbank
-    $resultCheck = $result->rowCount();                                                 //count results
-
-    if ($resultCheck > 0) {
-        while($row = $result->fetch(PDO::FETCH_ASSOC)){
-            ?><div class="output">
-                <div class="output_img">
-                    <img src="<?php echo $row['img'];?>">
-                </div>
-                <div class="output_text">
-                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . $row['name_extention'] . "<br>" . $row['price'] . " €/Tag"; ?>
-                </div>
-            </div>
-            <?php 
-        }
-    } else {
-        echo "Keine Treffer";
-    }
-
-}
-
-?>
-
-<?php 
-
-if (isset($_POST['filtern'])) {  // extented filter function
-
-    $start_date = $_POST['start_date'];         // setting filter variables 
-    $end_date = $_POST['end_date'];
-    $location = $_POST['location'];
-    $vendor = $_POST['vendor'];
-    $type = $_POST['type'];
-    $price = $_POST['price'];
-    $seats = $_POST['seats'];
-    $gear = $_POST['gear'];
-    $doors = $_POST['doors'];
-    $min_age = $_POST['min_age'];
-    $drive = $_POST['drive'];
-    $air_condition = isset($_POST['air_condition']) ? $_POST['air_condition'] : '0';
-    $gps = isset($_POST['gps']) ? $_POST['gps'] : '0';
-    $trunk = $_POST['trunk'];
+        $start_date = $_POST['start_date'];         // setting filter variables 
+        $end_date = $_POST['end_date'];
+        $location = $_POST['location'];
+        $vendor = $_POST['vendor'];
+        $type = $_POST['type'];
+        $price = $_POST['price'];
+        $seats = $_POST['seats'];
+        $gear = $_POST['gear'];
+        $doors = $_POST['doors'];
+        $min_age = $_POST['min_age'];
+        $drive = $_POST['drive'];
+        $air_condition = isset($_POST['air_condition']) ? $_POST['air_condition'] : '0';
+        $gps = isset($_POST['gps']) ? $_POST['gps'] : '0';
+        $trunk = $_POST['trunk'];
+    
+    
 
     $conditions = array();  // Array zum Sammeln von Bedingungen
 
@@ -270,12 +271,21 @@ if (isset($_POST['filtern'])) {  // extented filter function
         $conditions[] = "cardetails.price <= :price";
     }
 
+    if (!empty($seats)) {
+        $conditions[] = "cardetails.seats = :seats";
+    }
+
+    if (!empty($location)) {
+        $conditions[] = "location.location = :location";
+    }
+
     $whereClause = (!empty($conditions)) ? "WHERE " . implode(" AND ", $conditions) : "";
 
-    $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.img, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
+    $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
                     FROM vendordetails
                     INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
                     INNER JOIN carlocation ON carlocation.carId = cardetails.carId
+                    INNER JOIN location ON location.locationId = carlocation.locationId
                     $whereClause";
 
         $stmt = $conn->prepare($sqlLocation);
@@ -289,6 +299,12 @@ if (isset($_POST['filtern'])) {  // extented filter function
         if (!empty($price)) {
             $stmt->bindParam(':price', $price);
         }
+        if (!empty($seats)) {
+            $stmt->bindParam(':seats', $seats);
+        }
+        if (!empty($location)) {
+            $stmt->bindParam(':location', $location);
+        }
 
         $stmt->execute();
 
@@ -299,10 +315,10 @@ if (isset($_POST['filtern'])) {  // extented filter function
         foreach ($result as $row) {
             ?><div class="output">
                 <div class="output_img">
-                    <img src="Bilder/bilder_db/?php echo $row['img'];?>">             <!-- get IMG from Database -->
+                    <img src="Bilder/bilder_db/<?php echo $row['img'];?>">             <!-- get IMG from Database -->
                 </div>
                 <div class="output_text">
-                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
+                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
                 </div>
             </div>
             <?php 
@@ -311,11 +327,11 @@ if (isset($_POST['filtern'])) {  // extented filter function
         echo "Keine Treffer";
         var_dump($_POST);  //no results message
     }
-
+    ?></div><?php
 }
-
+    
 ?>
-</div>
+
 
 
 <?php include 'footer.php'?>
