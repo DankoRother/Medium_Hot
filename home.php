@@ -51,15 +51,15 @@
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="text" class="form-control" name="start_date" id="start_date">
+                  <input type="text" class="form-control" name="start_date" id="start_date" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="text" class="form-control" name="end_date" id="end_date">
+                  <input type="text" class="form-control" name="end_date" id="end_date" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Wo?</h2>
-                  <select name="location" class="form-select">
+                  <select name="location" class="form-select" required>
                   <option value="">Bitte wählen</option>
                   <option value="Hamburg">Hamburg</option>
                   <option value="Bielefeld">Bielefeld</option>
