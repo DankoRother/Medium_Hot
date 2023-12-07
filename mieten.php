@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
     <head>
+    <?php include 'dbConfig.php'?>
     <?php
     session_start();
 
@@ -27,7 +28,7 @@
 <body>
 <?php include 'header.php'; ?>
 
-<?php include 'dbConfig.php'?>
+
 
 <div class="img-container">
 
