@@ -141,7 +141,7 @@
                 </div>
                 <div class="filter-bar-2">
                     <h3>Preis bis</h3>
-                    <input type="number" name="price" class="form-input-2">
+                    <input type="number" name="price" class="form-input-2" value="<?php if (isset($_POST['price'])) {echo $_POST['price'];} ?>">
                     <h3>€/Tag</h3>
                 </div>
             </div>
@@ -154,18 +154,20 @@
                     <div class="filter-bar-2">
                         <h3>Getriebe</h3>
                         <select name="gear" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">manually</option>
-                            <option value="">automatic</option>
+                            <option value="<?php if (isset($_POST['gear'])) {echo $_POST['gear'];} ?>"><?php if (isset($_POST['gear'])) {echo $_POST['gear'];} ?></option>
+                            <option value="">Alle</option>
+                            <option value="manually">manually</option>
+                            <option value="automatic">automatic</option>
                         </select>
                     </div>
 
                     <div class="filter-bar-2">
                         <h3>Antrieb</h3>
                         <select name="drive" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">Verbrenner</option>
-                            <option value="">Elektro</option>
+                            <option value="<?php if (isset($_POST['drive'])) {echo $_POST['drive'];} ?>"><?php if (isset($_POST['drive'])) {echo $_POST['drive'];} ?></option>
+                            <option value="">Alle</option>
+                            <option value="Combuster">Combuster</option>
+                            <option value="Electric">Electric</option>
                         </select>
                     </div>
 
@@ -186,10 +188,11 @@
                     <div class="filter-bar-2">
                         <h3>Türen</h3>
                         <select name="doors" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">2</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
+                            <option value="<?php if (isset($_POST['doors'])) {echo $_POST['doors'];} ?>"><?php if (isset($_POST['doors'])) {echo $_POST['doors'];} ?></option>
+                            <option value="">/</option>
+                            <option value="2">2</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
                         </select>
                     </div>  
                 </div>
@@ -207,14 +210,14 @@
                     </div>
 
                     <div class="filter-bar-2">
-                        <h3>Kofferraum</h3>
+                        <h3>Kofferraum mind.</h3>
                         <select name="trunk" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">0</option>
-                            <option value="">1</option>
-                            <option value="">2</option>
-                            <option value="">3</option>
-                            <option value="">4</option>
+                            <option value="<?php if (isset($_POST['trunk'])) {echo $_POST['trunk'];} ?>"><?php if (isset($_POST['trunk'])) {echo $_POST['trunk'];} ?></option>
+                            <option value="">/</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
                         </select>
                         <h3>Koffer</h3>
                     </div>
@@ -222,10 +225,11 @@
                     <div class="filter-bar-2">
                         <h3>Alter ab</h3>
                         <select name="min_age" class="form-select-2">
-                            <option value=""></option>
-                            <option value="">18</option>
-                            <option value="">21</option>
-                            <option value="">25</option>
+                            <option value="<?php if (isset($_POST['min_age'])) {echo $_POST['min_age'];} ?>"><?php if (isset($_POST['min_age'])) {echo $_POST['min_age'];} ?></option>                          
+                            <option value="">/</option>
+                            <option value="18">18</option>
+                            <option value="21">21</option>
+                            <option value="25">25</option>
                         </select>
                         <h3>Jahren</h3>
                     </div> 
@@ -235,7 +239,7 @@
             <div class="filter-row-filter">
                 <div class="filter_bar">
                     <input type="submit" value="Filtern" class="button_filter" name="filtern">
-                    <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="document.getElementById('filter2').selectedIndex = 0">
+                    <input type="reset" value="Filterauswahl zurücksetzen" class="button_reset" onclick="">
                 </div>
             </div>
             
@@ -292,11 +296,20 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
     if (!empty($location)) {
         $conditions[] = "location.location = :location"; 
     }
-    if (!empty($air_condition)) {
-        $conditions[] = "cardetails.air_condition = :air_condition";
-    }
     if (!empty($doors)) {
         $conditions[] = "cardetails.doors = :doors";
+    }
+    if (!empty($gear)) {
+        $conditions[] = "cardetails.gear = :gear";
+    }
+    if (!empty($drive)) {
+        $conditions[] = "cardetails.drive = :drive";
+    }
+    if (!empty($min_age)) {
+        $conditions[] = "cardetails.min_age >= :min_age";
+    }
+    if (!empty($trunk)) {
+        $conditions[] = "cardetails.trunk >= :trunk";
     }
 
     
@@ -328,11 +341,20 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         if (!empty($location)) {
             $stmt->bindParam(':location', $location);
         }
-        if (!empty($air_condition)) {
-            $stmt->bindParam(':air_condition', $air_condition, PDO::PARAM_BOOL);
-        }
         if (!empty($doors)) {
-            $stmt->bindParam(':doors', $doors);
+            $stmt->bindParam(':doors', $doors); 
+        }
+        if (!empty($gear)) {
+            $stmt->bindParam(':gear', $gear);
+        }
+        if (!empty($drive)) {
+            $stmt->bindParam(':drive', $drive);
+        }
+        if (!empty($min_age)) {
+            $stmt->bindParam(':min_age', $min_age);
+        }
+        if (!empty($trunk)) {
+            $stmt->bindParam(':trunk', $trunk);
         }
 
         $stmt->execute();
