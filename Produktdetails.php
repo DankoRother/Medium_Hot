@@ -26,7 +26,7 @@
             <div class="divDesignForHeader"> <h3> Produktdetails </h3></div>                 <!-- Creating a div structure for the Heading  -->
             <div class="flex-container">                                                     <!-- Creating a div container for the following div 'divforheading'  -->
                 <div class="divForHeading">                                                  <!-- Creating a div for the heading  -->
-                     <h3> Das Fahrzeug ist vom DD.MM.YYYY bis zum DD.MM.YYYY am ausgewählten Standort verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
+                     <h3> Das Fahrzeug ist vom <?php echo $_SESSION['start_date']?> bis zum <?php echo $_SESSION['end_date']?> am ausgewählten Standort verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
                      <hr class="line1">
                 </div>
             </div>
