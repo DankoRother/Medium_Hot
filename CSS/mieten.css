@@ -314,7 +314,7 @@ body {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 15px; 
-    padding-left: 20px;
+    padding-left: 15px;
     padding-top: 10px;
 }
 
@@ -327,15 +327,16 @@ body {
 
 .button_text {
     display: flex;
-    gap: 125px;
+    justify-content: space-between;
     height: 100px;
 }
 
 .output_button {
+    margin-left: auto;
+    height: 100px; 
     display: flex;
-    justify-content: center;
-    align-items: center; /* Vertikale Ausrichtung zentrieren */
-    height: 100px; /* Du kannst die Höhe nach Bedarf anpassen */
+    align-items: center;
+    padding-right: 15px;
 }
 
 .output_button button {
