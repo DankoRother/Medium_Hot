@@ -14,14 +14,48 @@
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
     <?php include 'dbConfig.php'; ?> 
     <?php
-        $vehiclesSql = "SELECT * FROM cardetails LEFT JOIN vendordetails ON vendordetails.vendorId = cardetails.vendorId WHERE carId = 1";
-        $stmt = $conn->prepare($vehiclesSql);
+        if (isset($_GET['carId'])) {
+            $selectedCarId = $_GET['carId'];
+            // Jetzt kannst du $selectedCarId in deinem Code verwenden
+            $_SESSION['selected_car_id'] = $selectedCarId;
+        }
+
+        echo $selectedCarId;
+
+        $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
+                    FROM vendordetails
+                    INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
+                    INNER JOIN carlocation ON carlocation.carId = cardetails.carId
+                    INNER JOIN location ON location.locationId = carlocation.locationId
+                    WHERE cardetails.carId = $selectedCarId;";
+
+        $stmt = $conn->prepare($sqlLocation);
+
+        if ($stmt === false) {
+            die("Fehler bei der Vorbereitung der SQL-Abfrage.");
+        }
 
         $stmt->execute();
-        $result = $stmt->fetchAll();
+
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        echo '<pre>';
+var_dump($result);
+echo '</pre>';
 
     ?>
+<?php if (!empty($result)) {
+    $row = $result[0]; // Erster Datensatz
 
+    $vendorName = $row['vendor_name'];
+    $carId = $row['carId'];
+    // ... andere Felder
+
+    // Zeige die Werte an
+    echo "Vendor Name: $vendorName<br>";
+    echo "Car ID: $carId<br>";
+    // ... andere Felder
+} ?>
         <div class="divForBackground">                                                       <!-- Creating a div for the background  -->
             <div class="divDesignForHeader"> <h3> Produktdetails </h3></div>                 <!-- Creating a div structure for the Heading  -->
             <div class="flex-container">                                                     <!-- Creating a div container for the following div 'divforheading'  -->
@@ -31,12 +65,12 @@
                 </div>
             </div>
             <div class="flex-container2">                                                     <!-- Creating a div container which includes two divs and a table for structuring  -->
-                <div class="divDesignForImage"> <img src="Bilder\<?php echo $result[0]['img']; ?>" alt="">
+                <div class="divDesignForImage"> <img src="Bilder/bilder_db/<?php echo $result['img']; ?>">
                 </div>
                 <div class="divDesignForDescription"> 
                     <table style="width: 100%;">
                         <tr>
-                            <td class="td">  <h3 class="h3ForDescription "> Hersteller: <?php echo $result[0]['vendor_name']; ?></h3></td>
+                            <td class="td">  <h3 class="h3ForDescription "> Hersteller: <?php echo $result['vendor_name']; ?></h3></td>
                             <td class="td"> <h3 class="h3ForDescription "> Sitzplätze:</h3></td>           
                         </tr>
                         <tr>

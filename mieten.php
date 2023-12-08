@@ -370,10 +370,10 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
                 </div>
             <div class="button_text">    
                 <div class="output_text">
-                    <?php echo $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
+                    <?php echo $row['carId'] . "" . $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
                 </div>
                 <div class="output_button">
-                    <a href="Produktdetails.php"><button>Jetzt Mieten</button></a>
+                    <a href="Produktdetails.php?carId=<?php echo $row['carId']; ?>"><button>Jetzt Mieten</button></a>
                 </div>
             </div>    
             </div>
