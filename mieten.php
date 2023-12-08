@@ -290,10 +290,13 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
     }
 
     if (!empty($location)) {
-        $conditions[] = "location.location = :location";
+        $conditions[] = "location.location = :location"; 
     }
     if (!empty($air_condition)) {
         $conditions[] = "cardetails.air_condition = :air_condition";
+    }
+    if (!empty($doors)) {
+        $conditions[] = "cardetails.doors = :doors";
     }
 
     
@@ -328,7 +331,9 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         if (!empty($air_condition)) {
             $stmt->bindParam(':air_condition', $air_condition, PDO::PARAM_BOOL);
         }
-
+        if (!empty($doors)) {
+            $stmt->bindParam(':doors', $doors);
+        }
 
         $stmt->execute();
 
