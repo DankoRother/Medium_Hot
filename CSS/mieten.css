@@ -280,16 +280,15 @@ body {
 
 .container-output {
     display: grid;
-    grid-template-columns: auto 1fr auto; /* Erstes Element ganz links, Zweites Element mittig, Drittes Element ganz rechts */
-    gap: 20px;
-    max-width: 71%;
+    gap: 50px;
+    max-width: 80%;
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    padding-bottom: 30px;
-    justify-content: center;
-    
+    grid-template-columns: repeat(3, 1fr); /* Drei Spalten mit gleicher Breite */
+    box-sizing: border-box;
 }
+
 
 .output {
     width: 450px;
@@ -357,4 +356,15 @@ body {
 .output_button button:hover {
     background-color: rgba(255, 151, 77, 0.7);
     transform:scale(1.15);
+}
+
+.no_result {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    color: #edf0f1;
+    font-size: 30px;
+    width: 700px;
+    text-align: center;
+    margin-left: calc((1536px - 700px - 2 * 30px) / 2); /* Berechnet den linken Rand, um das Element zu zentrieren */
+    margin-right: calc((1536px - 700px - 2 * 30px) / 2); /* Berechnet den rechten Rand, um das Element zu zentrieren */
 }

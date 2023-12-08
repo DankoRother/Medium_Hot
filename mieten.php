@@ -352,9 +352,11 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
             </div>
             <?php 
         }
-    } else {                                                
-        echo "Keine Treffer";
-        var_dump($_POST);  //no results message
+    } else { 
+        ?><div class="no_result"><?php                                            
+        echo "Leider gibt es für ihre Suche keine Treffer";
+        var_dump($_POST); ?>
+        </div> <?php //no results message
     }
     ?></div></div><?php
 }
