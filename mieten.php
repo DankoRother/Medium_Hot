@@ -64,19 +64,19 @@
 
 <div class="filter-container">
     <div class="suchfilter">                                                                            <!-- search filter -->
-        <form id="filter1" action="" method="POST">
+        <form id="filter1" action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="text" class="form-control"  name="start_date" id="start_date" value="<?php echo $_SESSION['start_date']; ?>">
+                  <input type="text" class="form-control"  name="start_date" id="start_date" value="<?php echo $_SESSION['start_date']; ?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php echo $_SESSION['end_date']; ?>">
+                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php echo $_SESSION['end_date']; ?>" required>
                 </div>
                 <div class="filter_bar">
                     <h2>Wo?</h2>
-                    <select name="location" class="form-select">
+                    <select name="location" class="form-select" required>
                     <option value="<?php echo $_SESSION['location']; ?>"><?php echo $_SESSION['location']; ?></option>
                     <option value="">Alle anzeigen</option>
                     <option value="Hamburg">Hamburg</option>
@@ -106,7 +106,7 @@
 
 <div class="filter-container-2">
     <div class="suchfilter-extended">
-        <form id="filter2" action="" method="POST">
+        <form id="filter2" action="<?php echo $_SERVER["PHP_SELF"]?>" method="POST">
             <div class="filter-row-2">
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
@@ -261,7 +261,7 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
 
         $start_date = $_POST['start_date'];         // setting filter variables 
         $end_date = $_POST['end_date'];
-        $location = $_POST['location'];
+        $location = $_SESSION['location'];
         $vendor = $_POST['vendor'];
         $type = $_POST['type'];
         $price = $_POST['price'];
