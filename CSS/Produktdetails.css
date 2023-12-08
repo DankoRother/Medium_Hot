@@ -1,18 +1,30 @@
 .divForBackground{                                  /* Design and structuring for the background*/
-    height: 900px;
+    height: 825px;
     width: 100%;
-    background-color: white;
-    padding-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    background-image: url(CSS_Bilder/detailsback.jpg);
+    background-size: cover; /* Skaliert das Bild, um die gesamte Hintergrundfläche zu bedecken */
+    background-position: center center; /* Zentriert das Bild horizontal und vertikal */
 }
-.divDesignForHeader{
-    background-color: white;                      /* Design and structuring for the heading*/
-}
+
+
 .divDesignForHeader h3 {                            /* Design for the h3 text inside the div */
     font-family: "Poppins", sans-serif;
-    font-size: 40px;
-    font-weight: 800;
+    font-size: 50px;
+    font-weight: 500;
     text-align: center;
-    color: black;
+    color: white;
+    padding-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.highlight {
+    color: #0088a9;
+}
+
+.thickness {
+    font-weight: 500;
 }
 
 .flex-container {                                   /* Creating a flexbox for designing and structuring */
@@ -41,6 +53,7 @@
     text-align: center;
     color: white;
     position: relative;
+    padding-top: 8px;
 }
 .line1 {                                            /* Creating a horizontal line for design purposes */
     position: absolute;
@@ -63,16 +76,14 @@
 
   .divDesignForImage {                              /* Creating a div for the image inside the flexbox for structuring and designing */
     margin-left: 100px;
-    margin-top: 10px;
-    margin-bottom: 25px;
-    width: 475px;
-    height: 300px;
-    float: left;
+    margin-top: 20px;
+    box-shadow: 4px 8px 8px rgba(0, 0, 0, 0.4);
+    
   }
 .divDesignForImage img{                             /* Structuring the image*/
-    width: 475px;
-    height: 300px;
-    position: relative;
+    width: 100%;
+    height: 100%;
+    
 }
 
 
@@ -91,6 +102,8 @@
 .td{
     width: 50%;                                     /* Structuring the table cell */
     height: 50px;
+    box-shadow: 0px 2px 8px rgba(255, 255, 255, 0.4);
+    padding-left: 5px;
 }
 
 .h3ForDescription {                                 /* Designing the h3 text inside the td */
@@ -182,7 +195,7 @@
     cursor: pointer;
     transition: all 0.3s ease 0s;
     width: 100px;
-    height: 50px;
+    height: 35px;
     text-decoration: none;
 }
 
@@ -196,5 +209,14 @@
     font-size: 15px;
     font-weight: 800;
     text-align: center;
+    color: white;
+}
+
+.test{
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    text-align: left;
+    vertical-align: top;
     color: white;
 }

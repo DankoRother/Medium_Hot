@@ -373,7 +373,10 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
                     <?php echo $row['carId'] . "" . $row['vendor_name'] . "<br>" . $row['type'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
                 </div>
                 <div class="output_button">
-                    <a href="Produktdetails.php?carId=<?php echo $row['carId']; ?>"><button>Jetzt Mieten</button></a>
+                    <form action="Produktdetails.php" method="post">
+                        <input type="hidden" name="carId" value="<?php echo $row['carId']; ?>">
+                        <button type="submit">Jetzt Mieten</button>
+                    </form>
                 </div>
             </div>    
             </div>

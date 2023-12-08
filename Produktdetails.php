@@ -14,8 +14,8 @@
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
     <?php include 'dbConfig.php'; ?> 
     <?php
-        if (isset($_GET['carId'])) {
-            $selectedCarId = $_GET['carId'];
+        if (isset($_POST['carId'])) {
+            $selectedCarId = $_POST['carId'];
             // Jetzt kannst du $selectedCarId in deinem Code verwenden
             $_SESSION['selected_car_id'] = $selectedCarId;
         }
@@ -43,7 +43,7 @@
         
                 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
-                // Jetzt kannst du $result verwenden, um auf die Daten zuzugreifen
+                // $result verwenden, um auf die Daten zuzugreifen
             }
         } else {
 
@@ -57,34 +57,37 @@
             <div class="divDesignForHeader"> <h3> Produktdetails </h3></div>                 <!-- Creating a div structure for the Heading  -->
             <div class="flex-container">                                                     <!-- Creating a div container for the following div 'divforheading'  -->
                 <div class="divForHeading">                                                  <!-- Creating a div for the heading  -->
-                     <h3> Das Fahrzeug ist vom <?php echo $_SESSION['start_date']?> bis zum <?php echo $_SESSION['end_date']?> am ausgewählten Standort <?php echo $_SESSION['location']?> verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
+                     <h3> Das Fahrzeug ist vom <span class="highlight"><?php echo $_SESSION['start_date']?>
+                    </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
+                    </span> am ausgewählten Standort <span class="highlight"><?php echo $_SESSION['location']?></span> verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
                      <hr class="line1">
                 </div>
             </div>
             <div class="flex-container2">                                                     <!-- Creating a div container which includes two divs and a table for structuring  -->
-                <div class="divDesignForImage"> <img src="Bilder/bilder_db/<?php echo $row['img']; ?>">
+                <div class="divDesignForImage"> 
+                    <img src="Bilder/bilder_db/<?php echo $row['img']; ?>">
                 </div>
                 <div class="divDesignForDescription"> 
                     <table style="width: 100%;">
                         <tr>
-                            <td class="td">  <h3 class="h3ForDescription "> Hersteller: <?php echo $row['vendor_name']; ?></h3></td>
-                            <td class="td"> <h3 class="h3ForDescription "> Sitzplätze:</h3></td>           
+                            <td class="td">  <h3 class="h3ForDescription "> Hersteller: <span class="thickness"><?php echo $row['vendor_name']; ?></span></h3></td>
+                            <td class="td"> <h3 class="h3ForDescription "> Sitzplätze: <span class="thickness"><?php echo $row['seats']; ?></span></h3></td>           
                         </tr>
                         <tr>
-                            <td class="td"> <h3 class="h3ForDescription "> Typ: <?php echo $row['type']; ?></h3></td>
-                            <td class="td"> <h3 class="h3ForDescription "> Kofferraum: <?php echo $row['trunk']; ?> Koffer</h3></td>           
+                            <td class="td"> <h3 class="h3ForDescription "> Typ: <span class="thickness"><?php echo $row['type']; ?></span></h3></td>
+                            <td class="td"> <h3 class="h3ForDescription "> Kofferraum: <span class="thickness"><?php echo $row['trunk']; ?> Koffer</span></h3></td>           
                         </tr>
                         <tr>
-                            <td class="td"> <h3 class="h3ForDescription "> Kraftstoff:</h3></td>
+                            <td class="td"> <h3 class="h3ForDescription "> Kraftstoff: <span class="thickness"><?php echo $row['drive']; ?></span></h3></td>
                             <td class="td"> <h3 class="h3ForDescription "> Klimaanlage:</h3></td>           
                         </tr>
                         <tr>
-                            <td class="td"> <h3 class="h3ForDescription "> Getriebe:</h3></td>
+                            <td class="td"> <h3 class="h3ForDescription "> Getriebe: <span class="thickness"><?php echo $row['gear']; ?></span></h3></td>
                             <td class="td"> <h3 class="h3ForDescription "> GPS:</h3></td>           
                         </tr>
                         <tr>
-                            <td class="td"> <h3 class="h3ForDescription "> Türen:</h3></td>
-                            <td class="td"> <h3 class="h3ForDescription "> Mindestalter:</h3></td>           
+                            <td class="td"> <h3 class="h3ForDescription "> Türen: <span class="thickness"><?php echo $row['doors']; ?></span></h3></td>
+                            <td class="td"> <h3 class="h3ForDescription "> Mindestalter: <span class="thickness"><?php echo $row['min_age']; ?> Jahre</span></h3></td>           
                         </tr>
                         
                     </table>
