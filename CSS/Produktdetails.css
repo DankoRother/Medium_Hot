@@ -174,10 +174,12 @@
     font-size: 15px;
     font-weight: 600;
     color: white;
+    transition: 0.3s;
 }
 .divDesignForBackToSelection h3:hover {             /*Hover effect for the h3*/
-    color: #0088a9;                                 
-    padding-left: 8px;  
+    color: #0088a9;                                  
+    transform:scale(1.1);
+    z-index:1;
 }
 
 
