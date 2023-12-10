@@ -15,7 +15,7 @@ session_start();
 
     <body>
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
-    <?php include 'dbConfig.php'; ?> 
+    <?php include 'dbConfig.php';?> 
     <?php
         if (isset($_POST['carId'])) {
             $selectedCarId = $_POST['carId'];
@@ -82,11 +82,11 @@ session_start();
                         </tr>
                         <tr>
                             <td class="td"> <h3 class="h3ForDescription "> Kraftstoff: <span class="thickness"><?php echo $row['drive']; ?></span></h3></td>
-                            <td class="td"> <h3 class="h3ForDescription "> Klimaanlage:</h3></td>           
+                            <td class="td"> <h3 class="h3ForDescription "> Klimaanlage: <span class="thickness"><?php if($row['gps'] == 1){echo "Ja";}else {echo "Nein";};?></span></h3></td>           
                         </tr>
                         <tr>
                             <td class="td"> <h3 class="h3ForDescription "> Getriebe: <span class="thickness"><?php echo $row['gear']; ?></span></h3></td>
-                            <td class="td"> <h3 class="h3ForDescription "> GPS:</h3></td>           
+                            <td class="td"> <h3 class="h3ForDescription "> GPS: <span class="thickness"><?php if($row['gps'] == 1){echo "Ja";}else {echo "Nein";};?></span></h3></td>           
                         </tr>
                         <tr>
                             <td class="td"> <h3 class="h3ForDescription "> Türen: <span class="thickness"><?php echo $row['doors']; ?></span></h3></td>

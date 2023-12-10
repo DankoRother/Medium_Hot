@@ -27,10 +27,9 @@ window.onload = function () {
 }
 
 function validatePrice(input) {
-    if (input.value < 1) {
-        input.setCustomValidity('Der eingegebe Preis darf nicht Null oder kleiner Null sein.');
+    if (input.value < 0) {
+        input.setCustomValidity('Der eingegebe Preis darf nicht kleiner Null sein.');
     } else {
         input.setCustomValidity('');
     }
 }
-
