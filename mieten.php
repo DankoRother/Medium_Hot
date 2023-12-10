@@ -43,12 +43,13 @@ session_start();
     }
 
 
-    if (isset($_GET['start_date']) && isset($_GET['end_date']) && isset($_GET['location']) && isset($_GET['vendor'])) {
+    if (isset($_GET['start_date']) && isset($_GET['end_date']) && isset($_GET['location']) && isset($_GET['vendor']) && isset($_GET['type'])) {
         // Setze die Session-Variablen basierend auf den URL-Parametern
         $_SESSION['start_date'] = $_GET['start_date'];
         $_SESSION['end_date'] = $_GET['end_date'];
         $_SESSION['location'] = $_GET['location'];
         $_SESSION['vendor'] = $_GET['vendor'];
+        $_SESSION['type'] = $_GET['type'];
     }
     
 
@@ -63,9 +64,7 @@ session_start();
     </head>
 
 <body>
-<?php include 'header.php'; 
-error_reporting(E_ALL);
-ini_set('display_errors', 1);?>
+<?php include 'header.php'; ?>
 
 
 <div class="img-container">
@@ -291,7 +290,7 @@ function resetForm() {
             <div class="filter-row-filter">
                 <div class="filter_bar">
                     <input type="submit" value="Filtern" class="button_filter" name="filtern">
-                    <input type="button" value="Filterauswahl zurücksetzen" class="button_reset" onclick="resetForm()">
+                    <input type="submit" value="Filter und Sortierung zurücksetzen" class="button_reset" onclick="resetForm()">
                 </div>
             </div>
             

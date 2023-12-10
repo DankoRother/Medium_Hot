@@ -15,7 +15,8 @@ session_start();
 
     <body>
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
-    <?php include 'dbConfig.php';?> 
+    <?php include 'dbConfig.php';
+    echo $_SESSION['type'];?> 
     <?php
         if (isset($_POST['carId'])) {
             $selectedCarId = $_POST['carId'];
@@ -103,7 +104,7 @@ session_start();
             </div>
 
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
-                <div class="divDesignForBackToSelection"><button onclick="backToSelection()">Zurück zur Auswahl</button></div>
+                <div class="divDesignForBackToSelection"><button type="button" onclick="backToSelection()">Zurück zur Auswahl</button></div>
                 <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
             </div>
 
@@ -117,13 +118,15 @@ session_start();
                 var end_date = "<?php echo $_SESSION['end_date']; ?>";
                 var location = "<?php echo $_SESSION['location']; ?>";
                 var vendor = "<?php echo $_SESSION['vendor'];?>";
+                var type = "<?php echo $_SESSION['type'];?>";
 
 
             // URL erstellen, Session-Variablen anhängen und zur Seite leiten
             window.location.href = targetPage + '?start_date=' + encodeURIComponent(start_date)
             + '&end_date=' + encodeURIComponent(end_date)
             + '&location=' + encodeURIComponent(location)
-            + '&vendor=' + encodeURIComponent(vendor);
+            + '&vendor=' + encodeURIComponent(vendor)
+            + '&type=' + encodeURIComponent(type);
             }
 </script>
         </div> <?php 
