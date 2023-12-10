@@ -14,46 +14,12 @@ session_start();
     </head>
 
     <body>
-    <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
-    <?php include 'dbConfig.php';
-    echo $_SESSION['type'];?> 
-    <?php
-        if (isset($_POST['carId'])) {
-            $selectedCarId = $_POST['carId'];
-            // Jetzt kannst du $selectedCarId in deinem Code verwenden
-            $_SESSION['selected_car_id'] = $selectedCarId;
-        }
+    <?php include 'header.php'; ?> 
+                                                              <!-- Including the header structure into the product details site -->
+    <?php include 'dbConfig.php';?> 
 
-        if (isset($_SESSION['location'])) {
-            $location = $_SESSION['location'];
-        
-            // Überprüfe, ob $selectedCarId und $location gesetzt sind
-            if (isset($selectedCarId, $location)) {
-                // Verwende vorbereitete Anweisungen, um SQL-Injektion zu verhindern
-                $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.*
-                                FROM vendordetails
-                                INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
-                                INNER JOIN carlocation ON carlocation.carId = cardetails.carId
-                                INNER JOIN location ON location.locationId = carlocation.locationId
-                                WHERE cardetails.carId = :selectedCarId AND location.location = :location";
-        
-                $stmt = $conn->prepare($sqlLocation);
-        
-                // Binden der Parameter
-                $stmt->bindParam(':selectedCarId', $selectedCarId, PDO::PARAM_INT);
-                $stmt->bindParam(':location', $location, PDO::PARAM_STR);
-        
-                $stmt->execute();
-        
-                $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        
-                // $result verwenden, um auf die Daten zuzugreifen
-            }
-        } else {
-
-        }
-
-    ?>
+    <?php include 'PHP_Funktionen/abfragedetail.php'?>
+    
 <?php if (!empty($result)) {
     $row = $result[0]; // Erster Datensatz
  ?>
@@ -100,54 +66,16 @@ session_start();
             <div class="flex-container3">                                                       <!-- Creating a div container which includes one div. The div is used for structuring and styling the h3 text -->
                 <div class="divDesignForPrice"> <h3 class="h3ForPrice"> <?php echo $row['price'] ?>€/Tag</h3></div>
             <hr class="line2">
-                
             </div>
 
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
                 <div class="divDesignForBackToSelection"><button type="button" onclick="backToSelection()">Zurück zur Auswahl</button></div>
                 <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
+
+                <?php include 'PHP_Funktionen/sendValuesDetail.php'?>
+
             </div>
 
-            <script>
-            function backToSelection() {
-            // Hier setzt du den Pfad zur gewünschten Seite
-                var targetPage = "mieten.php";
-  
-            // Session-Variablen in den JavaScript-Code einfügen
-                var start_date = "<?php echo $_SESSION['start_date']; ?>";
-                var end_date = "<?php echo $_SESSION['end_date']; ?>";
-                var location = "<?php echo $_SESSION['location']; ?>";
-                var vendor = "<?php echo $_SESSION['vendor'];?>";
-                var type = "<?php echo $_SESSION['type'];?>";
-                var price = "<?php echo $_SESSION['price'];?>";
-                var doors = "<?php echo $_SESSION['doors'];?>";
-                var seats = "<?php echo $_SESSION['seats'];?>";
-                var min_age = "<?php echo $_SESSION['min_age'];?>";
-                var air_condition = "<?php echo $_SESSION['air_condition'];?>";
-                var gps = "<?php echo $_SESSION['gps'];?>";
-                var trunk = "<?php echo $_SESSION['trunk'];?>";
-                var drive = "<?php echo $_SESSION['drive'];?>";
-                var gear = "<?php echo $_SESSION['gear'];?>";
-
-
-
-            // URL erstellen, Session-Variablen anhängen und zur Seite leiten
-            window.location.href = targetPage + '?start_date=' + encodeURIComponent(start_date)
-            + '&end_date=' + encodeURIComponent(end_date)
-            + '&location=' + encodeURIComponent(location)
-            + '&vendor=' + encodeURIComponent(vendor)
-            + '&type=' + encodeURIComponent(type)
-            + '&price=' + encodeURIComponent(price)
-            + '&doors=' + encodeURIComponent(doors)
-            + '&seats=' + encodeURIComponent(seats)
-            + '&min_age=' + encodeURIComponent(min_age)
-            + '&air_condition=' + encodeURIComponent(air_condition)
-            + '&gps=' + encodeURIComponent(gps)
-            + '&trunk=' + encodeURIComponent(trunk)
-            + '&drive=' + encodeURIComponent(drive)
-            + '&gear=' + encodeURIComponent(gear);
-            }
-        </script>
         </div> <?php 
     }?>
         <?php include 'footer.php'; ?>      <!-- Including the footer structure into the product details site -->       
