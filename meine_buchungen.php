@@ -28,6 +28,17 @@
                                 </tr>
                             </thead>
                             <tbody>
+                                <tr onclick="showHideRow('hidden_row1');">
+                                    <td>Booking Number</td>
+                                    <td>Manufacturer and Model</td>
+                                    <td>Price</td>
+                                    <td>Start Date - End Date at Location</td>
+                                </tr>
+                                <tr id="hidden_row1" class="hidden_row">
+                                    <td colspan=4>
+                                        Getriebe   · 	· 	·   Antrieb   · 	· 	·   x Sitze   · 	· 	·   x Türen   · 	· 	·   GPS   · 	· 	·   Kofferraum   · 	· 	·   Alter
+                                    </td>
+                                </tr>
                                 <?php
                                 // Beispiel-Datenquelle - Hier könntest du deine tatsächliche Datenquelle einfügen
                                     $bookings = array(
@@ -45,11 +56,16 @@
                                         echo "</tr>";
                                     }
                                 ?>
-                                <tr>
+                                <tr onclick="showHideRow('hidden_row2');">
                                     <td>Booking Number</td>
                                     <td>Manufacturer and Model</td>
                                     <td>Price</td>
                                     <td>Start Date - End Date at Location</td>
+                                </tr>
+                                <tr id="hidden_row2" class="hidden_row">
+                                    <td colspan=4>
+                                        Getriebee   · 	· 	·   Antrieb   · 	· 	·   x Sitze   · 	· 	·   x Türen   · 	· 	·   GPS   · 	· 	·   Kofferraum   · 	· 	·   Alter
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
@@ -59,4 +75,25 @@
         </div>
 
         <?php include 'footer.php'; ?>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            function showHideRow(row) {
+                $("#" + row).toggle();
+                adjustContainerHeight();
+            }
+
+            function adjustContainerHeight() {
+                var tableHeight = document.querySelector('.booking-table table').clientHeight;
+                document.querySelector('.suchfilter').style.height = (tableHeight + 160) + 'px';
+                var suchfilterHeight = document.querySelector('.suchfilter').clientHeight;
+                var totalHeight = suchfilterHeight + 60; // Adjust padding as needed
+
+                document.querySelector('.img-container').style.height = totalHeight + 'px';
+            }
+
+            // Initial adjustment when the page loads
+            adjustContainerHeight();
+        </script>
+
     </body>
