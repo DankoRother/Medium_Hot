@@ -120,7 +120,11 @@ session_start();
   if (isset($_POST[$variableName])) {
     $_SESSION[$variableName] = $_POST[$variableName];
     echo $_SESSION[$variableName];
+  } elseif(isset($_GET[$variableName])){
+    $_SESSION[$variableName] = $_GET[$variableName];
+    echo $_SESSION[$variableName];
   } else {
+    $_SESSION[$variableName] = "";
     echo $_SESSION[$variableName];
   }
 }
@@ -314,16 +318,16 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         $end_date = $_SESSION['end_date'];
         $location = $_SESSION['location'];
         $vendor = $_SESSION['vendor'];
-        $type = $_POST['type'];
-        $price = $_POST['price'];
-        $seats = $_POST['seats'];
-        $gear = $_POST['gear'];
-        $doors = $_POST['doors'];
-        $min_age = $_POST['min_age'];
-        $drive = $_POST['drive'];
+        $type = $_SESSION['type'];
+        $price = $_SESSION['price'];
+        $seats = $_SESSION['seats'];
+        $gear = $_SESSION['gear'];
+        $doors = $_SESSION['doors'];
+        $min_age = $_SESSION['min_age'];
+        $drive = $_SESSION['drive'];
         $air_condition = changeValues('air_condition');
         $gps = changeValues('gps');
-        $trunk = $_POST['trunk'];
+        $trunk = $_SESSION['trunk'];
 
     $conditions = array();  // Array zum Sammeln von Bedingungen
 

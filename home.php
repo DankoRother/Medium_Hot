@@ -51,16 +51,16 @@
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="text" class="form-control" name="start_date" id="start_date" value="<?php echo $_SESSION['start_date']; ?>" required>
+                  <input type="text" class="form-control" name="start_date" id="start_date" value="<?php if(isset($_SESSION['start_date'])){echo $_SESSION['start_date'];} ?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php echo $_SESSION['end_date']; ?>" required>
+                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php if(isset($_SESSION['end_date'])){echo $_SESSION['end_date'];} ?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Wo?</h2>
                   <select name="location" class="form-select" required>
-                  <option value="<?php echo $_SESSION['location']; ?>"><?php echo $_SESSION['location']; ?></option>
+                  <option value="<?php if(isset($_SESSION['location'])){echo $_SESSION['location'];} ?>"><?php if(isset($_SESSION['location'])){echo $_SESSION['location'];} ?></option>
                   <option value="">Bitte wählen</option>
                   <option value="Hamburg">Hamburg</option>
                   <option value="Bielefeld">Bielefeld</option>
