@@ -139,9 +139,10 @@
                         <option value="Combi">Combi</option>
                     </select>
                 </div>
+                
                 <div class="filter-bar-2">
                     <h3>Preis bis</h3>
-                    <input type="number" name="price" class="form-input-2" value="<?php if (isset($_POST['price'])) {echo $_POST['price'];} ?>">
+                    <input type="number" id="price" name="price" class="form-input-2" value="<?php if (isset($_POST['price'])) {echo $_POST['price'];} ?>" oninput="validatePrice(this)">
                     <h3>€/Tag</h3>
                 </div>
             </div>
