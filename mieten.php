@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
     <head>                                 <!-- Verlinkung zu Jquery -->
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>                                    <!-- Verlinkung zu Jquery -->
@@ -39,6 +41,15 @@
         // Standardwerte setzen, falls keine Session existiert
         $_SESSION['start_date'] = $_SESSION['end_date'] = $_SESSION['location'] = "";
     }
+
+
+    if (isset($_GET['start_date']) && isset($_GET['end_date']) && isset($_GET['location']) && isset($_GET['vendor'])) {
+        // Setze die Session-Variablen basierend auf den URL-Parametern
+        $_SESSION['start_date'] = $_GET['start_date'];
+        $_SESSION['end_date'] = $_GET['end_date'];
+        $_SESSION['location'] = $_GET['location'];
+        $_SESSION['vendor'] = $_GET['vendor'];
+    }
     
 
     ?>
@@ -53,8 +64,6 @@
 
 <body>
 <?php include 'header.php'; ?>
-
-
 
 <div class="img-container">
 
@@ -103,6 +112,15 @@
     </div>
 </div>
 
+<?php function setValues($variableName) {
+  if (isset($_POST[$variableName])) {
+    $_SESSION[$variableName] = $_POST[$variableName];
+    echo $_SESSION[$variableName];
+  } else {
+    echo $_SESSION[$variableName];
+  }
+}
+?>
 
 <div class="filter-container-2">
     <div class="suchfilter-extended">
@@ -111,7 +129,7 @@
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
                     <select name="vendor" class="form-select-2">
-                        <option value="<?php if (isset($_POST['vendor'])) {echo $_POST['vendor'];} ?>"><?php if (isset($_POST['vendor'])) {echo $_POST['vendor'];} ?></option>
+                        <option value="<?php setValues('vendor')?>"><?php setValues('vendor')?></option>
                         <option value="">Alle anzeigen</option>
                         <option value="Audi">Audi</option>
                         <option value="BMW">BMW</option>
@@ -256,14 +274,14 @@
 
 <?php 
 
-if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt'])) {  // extented filter function
+if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt']) || isset($_GET['location'])) {  // extented filter function
 
     ?><div class="output_background"><div class="container-output"><?php
 
-        $start_date = $_POST['start_date'];         // setting filter variables 
-        $end_date = $_POST['end_date'];
+        $start_date = $_SESSION['start_date'];         // setting filter variables 
+        $end_date = $_SESSION['end_date'];
         $location = $_SESSION['location'];
-        $vendor = $_POST['vendor'];
+        $vendor = $_SESSION['vendor'];
         $type = $_POST['type'];
         $price = $_POST['price'];
         $seats = $_POST['seats'];

@@ -1,4 +1,6 @@
-<?php session_start(); ?>
+<?php 
+session_start(); 
+?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -8,11 +10,13 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/Produktdetails.css"> 
+        <script language="javascript" type="text/javascript" src="mieten.js"></script>
     </head>
 
     <body>
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
-    <?php include 'dbConfig.php'; ?> 
+    <?php include 'dbConfig.php'; 
+    echo $_SESSION['vendor'];?> 
     <?php
         if (isset($_POST['carId'])) {
             $selectedCarId = $_POST['carId'];
@@ -98,10 +102,31 @@
             <hr class="line2">
                 
             </div>
+
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
-                <div class="divDesignForBackToSelection"> <a href="mieten.php" style="text-decoration: none;"> <h3> Zurück zur Auswahl </h3></a></div>
+                <div class="divDesignForBackToSelection"><button onclick="backToSelection()">Zurück zur Auswahl</button></div>
                 <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
             </div>
+
+            <script>
+            function backToSelection() {
+            // Hier setzt du den Pfad zur gewünschten Seite
+                var targetPage = "mieten.php";
+  
+            // Session-Variablen in den JavaScript-Code einfügen
+                var start_date = "<?php echo $_SESSION['start_date']; ?>";
+                var end_date = "<?php echo $_SESSION['end_date']; ?>";
+                var location = "<?php echo $_SESSION['location']; ?>";
+                var vendor = "<?php echo $_SESSION['vendor'];?>";
+
+
+            // URL erstellen, Session-Variablen anhängen und zur Seite leiten
+            window.location.href = targetPage + '?start_date=' + encodeURIComponent(start_date)
+            + '&end_date=' + encodeURIComponent(end_date)
+            + '&location=' + encodeURIComponent(location)
+            + '&vendor=' + encodeURIComponent(vendor);
+            }
+</script>
         </div> <?php 
     }?>
         <?php include 'footer.php'; ?>      <!-- Including the footer structure into the product details site -->       

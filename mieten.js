@@ -33,3 +33,4 @@ function validatePrice(input) {
         input.setCustomValidity('');
     }
 }
+
