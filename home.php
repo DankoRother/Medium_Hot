@@ -76,6 +76,17 @@
                   <option value="Bremen">Bremen</option>
                   <option value="Paderborn">Paderborn</option>
               </select>
+              <input type="hidden" name="vendor" value="">
+    <input type="hidden" name="type" value="">
+    <input type="hidden" name="price" value="">
+    <input type="hidden" name="seats" value="">
+    <input type="hidden" name="gear" value="">
+    <input type="hidden" name="doors" value="">
+    <input type="hidden" name="min_age" value="">
+    <input type="hidden" name="drive" value="">
+    <input type="hidden" name="air_condition" value="">
+    <input type="hidden" name="gps" value="">
+    <input type="hidden" name="trunk" value="">
             </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
