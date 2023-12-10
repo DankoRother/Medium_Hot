@@ -15,8 +15,7 @@ session_start();
 
     <body>
     <?php include 'header.php'; ?>                                                           <!-- Including the header structure into the product details site -->
-    <?php include 'dbConfig.php'; 
-    echo $_SESSION['vendor'];?> 
+    <?php include 'dbConfig.php'; ?> 
     <?php
         if (isset($_POST['carId'])) {
             $selectedCarId = $_POST['carId'];
