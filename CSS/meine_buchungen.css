@@ -13,8 +13,9 @@
     background-image: url(CSS_Bilder/Leonardo_Diffusion_XL_car_rental_with_sun_in_the_background_2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: center bottom 28%;
-    height: 505px;
+    background-position: center bottom;
+    height: 100%;
+    background-attachment: fixed;
 }
 
 .filter-container {
@@ -90,7 +91,11 @@
     border-radius: 20px 20px 0 0;
 }
 
-.booking-table tr {
+.booking-table thead tr {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking-table tbody tr {
     box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.1);
     border-radius: 0 0 20px 20px;
 }
@@ -111,4 +116,20 @@
     font-weight: 300;
     font-size: 15px;
     text-decoration: none;
+}
+
+.table_detail {
+    width: 500px;
+    text-align: left;
+    border-collapse: collapse;
+    color: #2e2e2e;
+    border: #a4a4a4;
+}
+
+.table_detail tr:hover {
+    background-color: #f2f2f2;
+}
+
+.table_detail .hidden_row {
+    display: none;
 }
