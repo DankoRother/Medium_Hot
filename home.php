@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+$_SESSION['logged_in_userID']; ?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -34,6 +35,7 @@
     </head>
 <!-- Beginn der Webseite -->
     <body>
+      <?php Print_r ($_SESSION);;?>
         <?php include 'header.php'; ?>
         <div class="video-container">
           <video autoplay muted loop>

@@ -23,3 +23,37 @@ function loginFormSubmit(event) {
         }
     });
 }
+
+function validateUsername() {
+    var vorname = document.getElementById("vorname").value;
+    var errorElement = document.getElementById("vornameError");
+    var vornameElement = document.getElementById("vorname");
+
+    if (vorname === "") {
+        errorElement.style.color = "#ff974d";
+        vornameCondition = false;
+        vornameElement.style.borderColor = "#ff974d";
+    } else {
+        errorElement.style.color = "#0088a9";
+        vornameElement.style.borderColor = "#0088a9";
+        vornameCondition = true;
+    }
+    enablesecondbutton();
+}
+
+function validatePassword() {
+    var nachname = document.getElementById("pass").value;
+    var errorElement = document.getElementById("nachnameError");
+    var nachnameElement = document.getElementById("nachname");
+
+    if (nachname === "") {
+        errorElement.style.color = "#ff974d";
+        nachnameCondition = false;
+        nachnameElement.style.borderColor = "#ff974d";
+    } else {
+        errorElement.style.color = "#0088a9";
+        nachnameElement.style.borderColor = "#0088a9";
+        nachnameCondition = true;
+    }
+    enablesecondbutton();
+}

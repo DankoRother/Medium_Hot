@@ -15,6 +15,7 @@ li, a, button {
     font-size: 20px;                                    /*Schriftformatierung */
     color: #edf0f1;
     text-decoration: none;
+    cursor: pointer;
 }
 
 body {
@@ -51,7 +52,7 @@ header {
     color:#0088a9;
 }
 
-.log button {
+button.log {
     padding: 5px 18px;
     background-color: rgba(0,134,169,1);
     border: none;                               /* Login Button Hover Effekt */

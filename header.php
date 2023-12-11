@@ -2,11 +2,15 @@
 $loginButtonText;
 if ($_SESSION['logged_in_userID'] > 0) {   
     $loginButtonText = "Log Out";
-    # code...
+    $loginButtonAction = 'onclick="logOut()"';
+    $bookingButtonText = "Meine Buchungen";
+    $bookingButtonAction = 'onclick="myBookings()"';
 }
 else {
-    # code...
     $loginButtonText = "Log In";
+    $loginButtonAction = 'onclick="logIn()"';
+    $bookingButtonText = "Meine Buchungen";
+    $bookingButtonAction = 'onclick="logIn()"'; //redirect to Log In if not logged in
 }
 ?>
 <!DOCTYPE html>
@@ -17,6 +21,27 @@ else {
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/header.css">                                             <!--CSS Datei Import -->
+        
+        <script>
+        function logOut() {
+                // Use AJAX to perform a server-side logout action
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        // Redirect to the login page after successful logout
+                        window.location.href = 'home.php';
+                    }
+                };
+                xhr.open('GET', 'logout.php', true);
+                xhr.send();   
+        }
+        function logIn() {
+            window.location.href = 'login.php';
+        }
+        function myBookings() {
+            window.location.href = 'meine_buchungen.php';
+        }
+        </script>
     </head>
 <!-- Beginn der Webseite -->
     <body>
@@ -30,8 +55,8 @@ else {
             </nav>
             <nav id="autoleft">
                 <ul class="nav__links">
-                    <li class="boxtext"><a href="meine_buchungen.php">Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->                   
-                    <li class="log"><a href="login.php"><button><?php echo $loginButtonText?></a></li>
+                    <li class="boxtext"><a <?php echo($bookingButtonAction);?>>Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->                   
+                    <button class="log" <?php echo($loginButtonAction)?> enabled><?php echo $loginButtonText ?></button>
                 </ul>
             </nav>
         </header>
