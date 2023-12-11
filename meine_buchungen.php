@@ -12,7 +12,6 @@
     <body>
         <?php include 'header.php'; ?>
 
-        <?php var_dump($_SESSION); ?>
 
         <div class="img-container">
             <div class="filter-container">

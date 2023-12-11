@@ -20,7 +20,6 @@ session_start();
 
     <?php include 'PHP_Funktionen/abfragedetail.php'?>
 
-    <?php var_dump($_SESSION); ?>
     
 <?php if (!empty($result)) {
     $row = $result[0]; // Erster Datensatz
@@ -71,10 +70,8 @@ session_start();
             </div>
 
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
-                <div class="divDesignForBackToSelection"><button type="button" onclick="backToSelection()">Zurück zur Auswahl</button></div>
+                <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
                 <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
-
-                <?php include 'PHP_Funktionen/sendValuesDetail.php'?>
 
             </div>
 

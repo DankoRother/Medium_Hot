@@ -2,10 +2,11 @@
   if (isset($_POST[$variableName])) {
     $_SESSION[$variableName] = $_POST[$variableName];
     echo $_SESSION[$variableName];
-  } elseif(isset($_GET[$variableName])){
-    $_SESSION[$variableName] = $_GET[$variableName];
+  } elseif (isset($_SESSION[$variableName])) {
     echo $_SESSION[$variableName];
-  } else {
+  }
+  else {
+    $_SESSION[$variableName] = "";
     echo $_SESSION[$variableName];
   }
 }
@@ -18,6 +19,11 @@ function changeValues($valueName){
         }
     }
     return $value;
+}
+
+
+function resetForm (){
+  
 }
 
 ?>

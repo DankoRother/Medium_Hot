@@ -1,6 +1,6 @@
 <?php 
 
-if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt']) || isset($_GET['location'])) {  // extented filter function
+if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['searchOrt']) || isset($_POST['location'])) {  // extented filter function
 
     ?><div class="output_background"><div class="container-output"><?php
 
@@ -118,6 +118,7 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         $resultCount = count($result);                                                //count results
 
     if ($resultCount > 0) {
+
         foreach ($result as $row) {
             ?><div class="output">
                 <div class="output_img">
@@ -139,8 +140,7 @@ if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searc
         }
     } else { 
         ?><div class="no_result"><?php                                            
-        echo "Leider gibt es für ihre Suche keine Treffer";
-        var_dump($_POST); ?>
+        echo "Leider gibt es für ihre Suche keine Treffer";?>
         </div> <?php //no results message
     }
     ?></div></div><?php

@@ -248,8 +248,6 @@ session_start();
 </div>
 </div>
 
-<?php var_dump($_SESSION); ?>
-
 <?php include 'PHP_Funktionen/filterabfrage.php' ?>
 
 
