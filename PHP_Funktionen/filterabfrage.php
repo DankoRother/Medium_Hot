@@ -65,7 +65,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
 
     $whereClause = (!empty($conditions)) ? "WHERE " . implode(" AND ", $conditions) : "";
 
-    $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
+    $sqlLocation = "SELECT carlocation.carLocationId, vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
                     FROM vendordetails
                     INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
                     INNER JOIN carlocation ON carlocation.carId = cardetails.carId
@@ -130,7 +130,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                 </div>
                 <div class="output_button">
                     <form action="Produktdetails.php" method="post">
-                        <input type="hidden" name="carId" value="<?php echo $row['carId']; ?>">
+                        <input type="hidden" name="carId" value="<?php echo $row['carLocationId']; ?>">
                         <button type="submit">Jetzt Mieten</button>
                     </form>
                 </div>

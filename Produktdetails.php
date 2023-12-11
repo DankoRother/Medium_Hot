@@ -30,7 +30,7 @@ session_start();
                 <div class="divForHeading">                                                  <!-- Creating a div for the heading  -->
                      <h3> Das Fahrzeug ist vom <span class="highlight"><?php echo $_SESSION['start_date']?>
                     </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
-                    </span> am ausgewählten Standort <span class="highlight"><?php echo $_SESSION['location']?></span> verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
+                    </span> am ausgewählten Standort <span class="highlight"><?php echo $row['location']?></span> verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
                      <hr class="line1">
                 </div>
             </div>
