@@ -1,23 +1,19 @@
-<?php
-// You can include any necessary PHP files or scripts here
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="CSS/login.css"> <!-- Assuming you have a common CSS file for styling -->
+    <link rel="stylesheet" href="CSS/login.css">
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
 </head>
 <body>
-    <?php include 'header.php' ?> <!-- Assuming you have a common header file -->
+    <?php include 'header.php' ?>
     <br>
     <br>
     <br>
     <br>
-    <div align="center" class="dividiediv">
+    <div align="center">
         <h1> Anmelden </h1><br>
         <a href="register.php">Registrieren</a>
     </div>
@@ -36,6 +32,7 @@
     </div>
     <br>
     <br>
-    <?php include 'footer.php' ?> <!-- Assuming you have a common footer file -->
+    <?php include 'footer.php' ?>
+    <script src="js/loginscript.js"></script>
 </body>
 </html>

@@ -61,6 +61,6 @@
 <br>
 <br>
 <?php include 'footer.php'?>
-<script src="registrationscript.js"></script> 
+<script src="js\registrationscript.js"></script> 
 </body>
 </html>

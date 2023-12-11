@@ -1,3 +1,15 @@
+<?php
+session_start();
+$loginButtonText;
+if ($_SESSION['logged_in_userID'] > 0) {   
+    $loginButtonText = "Log Out";
+    # code...
+}
+else {
+    # code...
+    $loginButtonText = "Log In";
+}
+?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -20,7 +32,7 @@
             <nav id="autoleft">
                 <ul class="nav__links">
                     <li class="boxtext"><a href="meine_buchungen.php">Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->                   
-                    <li class="log"><a href="login.php"><button>Login</button></a></li>
+                    <li class="log"><a href="login.php"><button><?php echo $loginButtonText?></a></li>
                 </ul>
             </nav>
         </header>

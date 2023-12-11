@@ -1,4 +1,4 @@
-<?php session_start();?>
+
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -35,7 +35,6 @@
 <!-- Beginn der Webseite -->
     <body>
         <?php include 'header.php'; ?>
-
         <div class="video-container">
           <video autoplay muted loop>
             <source src="Bilder/videodark.mp4" type="video/mp4">
