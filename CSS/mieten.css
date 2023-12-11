@@ -61,6 +61,8 @@ body {
     padding: 0 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border: none;
+    text-align: center;
+    border-radius: 25px;
 }
 
 .form-select {
@@ -194,6 +196,7 @@ body {
     padding: 0 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
 }
 
 .form-input-2 {
