@@ -1,3 +1,4 @@
+<?php session_start();?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -10,6 +11,8 @@
 
     <body>
         <?php include 'header.php'; ?>
+
+        <?php var_dump($_SESSION); ?>
 
         <div class="img-container">
             <div class="filter-container">

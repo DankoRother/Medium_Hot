@@ -36,6 +36,8 @@
     <body>
         <?php include 'header.php'; ?>
 
+        <?php var_dump($_SESSION); ?>
+
         <div class="video-container">
           <video autoplay muted loop>
             <source src="Bilder/videodark.mp4" type="video/mp4">

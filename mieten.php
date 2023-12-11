@@ -27,7 +27,9 @@ session_start();
   });
 </script>
 <?php include 'dbConfig.php'?>
+
 <?php include 'PHP_Funktionen/getValues.php'?>
+
     
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">       
@@ -41,7 +43,6 @@ session_start();
 
 <body>
 <?php include 'header.php'; ?>
-
 
 <div class="img-container">
 
@@ -246,6 +247,8 @@ session_start();
     </div>
 </div>
 </div>
+
+<?php var_dump($_SESSION); ?>
 
 <?php include 'PHP_Funktionen/filterabfrage.php' ?>
 

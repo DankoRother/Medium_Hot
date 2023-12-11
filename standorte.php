@@ -11,6 +11,7 @@
 
     <body>
     <?php include 'header.php'; ?>
+    <?php var_dump($_SESSION); ?>
     <div class="map-heading">
         <h1>Unsere Standorte</h1>
     </div>

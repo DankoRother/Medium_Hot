@@ -19,6 +19,8 @@ session_start();
     <?php include 'dbConfig.php';?> 
 
     <?php include 'PHP_Funktionen/abfragedetail.php'?>
+
+    <?php var_dump($_SESSION); ?>
     
 <?php if (!empty($result)) {
     $row = $result[0]; // Erster Datensatz
