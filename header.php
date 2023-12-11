@@ -1,5 +1,4 @@
 <?php
-session_start();
 $loginButtonText;
 if ($_SESSION['logged_in_userID'] > 0) {   
     $loginButtonText = "Log Out";
