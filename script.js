@@ -38,7 +38,7 @@ function hideFirstShowSecond() {
         element.style.display = 'block';
     });
 }
-function hideSecondShowFirst() {
+global function hideSecondShowFirst() {
     var geburtsdatumElement = document.getElementById("geburtsdatum");
     document.getElementById("weiterButton").style.display = 'block';
     secondButtonId.style.display = 'none';  // Corrected this line
