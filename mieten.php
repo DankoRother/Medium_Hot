@@ -44,6 +44,8 @@ session_start();
 <body>
 <?php include 'header.php'; ?>
 
+<?php include 'PHP_Funktionen/resetbutton.php'?>
+
 <div class="img-container">
 
 <div class="filter-heading">
@@ -91,7 +93,7 @@ session_start();
 </div>
 
 <?php include 'PHP_Funktionen/editvalues.php';
-var_dump($_SESSION);
+
 ?>
 
 <div class="filter-container-2">
@@ -101,7 +103,7 @@ var_dump($_SESSION);
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
                     <select name="vendor" class="form-select-2">
-                        <option value="<?php setValues('vendor')?>"><?php setValues('vendor')?></option>
+                        <option value="<?php setValues('vendor')?>"><?php (setValues('vendor'))?></option>
                         <option value="">Alle</option>
                         <option value="Audi">Audi</option>
                         <option value="BMW">BMW</option>
@@ -239,6 +241,7 @@ var_dump($_SESSION);
                     <input type="submit" value="Filter und Sortierung zurücksetzen" class="button_reset" name="resetButton">
                 </div>
             </div>
+           
             
         </form>
         <div class="filter-row-button">

@@ -2,7 +2,7 @@
   if (isset($_POST[$variableName])) {
     $_SESSION[$variableName] = $_POST[$variableName];
     echo $_SESSION[$variableName];
-  } elseif (isset($_SESSION[$variableName])) {
+  }elseif (isset($_SESSION[$variableName])) {
     echo $_SESSION[$variableName];
   }
   else {
@@ -10,6 +10,7 @@
     echo $_SESSION[$variableName];
   }
 }
+
 
 function changeValues($valueName){
     $value = "";
@@ -21,14 +22,6 @@ function changeValues($valueName){
     return $value;
 }
 
-function getSessionValue($variableName, $defaultValue = '') {
-  if (isset($_SESSION[$variableName])) {
-      return $_SESSION[$variableName];
-  } else {
-      $_SESSION[$variableName] = $defaultValue;
-      return $_SESSION[$variableName];
-  }
-}
 
 
 
