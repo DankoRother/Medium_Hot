@@ -21,10 +21,16 @@ function changeValues($valueName){
     return $value;
 }
 
-
-function resetForm (){
-  
+function getSessionValue($variableName, $defaultValue = '') {
+  if (isset($_SESSION[$variableName])) {
+      return $_SESSION[$variableName];
+  } else {
+      $_SESSION[$variableName] = $defaultValue;
+      return $_SESSION[$variableName];
+  }
 }
+
+
 
 ?>
 
