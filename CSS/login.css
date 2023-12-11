@@ -85,7 +85,7 @@ input[type=text] {
     margin-top: 5%;
 }
 
-input[type=submit] {
+input[type=submit].login {
     text-align: center;
     background-color: #0088a9;
     border: none;
