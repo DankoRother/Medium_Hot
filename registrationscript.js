@@ -20,6 +20,19 @@ var nachnameInput;
 var geburtsdatumInput;
 var inputElement = "";
 
+function changeInputValue(inputId, newValue) {
+    // Get the input element by ID
+    var inputElement = document.getElementById(inputId);
+
+    // Check if the input element exists
+    if (inputElement) {
+        // Set the value of the input element
+        inputElement.value = newValue;
+    } else {
+        console.error('Input element with ID ' + inputId + ' not found.');
+    }
+}
+
 function hideFirstShowSecond() {
     var geburtsdatumElement = document.getElementById("geburtsdatum");
     document.getElementById("weiterButton").style.display = 'none';
@@ -38,7 +51,8 @@ function hideFirstShowSecond() {
         element.style.display = 'block';
     });
 }
-global function hideSecondShowFirst() {
+
+function hideSecondShowFirst() {
     var geburtsdatumElement = document.getElementById("geburtsdatum");
     document.getElementById("weiterButton").style.display = 'block';
     secondButtonId.style.display = 'none';  // Corrected this line
@@ -57,7 +71,6 @@ global function hideSecondShowFirst() {
         element.style.display = 'none';
     });
 }
-
 
 function loadInput(inputElement) {
     var element = document.getElementById(inputElement);
@@ -197,37 +210,36 @@ else{
 }
 
 function submitForm(event) {
-    console.log('Submit form function called'); // Add this line
     event.preventDefault(); // Prevent the default form submission
-    // Your existing code to handle the form submission
-    // For example, you can use AJAX to send the form data to your PHP script asynchronously
+
     $.ajax({
-        url: 'register.php',
+        url: 'php_funktionen/registerfunction.php', // Corrected URL
         method: 'POST',
         data: $('#registrationForm').serialize(),
+        dataType: 'json', // Specify that the expected response is JSON
         success: function(response) {
-            console.log('AJAX success:', response);
-            // Check if the response is defined
-            if (response) {
-                // Check the response status
-                if (response.status === 'success') {
-                    // Handle success (e.g., show a success message)
-                    console.log('Data inserted successfully');
-                } else {
-                    // Handle error (e.g., show an error message)
-                    console.error('Error inserting data:', response.message);
-                }
+            if (response && response.status === 'success') {
+                console.log('Data inserted successfully');
+                window.location.href = 'registrationresult.php?status=success'; // Redirect on success
             } else {
-                // Handle undefined response
-                console.error('Undefined response from the server');
+                console.error('AJAX error: Unexpected response', response);
+                // Check for specific error messages and redirect accordingly
+                if (response && response.message == 'email_exists') {
+                    window.location.href = 'registrationresult.php?status=email_exists';
+                } else if (response && response.message == 'username_exists') {
+                    window.location.href = 'registrationresult.php?status=username_exists';
+                } else if (response && response.message == 'both_exist') {
+                    window.location.href = 'registrationresult.php?status=both_exist';
+                } else {
+                    console.error('Unknown error:', response);
+                }
             }
         },
         error: function(xhr, status, error) {
             console.error('AJAX error:', status, error);
-            console.log(xhr.responseText); // Log the responseText for more details
         }
     });
-}
+}    
 
 
 /*

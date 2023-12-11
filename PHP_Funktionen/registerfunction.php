@@ -1,17 +1,15 @@
-
-<script src="../script.js"></script>
 <?php
-include("dbConfig.php");
-if(isset($_POST)) {
-    error_log("abcdefg");
+include("../dbConfig.php");
+
+if (isset($_POST)) {
     $usernameInput = $_POST['username'];
     $emailInput = $_POST['email'];
-    $passwordInput = $_POST['passwort'];
-    $vornameInput= $_POST['vorname'];
+    $passwordInput = password_hash($_POST['passwort'], PASSWORD_DEFAULT);
+    $vornameInput = $_POST['vorname'];
     $nachnameInput = $_POST['nachname'];
     $geburtstagInput = $_POST['geburtsdatum'];
     $loggedIn = "1";
-    // Do something with the data
+
     try {
         // Create a PDO database connection
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -27,15 +25,21 @@ if(isset($_POST)) {
         $usernameExists = $stmtUsername->fetchColumn() > 0;
 
         if ($emailExists || $usernameExists) {
-            hideSecondShowFirst();
-            // Email or username already exists
-            if ($emailExists) {
-                changeInputValue(emailInput, "E-Mail ist bereits vergeben");
+            // Redirect to registrationresult.php with status
+            $status = '';
+
+            if ($emailExists && $usernameExists) {
+                $status = 'both_exist';
+            } elseif ($emailExists) {
+                $status = 'email_exists';
+            } elseif ($usernameExists) {
+                $status = 'username_exists';
             }
-            if($usernameExists) {
-                changeInputValue(usernameInput, "Username ist bereits vergeben");
-            }
-            error_log(json_encode(['status' => 'error', 'message' => 'Email or username already exists']));
+
+            $response = ['status' => 'error', 'message' => $status];
+            error_log(json_encode($response));
+            echo json_encode($response);
+            exit();
         } else {
             // Insert data into the users table using prepared statement
             $stmt = $conn->prepare("INSERT INTO user (username, email, password, age, first_name, last_name, logged_in) VALUES (?, ?, ?, ?, ?, ?, ?)");
@@ -51,20 +55,28 @@ if(isset($_POST)) {
 
             // Execute the statement
             if ($stmt->execute()) {
-                error_log(json_encode(['status' => 'success', 'message' => 'Data inserted successfully']));
+                $response = ['status' => 'success'];
+                error_log(json_encode($response));
+                echo json_encode($response);
+                exit();
             } else {
-                error_log(json_encode(['status' => 'error', 'message' => 'Error inserting data']));
+                $response = ['status' => 'error', 'message' => 'Error inserting data'];
+                error_log(json_encode($response));
+                echo json_encode($response);
+                exit();
             }
 
             // Close the statement
             $stmt->closeCursor();
         }
+    } catch (PDOException $e) {
+        $response = ['status' => 'error', 'message' => 'Database error: ' . $e->getMessage()];
+        error_log(json_encode($response));
+    } finally {
         // Close the statements and the database connection
         $stmtEmail->closeCursor();
         $stmtUsername->closeCursor();
         $conn = null;
-    } catch (PDOException $e) {
-        error_log(json_encode(['status' => 'error', 'message' => 'Database error: ' . $e->getMessage()]));
     }
 }
 ?>
