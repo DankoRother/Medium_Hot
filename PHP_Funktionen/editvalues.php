@@ -24,12 +24,5 @@ function changeValues($valueName){
 
 
 <script>
-function resetForm() {
-  document.querySelector('select[name="vendor"]').value = '';
-  document.querySelector('input[name="price"]').value = '';
-  document.querySelector('select[name="type"]').value = '';
-  <?php $_SESSION['vendor'] = ''; ?> // Dies setzt den PHP-Wert auf einen Leerstring
-  <?php $_SESSION['price'] = ''; ?>
-  <?php $_SESSION['type'] = ''; ?>
-}
+
 </script>

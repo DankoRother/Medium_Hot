@@ -8,10 +8,7 @@
         $_SESSION['end_date'] = $_POST['end_date'] ?? "";
         $_SESSION['location'] = $_POST['location'] ?? "";
 
-    } else {
-        // Standardwerte setzen, falls keine Session existiert
-        $_SESSION['start_date'] = $_SESSION['end_date'] = $_SESSION['location'] = "";
-    }
+    } 
 
 
     if (isset($_GET['start_date']) && isset($_GET['end_date']) && isset($_GET['location'])) {
