@@ -26,7 +26,7 @@
             <label class="label" for="loginUsername" style="order: 5">Username:</label>
             <input class="input" type="text" id="loginPassword" name="loginPassword" style="order: 2">
             <label class="label" for="loginPassword" style="order: 3">Passwort:</label>
-            <input class="first" type="submit" name="submit" value="Anmelden" style="order: 1">
+            <input class="login" type="submit" name="submit" value="Anmelden" style="order: 1">
         </container>
         </form>
     </div>
