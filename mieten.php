@@ -244,6 +244,7 @@ session_start();
                 </div>
                 <div class="filter_bar">
                     <select name="sort" class="form-select-2">
+                        <option value="<?php setSort('sort')?>"><?php setSort('sort')?></option>  
                         <option value="ASC">ASC</option>
                         <option value="DESC">DESC</option>   
                     </select>
