@@ -12,19 +12,15 @@
 }
 
 function setSort($variableName) {
-  if (isset($_POST[$variableName])) {
+  // Überprüfe, ob ein POST-Wert vorhanden ist
+  if (isset($_POST[$variableName]) || isset($_SESSION[$variableName]) ) {
     $_SESSION[$variableName] = $_POST[$variableName];
-    echo $_SESSION[$variableName];
-  }elseif (isset($_SESSION[$variableName])) {
-    echo $_SESSION[$variableName];
   }
+  // Wenn weder POST noch SESSION vorhanden sind, setze Standardwert auf "ASC"
   else {
-    $_POST[$variableName] = "ASC";
     $_SESSION[$variableName] = "ASC";
-    echo $_SESSION[$variableName];
   }
 }
-
 
 
 

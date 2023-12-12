@@ -242,11 +242,12 @@ session_start();
                     <input type="submit" value="Filtern" class="button_filter" name="filtern">
                     <input type="submit" value="Filter und Sortierung zurücksetzen" class="button_reset" name="resetButton">
                 </div>
+
+                <?php setSort('sort'); ?>
                 <div class="filter_bar">
                     <select name="sort" class="form-select-2">
-                        <option value="<?php setSort('sort')?>"><?php setSort('sort')?></option>  
-                        <option value="ASC">ASC</option>
-                        <option value="DESC">DESC</option>   
+                        <option value="ASC" <?php echo ($_SESSION['sort'] === 'ASC') ? 'selected' : ''; ?>>Aufsteigend</option>
+                        <option value="DESC" <?php echo ($_SESSION['sort'] === 'DESC') ? 'selected' : ''; ?>>Absteigend</option>
                     </select>
                 </div>
             </div>
