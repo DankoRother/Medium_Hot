@@ -59,7 +59,7 @@ session_start();
             <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="text" class="form-control"  name="start_date" id="start_date" value="<?php echo isset($_SESSION['start_date']) ? $_SESSION['start_date'] : date('Y-m-d'); ?>" required>
+                  <input type="text" class="form-control" name="start_date" id="start_date" value="<?php echo isset($_SESSION['start_date']) ? $_SESSION['start_date'] : date('m/d/Y');?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>

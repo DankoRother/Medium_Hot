@@ -67,13 +67,29 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
 
     $sortOrder = (isset($_POST['sort']) && !empty($_POST['sort'])) ? $_POST['sort'] : (isset($_SESSION['sort']) ? $_SESSION['sort'] : 'ASC');
 
+    if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt']) || isset($_POST['location']) || isset($_POST['resetButton'])) {
+        unset($_GET['mehr_anzeigen']); // Lösche den GET-Parameter
+        $limit = 6; // Setze das Limit wieder auf 6
+    }
+
+    if(isset($_GET['mehr_anzeigen'])){
+        $limit = 6;
+    }
+
+    $limit = 6;
+
+    if(isset($_GET['mehr_anzeigen'])){
+        $limit = 1000;
+    }
+
     $sqlLocation = "SELECT carlocation.carLocationId, vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
                     FROM vendordetails
                     INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
                     INNER JOIN carlocation ON carlocation.carId = cardetails.carId
                     INNER JOIN location ON location.locationId = carlocation.locationId
                     $whereClause
-                    ORDER BY cardetails.price $sortOrder";
+                    ORDER BY cardetails.price $sortOrder
+                    LIMIT $limit";
 
         $stmt = $conn->prepare($sqlLocation);
 
@@ -117,7 +133,9 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
         $stmt->execute();
 
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-        $resultCount = count($result);                                                //count results
+        $resultCount = count($result);   
+        
+        
 
     if ($resultCount > 0) {
 
@@ -140,12 +158,34 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             </div>
             <?php 
         }
+   
     } else { 
         ?><div class="no_result"><?php                                            
         echo "Leider gibt es für ihre Suche keine Treffer";?>
         </div> <?php //no results message
     }
-    ?></div></div><?php
+    ?></div><?php
+    if ($resultCount == 6) {
+            ?>
+            <div class="container-anzeigen">
+                <form method="get" action="">
+                    <input type="submit" name="mehr_anzeigen" value="Mehr Anzeigen">
+                </form>
+            </div>
+            <?php
+        } 
+        if ($resultCount > 6) {
+            ?>
+            <div class="container-anzeigen">
+                <form method="get" action="">
+                    <input type="submit" name="weniger_anzeigen" value="Weniger Anzeigen">
+                </form>
+            </div>
+            <?php
+        }  ?>
+
+
+</div><?php
 }
     
 ?>

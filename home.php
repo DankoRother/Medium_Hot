@@ -49,11 +49,11 @@
               <div class="filter_row">
                 <div class="filter_bar">
                   <h2>Start:</h2>
-                  <input type="text" class="form-control" name="start_date" id="start_date" value="<?php if(isset($_SESSION['start_date'])){echo $_SESSION['start_date'];} ?>" required>
+                  <input type="text" class="form-control" name="start_date" id="start_date" value="<?php echo isset($_SESSION['start_date']) ? $_SESSION['start_date'] : date('m/d/Y');?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php if(isset($_SESSION['end_date'])){echo $_SESSION['end_date'];} ?>" required>
+                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php isset($_SESSION['end_date']) ? $_SESSION['end_date'] : date('m/d/Y');?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Wo?</h2>
