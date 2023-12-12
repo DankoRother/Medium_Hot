@@ -1,5 +1,4 @@
-<?php session_start();
-$_SESSION['logged_in_userID']; ?>
+<?php session_start();?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,7 +11,7 @@ $_SESSION['logged_in_userID']; ?>
 <body>
     <?php include 'header.php' ?>
     <?php 
-    if ($_SESSION['logged_in_userID'] > 0) {
+    if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {
         echo('<br>
         <br>
         <br>

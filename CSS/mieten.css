@@ -72,6 +72,8 @@ body {
     font-size: 15px;
     padding: 0 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+    text-align: center;
 }
 
 .button_filter {
@@ -199,15 +201,34 @@ body {
     border-radius: 25px;
 }
 
+.form-select-sort {
+    height: 30px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    padding: 0 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    border-radius: 25px;
+}
+
+.arrow {
+    color: #333; /* Farbe des Pfeils anpassen */
+    font-size: 12px; /* Größe des Pfeils anpassen */
+    margin-left: 5px; /* Abstand zwischen Text und Pfeil anpassen */
+  }
+
+
 .form-input-2 {
     height: 30px;
-    width: 60px;
+    width: 75px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 15px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border: none;
+    border-radius: 25px;
 }
 
 .filter-bar-2 button {

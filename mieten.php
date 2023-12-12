@@ -67,8 +67,8 @@ session_start();
                 </div>
                 <div class="filter_bar">
                     <h2>Wo?</h2>
-                    <select name="location" class="form-select" required>
-                    <option value="<?php echo isset($_SESSION['location']) ? $_SESSION['location'] : ''; ?>"><?php echo isset($_SESSION['location']) ? $_SESSION['location'] : ''; ?></option>
+                    <select name="location" class="form-select">
+                    <option value="<?php echo isset($_SESSION['location']) ? $_SESSION['location'] : ''; ?>"><?php echo isset($_SESSION['location']) && !empty($_SESSION['location']) ? $_SESSION['location'] : 'Alle anzeigen'; ?></option>
                     <option value="">Alle anzeigen</option>
                     <option value="Hamburg">Hamburg</option>
                     <option value="Bielefeld">Bielefeld</option>
@@ -105,7 +105,7 @@ session_start();
                 <div class="filter-bar-2">
                     <h3>Hersteller</h3>
                     <select name="vendor" class="form-select-2">
-                        <option value="<?php setValues('vendor')?>"><?php (setValues('vendor'))?></option>
+                        <option value="<?php setValues('vendor')?>"><?php (setOutput('vendor'))?></option>
                         <option value="">Alle</option>
                         <option value="Audi">Audi</option>
                         <option value="BMW">BMW</option>
@@ -123,7 +123,7 @@ session_start();
                 <div class="filter-bar-2">
                     <h3>Typ</h3>
                     <select name="type" class="form-select-2">
-                        <option value="<?php setValues('type')?>"><?php setValues('type')?></option>
+                        <option value="<?php setValues('type')?>"><?php setOutput('type')?></option>
                         <option value="">Alle</option>
                         <option value="SUV">SUV</option>
                         <option value="Cabrio">Cabrio</option>
@@ -136,7 +136,7 @@ session_start();
                 
                 <div class="filter-bar-2">
                     <h3>Preis bis</h3>
-                    <input type="number" id="price" name="price" class="form-input-2" value="<?php setValues('price')?>" oninput="validatePrice(this)">
+                    <input type="number" id="price" name="price" class="form-input-2" value="<?php setValues('price')?>" oninput="validatePrice(this)"  placeholder="Betrag">
                     <h3>€/Tag</h3>
                 </div>
             </div>
@@ -149,7 +149,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Getriebe</h3>
                         <select name="gear" class="form-select-2">
-                            <option value="<?php setValues('gear')?>"><?php setValues('gear')?></option>
+                            <option value="<?php setValues('gear')?>"><?php setOutput('gear')?></option>
                             <option value="">Alle</option>
                             <option value="manually">manually</option>
                             <option value="automatic">automatic</option>
@@ -159,7 +159,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Antrieb</h3>
                         <select name="drive" class="form-select-2">
-                            <option value="<?php setValues('drive')?>"><?php setValues('drive')?></option>
+                            <option value="<?php setValues('drive')?>"><?php setOutput('drive')?></option>
                             <option value="">Alle</option>
                             <option value="Combuster">Combuster</option>
                             <option value="Electric">Electric</option>
@@ -169,7 +169,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Sitze</h3>
                         <select name="seats" class="form-select-2">
-                            <option value="<?php setValues('seats')?>"><?php setValues('seats')?></option>
+                            <option value="<?php setValues('seats')?>"><?php setOutputNum('seats')?></option>
                             <option value="">/</option>
                             <option value="2">2</option>
                             <option value="4">4</option>
@@ -183,7 +183,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Türen</h3>
                         <select name="doors" class="form-select-2">
-                            <option value="<?php setValues('doors')?>"><?php setValues('doors')?></option>
+                            <option value="<?php setValues('doors')?>"><?php setOutputNum('doors')?></option>
                             <option value="">/</option>
                             <option value="2">2</option>
                             <option value="4">4</option>
@@ -196,7 +196,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Klima</h3>
                         <select name="air_condition" class="form-select-2">
-                            <option value="<?php setValues('air_condition')?>"><?php setValues('air_condition')?></option>
+                            <option value="<?php setValues('air_condition')?>"><?php setOutputCon('air_condition')?></option>
                             <option value="">Egal</option>
                             <option value="Ja">Ja</option>
                         </select>
@@ -204,7 +204,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>GPS</h3>
                         <select name="gps" class="form-select-2">
-                            <option value="<?php setValues('gps')?>"><?php setValues('gps')?></option>
+                            <option value="<?php setValues('gps')?>"><?php setOutputCon('gps')?></option>
                             <option value="">Egal</option>
                             <option value="Ja">Ja</option>
                         </select>
@@ -213,7 +213,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Kofferraum mind.</h3>
                         <select name="trunk" class="form-select-2">
-                            <option value="<?php setValues('trunk')?>"><?php setValues('trunk')?></option>
+                            <option value="<?php setValues('trunk')?>"><?php setOutputNum('trunk')?></option>
                             <option value="">/</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -226,7 +226,7 @@ session_start();
                     <div class="filter-bar-2">
                         <h3>Alter ab</h3>
                         <select name="min_age" class="form-select-2">
-                            <option value="<?php setValues('min_age')?>"><?php setValues('min_age')?></option>                          
+                            <option value="<?php setValues('min_age')?>"><?php setOutputNum('min_age')?></option>                          
                             <option value="">/</option>
                             <option value="18">18</option>
                             <option value="21">21</option>
@@ -236,19 +236,15 @@ session_start();
                     </div> 
                 </div>    
             </div>    
-
+            <?php setSort('sort'); ?>
             <div class="filter-row-filter">
                 <div class="filter_bar">
+                    <select name="sort" class="form-select-sort">  
+                        <option value="ASC" <?php echo ($_SESSION['sort'] === 'ASC') ? 'selected' : ''; ?>>Preis Aufsteigend <span class="arrow">&#8593;</span></option>
+                        <option value="DESC" <?php echo ($_SESSION['sort'] === 'DESC') ? 'selected' : ''; ?>>Preis Absteigend <span class="arrow">&#8595;</span></option>
+                    </select>
                     <input type="submit" value="Filtern" class="button_filter" name="filtern">
                     <input type="submit" value="Filter und Sortierung zurücksetzen" class="button_reset" name="resetButton">
-                </div>
-
-                <?php setSort('sort'); ?>
-                <div class="filter_bar">
-                    <select name="sort" class="form-select-2">
-                        <option value="ASC" <?php echo ($_SESSION['sort'] === 'ASC') ? 'selected' : ''; ?>>Aufsteigend</option>
-                        <option value="DESC" <?php echo ($_SESSION['sort'] === 'DESC') ? 'selected' : ''; ?>>Absteigend</option>
-                    </select>
                 </div>
             </div>
            

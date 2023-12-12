@@ -35,7 +35,6 @@
     </head>
 <!-- Beginn der Webseite -->
     <body>
-      <?php Print_r ($_SESSION);;?>
         <?php include 'header.php'; ?>
         <div class="video-container">
           <video autoplay muted loop>

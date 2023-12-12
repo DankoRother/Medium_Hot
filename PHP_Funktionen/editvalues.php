@@ -11,6 +11,45 @@
   }
 }
 
+function setOutput($variableName) {
+  if (isset($_POST[$variableName]) && $_POST[$variableName] != "") {
+    $_SESSION[$variableName] = $_POST[$variableName];
+    echo $_SESSION[$variableName];
+  }elseif (isset($_SESSION[$variableName]) && $_SESSION[$variableName] != "") {
+    echo $_SESSION[$variableName];
+  }
+  else {
+    $_SESSION[$variableName] = "";
+    echo 'Alle';
+}
+}
+
+function setOutputNum($variableName) {
+  if (isset($_POST[$variableName]) && $_POST[$variableName] != "") {
+    $_SESSION[$variableName] = $_POST[$variableName];
+    echo $_SESSION[$variableName];
+  }elseif (isset($_SESSION[$variableName]) && $_SESSION[$variableName] != "") {
+    echo $_SESSION[$variableName];
+  }
+  else {
+    $_SESSION[$variableName] = "";
+    echo '/';
+}
+}
+
+function setOutputCon($variableName) {
+  if (isset($_POST[$variableName]) && $_POST[$variableName] != "") {
+    $_SESSION[$variableName] = $_POST[$variableName];
+    echo $_SESSION[$variableName];
+  }elseif (isset($_SESSION[$variableName]) && $_SESSION[$variableName] != "") {
+    echo $_SESSION[$variableName];
+  }
+  else {
+    $_SESSION[$variableName] = "";
+    echo 'Egal';
+}
+}
+
 function setSort($variableName) {
   // Überprüfe, ob ein POST-Wert vorhanden ist und nicht leer ist
   if (isset($_POST[$variableName]) && !empty($_POST[$variableName])) {
