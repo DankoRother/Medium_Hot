@@ -30,6 +30,8 @@ session_start();
 
 <?php include 'PHP_Funktionen/getValues.php'?>
 
+<?php include 'PHP_Funktionen/resetbutton.php'?>
+
     
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">       
@@ -44,7 +46,7 @@ session_start();
 <body>
 <?php include 'header.php'; ?>
 
-<?php include 'PHP_Funktionen/resetbutton.php'?>
+
 
 <div class="img-container">
 
@@ -239,6 +241,12 @@ session_start();
                 <div class="filter_bar">
                     <input type="submit" value="Filtern" class="button_filter" name="filtern">
                     <input type="submit" value="Filter und Sortierung zurücksetzen" class="button_reset" name="resetButton">
+                </div>
+                <div class="filter_bar">
+                    <select name="sort" class="form-select-2">
+                        <option value="ASC">ASC</option>
+                        <option value="DESC">DESC</option>   
+                    </select>
                 </div>
             </div>
            
