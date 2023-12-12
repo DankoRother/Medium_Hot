@@ -38,7 +38,7 @@
                                 </tr>
                                 <tr id="hidden_row1" class="hidden_row">
                                     <td colspan=4>
-                                        Getriebe   · 	· 	·   Antrieb   · 	· 	·   x Sitze   · 	· 	·   x Türen   · 	· 	·   GPS   · 	· 	·   Kofferraum   · 	· 	·   Alter
+                                        <div id="rowContent">Getriebe Antrieb x-Sitzer x-Türer GPS Klima Kofferraum Alter</div>
                                     </td>
                                 </tr>
                                 <?php
@@ -83,6 +83,9 @@
             function showHideRow(row) {
                 $("#" + row).toggle();
                 adjustContainerHeight();
+                if ($("#" + row).is(":visible")) {
+                    justifyRowContent(row);
+                }
             }
 
             function adjustContainerHeight() {
@@ -96,6 +99,28 @@
 
             // Initial adjustment when the page loads
             adjustContainerHeight();
+
+            // Hide the rows by default
+            $(document).ready(function () {
+                $('.hidden_row').hide();
+            });
+            // Function to justify the row content
+            function justifyRowContent(rowId) {
+                console.log('Justify function called for row:', rowId);
+                var rowContent = document.getElementById(rowId).querySelector('#rowContent');
+                var words = rowContent.innerText.split(' ');
+                rowContent.innerHTML = '';
+
+                words.forEach(function (word) {
+                    var span = document.createElement('span');
+                    span.textContent = word + ' ';
+                    span.style.display = 'inline-block';
+                    /*span.style.marginRight = '5px'; <---- wenn die einzelnen Wörter lieber enger zusammen anstatt über die Breite verteilt werden sollen*/
+                    rowContent.appendChild(span);
+                });
+                rowContent.style.display = 'flex'; // <---- wenn span.style.marginRight eingefügt wird, diese Zeile löschen
+                rowContent.style.justifyContent = 'space-between'; // <---- wenn span.style.marginRight eingefügt wird, diese Zeile löschen
+            }
         </script>
 
     </body>

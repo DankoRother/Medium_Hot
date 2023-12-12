@@ -133,3 +133,7 @@
 .table_detail .hidden_row {
     display: none;
 }
+
+.hidden_row td div {
+    text-align: justify;
+}
