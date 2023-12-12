@@ -57,9 +57,9 @@
                 </div>
                 <div class="filter_bar">
                   <h2>Wo?</h2>
-                  <select name="location" class="form-select" required>
-                  <option value="<?php if(isset($_SESSION['location'])){echo $_SESSION['location'];} ?>"><?php if(isset($_SESSION['location'])){echo $_SESSION['location'];} ?></option>
-                  <option value="">Bitte wählen</option>
+                  <select name="location" class="form-select">
+                  <option value="<?php echo isset($_SESSION['location']) ? $_SESSION['location'] : ''; ?>"><?php echo isset($_SESSION['location']) && !empty($_SESSION['location']) ? $_SESSION['location'] : 'Alle anzeigen'; ?></option>
+                  <option value="">Alle anzeigen</option>
                   <option value="Hamburg">Hamburg</option>
                   <option value="Bielefeld">Bielefeld</option>
                   <option value="Rostock">Rostock</option>
@@ -86,6 +86,7 @@
               <input type="hidden" name="air_condition" value="">
               <input type="hidden" name="gps" value="">
               <input type="hidden" name="trunk" value="">
+              <input type="hidden" name="sort" value="ASC">
             </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
