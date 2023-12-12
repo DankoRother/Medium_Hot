@@ -53,7 +53,7 @@
                 </div>
                 <div class="filter_bar">
                   <h2>Ende:</h2>
-                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php isset($_SESSION['end_date']) ? $_SESSION['end_date'] : date('m/d/Y');?>" required>
+                  <input type="text" class="form-control" name="end_date" id="end_date" value="<?php echo isset($_SESSION['end_date']) ? $_SESSION['end_date'] : date('m/d/Y', strtotime('+1 day')); ?>" required>
                 </div>
                 <div class="filter_bar">
                   <h2>Wo?</h2>
