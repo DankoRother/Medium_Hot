@@ -169,7 +169,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             ?>
             <div class="container-anzeigen">
                 <form method="get" action="">
-                    <input type="submit" name="mehr_anzeigen" value="Mehr Anzeigen">
+                    <input type="submit" class="button_showmore" name="mehr_anzeigen" value="Mehr Anzeigen">
                 </form>
             </div>
             <?php
@@ -178,7 +178,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             ?>
             <div class="container-anzeigen">
                 <form method="get" action="">
-                    <input type="submit" name="weniger_anzeigen" value="Weniger Anzeigen">
+                    <input type="submit" class="button_showless" name="weniger_anzeigen" value="Weniger Anzeigen">
                 </form>
             </div>
             <?php
