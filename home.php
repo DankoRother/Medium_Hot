@@ -1,5 +1,5 @@
-<?php session_start();
-$_SESSION['logged_in_userID']; ?>
+<?php session_start();?>
+
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">

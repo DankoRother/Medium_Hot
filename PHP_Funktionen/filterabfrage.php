@@ -65,7 +65,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
 
     $whereClause = (!empty($conditions)) ? "WHERE " . implode(" AND ", $conditions) : "";
 
-    $sortOrder = isset($_POST['sort']) ? $_POST['sort'] : 'ASC';
+    $sortOrder = (isset($_POST['sort']) && !empty($_POST['sort'])) ? $_POST['sort'] : (isset($_SESSION['sort']) ? $_SESSION['sort'] : 'ASC');
 
     $sqlLocation = "SELECT carlocation.carLocationId, vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
                     FROM vendordetails

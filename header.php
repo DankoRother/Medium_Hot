@@ -1,6 +1,6 @@
 <?php
 $loginButtonText;
-if ($_SESSION['logged_in_userID'] > 0) {   
+if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {   
     $loginButtonText = "Log Out";
     $loginButtonAction = 'onclick="logOut()"';
     $bookingButtonText = "Meine Buchungen";

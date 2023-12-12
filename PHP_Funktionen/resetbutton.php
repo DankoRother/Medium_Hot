@@ -11,6 +11,7 @@ if (isset($_POST['resetButton'])) {
     $_SESSION['gps'] = "";
     $_SESSION['air_condition'] = "";
     $_SESSION['trunk'] = "";
+    $_SESSION['sort'] = "ASC";
 
   header("Location: {$_SERVER['PHP_SELF']}");
   exit;
