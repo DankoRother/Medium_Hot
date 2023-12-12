@@ -129,7 +129,7 @@
     width: 200px;
     height: 50px;
     margin-top: 20px;
-    margin-left: 830px;
+    margin-left: 630px;
     position: relative;
     
 }
@@ -142,6 +142,25 @@
     vertical-align: top;
     color: white;
 }
+
+.divDesignForName {
+    width: 250px;
+    height: 50px;
+    margin-top: 20px;
+    margin-left: 195px;
+    position: absolute;
+}
+
+.divDesignForName h3{                              /* Structuring and designing the Name*/
+    font-family: "Poppins", sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-align: center;
+    vertical-align: top;
+    color: white;
+}
+
+
 .line2 {                                            /* Creating a horizontal line for design purposes */
     position: absolute;
     bottom: 30px;
@@ -166,7 +185,7 @@
 .divDesignForBackToSelection {                      /*Creating a div for structuring*/
     height: 80px;
     width: 200px;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-left: 100px;
 }
 .divDesignForBackToSelection h3 {                   /*Designing and strucutring the h3 text inside the div*/
@@ -176,11 +195,7 @@
     color: white;
     transition: 0.3s;
 }
-.divDesignForBackToSelection h3:hover {             /*Hover effect for the h3*/
-    color: #0088a9;                                  
-    transform:scale(1.1);
-    z-index:1;
-}
+
 
 
 .divDesignForLogin {                                /*Creating a line bollow the heading*/
@@ -190,7 +205,6 @@
     margin-left: 1000px;
 }
 .button {
-
     background-color: rgba(0,134,169,1);
     border: none;                               /* Structuring and designing the button inside the login div*/
     border-radius: 35px;
@@ -201,9 +215,27 @@
     text-decoration: none;
 }
 
+.button-back {
+    background-color: rgba(0,134,169,1);
+    border: none;                               /* Structuring and designing the button inside the login div*/
+    border-radius: 35px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+    width: 175px;
+    height: 35px;
+    text-decoration: none;
+}
+
 .button:hover {
     background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
     text-decoration: none;
+}
+
+.button-back:hover {
+    background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
+    text-decoration: none;
+    transform:scale(1.1);
+    z-index:1;
 }
 
 .h3ForLogin {

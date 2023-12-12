@@ -30,7 +30,7 @@ session_start();
                 <div class="divForHeading">                                                  <!-- Creating a div for the heading  -->
                      <h3> Das Fahrzeug ist vom <span class="highlight"><?php echo $_SESSION['start_date']?>
                     </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
-                    </span> am ausgewählten Standort <span class="highlight"><?php echo $row['location']?></span> verfügbar (Anzahl: N/A) </h3>         <!-- This part is the heading with certain elements specified in the css  -->
+                    </span> am ausgewählten Standort <span class="highlight"><?php echo $row['location']?></span> verfügbar</h3>         <!-- This part is the heading with certain elements specified in the css  -->
                      <hr class="line1">
                 </div>
             </div>
@@ -66,11 +66,12 @@ session_start();
             </div>
             <div class="flex-container3">                                                       <!-- Creating a div container which includes one div. The div is used for structuring and styling the h3 text -->
                 <div class="divDesignForPrice"> <h3 class="h3ForPrice"> <?php echo $row['price'] ?>€/Tag</h3></div>
+                <div class="divDesignForName"> <h3 class="h3ForPrice"> <?php echo $row['vendor_name']. " " . $row['name'] . " " . $row['name_extension'] ?></h3></div>
             <hr class="line2">
             </div>
 
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
-                <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
+                <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button-back"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
                 <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
 
             </div>
