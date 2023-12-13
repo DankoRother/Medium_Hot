@@ -2,9 +2,9 @@
 
 if (isset($_POST['book'])) {
         if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {  
-                $start_date = $_SESSION['start_date'];
-                $end_date = $_SESSION['end_date'];
-                 $userID = $_SESSION['logged_in_userID'];
+                $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));
+                $end_date = date('Y-m-d', strtotime($_SESSION['end_date']));
+                $userID = $_SESSION['logged_in_userID'];
                 $carLocationID = $_SESSION['selected_car_id'];
 
                 $sql = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES ('$start_date', '$end_date', $userID, $carLocationID)";

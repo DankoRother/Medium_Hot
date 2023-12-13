@@ -5,12 +5,14 @@ if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {
     $loginButtonAction = 'onclick="logOut()"';
     $bookingButtonText = "Meine Buchungen";
     $bookingButtonAction = 'onclick="myBookings()"';
+    $class = "log-out";
 }
 else {
     $loginButtonText = "Log In";
     $loginButtonAction = 'onclick="logIn()"';
     $bookingButtonText = "Meine Buchungen";
     $bookingButtonAction = 'onclick="logIn()"'; //redirect to Log In if not logged in
+    $class = "log";
 }
 ?>
 <!DOCTYPE html>
@@ -57,7 +59,7 @@ else {
             <nav id="autoleft">
                 <ul class="nav__links">
                     <li class="boxtext"><a <?php echo($bookingButtonAction);?>>Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->                   
-                    <button class="log" <?php echo($loginButtonAction)?> enabled><?php echo $loginButtonText ?></button>
+                    <button class="<?php echo $class?>" <?php echo($loginButtonAction)?> enabled><?php echo $loginButtonText ?></button>
                 </ul>
             </nav>
         </header>

@@ -224,7 +224,7 @@
 .button-back {
     background-color: rgba(0,134,169,1);
     border: none;                               /* Structuring and designing the button inside the login div*/
-    border-radius: 35px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     width: 175px;
