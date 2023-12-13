@@ -9,9 +9,28 @@
     background-image: url(CSS_Bilder/detailsback.jpg);
     background-size: cover; /* Skaliert das Bild, um die gesamte Hintergrundfläche zu bedecken */
     background-position: center center; /* Zentriert das Bild horizontal und vertikal */
+}
+
+.big-object-container {
+    height: 825px;
+    width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    padding-top: 40px;
+}
+
+.headline {
+    text-align: center;
+    padding-top:10px;
+}
+
+.headline h3 {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                                                                /* font styling */
+    color: white;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
 .object-container {
@@ -34,7 +53,7 @@
     color: white;
 }
 
-.button-container {
+.buttom-container {
     height: 75px;
     display: flex;
     justify-content: center;
@@ -56,8 +75,66 @@
 
 .text-car {
     height: 80px;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.text-car h3{
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: white;
 }
 
 .highlight {
     color: #0088a9;
+}
+
+.bottom {
+    width: 50%;
+    padding-top: 15px;
+    padding-left: 30px;
+}
+
+.bottom-book {
+    width: 50%;
+    padding-top: 15px;
+    padding-right: 30px;
+    text-align: right;
+}
+
+.home-button {
+    border-radius: 5px;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: rgba(0,134,169,1);
+    padding: 5px 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.book-button {
+    margin-left: auto;
+    border-radius: 5px;
+    border-style: none;
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    background-color: rgba(0,134,169,1);
+    padding: 5px 10px;
+    transition: all 0.3s ease 0s;
+}
+
+.book-button:hover {
+    background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
+    text-decoration: none;
+    transform:scale(1.1);
+}
+
+.home-button:hover {
+    background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
+    text-decoration: none;
+    transform:scale(1.1);
 }

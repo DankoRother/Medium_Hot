@@ -39,23 +39,33 @@
     $row = $result[0]; // Erster Datensatz
  ?>
 <div class="divForBackground">
-    <div class="object-container">
-        <div class="text-container">
-            <h3>Ihr Buchung vom <span class="highlight"><?php echo $_SESSION['start_date']?>
-                    </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
-                    </span> in <span class="highlight"><?php echo $row['location']?>
-                    </span> war erfolgreich!</h3>
-        </div>
-        <div class="img-car">
-            <img src="Bilder/bilder_db/<?php echo $row['img']?>">
-        </div>
-        <div class="text-car">
-
-        </div>
-        <div class="buttom-container">
-            <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
-        </div>
+    <div class="headline">
+        <h3>Gute Fahrt!</h3>
     </div>
+    <div class="big-object-container">
+        <div class="object-container">
+            <div class="text-container">
+                <h3>Ihre Buchung vom <span class="highlight"><?php echo $_SESSION['start_date']?>
+                        </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
+                        </span> in <span class="highlight"><?php echo $row['location']?>
+                        </span> war erfolgreich!</h3>
+            </div>
+            <div class="img-car">
+                <img src="Bilder/bilder_db/<?php echo $row['img']?>">
+            </div>
+            <div class="text-car">
+                <h3><?php echo $row['vendor_name']. " " . $row['name'] . " " . $row['name_extension'] ?></h3>
+            </div>
+            <div class="buttom-container">
+                <div class="bottom">
+                    <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
+                </div>    
+                <div class="bottom-book">
+                    <a href="meine_buchungen.php"><button class="book-button">Zu ihren Buchungen</button></a>
+                </div>  
+            </div>
+        </div>
+    </div> 
 </div>
 <?php } ?>
 
