@@ -8,15 +8,13 @@ if (isset($_POST['book'])) {
                 $carLocationID = $_SESSION['selected_car_id'];
 
                 // Überprüfen, ob es bereits Buchungen für den angegebenen Zeitraum und die carLocationId gibt
-                $checkExistingBookingsSQL =     "SELECT * 
-                                                FROM bookings 
-                                                WHERE carLocationId = $carLocationID 
-                                                AND (('$end_date' < start AND '$start_date' < start) OR ('$start_date' > end AND '$end_date' > end))";
+                $checkExistingBookingsSQL = "SELECT COUNT(*) as count FROM bookings 
+                                 WHERE carLocationId = $carLocationID 
+                                 AND (('$start_date' BETWEEN bookings.start AND bookings.end) OR ('$end_date' BETWEEN bookings.start AND bookings.end))";
 
-                $result = $conn->query($checkExistingBookingsSQL);
-                $resultCount = $result->num_rows;
+                        $result = $conn->query($checkExistingBookingsSQL);
 
-                if ($resultCount !== 0) {
+                        if ($result->num_rows == 0){
                         // Keine Überschneidungen gefunden, führe das INSERT-Statement aus
                         $insertSQL = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES ('$start_date', '$end_date', $userID, $carLocationID)";
 
