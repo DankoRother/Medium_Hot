@@ -30,7 +30,7 @@
                     <div class="footer-col">
                         <h4>Hilfe</h4>
                         <ul>
-                            <li><a href="index.php">Home</a></li>
+                            <li><a href="home.php">Home</a></li>
                             <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
