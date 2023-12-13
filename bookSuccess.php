@@ -41,7 +41,10 @@
 <div class="divForBackground">
     <div class="object-container">
         <div class="text-container">
-            <h3>Ihr Buchung vom <?php echo $_SESSION['start_date']?> bis zum <?php echo $_SESSION['end_date']?> in <?php echo $row['location']?> war erfolgreich</h3>
+            <h3>Ihr Buchung vom <span class="highlight"><?php echo $_SESSION['start_date']?>
+                    </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
+                    </span> in <span class="highlight"><?php echo $row['location']?>
+                    </span> war erfolgreich!</h3>
         </div>
         <div class="img-car">
             <img src="Bilder/bilder_db/<?php echo $row['img']?>">
