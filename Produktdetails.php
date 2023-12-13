@@ -77,6 +77,7 @@ session_start();
                 
                 <div class="divDesignForLogin">
                     <form method="post">
+                    <input type="hidden" name="carId" value="<?php echo $_SESSION['selected_car_id']; ?>">
                     <button type="submit" name="book" class="button"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
                     </form>
                 </div>
