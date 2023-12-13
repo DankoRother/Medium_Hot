@@ -16,7 +16,7 @@ if (isset($_POST['book'])) {
                 exit;
                 }  else {
                 // Setze eine Fehlermeldung
-                ?> <div class="book-error"><h3><span class="dang-sign">&#9888;</span> Bitte Logge dich ein!</h3></div> <?php
+                ?> <a href="login.php"><div class="book-error"><h3><span class="dang-sign">&#9888;</span> Bitte Logge dich ein!</h3></div></a> <?php
                 }
                 }
             

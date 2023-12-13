@@ -31,7 +31,7 @@ else {
                 xhr.onreadystatechange = function() {
                     if (xhr.readyState == 4 && xhr.status == 200) {
                         // Redirect to the login page after successful logout
-                        window.location.href = 'home.php';
+                        window.location.href = 'logout.php';
                     }
                 };
                 xhr.open('GET', 'logout.php', true);
