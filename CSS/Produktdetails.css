@@ -147,7 +147,7 @@
     width: 350px;
     height: 50px;
     margin-top: 20px;
-    margin-left: 155px;
+    margin-left: 150px;
     position: absolute;
 }
 
@@ -210,7 +210,7 @@
     border-radius: 35px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
-    width: 100px;
+    width: 125px;
     height: 35px;
     text-decoration: none;
 }
