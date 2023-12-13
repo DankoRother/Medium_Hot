@@ -37,7 +37,7 @@ if (isset($_POST['book'])) {
                         header("Location: bookSuccess.php");
                         exit;
                 } else {
-                        ?> <a href=""><div class="book-error-2"><h3><span class="dang-sign">&#9888;</span> Bereits vergeben innerhalb des Zeitraums!</h3></div></a> <?php  
+                        ?> <div class="book-error-2"><h3><span class="dang-sign">&#9888;</span> Bereits vergeben innerhalb des Zeitraums!</h3></div> <?php  
                 }
         
         
