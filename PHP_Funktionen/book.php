@@ -12,9 +12,12 @@ if (isset($_POST['book'])) {
                                  WHERE carLocationId = $carLocationID 
                                  AND (('$start_date' BETWEEN bookings.start AND bookings.end) OR ('$end_date' BETWEEN bookings.start AND bookings.end))";
 
-                        $result = $conn->query($checkExistingBookingsSQL);
+                        $checkExistingBookingsSQ = $conn->prepare($checkExistingBookingsSQL);
+                        $checkExistingBookingsSQ->execute();
+                        $resultCount = $checkExistingBookingsSQ->fetchColumn();
 
-                        if ($result->num_rows == 0){
+
+                        if ($resultCount == 0){
                         // Keine Überschneidungen gefunden, führe das INSERT-Statement aus
                         $insertSQL = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES ('$start_date', '$end_date', $userID, $carLocationID)";
 
@@ -24,7 +27,7 @@ if (isset($_POST['book'])) {
                         header("Location: bookSuccess.php");
                         exit;
                 } else {
-                        ?> <a href=""><div class="book-error"><h3><span class="dang-sign">&#9888;</span> Bereits vergeben innerhalb des Zeitraums!</h3></div></a> <?php  
+                        ?> <a href=""><div class="book-error-2"><h3><span class="dang-sign">&#9888;</span> Bereits vergeben innerhalb des Zeitraums!</h3></div></a> <?php  
                 }
         
         
