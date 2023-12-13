@@ -72,16 +72,7 @@ session_start();
 
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
                 <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button-back"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
-                <div class="divDesignForLogin">
-                    <form method="post">
-                    <input type="hidden" name="carId" value="<?php echo $_SESSION['selected_car_id']; ?>">
-                    <button type="submit" name="book" class="button"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
-                    </form>
-                </div>
-
-            </div>
-
-            <?php 
+                <?php 
 
                 if (isset($_POST['book'])) {
                     if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {  
@@ -94,13 +85,23 @@ session_start();
 
                                 $conn->query($sql);
 
-            }  else {
+                }  else {
                 // Setze eine Fehlermeldung
                 echo "Bitte Logge dich ein";
-            }
-        }
+                }
+                }
             
             ?>
+                <div class="divDesignForLogin">
+                    <form method="post">
+                    <input type="hidden" name="carId" value="<?php echo $_SESSION['selected_car_id']; ?>">
+                    <button type="submit" name="book" class="button"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
+                    </form>
+                </div>
+
+            </div>
+
+            
 
         </div> <?php 
     }?>
