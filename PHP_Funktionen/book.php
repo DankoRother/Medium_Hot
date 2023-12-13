@@ -19,9 +19,19 @@ if (isset($_POST['book'])) {
 
                         if ($resultCount == 0){
                         // Keine Überschneidungen gefunden, führe das INSERT-Statement aus
-                        $insertSQL = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES ('$start_date', '$end_date', $userID, $carLocationID)";
+                        $insertSQL = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES (?, ?, ?, ?)";
+                        
+                        // Vorbereiten der INSERT-Anweisung
+                        $insertStatement = $conn->prepare($insertSQL);
 
-                        $conn->query($insertSQL);
+                        // Binden der Werte
+                        $insertStatement->bindParam(1, $start_date, PDO::PARAM_STR);
+                        $insertStatement->bindParam(2, $end_date, PDO::PARAM_STR);
+                        $insertStatement->bindParam(3, $userID, PDO::PARAM_INT);
+                        $insertStatement->bindParam(4, $carLocationID, PDO::PARAM_INT);
+
+                        // Ausführen der vorbereiteten Anweisung
+                        $insertStatement->execute();
                 
                         ?><div class="book-success"><h3>&#9989; Die Buchung war erfolgreich!</h3></div> <?php
                         header("Location: bookSuccess.php");
