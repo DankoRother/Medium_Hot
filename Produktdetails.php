@@ -85,6 +85,8 @@ session_start();
 
                                 $conn->query($sql);
 
+                                echo "Buchung erfolgreich";
+
                 }  else {
                 // Setze eine Fehlermeldung
                 echo "Bitte Logge dich ein";
