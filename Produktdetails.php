@@ -10,7 +10,8 @@ session_start();
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/Produktdetails.css"> 
-        <script language="javascript" type="text/javascript" src="mieten.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="mieten.js"></script>
     </head>
 
     <body>
@@ -73,37 +74,62 @@ session_start();
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
                 <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button-back"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
                 <div class="divDesignForLogin">
-                    <form method="post">
-                    <input type="hidden" name="carId" value="<?php echo $_SESSION['selected_car_id']; ?>">
-                    <button type="submit" name="book" class="button"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
-                    </form>
+                    <button class="button" onclick="handleBooking()"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
                 </div>
 
             </div>
+            </div>
 
-            <?php 
 
-                if (isset($_POST['book'])) {
-                    if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {  
-                        $start_date = $_SESSION['start_date'];
-                        $end_date = $_SESSION['end_date'];
-                        $userID = $_SESSION['logged_in_userID'];
-                        $carLocationID = $_SESSION['selected_car_id'];
+    
+<?php
+if (!empty($result)) {
+    $row = $result[0]; // Erster Datensatz
 
-                                $sql = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES ('$start_date', '$end_date', $userID, $carLocationID)";
+    if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {
+        $start_date = $_SESSION['start_date'];
+        $end_date = $_SESSION['end_date'];
+        $userID = $_SESSION['logged_in_userID'];
+        $carLocationID = $_SESSION['selected_car_id'];
+    } else {
+        $errorMessage = "Bitte logge dich ein!";
+    }
+}
+}
+?>
+  <script>
+    function handleBooking() {
+    console.log("Function is called");  // Check if this is printed in the console
 
-                                $conn->query($sql);
+    var errorMessage = "<?php echo isset($errorMessage) ? $errorMessage : ''; ?>";
+    console.log("Error message: " + errorMessage);  // Check the error message
 
-            }  else {
-                // Setze eine Fehlermeldung
-                echo "Bitte Logge dich ein";
+    // Überprüfe, ob eine Fehlermeldung vorhanden ist
+    if (errorMessage !== "") {
+        // Zeige eine Alert-Box mit der Fehlermeldung an
+        alert(errorMessage);
+    } else {
+        // Führe den Ajax-Request durch, um den INSERT-Befehl aufzurufen
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "PHP_Funktionen/insert_booking.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        
+        // Sende die Session-Variablen als Daten im POST-Request
+        var data = "start_date=" + encodeURIComponent("<?php echo $start_date; ?>") +
+                "&end_date=" + encodeURIComponent("<?php echo $end_date; ?>") +
+                "&userID=" + encodeURIComponent("<?php echo $userID; ?>") +
+                "&carLocationID=" + encodeURIComponent("<?php echo $carLocationID; ?>");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Hier kannst du weitere Aktionen nach erfolgreichem INSERT durchführen
+                alert(xhr.responseText);
             }
-        }
-            
-            ?>
-
-        </div> <?php 
-    }?>
+        };
+        xhr.send(data);
+    }
+}
+</script>
         <?php include 'footer.php'; ?>      <!-- Including the footer structure into the product details site -->       
     </body>
 </html>
