@@ -1,4 +1,11 @@
 <?php session_start();?>
+<?php
+// Placeholder data for a single booking
+$placeholder_booking = [
+    ["Booking Number 123", "Tesla", "Model S", "Electric", "150€", "2023-12-15", "2023-12-20", "Berlin"],
+    // Add more bookings if needed
+];
+?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -30,45 +37,65 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr onclick="showHideRow('hidden_row1');">
-                                    <td>Booking Number</td>
-                                    <td>Manufacturer and Model</td>
-                                    <td>Price</td>
-                                    <td>Start Date - End Date at Location</td>
-                                </tr>
-                                <tr id="hidden_row1" class="hidden_row">
-                                    <td colspan=4>
-                                        <div id="rowContent">Getriebe Antrieb x-Sitzer x-Türer GPS Klima Kofferraum Alter</div>
-                                    </td>
-                                </tr>
-                                <?php
-                                // Beispiel-Datenquelle - Hier könntest du deine tatsächliche Datenquelle einfügen
-                                    $bookings = array(
-                                        array("Booking Number 1", "Manufacturer and Model 1", "Price 1", "Start Date - End Date at Location 1"),
-                                        array("Booking Number 2", "Manufacturer and Model 2", "Price 2", "Start Date - End Date at Location 2")
-                                        // Füge weitere Buchungsdaten hier hinzu, basierend auf deiner Datenquelle
-                                    );
+                                <?php foreach ($placeholder_booking as $booking) : ?>
+                                    <tr onclick="showHideRow('hidden_row1');">
+                                        <td><?= $booking[0] ?></td> <!-- Booking Number -->
+                                        <td><?= $booking[1] . ' ' . $booking[2] . ' ' . $booking[3] ?></td> <!-- Vendor Name, Name and Extension -->
+                                        <td><?= $booking[4] ?></td> <!-- Price -->
+                                        <td><?= $booking[5] . ' bis ' . $booking[6] . ' in ' . $booking[7] ?></td> <!-- Start Date bis End Date in Location -->
+                                    </tr>
+                                <?php endforeach; ?>
+                                    <tr id="hidden_row1" class="hidden_row">
+                                        <td colspan=4>
+                                            <div class="textfeld">
+                                                <div>Getriebe</div>
+                                                <div>Antrieb</div>
+                                                <div>x Sitze</div>
+                                                <div>x Türen</div>
+                                                <div>GPS</div>
+                                                <div>Klima</div>
+                                                <div>Kofferraum</div>
+                                                <div>Alter</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <?php
+                                    // Beispiel-Datenquelle - Hier könntest du deine tatsächliche Datenquelle einfügen
+                                        $bookings = array(
+                                            array("Booking Number 1", "Manufacturer and Model 1", "Price 1", "Start Date - End Date at Location 1"),
+                                            array("Booking Number 2", "Manufacturer and Model 2", "Price 2", "Start Date - End Date at Location 2")
+                                            // Füge weitere Buchungsdaten hier hinzu, basierend auf deiner Datenquelle
+                                        );
 
-                                    // Iteriere durch die Buchungsdaten und fülle die Tabelle
-                                    foreach ($bookings as $booking) {
-                                        echo "<tr>";
-                                        foreach ($booking as $data) {
-                                            echo "<td>$data</td>";
+                                        // Iteriere durch die Buchungsdaten und fülle die Tabelle
+                                        foreach ($bookings as $booking) {
+                                            echo "<tr>";
+                                            foreach ($booking as $data) {
+                                                echo "<td>$data</td>";
+                                            }
+                                            echo "</tr>";
                                         }
-                                        echo "</tr>";
-                                    }
-                                ?>
-                                <tr onclick="showHideRow('hidden_row2');">
-                                    <td>Booking Number</td>
-                                    <td>Manufacturer and Model</td>
-                                    <td>Price</td>
-                                    <td>Start Date - End Date at Location</td>
-                                </tr>
-                                <tr id="hidden_row2" class="hidden_row">
-                                    <td colspan=4>
-                                        Getriebee   · 	· 	·   Antrieb   · 	· 	·   x Sitze   · 	· 	·   x Türen   · 	· 	·   GPS   · 	· 	·   Kofferraum   · 	· 	·   Alter
-                                    </td>
-                                </tr>
+                                    ?>
+                                    <tr onclick="showHideRow('hidden_row2');">
+                                        <td>Booking Number</td>
+                                        <td>Manufacturer and Model</td>
+                                        <td>Price</td>
+                                        <td>Start Date - End Date at Location</td>
+                                    </tr>
+                                    <tr id="hidden_row2" class="hidden_row">
+                                        <td colspan=4>
+                                            <div class="textfeld">
+                                                <div>Getriebe</div>
+                                                <div>Antrieb</div>
+                                                <div>x Sitze</div>
+                                                <div>x Türen</div>
+                                                <div>GPS</div>
+                                                <div>Klima</div>
+                                                <div>Kofferraum</div>
+                                                <div>Alter</div>
+                                            </div>
+                                        </td>
+                                    </tr>
                             </tbody>
                         </table>
                     </div>
@@ -80,12 +107,16 @@
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
+            window.onload = function() {
+                setTimeout(function() {
+                    adjustContainerHeight();
+                    $('.hidden_row').hide(); // Hide the rows by default
+                }, 100); // Adjust delay time if needed
+            };
+
             function showHideRow(row) {
                 $("#" + row).toggle();
                 adjustContainerHeight();
-                if ($("#" + row).is(":visible")) {
-                    justifyRowContent(row);
-                }
             }
 
             function adjustContainerHeight() {
@@ -95,31 +126,6 @@
                 var totalHeight = suchfilterHeight + 60; // Adjust padding as needed
 
                 document.querySelector('.img-container').style.height = totalHeight + 'px';
-            }
-
-            // Initial adjustment when the page loads
-            adjustContainerHeight();
-
-            // Hide the rows by default
-            $(document).ready(function () {
-                $('.hidden_row').hide();
-            });
-            // Function to justify the row content
-            function justifyRowContent(rowId) {
-                console.log('Justify function called for row:', rowId);
-                var rowContent = document.getElementById(rowId).querySelector('#rowContent');
-                var words = rowContent.innerText.split(' ');
-                rowContent.innerHTML = '';
-
-                words.forEach(function (word) {
-                    var span = document.createElement('span');
-                    span.textContent = word + ' ';
-                    span.style.display = 'inline-block';
-                    /*span.style.marginRight = '5px'; <---- wenn die einzelnen Wörter lieber enger zusammen anstatt über die Breite verteilt werden sollen*/
-                    rowContent.appendChild(span);
-                });
-                rowContent.style.display = 'flex'; // <---- wenn span.style.marginRight eingefügt wird, diese Zeile löschen
-                rowContent.style.justifyContent = 'space-between'; // <---- wenn span.style.marginRight eingefügt wird, diese Zeile löschen
             }
         </script>
 

@@ -137,3 +137,9 @@
 .hidden_row td div {
     text-align: justify;
 }
+
+.textfeld {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
