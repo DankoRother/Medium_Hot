@@ -5,7 +5,7 @@
         $_SESSION['selected_car_id'] = $selectedCarId;
     
         // Verwende vorbereitete Anweisungen, um SQL-Injektion zu verhindern
-        $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.*, location.location
+        $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.*, location.location, carlocation.carLocationId
                         FROM vendordetails
                         INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
                         INNER JOIN carlocation ON carlocation.carId = cardetails.carId
