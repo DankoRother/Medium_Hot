@@ -10,7 +10,8 @@ session_start();
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/Produktdetails.css"> 
-        <script language="javascript" type="text/javascript" src="mieten.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="mieten.js"></script>
     </head>
 
     <body>
@@ -77,51 +78,58 @@ session_start();
                 </div>
 
             </div>
-            
+            </div>
 
-            <?php if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {
-                        $start_date = $_SESSION['start_date'];
-                        $end_date = $_SESSION['end_date'];
-                        $userID = $_SESSION['logged_in_userID'];
-                        $carLocationID = $_SESSION['selected_car_id'];
-                    } else {
-                        $errorMessage = "Bitte logge dich ein!";
-                    }
 
-            ?>
-<script>
-    function handleBooking() {
-        var errorMessage = "<?php echo isset($errorMessage) ? $errorMessage : ''; ?>";
+    
+<?php
+if (!empty($result)) {
+    $row = $result[0]; // Erster Datensatz
 
-        // Überprüfe, ob eine Fehlermeldung vorhanden ist
-        if (errorMessage !== "") {
-            // Zeige eine Alert-Box mit der Fehlermeldung an
-            alert(errorMessage);
-        } else {
-            // Führe den Ajax-Request durch, um den INSERT-Befehl aufzurufen
-            var xhr = new XMLHttpRequest();
-            xhr.open("POST", "PHP_Funktionen/insert_booking.php", true);
-            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            
-            // Sende die Session-Variablen als Daten im POST-Request
-            var data = "start_date=" + encodeURIComponent("<?php echo $start_date; ?>") +
-                       "&end_date=" + encodeURIComponent("<?php echo $end_date; ?>") +
-                       "&userID=" + encodeURIComponent("<?php echo $userID; ?>") +
-                       "&carLocationID=" + encodeURIComponent("<?php echo $carLocationID; ?>");
-
-            xhr.onreadystatechange = function () {
-                if (xhr.readyState == 4 && xhr.status == 200) {
-                    // Hier kannst du weitere Aktionen nach erfolgreichem INSERT durchführen
-                    alert(xhr.responseText);
-                }
-            };
-            xhr.send(data);
-        }
+    if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {
+        $start_date = $_SESSION['start_date'];
+        $end_date = $_SESSION['end_date'];
+        $userID = $_SESSION['logged_in_userID'];
+        $carLocationID = $_SESSION['selected_car_id'];
+    } else {
+        $errorMessage = "Bitte logge dich ein!";
     }
-</script>
+}
+}
+?>
+  <script>
+    function handleBooking() {
+    console.log("Function is called");  // Check if this is printed in the console
 
-        </div> <?php 
-    }?>
+    var errorMessage = "<?php echo isset($errorMessage) ? $errorMessage : ''; ?>";
+    console.log("Error message: " + errorMessage);  // Check the error message
+
+    // Überprüfe, ob eine Fehlermeldung vorhanden ist
+    if (errorMessage !== "") {
+        // Zeige eine Alert-Box mit der Fehlermeldung an
+        alert(errorMessage);
+    } else {
+        // Führe den Ajax-Request durch, um den INSERT-Befehl aufzurufen
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "PHP_Funktionen/insert_booking.php", true);
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        
+        // Sende die Session-Variablen als Daten im POST-Request
+        var data = "start_date=" + encodeURIComponent("<?php echo $start_date; ?>") +
+                "&end_date=" + encodeURIComponent("<?php echo $end_date; ?>") +
+                "&userID=" + encodeURIComponent("<?php echo $userID; ?>") +
+                "&carLocationID=" + encodeURIComponent("<?php echo $carLocationID; ?>");
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 && xhr.status == 200) {
+                // Hier kannst du weitere Aktionen nach erfolgreichem INSERT durchführen
+                alert(xhr.responseText);
+            }
+        };
+        xhr.send(data);
+    }
+}
+</script>
         <?php include 'footer.php'; ?>      <!-- Including the footer structure into the product details site -->       
     </body>
 </html>
