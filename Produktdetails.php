@@ -72,9 +72,53 @@ session_start();
 
             <div class="flex-container4">                                                       <!-- Creating a div container which includes two divs. The divs are used for structuring and styling the h3 texts -->
                 <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button-back"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
-                <div class="divDesignForLogin"> <a href="login.php"><button class="button"> <h3 class="h3ForLogin"> Login </h3></button></a></div>
+                <div class="divDesignForLogin">
+                    <button class="button" onclick="handleBooking()"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
+                </div>
 
             </div>
+            
+
+            <?php if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {
+                        $start_date = $_SESSION['start_date'];
+                        $end_date = $_SESSION['end_date'];
+                        $userID = $_SESSION['logged_in_userID'];
+                        $carLocationID = $_SESSION['selected_car_id'];
+                    } else {
+                        $errorMessage = "Bitte logge dich ein!";
+                    }
+
+            ?>
+<script>
+    function handleBooking() {
+        var errorMessage = "<?php echo isset($errorMessage) ? $errorMessage : ''; ?>";
+
+        // Überprüfe, ob eine Fehlermeldung vorhanden ist
+        if (errorMessage !== "") {
+            // Zeige eine Alert-Box mit der Fehlermeldung an
+            alert(errorMessage);
+        } else {
+            // Führe den Ajax-Request durch, um den INSERT-Befehl aufzurufen
+            var xhr = new XMLHttpRequest();
+            xhr.open("POST", "PHP_Funktionen/insert_booking.php", true);
+            xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            
+            // Sende die Session-Variablen als Daten im POST-Request
+            var data = "start_date=" + encodeURIComponent("<?php echo $start_date; ?>") +
+                       "&end_date=" + encodeURIComponent("<?php echo $end_date; ?>") +
+                       "&userID=" + encodeURIComponent("<?php echo $userID; ?>") +
+                       "&carLocationID=" + encodeURIComponent("<?php echo $carLocationID; ?>");
+
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState == 4 && xhr.status == 200) {
+                    // Hier kannst du weitere Aktionen nach erfolgreichem INSERT durchführen
+                    alert(xhr.responseText);
+                }
+            };
+            xhr.send(data);
+        }
+    }
+</script>
 
         </div> <?php 
     }?>
