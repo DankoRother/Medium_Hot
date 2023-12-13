@@ -43,6 +43,12 @@
         <div class="text-container">
             <h3>Ihr Buchung vom <?php echo $_SESSION['start_date']?> bis zum <?php echo $_SESSION['end_date']?> in <?php echo $row['location']?> war erfolgreich</h3>
         </div>
+        <div class="img-car">
+            <img src="Bilder/bilder_db/<?php echo $row['img']?>">
+        </div>
+        <div class="text-car">
+
+        </div>
         <div class="buttom-container">
             <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
         </div>

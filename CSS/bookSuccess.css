@@ -22,10 +22,29 @@
 }
 
 .text-container{
-    height: 400px;
+    height: 75px;
     text-align: center;
 }
 
 .button-container {
-    height: 100px;
+    height: 75px;
+}
+
+.img-car {
+    height: 300px;
+    width: 100%;
+    justify-content: center;
+    display: flex;
+    
+}
+
+.img-car img {
+    height: 100%;
+    width: 450px;
+    
+  
+}
+
+.text-car {
+    height: 50px;
 }
