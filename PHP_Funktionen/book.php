@@ -9,12 +9,20 @@ if (isset($_POST['book'])) {
 
                 // Überprüfen, ob es bereits Buchungen für den angegebenen Zeitraum und die carLocationId gibt
                 $checkExistingBookingsSQL = "SELECT COUNT(*) as count FROM bookings 
-                                 WHERE carLocationId = $carLocationID 
-                                 AND (('$start_date' BETWEEN bookings.start AND bookings.end) OR ('$end_date' BETWEEN bookings.start AND bookings.end))";
+                WHERE carLocationId = :carLocationID 
+                AND (
+                    (:start_date BETWEEN bookings.start AND bookings.end) OR
+                    (:end_date BETWEEN bookings.start AND bookings.end) OR
+                    (bookings.start BETWEEN :start_date AND :end_date) OR
+                    (bookings.end BETWEEN :start_date AND :end_date)
+                )";
 
-                        $checkExistingBookingsSQ = $conn->prepare($checkExistingBookingsSQL);
-                        $checkExistingBookingsSQ->execute();
-                        $resultCount = $checkExistingBookingsSQ->fetchColumn();
+                $checkExistingBookingsSQ = $conn->prepare($checkExistingBookingsSQL);
+                $checkExistingBookingsSQ->bindParam(':carLocationID', $carLocationID);
+                $checkExistingBookingsSQ->bindParam(':start_date', $start_date);
+                $checkExistingBookingsSQ->bindParam(':end_date', $end_date);
+                $checkExistingBookingsSQ->execute();
+                $resultCheck = $checkExistingBookingsSQ->fetchColumn();
 
 
                         if ($resultCount == 0){

@@ -140,6 +140,28 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
     if ($resultCount > 0) {
 
         foreach ($result as $row) {
+                $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));
+                $end_date = date('Y-m-d', strtotime($_SESSION['end_date']));
+                $carLocationID = $row['carLocationId'];
+
+                // Überprüfen, ob es bereits Buchungen für den angegebenen Zeitraum und die carLocationId gibt
+                $checkExistingBookingsSQL = "SELECT COUNT(*) as count FROM bookings 
+                WHERE carLocationId = :carLocationID 
+                AND (
+                    (:start_date BETWEEN bookings.start AND bookings.end) OR
+                    (:end_date BETWEEN bookings.start AND bookings.end) OR
+                    (bookings.start BETWEEN :start_date AND :end_date) OR
+                    (bookings.end BETWEEN :start_date AND :end_date)
+                )";
+
+                $checkExistingBookingsSQ = $conn->prepare($checkExistingBookingsSQL);
+                $checkExistingBookingsSQ->bindParam(':carLocationID', $carLocationID);
+                $checkExistingBookingsSQ->bindParam(':start_date', $start_date);
+                $checkExistingBookingsSQ->bindParam(':end_date', $end_date);
+                $checkExistingBookingsSQ->execute();
+                $resultCheck = $checkExistingBookingsSQ->fetchColumn();
+
+            if ($resultCheck == 0){
             ?><div class="output">
                 <div class="output_img">
                     <img src="Bilder/bilder_db/<?php echo $row['img'];?>">             <!-- get IMG from Database -->
@@ -157,6 +179,14 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             </div>    
             </div>
             <?php 
+        } else {
+            ?>
+            <div style="display: none;">
+                <!-- This div will be hidden -->
+                <!-- You can add any content or styling you want here -->
+            </div>
+            <?php
+        }
         }
    
     } else { 
