@@ -438,3 +438,27 @@ body {
 .button_showless:hover {
     background-color: rgba(255, 151, 77, 0.7);
 }
+
+.pagination {
+    text-align: left;
+    width: auto;
+    width: 71%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pagination a {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    margin: 0 5px; /* Beispielabstand von 5px zwischen den Zahlen */
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: #333;
+}
+
+.pagination a.active {
+    background-color: #4CAF50;
+    color: white;
+    border: 1px solid #4CAF50;
+}

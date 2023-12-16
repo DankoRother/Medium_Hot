@@ -67,20 +67,6 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
 
     $sortOrder = (isset($_POST['sort']) && !empty($_POST['sort'])) ? $_POST['sort'] : (isset($_SESSION['sort']) ? $_SESSION['sort'] : 'ASC');
 
-    if (isset($_POST['filtern']) || isset($_POST['location']) || isset($_POST['searchOrt']) || isset($_POST['location']) || isset($_POST['resetButton'])) {
-        unset($_GET['mehr_anzeigen']); // Lösche den GET-Parameter
-        $limit = 6; // Setze das Limit wieder auf 6
-    }
-
-    if(isset($_GET['mehr_anzeigen'])){
-        $limit = 6;
-    }
-
-    $limit = 6;
-
-    if(isset($_GET['mehr_anzeigen'])){
-        $limit = 1000;
-    }
 
     $sqlLocation = "SELECT carlocation.carLocationId, vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, cardetails.carId, cardetails.type, cardetails.price
                     FROM vendordetails
@@ -88,8 +74,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                     INNER JOIN carlocation ON carlocation.carId = cardetails.carId
                     INNER JOIN location ON location.locationId = carlocation.locationId
                     $whereClause
-                    ORDER BY cardetails.price $sortOrder
-                    LIMIT $limit";
+                    ORDER BY cardetails.price $sortOrder";
 
         $stmt = $conn->prepare($sqlLocation);
 
@@ -137,85 +122,88 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
         
         
 
-    if ($resultCount > 0) {
-
-        foreach ($result as $row) {
+        if ($resultCount > 0) {
+            $finalResults = array();
+        
+            foreach ($result as $row) {
                 $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));
                 $end_date = date('Y-m-d', strtotime($_SESSION['end_date']));
                 $carLocationID = $row['carLocationId'];
-
+        
                 // Überprüfen, ob es bereits Buchungen für den angegebenen Zeitraum und die carLocationId gibt
                 $checkExistingBookingsSQL = "SELECT COUNT(*) as count FROM bookings 
-                WHERE carLocationId = :carLocationID 
-                AND (
-                    (:start_date BETWEEN bookings.start AND bookings.end) OR
-                    (:end_date BETWEEN bookings.start AND bookings.end) OR
-                    (bookings.start BETWEEN :start_date AND :end_date) OR
-                    (bookings.end BETWEEN :start_date AND :end_date)
-                )";
-
+                    WHERE carLocationId = :carLocationID 
+                    AND (
+                        (:start_date BETWEEN bookings.start AND bookings.end) OR
+                        (:end_date BETWEEN bookings.start AND bookings.end) OR
+                        (bookings.start BETWEEN :start_date AND :end_date) OR
+                        (bookings.end BETWEEN :start_date AND :end_date)
+                    )";
+        
                 $checkExistingBookingsSQ = $conn->prepare($checkExistingBookingsSQL);
                 $checkExistingBookingsSQ->bindParam(':carLocationID', $carLocationID);
                 $checkExistingBookingsSQ->bindParam(':start_date', $start_date);
                 $checkExistingBookingsSQ->bindParam(':end_date', $end_date);
                 $checkExistingBookingsSQ->execute();
                 $resultCheck = $checkExistingBookingsSQ->fetchColumn();
-
-            if ($resultCheck == 0){
-            ?><div class="output">
-                <div class="output_img">
-                    <img src="Bilder/bilder_db/<?php echo $row['img'];?>">             <!-- get IMG from Database -->
+        
+                if ($resultCheck == 0) {
+                    $finalResults[] = $row;
+                }
+            }
+        
+            // Pagination-Logik
+            $resultsPerPage = 6;
+            $totalResults = count($finalResults);
+            $totalPages = ceil($totalResults / $resultsPerPage);
+        
+            if (isset($_GET['page']) && is_numeric($_GET['page'])) {
+                $currentPage = (int)$_GET['page'];
+            } else {
+                $currentPage = 1;
+            }
+        
+            if ($currentPage > $totalPages) {
+                $currentPage = $totalPages;
+            } elseif ($currentPage < 1) {
+                $currentPage = 1;
+            }
+        
+            $startIndex = ($currentPage - 1) * $resultsPerPage;
+            $visibleResults = array_slice($finalResults, $startIndex, $resultsPerPage);
+        
+            foreach ($visibleResults as $row) { ?>
+                <div class="output">
+                    <div class="output_img">
+                        <img src="Bilder/bilder_db/<?php echo $row['img']; ?>">
+                    </div>
+                    <div class="button_text">
+                        <div class="output_text">
+                            <?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['type'] . "<br>" . $row['price'] . " €/Tag"; ?>
+                        </div>
+                        <div class="output_button">
+                            <form action="Produktdetails.php" method="post">
+                                <input type="hidden" name="carId" value="<?php echo $row['carLocationId']; ?>">
+                                <button type="submit">Jetzt Mieten</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
-            <div class="button_text">    
-                <div class="output_text">
-                    <?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['type'] .  "<br>" . $row['price'] . " €/Tag"; ?>  <!-- show Info from Database -->
-                </div>
-                <div class="output_button">
-                    <form action="Produktdetails.php" method="post">
-                        <input type="hidden" name="carId" value="<?php echo $row['carLocationId']; ?>">
-                        <button type="submit">Jetzt Mieten</button>
-                    </form>
-                </div>
-            </div>    
-            </div>
-            <?php 
-        } else {
-            ?>
-            <div style="display: none;">
-                <!-- This div will be hidden -->
-                <!-- You can add any content or styling you want here -->
-            </div>
-            <?php
-        }
-        }
-   
-    } else { 
-        ?><div class="no_result"><?php                                            
-        echo "Leider gibt es für ihre Suche keine Treffer";?>
-        </div> <?php //no results message
-    }
-    ?></div><?php
-    if ($resultCount == 6) {
-            ?>
-            <div class="container-anzeigen">
-                <form method="get" action="">
-                    <input type="submit" class="button_showmore" name="mehr_anzeigen" value="Mehr Anzeigen">
-                </form>
-            </div>
-            <?php
-        } 
-        if ($resultCount > 6) {
-            ?>
-            <div class="container-anzeigen">
-                <form method="get" action="">
-                    <input type="submit" class="button_showless" name="weniger_anzeigen" value="Weniger Anzeigen">
-                </form>
-            </div>
-            <?php
-        }  ?>
+            <?php }
 
-
-</div><?php
+        } else { ?>
+            <div class="no_result">
+                <?php echo "Leider gibt es für ihre Suche keine Treffer"; ?>
+            </div>
+        <?php } ?>
+</div><?php if ($resultCount > 0) {
+            // Pagination-Links
+            echo '<div class="pagination">';
+            for ($i = 1; $i <= $totalPages; $i++) {
+                $activeClass = ($i == $currentPage) ? 'active' : '';
+                echo '<a class="' . $activeClass . '" href="?page=' . $i . '">' . $i . '</a>';
+            }
+            echo '</div>'; }
 }
     
 ?>
