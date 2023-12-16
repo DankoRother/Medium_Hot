@@ -27,6 +27,9 @@
         </div>
         <br>
         <br>');
+        echo('<script> setTimeout(function() {
+            window.location.href = "home.php";
+            }, 2000); </script>');
     }
     else {
         echo '
@@ -48,6 +51,7 @@
                     <input class="input" type="text" id="loginPassword" name="loginPassword" style="order: 2">
                     <label class="label" for="loginPassword" style="order: 3">Passwort:</label>
                     <input class="login" type="submit" name="submit" value="Anmelden" style="order: 1">
+                    <br>
                 </container>
                 </form>
             </div>

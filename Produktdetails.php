@@ -10,7 +10,8 @@ session_start();
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/Produktdetails.css"> 
-        <script language="javascript" type="text/javascript" src="mieten.js"></script>
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script src="mieten.js"></script>
     </head>
 
     <body>
@@ -76,10 +77,7 @@ session_start();
                 <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button-back"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
                 
                 <div class="divDesignForLogin">
-                    <form method="post">
-                    <input type="hidden" name="carId" value="<?php echo $_SESSION['selected_car_id']; ?>">
-                    <button type="submit" name="book" class="button"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
-                    </form>
+                    <button class="button" onclick="handleBooking()"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
                 </div>
 
             </div>
