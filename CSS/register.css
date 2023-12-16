@@ -63,7 +63,7 @@ div.roundedcorners {
     width: 28%;
     background-color: rgb(36, 37, 42, 0.9);
     margin-left: 36%;
-    border-radius: 50px;
+    border-radius: 15px;
     margin-bottom: 100px;
     display: flex;
     flex-direction: row;
@@ -119,7 +119,7 @@ input.back {
     margin-top: 3%;
     margin-left: 30%;
     padding: 6px 16px;
-    border-radius: 50px;
+    border-radius: 5px;
     height: fit-content;
 }
 
@@ -131,7 +131,7 @@ input.first {
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 5px;
     margin-top: 10%;
     margin-left: 20%;
 }
@@ -145,7 +145,7 @@ input.final {
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 5px;
     margin: 10% auto;
     margin-left: 3%; 
     display: block; 
@@ -159,7 +159,7 @@ input.first:disabled {
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 5px;
     margin-top: 10%;
     cursor: not-allowed;
 }
@@ -173,7 +173,7 @@ input.final:disabled {
     font-family: "Poppins";
     font-size: 24px;
     cursor: pointer;
-    border-radius: 50px;
+    border-radius: 5px;
     margin: 10% auto;
     margin-left: 3%; 
     display: block; 

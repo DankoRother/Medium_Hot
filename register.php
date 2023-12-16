@@ -38,20 +38,20 @@
                     <label class="label" for="nachname" style="order: 5; display: none" hidden>Nachname:</label>
                 <input class="datum" type="date" id="geburtsdatum" name="geburtsdatum" style="display: none; order: 2;">
                     <label class="label" for="geburtsdatum" style="order: 3; display: none">Geburtsdatum:</label>
-                    <input id="submitButton" class="final" type="submit" style="order: 1; display: none" name="submit" value="Registrieren" disabled>
+                    <input id="submitButton" class="final" type="submit" style="order: 1; display: none; margin-left: 18%;" name="submit" value="Registrieren" disabled>
     </container>
     <br>
     </form>
     <div class="errorHandlingMajor" id="firstErrors" style="display: block"> 
-        <div class="errorHandlingMinor" id="error1" style="margin-top: 14%; order: 1;">Username darf nicht leer sein</div>
+        <div class="errorHandlingMinor" id="error1" style="margin-top: 10%; order: 1;">Username darf nicht leer sein</div>
         <div class="errorHandlingMinor" id="error2" style="margin-top: 12%; order: 2; margin-right: 5%;">Geben Sie eine gültige E-Mail ein</div>
-        <div class="errorHandlingMinor" id="error3" style="margin-top: 6%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
+        <div class="errorHandlingMinor" id="error3" style="margin-top:9%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
     </div>
     <div class="errorHandlingMajor" id="secondErrors" style="display:none"> 
-            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 14%; order: 1;" >Vorname darf nicht leer sein</div>
-            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 15%; order: 2; margin-right: 5%;" >Nachname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 10%; order: 1;" >Vorname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 12%; order: 2; margin-right: 5%;" >Nachname darf nicht leer sein</div>
             <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 12%; margin-right: 5%; order: 3;" >Geben Sie ein gültiges Datum ein</div>
-            <input type="button" id="backButton" class="back" onclick="hideSecondShowFirst()" value="Zurück" style="display: none">
+            <input type="button" id="backButton" class="back" onclick="hideSecondShowFirst()" value="Zurück" style="display: none; margin-top: 8%;">
     </div>
 </div>
 
