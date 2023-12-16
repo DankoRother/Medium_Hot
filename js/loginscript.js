@@ -13,7 +13,7 @@ function loginFormSubmit(event) {
         success: function(response) {
             if (response && response.status === 'success') {
                 console.log('Login successful');
-                window.location.href = 'home.php';
+                window.location.href = 'login_screen.php';
             } else {
                 console.error('Login error:', response.message);
             }

@@ -36,6 +36,7 @@
 <!-- Beginn der Webseite -->
     <body>
         <?php include 'header.php'; ?>
+        <?php include 'PHP_Funktionen/resetbutton.php'; ?>
         <div class="video-container">
           <video autoplay muted loop>
             <source src="Bilder/videodark.mp4" type="video/mp4">
@@ -90,7 +91,7 @@
             </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
-                    <input type="reset" class="button_reset" value="Zurücksetzen">
+                    <input type="submit" class="button_reset" value="Zurücksetzen" name="resetHome">
                 </div>
               </div>
               

@@ -23,7 +23,7 @@ body {
 .suchfilter {
     height: 125px;
     width: 71%;
-    border-radius: 25px;
+    border-radius: 15px;
     z-index: 0;
     background-color: rgb(36, 37, 42, 0.9);
     
@@ -62,7 +62,7 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border: none;
     text-align: center;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .form-select {
@@ -72,7 +72,7 @@ body {
     font-size: 15px;
     padding: 0 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 25px;
+    border-radius: 5px;
     text-align: center;
 }
 
@@ -80,7 +80,7 @@ body {
     padding: 5px 18px;
     background-color: rgba(0,134,169,1);
     border: none;                                                                                   /* login button hover effect */
-    border-radius: 35px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     font-family: "Poppins", sans-serif;
@@ -99,7 +99,7 @@ body {
     padding: 5px 18px;
     background-color: rgba(255, 151, 77, 1);
     border: none;                                                                                   /* login button hover effect */
-    border-radius: 35px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     font-family: "Poppins", sans-serif;
@@ -128,7 +128,7 @@ body {
 .suchfilter-extended {
     height: auto;
     width: 71%;
-    border-radius: 25px;
+    border-radius: 15px;
     z-index: 0;
     background-color: rgb(36, 37, 42, 0.96);
     padding: 10px 0;
@@ -198,7 +198,7 @@ body {
     padding: 0 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .form-select-sort {
@@ -209,7 +209,7 @@ body {
     padding: 0 8px;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .arrow {
@@ -228,7 +228,7 @@ body {
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
     border: none;
-    border-radius: 25px;
+    border-radius: 5px;
 }
 
 .filter-bar-2 button {

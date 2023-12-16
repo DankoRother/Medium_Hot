@@ -202,32 +202,41 @@
     height: 80px;
     width: 130px;
     margin-top: 0px;
-    margin-left: 1000px;
+    margin-left: 975px;
+    
 }
 .button {
-    background-color: rgba(0,134,169,1);
-    border: none;                               /* Structuring and designing the button inside the login div*/
-    border-radius: 35px;
-    cursor: pointer;
-    transition: all 0.3s ease 0s;
-    width: 125px;
+    width: 145px;
     height: 35px;
-    text-decoration: none;
+    color: #edf0f1;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px; 
+    background-color: rgba(0,134,160,1); 
+    border-radius: 5px;
+    border: none; 
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition:0.4s;
+    
 }
 
 .button-back {
     background-color: rgba(0,134,169,1);
     border: none;                               /* Structuring and designing the button inside the login div*/
-    border-radius: 35px;
+    border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
     width: 175px;
     height: 35px;
     text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 .button:hover {
-    background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
+    
+    background-color: rgba(255, 151, 77, 0.6);
+         /*Hover effect for the button*/
     text-decoration: none;
 }
 
@@ -253,4 +262,76 @@
     text-align: left;
     vertical-align: top;
     color: white;
+}
+
+.book-error {
+    width: 240px;
+    height: 40px;
+    position: absolute;
+    margin-left: 1175px;
+    margin-top: 635px;
+    background-color: rgba(255, 151, 77, 0.2);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-right: 5px;
+    z-index: 4;
+}
+
+.book-error h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255, 151, 77, 1);
+    text-align: center;
+}
+
+.dang-sign {
+    font-size: 20px;
+}
+
+.book-success {
+    width: 300px;
+    height: 40px;
+    position: absolute;
+    margin-top: 635px;
+    margin-left: 1105px;
+    background-color: rgba(102, 255, 51, 0.2);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-right: 5px;
+}
+
+.book-success h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 5px;
+    font-weight: 500;
+    color: rgba(102, 255, 51, 1);
+    text-align: center;
+}
+
+.book-error-2{
+    width: 240px;
+    height: 60px;
+    position: absolute;
+    margin-left: 1175px;
+    margin-top: 625px;
+    background-color: rgba(255, 151, 77, 0.2);
+    border-radius: 5px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding-right: 5px;
+    z-index: 4;
+}
+
+.book-error-2 h3 {
+    font-family: "Poppins", sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: rgba(255, 151, 77, 1);
+    text-align: center;
 }

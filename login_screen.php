@@ -1,18 +1,4 @@
-<?php
-session_start();
-
-if ($_SESSION['logged_in_userID'] > 0) {
-    // User is logged in, perform the logout action
-    // ... (any additional logout actions if needed)
-
-    // Set the session variable to 0
-    $_SESSION['logged_in_userID'] = 0;
- // Send a response (you can customize the response if needed)
-
-} else {
-    // User is not logged in, handle accordingly
-}
-?>
+<?php session_start() ?>
 
 <!DOCTYPE html>
     <head>
@@ -28,19 +14,23 @@ if ($_SESSION['logged_in_userID'] > 0) {
 
 <div class="divForBackground">
     <div class="headline">
-        <h3>Log Out</h3>
+        <h3>Log In</h3>
     </div>
     <div class="big-object-container">
         <div class="object-container">
             <div class="text-container">
-                <h3>Sie wurden erfolgreich ausgeloggt!</h3>
+                <h3>Sie wurden erfolgreich eingeloggt!</h3>
             </div>
             <div class="buttom-container">
                 <div class="bottom">
                     <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
                 </div>    
                 <div class="bottom-book">
-                    <a href="login.php"><button class="book-button">Zum Log In</button></a>
+                <?php if(isset($_SESSION['selected_car_id'])) { ?>
+                    <a href="Produktdetails.php"><button class="book-button">Zurück zum Buchungsvorgang</button></a>
+                  <?php } else {
+                    
+                  } ?>  
                 </div>  
             </div>
         </div>
