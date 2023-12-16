@@ -26,11 +26,12 @@
 }
 
 .suchfilter {
-    height: 445px;
+    height: auto;
     width: 71%;
     border-radius: 15px;
     z-index: 2;
-    background: rgba(36, 37, 42, 0.90);   
+    background: rgba(36, 37, 42, 0.90);  
+    padding-bottom: 20px; 
 }
 
 .filter-heading {
