@@ -23,12 +23,12 @@ if ($status === 'email_exists') {
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="script.js"></script>
     <script>         // Set the delay time in milliseconds (e.g., 5000 milliseconds = 5 seconds)
-        var delayTime = 800;
+        var delayTime = 2000;
 
         // Use setTimeout to redirect after the specified delay
         setTimeout(function() {
             // Replace 'https://example.com/new-page' with the URL you want to redirect to
-            window.location.href = 'home.php';
+            window.location.href = 'register.php';
         }, delayTime);
         </script>    
 </head>
