@@ -52,7 +52,7 @@ session_start();
                         </tr>
                         <tr>
                             <td class="td"> <h3 class="h3ForDescription "> Kraftstoff: <span class="thickness"><?php echo $row['drive']; ?></span></h3></td>
-                            <td class="td"> <h3 class="h3ForDescription "> Klimaanlage: <span class="thickness"><?php if($row['gps'] == 1){echo "Ja";}else {echo "Nein";};?></span></h3></td>           
+                            <td class="td"> <h3 class="h3ForDescription "> Klimaanlage: <span class="thickness"><?php if($row['air_condition'] == 1){echo "Ja";}else {echo "Nein";};?></span></h3></td>           
                         </tr>
                         <tr>
                             <td class="td"> <h3 class="h3ForDescription "> Getriebe: <span class="thickness"><?php echo $row['gear']; ?></span></h3></td>
