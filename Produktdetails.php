@@ -77,7 +77,9 @@ session_start();
                 <div class="divDesignForBackToSelection"><a href="mieten.php"><button class="button-back"> <h3 class="h3ForLogin">Zurück zur Auswahl</h3></button></a></div>
                 
                 <div class="divDesignForLogin">
-                    <button class="button" onclick="handleBooking()"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
+                   <form method="post"> 
+                    <button type="submit" class="button" name="book"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
+                   <form></form> 
                 </div>
 
             </div>

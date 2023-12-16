@@ -130,10 +130,6 @@
     background-color: #f2f2f2;
 }
 
-#hidden_row1 {
-    display: none;
-}
-
 .hidden_row td div {
     text-align: justify;
 }

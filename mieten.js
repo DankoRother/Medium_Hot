@@ -35,8 +35,8 @@ function validatePrice(input) {
 }
 
 
-function showHideRow() {
-    var hiddenRow = document.getElementById('hidden_row1');
+function showHideRow(rowId) {
+    var hiddenRow = document.getElementById(rowId);
     if (hiddenRow.style.display === 'none') {
         hiddenRow.style.display = 'table-row';
     } else {
