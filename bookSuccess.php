@@ -32,7 +32,9 @@
     
         $stmt->execute();
     
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC); ?>
+        $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
+        
+        unset($_SESSION['selected_car_id']);    ?>
 
 
 <?php if (!empty($result)) {
