@@ -110,7 +110,7 @@ input[type=date].datum {
 input.back {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 20px;
     background-color: #ff974d;
     border: none;                                                                                                                                           
     color: #edf0f1;
@@ -118,7 +118,7 @@ input.back {
     order: 2;
     margin-top: 3%;
     margin-left: 30%;
-    padding: 6px 16px;
+    padding: 8px 20px;
     border-radius: 5px;
     height: fit-content;
 }
@@ -129,7 +129,7 @@ input.first {
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10%;
@@ -143,7 +143,7 @@ input.final {
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
     margin: 10% auto;
@@ -157,7 +157,7 @@ input.first:disabled {
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
     margin-top: 10%;
@@ -171,7 +171,7 @@ input.final:disabled {
     color: #edf0f1;
     padding: 8px 20px;
     font-family: "Poppins";
-    font-size: 24px;
+    font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
     margin: 10% auto;
