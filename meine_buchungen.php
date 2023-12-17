@@ -35,9 +35,9 @@
                                 </tr>
                             </thead>
                             <tbody>
-                        <?php if ($resultCount > 0) {
+                        <?php if ($visibleResults > 0) {
 
-                                foreach ($result as $row) {
+                                foreach ($visibleResults as $row) {
                                                                     // Datum in YYYY-MM-DD-Format
                                     $originalDateStart = $row['start'];
                                     $originalDateEnd = $row['end'];
@@ -76,6 +76,13 @@
                             </tbody>
                         </table>
                     </div>
+                    <?php echo '<div class="pagination">';
+                        for ($i = 1; $i <= $totalPages; $i++) {
+                            $activeClass = ($i == $currentPage) ? 'active' : '';
+                            echo '<a class="' . $activeClass . '" href="?page=' . $i . '">' . $i . '</a>';
+                        }
+                        echo '</div>';
+                        ?>
                 </div>
             </div>
         </div>

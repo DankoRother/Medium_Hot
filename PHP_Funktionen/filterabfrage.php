@@ -153,7 +153,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             }
         
             // Pagination-Logik
-            $resultsPerPage = 6;
+            $resultsPerPage = 9;
             $totalResults = count($finalResults);
             $totalPages = ceil($totalResults / $resultsPerPage);
         

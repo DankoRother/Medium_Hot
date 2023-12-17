@@ -140,3 +140,29 @@
     display: flex;
     justify-content: space-between;
 }
+
+.pagination {
+    text-align: center;
+    width: auto;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+}
+
+.pagination a {
+    width: 35px;
+    height: 35px;
+    display: inline-block;
+    margin: 0 5px; /* Beispielabstand von 5px zwischen den Zahlen */
+    border: 1px solid #ccc;
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.3);
+    padding-top: 1px;
+}
+
+.pagination a.active {
+    background-color: rgba(255, 151, 77, 1);
+    color: white;
+    border: 1px solid rgba(255, 151, 77, 1);
+}

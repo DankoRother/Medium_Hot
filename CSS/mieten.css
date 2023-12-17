@@ -440,11 +440,12 @@ body {
 }
 
 .pagination {
-    text-align: left;
+    text-align: center;
     width: auto;
-    width: 71%;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
+    padding-bottom: 20px;
 }
 
 .pagination a {
@@ -454,11 +455,12 @@ body {
     margin: 0 5px; /* Beispielabstand von 5px zwischen den Zahlen */
     border: 1px solid #ccc;
     text-decoration: none;
-    color: #333;
+    color: rgba(255, 255, 255, 0.3);
+    padding-top: 1px;
 }
 
 .pagination a.active {
-    background-color: #4CAF50;
+    background-color: rgba(255, 151, 77, 1);
     color: white;
-    border: 1px solid #4CAF50;
+    border: 1px solid rgba(255, 151, 77, 1);
 }
