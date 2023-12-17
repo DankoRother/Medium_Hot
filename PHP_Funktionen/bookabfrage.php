@@ -1,4 +1,5 @@
 <?php 
+
 $userID = $_SESSION['logged_in_userID'];
 
 $resultsPerPage = 5;
@@ -54,4 +55,5 @@ $stmt->bindParam(':resultsPerPage', $resultsPerPage, PDO::PARAM_INT);
 $stmt->execute();
 
 $visibleResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>

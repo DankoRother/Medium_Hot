@@ -1,4 +1,10 @@
-<?php session_start();?>
+<?php session_start();
+
+if (!isset($_SESSION['logged_in_userID'])) {
+    // Wenn nicht, leite zur Login-Seite weiter
+    header("Location: login.php");
+    exit(); // Beende das Skript nach der Weiterleitung
+}?>
 
 
 <!DOCTYPE html>
@@ -35,7 +41,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                        <?php if ($visibleResults > 0) {
+                        <?php 
+                        if ($visibleResults > 0) {
 
                                 foreach ($visibleResults as $row) {
                                                                     // Datum in YYYY-MM-DD-Format
@@ -76,7 +83,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <?php echo '<div class="pagination">';
+                    <?php 
+                    echo '<div class="pagination">';
                         for ($i = 1; $i <= $totalPages; $i++) {
                             $activeClass = ($i == $currentPage) ? 'active' : '';
                             echo '<a class="' . $activeClass . '" href="?page=' . $i . '">' . $i . '</a>';
