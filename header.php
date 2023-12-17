@@ -3,18 +3,18 @@ $loginButtonText;
 if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {   
     $loginButtonText = "Log Out";
     $loginButtonAction = 'onclick="logOut()"';
-    $bookingButtonText = "Meine Buchungen";
     $bookingButtonAction = 'onclick="myBookings()"';
     $class = "log-out";
 }
 else {
     $loginButtonText = "Log In";
     $loginButtonAction = 'onclick="logIn()"';
-    $bookingButtonText = "Meine Buchungen";
     $bookingButtonAction = 'onclick="logIn()"'; //redirect to Log In if not logged in
     $class = "log";
 }
 ?>
+<?php include 'dbConfig.php'; ?>
+<?php include 'PHP_Funktionen/userabfrage.php'; ?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -53,12 +53,17 @@ else {
                 <ul class="nav__links">
                     <li class="boxtext"><a href="home.php">Home</a></li>   
                     <li class="boxtext"><a href="standorte.php">Standorte</a></li>              
-                    <li class="boxtext"><a href="mieten.php">Mieten</a></li>                             <!--Navigation Links erstellt--> 
+                    <li class="boxtext"><a href="mieten.php">Mieten</a></li>
+                    <?php if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) { ?>
+                    <li class="boxtext"><a <?php echo($bookingButtonAction);?>>Meine Buchungen</a></li>  
+                    <?php } ?>                           <!--Navigation Links created--> 
                 </ul>
             </nav>
             <nav id="autoleft">
                 <ul class="nav__links">
-                    <li class="boxtext"><a <?php echo($bookingButtonAction);?>>Meine Buchungen</a></li>         <!--Meine Buchungen + Login erstellt-->                   
+                           <!--Hallo Message + Login created-->
+                <?php if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) { 
+                    ?><li class="boxtext"><a href="">Moin, <?php echo $result['first_name']; }?></a></li>                   
                     <button class="<?php echo $class?>" <?php echo($loginButtonAction)?> enabled><?php echo $loginButtonText ?></button>
                 </ul>
             </nav>
