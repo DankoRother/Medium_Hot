@@ -152,12 +152,12 @@
           chevron_left
         </button>
         <ul class="image-list">
-          <img class="image-item" src="Bilder/Caprio.jpg" alt="img-1" />
-          <img class="image-item" src="Bilder/combi.jpg" alt="img-2" />
-          <img class="image-item" src="Bilder/Coupe.jpg" alt="img-3" />
-          <img class="image-item" src="Bilder/Limousine.jpg" alt="img-4" />
-          <img class="image-item" src="Bilder/SUV.jpg" alt="img-5" />
-          <img class="image-item" src="Bilder/van.jpg" alt="img-6" />
+          <img class="image-item" src="Bilder/bilder_db/bmw-3er-kombi.jpg" alt="img-1" />
+          <img class="image-item" src="Bilder/bilder_db/audi-a7-cabrio.jpg" alt="img-2" />
+          <img class="image-item" src="Bilder/bilder_db/mb-v-van.jpg" alt="img-3" />
+          <img class="image-item" src="Bilder/bilder_db/mb-e-klasse.jpg" alt="img-4" />
+          <img class="image-item" src="Bilder/bilder_db/mb-g-klasse.jpg" alt="img-5" />
+          <img class="image-item" src="Bilder/bilder_db/bmw-2er-coupe.jpg" alt="img-6" />
         </ul>
         <button id="next-slide" class="slide-button material-symbols-rounded">
           chevron_right

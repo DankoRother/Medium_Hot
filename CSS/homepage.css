@@ -294,13 +294,12 @@ h1 {
 }
 
 .slider-wrapper .image-list .image-item {
-    width: 400px;
+    width: 425px;
     height: 325px;
-    object-fit: cover;
 }
 
 .container {
-    max-width: 1240px;
+    max-width: 1311px;
 }
 
 .big-container {
