@@ -75,9 +75,8 @@
                   <option value="Nuernberg">Nürnberg</option>
                   <option value="Bremen">Bremen</option>
                   <option value="Paderborn">Paderborn</option>
-              </select>
+                </select>
               <input type="hidden" name="vendor" value="">
-              <input type="hidden" name="type" value="">
               <input type="hidden" name="price" value="">
               <input type="hidden" name="seats" value="">
               <input type="hidden" name="gear" value="">
@@ -88,6 +87,19 @@
               <input type="hidden" name="gps" value="">
               <input type="hidden" name="trunk" value="">
               <input type="hidden" name="sort" value="ASC">
+            </div>
+            <div class="filter_bar">
+                  <h2>Typ</h2>
+                  <select name="type" class="form-select">
+                  <option value="<?php echo isset($_SESSION['type']) ? $_SESSION['type'] : ''; ?>"><?php echo isset($_SESSION['type']) && !empty($_SESSION['type']) ? $_SESSION['type'] : 'Alle'; ?></option>
+                  <option value="">Alle</option>
+                  <option value="SUV">SUV</option>
+                  <option value="Cabrio">Cabrio</option>
+                  <option value="Coupe">Coupe</option>
+                  <option value="Mehrsitzer">Mehrsitzer</option>
+                  <option value="Limousine">Limousine</option>
+                  <option value="Combi">Combi</option>
+                </select>
             </div>
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter">
