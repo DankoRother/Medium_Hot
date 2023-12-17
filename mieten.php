@@ -89,6 +89,7 @@ session_start();
                 <div class="filter_bar">
                     <input type="submit" value="Suchen" class="button_filter" name="searchOrt">
                     <input type="submit" class="button_reset" value="Alles zurücksetzen" name="resetAll">
+                    <input type="hidden" name="page" value="1">
                 </div>
             </div>
     </div>
@@ -245,6 +246,7 @@ session_start();
                     </select>
                     <input type="submit" value="Filtern" class="button_filter" name="filtern">
                     <input type="submit" value="Filter und Sortierung zurücksetzen" class="button_reset" name="resetButton">
+                    <input type="hidden" name="page" value="1">
                 </div>
             </div>
            

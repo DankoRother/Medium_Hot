@@ -168,6 +168,12 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             } elseif ($currentPage < 1) {
                 $currentPage = 1;
             }
+            if(isset($_POST['filtern'])){
+            $currentPage = isset($_POST['page']) ? (int)$_POST['page'] : 1; }
+
+            if(isset($_POST['searchOrt'])){
+            $currentPage = isset($_POST['page']) ? (int)$_POST['page'] : 1; }
+
         
             $startIndex = ($currentPage - 1) * $resultsPerPage;
             $visibleResults = array_slice($finalResults, $startIndex, $resultsPerPage);
