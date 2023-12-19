@@ -63,7 +63,7 @@ else {
                 <ul class="nav__links">
                            <!--Hallo Message + Login created-->
                 <?php if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) { 
-                    ?><li class="boxtext"><a href="">Moin, <?php echo $result['first_name']; }?>!</a></li>                   
+                    ?><li class="boxtext"><a href="">Moin, <?php echo $result['first_name'] . "!"; }?></a></li>                   
                     <button class="<?php echo $class?>" <?php echo($loginButtonAction)?> enabled><?php echo $loginButtonText ?></button>
                 </ul>
             </nav>
