@@ -79,7 +79,7 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php }} else { ?> <div class="zeroresults">Lösch dich</div> <?php
+                                    <?php }} else { ?> <tr><td colspan=4><div class="zeroresults"><h3>Noch keine Buchungen vorhanden!<h3></div></td></tr> <?php
                                         }?>
                             </tbody>
                         </table>

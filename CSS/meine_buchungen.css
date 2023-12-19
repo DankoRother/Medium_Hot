@@ -176,3 +176,20 @@
    background-color: rgba(36, 37, 42, 0.5);  
 }
 
+.zeroresults h3 {
+    font-family: "Poppins", sans-serif;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 300;
+    font-size: 20px;
+    font-style: italic;
+    text-decoration: none;
+    opacity: 0.9;
+}
+
+.zeroresults {
+    text-align: center;
+    width: 100%;
+    height: 100px;
+    padding-top: 35px;
+}
+
