@@ -59,7 +59,7 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                     
                                     $uniqueId = 'hidden_row_' . $row['bookingId'];?>
 
-                                    <tr onclick="showHideRow('<?php echo $uniqueId; ?>')">
+                                    <tr class="mainline" onclick="showHideRow('<?php echo $uniqueId; ?>')">
                                         <td><?php echo $row['bookingId']?></td> <!-- Booking Number -->
                                         <td><?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] ?></td> <!-- Vendor Name, Name and Extension -->
                                         <td><?php echo $row['price']?></td> <!-- Price -->
@@ -68,7 +68,7 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                     <tr id="<?php echo $uniqueId; ?>" class="hidden_row" style="display: none;">
                                         <td colspan=4>
                                             <div class="textfeld">
-                                                <div><?php echo $row['gear'] ?></div>
+                                                <div><?php if($row['gear'] == "manually"){echo "Schaltgetriebe";}else {echo "Automatik";};?></div>
                                                 <div><?php echo $row['drive'] ?></div>
                                                 <div><?php echo $row['seats'] ?> Sitze</div>
                                                 <div><?php echo $row['doors'] ?> Türen</div>
@@ -79,7 +79,8 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                             </div>
                                         </td>
                                     </tr>
-                                    <?php }}?>
+                                    <?php }} else { ?> <div class="zeroresults">Lösch dich</div> <?php
+                                        }?>
                             </tbody>
                         </table>
                     </div>

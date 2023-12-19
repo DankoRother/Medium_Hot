@@ -8,7 +8,7 @@ if (isset($_POST)) {
     $vornameInput = $_POST['vorname'];
     $nachnameInput = $_POST['nachname'];
     $geburtstagInput = $_POST['geburtsdatum'];
-    $loggedIn = "1";
+   
 
     try {
         // Create a PDO database connection
@@ -42,7 +42,7 @@ if (isset($_POST)) {
             exit();
         } else {
             // Insert data into the users table using prepared statement
-            $stmt = $conn->prepare("INSERT INTO user (username, email, password, age, first_name, last_name, logged_in) VALUES (?, ?, ?, ?, ?, ?, ?)");
+            $stmt = $conn->prepare("INSERT INTO user (username, email, password, age, first_name, last_name) VALUES (?, ?, ?, ?, ?, ?)");
 
             // Bind parameters
             $stmt->bindParam(1, $usernameInput);
@@ -51,7 +51,7 @@ if (isset($_POST)) {
             $stmt->bindParam(4, $geburtstagInput);
             $stmt->bindParam(5, $vornameInput);
             $stmt->bindParam(6, $nachnameInput);
-            $stmt->bindParam(7, $loggedIn);
+           
 
             // Execute the statement
             if ($stmt->execute()) {

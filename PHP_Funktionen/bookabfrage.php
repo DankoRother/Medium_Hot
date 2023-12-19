@@ -5,7 +5,7 @@ $userID = $_SESSION['logged_in_userID'];
 $resultsPerPage = 5;
 
 // Ermittle die Gesamtanzahl der Ergebnisse
-$sqlCount = "SELECT COUNT(*) as count
+$sqlCount = "SELECT *
              FROM vendordetails
              INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
              INNER JOIN carlocation ON carlocation.carId = cardetails.carId
@@ -16,7 +16,7 @@ $sqlCount = "SELECT COUNT(*) as count
 $stmtCount = $conn->prepare($sqlCount);
 $stmtCount->bindParam(':userID', $userID, PDO::PARAM_INT);
 $stmtCount->execute();
-$totalResults = $stmtCount->fetchColumn();
+$totalResults = $stmtCount->rowCount();
 
 // Berechne die Gesamtanzahl der Seiten
 $totalPages = ceil($totalResults / $resultsPerPage);
@@ -35,6 +35,8 @@ if ($currentPage > $totalPages) {
     $currentPage = 1;
 }
 
+
+if ($totalResults > 0) {
 // Berechne den OFFSET-Wert für die SQL-Abfrage
 $offset = ($currentPage - 1) * $resultsPerPage;
 
@@ -55,5 +57,7 @@ $stmt->bindParam(':resultsPerPage', $resultsPerPage, PDO::PARAM_INT);
 $stmt->execute();
 
 $visibleResults = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+} else {
+    $visibleResults = 0;
+}
 ?>

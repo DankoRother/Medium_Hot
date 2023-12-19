@@ -132,13 +132,18 @@
 }
 
 .hidden_row td div {
-    text-align: justify;
+    text-align: justify;  
+}
+
+.hidden_row td {
+    background-color: rgba(36, 37, 42, 0.2);
 }
 
 .textfeld {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    
 }
 
 .pagination {
@@ -166,3 +171,8 @@
     color: white;
     border: 1px solid rgba(255, 151, 77, 1);
 }
+
+.mainline td {
+   background-color: rgba(36, 37, 42, 0.5);  
+}
+
