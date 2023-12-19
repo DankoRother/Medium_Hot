@@ -55,7 +55,7 @@ div.roundedcorners {
     background-color: rgb(36, 37, 42, 0.9);
     margin-left: 41%;
     border-radius: 15px;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
     display: flex;
     flex-direction: row;
     height: 275px;
@@ -128,9 +128,8 @@ button.login{
     font-size: 24px;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10% auto;
     margin-left: 48%; 
-    margin-top: 15%;
-    margin-bottom: 5%;
     display: block; 
+    margin-bottom: 30px;
+    box-shadow: 2px 2px 4px rgba(0,0,0,0.7);
 }

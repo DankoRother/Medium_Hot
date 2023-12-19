@@ -54,9 +54,7 @@
                 </container>
                 </form>
             </div>
-            <br>
-            <button class="login" href="register.php">Registrieren</a>
-            <br>';
+            <a class="login" href="register.php"><button class="login">Registrieren</button></a>';
     }
     ?>
     <?php include 'footer.php' ?>
