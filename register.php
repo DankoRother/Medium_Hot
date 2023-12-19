@@ -52,7 +52,7 @@
             <input type="button" id="backButton" class="back" onclick="hideSecondShowFirst()" value="Zurück" style="display: none; margin-top: 8%;">
     </div>
 </div>
-<a class="register" href="register.php"><button class="login">Login</button></a>';
+<a class="register" href="login.php"><button class="login">Login</button></a>';
 <br>
 <?php include 'footer.php'?>
 <script src="js\registrationscript.js"></script> 
