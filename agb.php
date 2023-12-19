@@ -1,3 +1,5 @@
+<?php session_start(); ?>
+
 <!DOCTYPE html>
 <head>
         <meta charset="utf-8">
@@ -17,7 +19,7 @@
         <td width="100%">
             <div align="center" class="agb">
                 <h1>Allgemeine Geschäftsbedingungen (AGB)</h1><br>
-                <h3>der<br>CarSBA GmbH Autovermietung<br>Willy-Brandt-Straße 75<br>DE 20459 Hamburg<br>(nachfolgend "CarSBA genannt)</h3>
+                <h3>der<br>CarSBA GmbH Autovermietung<br>Willy-Brandt-Straße 75<br>DE 20459 Hamburg<br>(nachfolgend "CarSBA" genannt)</h3>
             </div>
         </td>
            <!-- <td width="10%" style="background-color: #ffffff;"></td>-->

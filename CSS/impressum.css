@@ -58,8 +58,6 @@ p {
 }
 
 .agb {
-    padding-left: 15%; 
-    padding-right:15%;
     padding-top: 20px;
     padding-bottom: 50px;
 }
@@ -71,7 +69,6 @@ td {
 .agb_2 {
     text-align: left;
     width: 50%;
-    padding-left: 130px;
     padding-bottom: 40px;
 }
 

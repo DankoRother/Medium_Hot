@@ -18,8 +18,8 @@ if (isset($_POST['resetButton'])) {
 }
 
 if (isset($_POST['resetAll'])) {
-    unset($_SESSION['start_date']);
-    unset($_SESSION['end_date']);
+    $_SESSION['start_date'] = date('m/d/Y');;
+    $_SESSION['end_date'] = date('m/d/Y', strtotime('+1 day'));
     $_SESSION['location'] = "";
     $_SESSION['vendor'] = "";
     $_SESSION['type'] = "";

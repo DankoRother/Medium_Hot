@@ -9,6 +9,6 @@
         $_SESSION['location'] = $_POST['location'] ?? "";
         $_SESSION['type'] = $_POST['type'] ?? "";
 
-    } 
+    } ;
 
 ?>
