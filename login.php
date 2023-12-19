@@ -39,7 +39,6 @@
             <br>
             <div align="center">
                 <h1 class="login"> Anmelden </h1><br>
-                <a class="login" href="register.php">Registrieren</a>
             </div>
             <br>
             <br>
@@ -56,6 +55,7 @@
                 </form>
             </div>
             <br>
+            <button class="login" href="register.php">Registrieren</a>
             <br>';
     }
     ?>
