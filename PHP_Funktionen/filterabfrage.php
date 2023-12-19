@@ -1,6 +1,6 @@
 <?php 
 
-if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['searchOrt']) || isset($_POST['location']) || isset($_POST['resetButton'])) {  // extented filter function
+if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['searchOrt']) || isset($_POST['location']) || isset($_POST['resetButton']) || isset($_POST['start_date']) || isset($_SESSION['start_date'])) {  // extented filter function
 
     ?><div class="output_background"><div class="container-output"><?php
 
