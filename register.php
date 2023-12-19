@@ -18,9 +18,7 @@
 <br>
 <div align="center">
 <h1 class="register"> Registrieren </h1><br>
-<a class="register" href="login.php">Anmelden</a>
 </div>
-<br>
 <br>
 <div class="roundedcorners" id="roundedcorners">
 <form method="POST"  id="registrationForm" onsubmit="submitForm(event)">
@@ -43,9 +41,9 @@
     <br>
     </form>
     <div class="errorHandlingMajor" id="firstErrors" style="display: block"> 
-        <div class="errorHandlingMinor" id="error1" style="margin-top: 10%; order: 1;">Username darf nicht leer sein</div>
-        <div class="errorHandlingMinor" id="error2" style="margin-top: 12%; order: 2; margin-right: 5%;">Geben Sie eine gültige E-Mail ein</div>
-        <div class="errorHandlingMinor" id="error3" style="margin-top:9%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
+        <div class="errorHandlingMinor" id="error1" style="margin-top:14%; order: 1;">Username darf nicht leer sein</div>
+        <div class="errorHandlingMinor" id="error2" style="margin-top: 11%; order: 2; margin-right: 5%;">Geben Sie eine gültige E-Mail ein</div>
+        <div class="errorHandlingMinor" id="error3" style="margin-top:6%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
     </div>
     <div class="errorHandlingMajor" id="secondErrors" style="display:none"> 
             <div class="errorHandlingMinor" id="vornameError" style="margin-top: 10%; order: 1;" >Vorname darf nicht leer sein</div>
@@ -54,12 +52,7 @@
             <input type="button" id="backButton" class="back" onclick="hideSecondShowFirst()" value="Zurück" style="display: none; margin-top: 8%;">
     </div>
 </div>
-
-<br>
-<br>
-<br>
-<br>
-<br>
+<a class="register" href="register.php"><button class="login">Login</button></a>';
 <br>
 <?php include 'footer.php'?>
 <script src="js\registrationscript.js"></script> 
