@@ -11,7 +11,7 @@ body {
     width: 100%;
     background-size: cover;
 }
-h1 {
+h1.register {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -20,16 +20,16 @@ h1 {
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
-a {
+a.register {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 35px;                                    /*Schriftformatierung */
-    color: #0088a9;
+    font-size: 25px;                                    /*Schriftformatierung */
     text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
 
-h3 {
+h3.register {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 22px;

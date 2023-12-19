@@ -16,14 +16,14 @@
         <br>
         <br>
         <br>
-        <div align="center" class="dividiediv">
-            <h1> Anmeldung </h1><br>
-            <a href="register.php">Registrieren</a>
+        <div align="center">
+            <h1 class="login"> Anmeldung </h1><br>
+            <a class="login" href="register.php">Registrieren</a>
         </div>
         <br>
         <br>
         <div class="roundedcorners" id="roundedcorners" style="height: 140px">
-            <h3>Bereits angemeldet</h3>
+            <h3 class="login">Bereits angemeldet</h3>
         </div>
         <br>
         <br>');
@@ -38,8 +38,8 @@
             <br>
             <br>
             <div align="center">
-                <h1> Anmelden </h1><br>
-                <a href="register.php">Registrieren</a>
+                <h1 class="login"> Anmelden </h1><br>
+                <a class="login" href="register.php">Registrieren</a>
             </div>
             <br>
             <br>

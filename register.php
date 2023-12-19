@@ -17,8 +17,8 @@
 <br>
 <br>
 <div align="center">
-<h1> Registrieren </h1><br>
-<a href="login.php">Anmelden</a>
+<h1 class="register"> Registrieren </h1><br>
+<a class="register" href="login.php">Anmelden</a>
 </div>
 <br>
 <br>
