@@ -36,11 +36,9 @@
             <br>
             <br>
             <br>
-            <br>
             <div align="center">
                 <h1 class="login"> Anmelden </h1><br>
             </div>
-            <br>
             <br>
             <div class="roundedcorners" id="roundedcorners">
                 <form method="POST" id="loginForm" onsubmit="loginFormSubmit(event)">

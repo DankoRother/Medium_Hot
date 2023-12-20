@@ -13,7 +13,14 @@ function loginFormSubmit(event) {
         success: function(response) {
             if (response && response.status === 'success') {
                 console.log('Login successful');
-                window.location.href = 'login_screen.php';
+                document.getElementById("error").textContent="Erfolgreich eingelogt! Weiterleitung..."
+                document.getElementById("error").style.color="#0088a9";
+                document.getElementById("error").style.marginLeft = "1%";
+                document.getElementById("loginButton").style.marginTop = "10%";
+                setTimeout(function() {
+                    // Redirect to another page
+                    window.location.href = 'home.php';
+                }, 700);
             } else {
                 console.error('Login error:', response.message);
                 if(response.message == "Incorrect username or password") {

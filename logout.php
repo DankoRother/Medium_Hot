@@ -28,11 +28,12 @@ if ($_SESSION['logged_in_userID'] > 0) {
 
 <div class="divForBackground">
     <div class="headline">
-        <h3>Log Out</h3>
+        <h3>Logout</h3>
     </div>
     <div class="big-object-container">
         <div class="object-container">
             <div class="text-container">
+                <br>
                 <h3>Sie wurden erfolgreich ausgeloggt!</h3>
             </div>
             <div class="buttom-container">
@@ -40,7 +41,7 @@ if ($_SESSION['logged_in_userID'] > 0) {
                     <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
                 </div>    
                 <div class="bottom-book">
-                    <a href="login.php"><button class="book-button">Zum Log In</button></a>
+                    <a href="login.php"><button class="book-button">Zum Login</button></a>
                 </div>  
             </div>
         </div>
