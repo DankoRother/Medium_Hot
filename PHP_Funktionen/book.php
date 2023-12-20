@@ -1,17 +1,15 @@
 <?php 
 $userID = $_SESSION['logged_in_userID'];
-$stmt = $conn->prepare("SELECT TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) AS age FROM user WHERE userId = :userId");
-$stmt->bindParam(':username', $userID);
-$stmt->execute();
-$result = $stmt->fetch(PDO::FETCH_ASSOC);
-if ($result) {
-    $loggedInAge = $result['age'];
-    echo $loggedInAge;
+$agestmt = $conn->prepare("SELECT TIMESTAMPDIFF(YEAR, age, CURDATE()) AS age FROM user WHERE userId = :userId");
+$agestmt->bindParam(':userId', $userID);
+$agestmt->execute();
+$ageresult = $agestmt->fetch(PDO::FETCH_ASSOC);
+if ($ageresult) {
+    $loggedInAge = $ageresult['age'];
 } else {
     $loggedInAge = 0;
-    echo $loggedInAge;
 }
-if (isset($_POST['book'])) {
+if (isset($_POST['book'])) { 
         if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {  
                 $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));
                 $end_date = date('Y-m-d', strtotime($_SESSION['end_date']));
@@ -27,17 +25,21 @@ if (isset($_POST['book'])) {
                     (bookings.start BETWEEN :start_date AND :end_date) OR
                     (bookings.end BETWEEN :start_date AND :end_date)
                 )";
+                $checkExistingBookingsSQL = $conn->prepare($checkExistingBookingsSQL);
+                $checkExistingBookingsSQL->bindParam(':carLocationID', $carLocationID);
+                $checkExistingBookingsSQL->bindParam(':start_date', $start_date);
+                $checkExistingBookingsSQL->bindParam(':end_date', $end_date);
+                $checkExistingBookingsSQL->execute();
+                $resultCount = $checkExistingBookingsSQL->fetchColumn();
 
-                $checkExistingBookingsSQ = $conn->prepare($checkExistingBookingsSQL);
-                $checkExistingBookingsSQ->bindParam(':carLocationID', $carLocationID);
-                $checkExistingBookingsSQ->bindParam(':start_date', $start_date);
-                $checkExistingBookingsSQ->bindParam(':end_date', $end_date);
-                $checkExistingBookingsSQ->execute();
-                $resultCheck = $checkExistingBookingsSQ->fetchColumn();
-
-
+                $checkMinAge = "SELECT min_age FROM carDetails INNER JOIN carLocation ON carDetails.carID = carLocation.carId WHERE :selectedCar = carLocationId";
+                $checkMinAge = $conn->prepare($checkMinAge);
+                $checkMinAge->bindParam(':selectedCar', $carLocationID);
+                $checkMinAge->execute();
+                $minAge = $checkMinAge->fetchColumn();
                         if ($resultCount == 0){
                         // Keine Überschneidungen gefunden, führe das INSERT-Statement aus
+                        if ($minAge <= $loggedInAge) {
                         $insertSQL = "INSERT INTO bookings (start, end, userId, carLocationId) VALUES (?, ?, ?, ?)";
                         
                         // Vorbereiten der INSERT-Anweisung
@@ -55,6 +57,10 @@ if (isset($_POST['book'])) {
                         ?><div class="book-success"><h3>&#9989; Die Buchung war erfolgreich!</h3></div> <?php
                         header("Location: bookSuccess.php");
                         exit;
+                        }
+                        else {
+                                ?> <div class="book-error-2"><h3><span class="dang-sign">&#9888;</span> Erst ab <?php echo($minAge);?> buchbar!</h3></div> <?php  
+                        }
                 } else {
                         ?> <div class="book-error-2"><h3><span class="dang-sign">&#9888;</span> Bereits vergeben innerhalb des Zeitraums!</h3></div> <?php  
                 }
