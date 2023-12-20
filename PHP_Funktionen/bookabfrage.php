@@ -1,7 +1,6 @@
 <?php 
 
 $userID = $_SESSION['logged_in_userID'];
-
 $resultsPerPage = 5;
 
 // Ermittle die Gesamtanzahl der Ergebnisse

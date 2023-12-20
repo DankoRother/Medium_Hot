@@ -1,5 +1,16 @@
 <?php 
-
+$userID = $_SESSION['logged_in_userID'];
+$stmt = $conn->prepare("SELECT TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) AS age FROM user WHERE userId = :userId");
+$stmt->bindParam(':username', $userID);
+$stmt->execute();
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
+if ($result) {
+    $loggedInAge = $result['age'];
+    echo $loggedInAge;
+} else {
+    $loggedInAge = 0;
+    echo $loggedInAge;
+}
 if (isset($_POST['book'])) {
         if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {  
                 $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));

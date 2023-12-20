@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+ *{
+    margin: 0;
+    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(CSS_Bilder/loginhafen.jpg);
+    width: 100%;
+    background-size: cover;
+}
+h1.register {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 50px;                                    /*Schriftformatierung */
+    color: #edf0f1;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+container.flexLeft {
+    margin-left: 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: left;
+    width: 50%;
+    order: 1;
+}
+container.flexRight {
+    margin-left: 5%;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: right;
+    width: 50%;
+    order: 2;
+}
+
+div.roundedcorners {
+    width: 28%;
+    background-color: rgb(36, 37, 42, 0.9);
+    margin-left: 36%;
+    border-radius: 15px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
+    height: 315px;
+}
+
+form {
+    box-sizing: border-box;
+    width: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000000;
+    text-align: left;
+    order: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label.label {
+    color: white;
+    margin-top: 3%;
+    text-align: center;
+}
+
+input[type=text].input {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 5%;
+    font-size: 22px;    
+    border: 2px solid #ff974d;
+    border-radius: 5px;
+    align-self: right;
+}
+
+input[type=date].datum {
+    box-sizing: border-box;
+    width: 100%;
+    padding-right: 5%;    
+    border: 2px solid #ff974d;
+    border-radius: 5px;
+    align-self: right;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+input.account {
+    text-align: center;
+    width: 30%;
+    background-color: #0088a9;
+    border: none;
+    color: #edf0f1;
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 25px;
+    font-family: "Poppins";
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 35%; 
+    margin-top: 2%; 
+}
+input.account:disabled {
+    text-align: center;
+    width: 30%;
+    background-color: #7ea2ab;
+    border: none;
+    color: #edf0f1;
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    font-family: "Poppins";
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 35%;
+    margin-top: 2%; 
+    display: block; 
+    cursor: not-allowed;
+}
