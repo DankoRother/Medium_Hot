@@ -83,14 +83,18 @@ function loadInput(inputElement) {
 }
 
 
-function validateUsername() {
-    var username = document.getElementById("username").value;
+function validateUsername() {               
+    //revert styling changes from incorrect input
+    var username = document.getElementById("username").value;                   
     var errorElement = document.getElementById("error1");
     var usernameElement = document.getElementById("username");
-    
+    if(document.getElementById("error2").style.marginTop!="12%") {
+        document.getElementById("error2").style.marginTop="15%";
+    }
+    document.getElementById("error1").textContent="Username darf nicht leer sein";
     if (username === "") {
         errorElement.style.color = "#ff974d";
-        condition1 = false;
+        condition1 = false;             
         usernameElement.style.borderColor = "#ff974d";
     } else {
         errorElement.style.color = "#0088a9";
@@ -101,10 +105,13 @@ function validateUsername() {
 }
 
 function validateEmail() {
+    //revert styling changes from incorrect input
     var email = document.getElementById("email").value;
     var errorElement = document.getElementById("error2");
     var emailElement = document.getElementById("email");
-
+    document.getElementById("error2").style.marginTop="12%";
+    document.getElementById("error3").style.marginTop="8%";
+    document.getElementById("error2").textContent="Geben Sie eine gültige E-Mail ein";
     if (!/^.+@.+\..{2,3}$/.test(email)) {
         errorElement.style.color = "#ff974d";
         emailElement.style.borderColor = "#ff974d";
@@ -220,16 +227,43 @@ function submitForm(event) {
         success: function(response) {
             if (response && response.status === 'success') {
                 console.log('Data inserted successfully');
-                window.location.href = 'registrationresult.php?status=success'; // Redirect on success
+                document.getElementById("vornameError").style.color="rgb(0, 0, 0, 0)";
+                document.getElementById("geburtstagError").style.color="rgb(0, 0, 0, 0)";
+                document.getElementById("nachnameError").style.color="#0088a9";
+                document.getElementById("nachnameError").style.textAlign="center";
+                document.getElementById("nachnameError").textContent="Erfolgreich Registriert!..."
+                setTimeout(function() {
+                    window.location.href = 'home.php'; // Redirect on success
+            }, 1200);
+
             } else {
                 console.error('AJAX error: Unexpected response', response);
                 // Check for specific error messages and redirect accordingly
                 if (response && response.message == 'email_exists') {
-                    window.location.href = 'registrationresult.php?status=email_exists';
+                    hideSecondShowFirst();
+                    document.getElementById("error2").textContent="E-Mail existiert bereits <br>";
+                    document.getElementById("error2").style.color="#ff974d";
+                    document.getElementById("error3").style.marginTop="13%";
+                    document.getElementById("email").style.borderColor="#ff974d";
                 } else if (response && response.message == 'username_exists') {
-                    window.location.href = 'registrationresult.php?status=username_exists';
+                    hideSecondShowFirst();
+                    document.getElementById("error1").textContent="Username existiert bereits";
+                    document.getElementById("error1").style.color="#ff974d"
+                    document.getElementById("username").style.borderColor="#ff974d";
+                    document.getElementById("error2").style.marginTop="17%";
                 } else if (response && response.message == 'both_exist') {
-                    window.location.href = 'registrationresult.php?status=both_exist';
+                    hideSecondShowFirst();
+                    document.getElementById("error2").textContent="E-Mail existiert bereits <br>";
+                    document.getElementById("error2").style.color="#ff974d";
+                    document.getElementById("error2").style.marginTop="17%";
+                    document.getElementById("error3").style.marginTop="13%";
+                    document.getElementById("error1").textContent="Username existiert bereits";
+                    document.getElementById("error1").style.color="#ff974d"
+                    document.getElementById("username").style.borderColor="#ff974d";
+                    document.getElementById("error2").textContent="E-Mail existiert bereits";
+                    document.getElementById("error2").style.color="#ff974d"
+                    document.getElementById("email").style.borderColor="#ff974d";
+
                 } else {
                     console.error('Unknown error:', response);
                 }

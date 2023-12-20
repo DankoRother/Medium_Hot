@@ -1,12 +1,10 @@
 <?php
 session_start();
-
 if ($_SESSION['logged_in_userID'] > 0) {
-    // User is logged in, perform the logout action
-    // ... (any additional logout actions if needed)
-
     // Set the session variable to 0
     $_SESSION['logged_in_userID'] = 0;
+    // Set the selected car to 0
+    $_SESSION['selected_car_id'] = 0;
  // Send a response (you can customize the response if needed)
 
 } else {

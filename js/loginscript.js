@@ -13,18 +13,25 @@ function loginFormSubmit(event) {
         success: function(response) {
             if (response && response.status === 'success') {
                 console.log('Login successful');
-                document.getElementById("error").textContent="Erfolgreich eingelogt! Weiterleitung..."
-                document.getElementById("error").style.color="#0088a9";
+                // Access the selected_car_id from the response
+                var selectedCarId = response.selected_car_id;
+                
+                document.getElementById("error").textContent = "Erfolgreich eingelogt! Weiterleitung...";
+                document.getElementById("error").style.color = "#0088a9";
                 document.getElementById("error").style.marginLeft = "1%";
                 document.getElementById("loginButton").style.marginTop = "10%";
+
                 setTimeout(function() {
                     // Redirect to another page
+                    if(selectedCarId > 0) {
+                        window.location.href = 'produktdetails.php';
+                    } else {
                     window.location.href = 'home.php';
-                }, 700);
+            }}, 700);
             } else {
                 console.error('Login error:', response.message);
-                if(response.message == "Incorrect username or password") {
-                    document.getElementById("error").textContent=" Loginaten stimmen nicht überein!"
+                if (response.message == "Incorrect username or password") {
+                    document.getElementById("error").textContent = " Logindaten stimmen nicht überein!";
                     document.getElementById("loginButton").style.marginTop = "10%";
                 }
             }

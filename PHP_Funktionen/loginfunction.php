@@ -21,7 +21,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die(json_encode(['status' => 'error', 'message' => 'Connection failed: ' . $e->getMessage()]));
     }
 
-
     // Check if the username exists in the database
     $stmt = $conn->prepare("SELECT userId, password FROM user WHERE username = :username");
     $stmt->bindValue(':username', $loginUsername);
@@ -32,8 +31,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($user && password_verify($loginPassword, $user['password'])) {
         // Password is correct
-        $_SESSION['logged_in_userID'] = $user['userId'];
-        echo json_encode(['status' => 'success']);
+        $_SESSION['logged_in_userID'] = $user['userId'];    
+        // Add this line to send the session variables in the response
+        echo json_encode([
+            'status' => 'success',
+            'logged_in_userID' => $_SESSION['logged_in_userID'],
+            'selected_car_id' => $_SESSION['selected_car_id']
+        ]);
     } else {
         // Password is incorrect or username not found
         echo json_encode(['status' => 'error', 'message' => 'Incorrect username or password']);

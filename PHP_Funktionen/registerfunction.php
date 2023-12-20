@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("../dbConfig.php");
 
 if (isset($_POST)) {
@@ -8,7 +9,6 @@ if (isset($_POST)) {
     $vornameInput = $_POST['vorname'];
     $nachnameInput = $_POST['nachname'];
     $geburtstagInput = $_POST['geburtsdatum'];
-   
 
     try {
         // Create a PDO database connection
@@ -51,13 +51,23 @@ if (isset($_POST)) {
             $stmt->bindParam(4, $geburtstagInput);
             $stmt->bindParam(5, $vornameInput);
             $stmt->bindParam(6, $nachnameInput);
-           
 
             // Execute the statement
             if ($stmt->execute()) {
                 $response = ['status' => 'success'];
                 error_log(json_encode($response));
                 echo json_encode($response);
+                $stmt2 = $conn->prepare("SELECT userId FROM user WHERE username = :username");
+                $stmt2->bindParam(':username', $usernameInput);
+                $stmt2->execute();
+                $user = $stmt2->fetch(PDO::FETCH_ASSOC);
+                if ($user) {
+                    // Assuming userId is an integer; change the type accordingly if it's different
+                    $_SESSION['logged_in_userID'] = (int) $user['userId'];
+                } else {
+                    // Handle the case when the username is not found
+                    $_SESSION['logged_in_userID'] = null;
+                }
                 exit();
             } else {
                 $response = ['status' => 'error', 'message' => 'Error inserting data'];

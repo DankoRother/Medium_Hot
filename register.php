@@ -41,17 +41,18 @@
     <br>
     </form>
     <div class="errorHandlingMajor" id="firstErrors" style="display: block"> 
-        <div class="errorHandlingMinor" id="error1" style="margin-top:14%; order: 1;">Username darf nicht leer sein</div>
-        <div class="errorHandlingMinor" id="error2" style="margin-top: 11%; order: 2; margin-right: 5%;">Geben Sie eine gültige E-Mail ein</div>
-        <div class="errorHandlingMinor" id="error3" style="margin-top:6%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
+        <div class="errorHandlingMinor" id="error1" style="margin-top:16%; order: 1;">Username darf nicht leer sein</div>
+        <div class="errorHandlingMinor" id="error2" style="margin-top: 12%; order: 2; margin-right: 5%;">Geben Sie eine gültige E-Mail ein</div>
+        <div class="errorHandlingMinor" id="error3" style="margin-top:8%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
     </div>
     <div class="errorHandlingMajor" id="secondErrors" style="display:none"> 
-            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 10%; order: 1;" >Vorname darf nicht leer sein</div>
-            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 12%; order: 2; margin-right: 5%;" >Nachname darf nicht leer sein</div>
-            <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 12%; margin-right: 5%; order: 3;" >Geben Sie ein gültiges Datum ein</div>
-            <input type="button" id="backButton" class="back" onclick="hideSecondShowFirst()" value="Zurück" style="display: none; margin-top: 8%;">
+            <div class="errorHandlingMinor" id="vornameError" style="margin-top: 16%; order: 1;" >Vorname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 17%; order: 2; margin-right: 5%;" >Nachname darf nicht leer sein</div>
+            <div class="errorHandlingMinor" id="geburtstagError" style="margin-top: 13%; margin-right: 5%; order: 3;" >Geben Sie ein gültiges Datum ein</div>
+            <input type="button" id="backButton" class="back" onclick="hideSecondShowFirst()" value="Zurück" style="display: none; margin-top: 0.25%;">
     </div>
 </div>
+
 <a class="register" href="login.php"><button class="login">Login</button></a>';
 <br>
 <?php include 'footer.php'?>

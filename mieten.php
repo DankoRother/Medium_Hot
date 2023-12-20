@@ -1,5 +1,6 @@
 <?php 
 session_start(); 
+$_SESSION['selected_car_id'] = 0;
 ?>
 <!DOCTYPE html>
     <head>                                 <!-- Verlinkung zu Jquery -->

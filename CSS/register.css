@@ -28,7 +28,17 @@ a.register {
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
-
+div.registrationResult {
+    margin-left: 10%;
+    margin-top: 2%;
+    text-align: left;
+    width: 400%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 15px;                                    /*Schriftformatierung */
+    text-decoration: none;
+    color: #ff974d;
+}
 h3.register {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -66,7 +76,7 @@ div.roundedcorners {
     margin-bottom: 30px;
     display: flex;
     flex-direction: row;
-    height: 305px;
+    height: 315px;
 }
 
 form {
@@ -107,7 +117,7 @@ input[type=date].datum {
     font-size: 16px;
 }
 
-input.back {
+input[type=button].back {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 20px;
@@ -116,8 +126,8 @@ input.back {
     color: #edf0f1;
     cursor: pointer;
     order: 2;
-    margin-top: 3%;
     margin-left: 30%;
+    margin-top: 10%;
     padding: 8px 20px;
     border-radius: 5px;
     height: fit-content;
@@ -138,16 +148,20 @@ input.first {
 
 input.final {
     text-align: center;
+    width: 90%;
     background-color: #0088a9;
     border: none;
     color: #edf0f1;
-    padding: 8px 20px;
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 25px;
     font-family: "Poppins";
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    margin: 10% auto;
-    margin-left: 3%; 
+    margin-left: 0%; 
+    margin-top: 7%; 
     display: block; 
 }
 
@@ -166,15 +180,20 @@ input.first:disabled {
 
 input.final:disabled {
     text-align: center;
+    width: 90%;
     background-color: #7ea2ab;
     border: none;
     color: #edf0f1;
-    padding: 8px 20px;
+    padding-left: 12px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 20px;
     font-family: "Poppins";
     font-size: 20px;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 1%; 
+    margin-left: 0%;
+    margin-top: 7%; 
     display: block; 
     cursor: not-allowed;
 }
