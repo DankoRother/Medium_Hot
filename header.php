@@ -1,13 +1,13 @@
 <?php
 $loginButtonText;
 if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {   
-    $loginButtonText = "Log Out";
+    $loginButtonText = "Logout";
     $loginButtonAction = 'onclick="logOut()"';
     $bookingButtonAction = 'onclick="myBookings()"';
     $class = "log-out";
 }
 else {
-    $loginButtonText = "Log In";
+    $loginButtonText = "Login";
     $loginButtonAction = 'onclick="logIn()"';
     $bookingButtonAction = 'onclick="logIn()"'; //redirect to Log In if not logged in
     $class = "log";
