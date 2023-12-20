@@ -11,7 +11,7 @@ session_start();
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/Produktdetails.css"> 
         <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-        <script src="mieten.js"></script>
+        <script src="js/mieten.js"></script>
     </head>
 
     <body>

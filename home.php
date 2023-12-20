@@ -31,7 +31,7 @@
     });
   });
 </script>
-        <script language="javascript" type="text/javascript" src="homepage.js"></script>                                            <!-- CSS Datei Import -->
+        <script language="javascript" type="text/javascript" src="js/homepage.js"></script>                                            <!-- CSS Datei Import -->
     </head>
 <!-- Beginn der Webseite -->
     <body>
@@ -89,7 +89,7 @@
               <input type="hidden" name="sort" value="ASC">
             </div>
             <div class="filter_bar">
-                  <h2>Typ</h2>
+                  <h2>Typ: </h2>
                   <select name="type" class="form-select">
                   <option value="<?php echo isset($_SESSION['type']) ? $_SESSION['type'] : ''; ?>"><?php echo isset($_SESSION['type']) && !empty($_SESSION['type']) ? $_SESSION['type'] : 'Alle'; ?></option>
                   <option value="">Alle</option>

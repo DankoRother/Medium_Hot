@@ -39,7 +39,7 @@ session_start();
 <meta name="description" content="">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="CSS/mieten.css">                                                   <!-- CSS file import -->
-<script language="javascript" type="text/javascript" src="mieten.js"></script>   
+<script language="javascript" type="text/javascript" src="js/mieten.js"></script>   
 
 </head>
 
