@@ -49,9 +49,11 @@
                     <label class="label" for="loginUsername" style="order: 5">Username:</label>
                     <input class="input" type="text" id="loginPassword" name="loginPassword" style="order: 2">
                     <label class="label" for="loginPassword" style="order: 3">Passwort:</label>
-                    <input class="login" type="submit" name="submit" value="Anmelden" style="order: 1">
+                    <input class="login" type="submit" name="submit" value="Anmelden" id="loginButton" style="order: 1" disabled>
                     <br>
+                    <div class="error" id="error"></div>
                 </container>
+
                 </form>
             </div>
             <a class="login" href="register.php"><button class="login">Registrieren</button></a>';

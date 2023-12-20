@@ -16,6 +16,10 @@ function loginFormSubmit(event) {
                 window.location.href = 'login_screen.php';
             } else {
                 console.error('Login error:', response.message);
+                if(response.message == "Incorrect username or password") {
+                    document.getElementById("error").textContent=" Loginaten stimmen nicht überein!"
+                    document.getElementById("loginButton").style.marginTop = "10%";
+                }
             }
         },
         error: function(xhr, status, error) {
@@ -23,37 +27,44 @@ function loginFormSubmit(event) {
         }
     });
 }
-
+document.getElementById("loginUsername").addEventListener("input", validateUsername);
+document.getElementById("loginPassword").addEventListener("input", validatePassword);
 function validateUsername() {
-    var vorname = document.getElementById("vorname").value;
-    var errorElement = document.getElementById("vornameError");
-    var vornameElement = document.getElementById("vorname");
-
-    if (vorname === "") {
-        errorElement.style.color = "#ff974d";
-        vornameCondition = false;
-        vornameElement.style.borderColor = "#ff974d";
+    var usernameInput = document.getElementById("loginUsername").value;
+    var usernameElement = document.getElementById("loginUsername");
+    document.getElementById("error").textContent="";
+    document.getElementById("loginButton").style.marginTop = "18.5%";
+    if (usernameInput === "") {
+        usernameCondition = false;
+        usernameElement.style.borderColor = "#ff974d";
     } else {
-        errorElement.style.color = "#0088a9";
-        vornameElement.style.borderColor = "#0088a9";
-        vornameCondition = true;
+        usernameElement.style.borderColor = "#0088a9";
+        usernameCondition = true;
     }
-    enablesecondbutton();
+    enableLogin();
 }
 
 function validatePassword() {
-    var nachname = document.getElementById("pass").value;
-    var errorElement = document.getElementById("nachnameError");
-    var nachnameElement = document.getElementById("nachname");
-
-    if (nachname === "") {
-        errorElement.style.color = "#ff974d";
-        nachnameCondition = false;
-        nachnameElement.style.borderColor = "#ff974d";
+    var passwordInput = document.getElementById("loginPassword").value;
+    var passwordElement = document.getElementById("loginPassword");
+    document.getElementById("error").textContent="";
+    document.getElementById("loginButton").style.marginTop = "18.5%";
+    if (passwordInput === "") {
+        passwordCondition = false;
+        passwordElement.style.borderColor = "#ff974d";
     } else {
-        errorElement.style.color = "#0088a9";
-        nachnameElement.style.borderColor = "#0088a9";
-        nachnameCondition = true;
+        passwordElement.style.borderColor = "#0088a9";
+        passwordCondition = true;
     }
-    enablesecondbutton();
+    enableLogin();
+}
+
+var loginButtonId = document.getElementById("loginButton");
+function enableLogin() {
+    if(usernameCondition && passwordCondition) {
+    loginButtonId.disabled = false;
+}
+else{
+    loginButtonId.disabled = true;
+}
 }
