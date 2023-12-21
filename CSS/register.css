@@ -1,21 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
- *{
+ 
+/* Global reset for margin, padding, and box-sizing */
+*{
     margin: 0;
-    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                            
     box-sizing: border-box;
 }
 
+/* Styling for the body, setting background image and size */
 body {
     background-image: url(CSS_Bilder/loginhafen.jpg);
     width: 100%;
     background-size: cover;
 }
+
+/* Styling for the registration heading */
 h1.register {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /*Schriftformatierung */
+    font-size: 50px;                                    
     color: #edf0f1;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
@@ -24,10 +29,12 @@ a.register {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 25px;                                    /*Schriftformatierung */
+    font-size: 25px;                                   
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
+
+/* Styling for the registration result message */
 div.registrationResult {
     margin-left: 10%;
     margin-top: 2%;
@@ -35,15 +42,19 @@ div.registrationResult {
     width: 400%;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 15px;                                    /*Schriftformatierung */
+    font-size: 15px;                                    
     text-decoration: none;
     color: #ff974d;
 }
+
+/* Styling for sub-heading in registration */
 h3.register {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 22px;
 }
+
+/* Styling for major error handling container */
 div.errorHandlingMajor {
     padding-top: 4%;
     box-sizing: border-box;
@@ -52,13 +63,17 @@ div.errorHandlingMajor {
     display: flex;
     flex-direction: column;
 }
+
+/* Styling for minor error handling messages */
 div.errorHandlingMinor {
     text-align: left;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 16px;                                    /*Schriftformatierung */
+    font-size: 16px;                                    
     color: #ff974d;
 }
+
+/* Styling for the main flex container */
 container.flex {
     margin-left: 20%;
     margin-right: 20%;
@@ -68,6 +83,7 @@ container.flex {
     padding-top: 8%;
 }
 
+/* Styling for the main container with rounded corners */
 div.roundedcorners {
     width: 28%;
     background-color: rgb(36, 37, 42, 0.9);
@@ -79,6 +95,7 @@ div.roundedcorners {
     height: 315px;
 }
 
+/* Styling for the form inside the container */
 form {
     box-sizing: border-box;
     width: 50%;
@@ -90,11 +107,13 @@ form {
     order: 1;
 }
 
+/* Styling for labels in the form */
 label.label {
     color: white;
     margin-top: 3%;
 }
 
+/* Styling for text input fields */
 input[type=text].input {
     box-sizing: border-box;
     width: 120%;
@@ -105,6 +124,7 @@ input[type=text].input {
     align-self: right;
 }
 
+/* Styling for date input fields */
 input[type=date].datum {
     box-sizing: border-box;
     width: 120%;
@@ -117,6 +137,7 @@ input[type=date].datum {
     font-size: 16px;
 }
 
+/* Styling for back button */
 input[type=button].back {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -133,6 +154,7 @@ input[type=button].back {
     height: fit-content;
 }
 
+/* Styling for the first step button */
 input.first {
     background-color: #0088a9;
     border: none;                                                                                                                                           
@@ -146,6 +168,7 @@ input.first {
     margin-left: 20%;
 }
 
+/* Styling for the final step button */
 input.final {
     text-align: center;
     width: 90%;
@@ -165,6 +188,7 @@ input.final {
     display: block; 
 }
 
+/* Styling for the disabled first step button */
 input.first:disabled {
     background-color: #7ea2ab;
     border: none;                                                                                                                                           
@@ -178,6 +202,7 @@ input.first:disabled {
     cursor: not-allowed;
 }
 
+/* Styling for the disabled final step button */
 input.final:disabled {
     text-align: center;
     width: 90%;
@@ -197,6 +222,8 @@ input.final:disabled {
     display: block; 
     cursor: not-allowed;
 }
+
+/* Styling for the login button */
 button.login{
     text-align: center;
     background-color: #ff974d;

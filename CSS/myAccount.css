@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
- *{
+ 
+/* Global reset for margin, padding, and box-sizing */
+*{
     margin: 0;
     padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
     box-sizing: border-box;
@@ -34,11 +36,13 @@ body {
     width: 100%;
     background-size: cover;
 }
+
+/* Styling for the registration heading */
 h1.register {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /*Schriftformatierung */
+    font-size: 50px;                                    
     color: #edf0f1;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
@@ -54,6 +58,7 @@ div.roundedcorners {
     height: 300px;
 }
 
+/* Styling for the form inside the container */
 form {
     box-sizing: border-box;
     width: 100%;

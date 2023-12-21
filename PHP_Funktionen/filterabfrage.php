@@ -1,5 +1,5 @@
 <?php 
-
+ // Extended filter function
 if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['searchOrt']) || isset($_POST['location']) || isset($_POST['resetButton']) || isset($_POST['start_date']) || isset($_SESSION['start_date'])) {  // extented filter function
 
     ?><div class="output_background"><div class="container-output"><?php
@@ -19,9 +19,9 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
         $gps = changeValues('gps');
         $trunk = $_SESSION['trunk'];
 
-    $conditions = array();  // Array zum Sammeln von Bedingungen
+    $conditions = array();  // Array for collecting conditions
 
-    // Sammle Bedingungen basierend auf vorhandenen Werten
+    // Collect conditions based on existing values
     if (!empty($vendor)) {
         $conditions[] = "vendordetails.vendor_name = :vendor";
     }
@@ -68,6 +68,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
     $sortOrder = (isset($_POST['sort']) && !empty($_POST['sort'])) ? $_POST['sort'] : (isset($_SESSION['sort']) ? $_SESSION['sort'] : 'ASC');
 
 
+     // SQL query to fetch results based on filters and conditions
     $sqlLocation = "SELECT carlocation.carLocationId, vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, 
                     cardetails.carId, cardetails.type, cardetails.price
                     FROM vendordetails
@@ -78,6 +79,8 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                     ORDER BY cardetails.price $sortOrder";
 
         $stmt = $conn->prepare($sqlLocation);
+
+         // Bind parameters for the prepared statement based on conditions
 
         if (!empty($vendor)) {
             $stmt->bindParam(':vendor', $vendor);
@@ -125,13 +128,14 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
 
         if ($resultCount > 0) {
             $finalResults = array();
+            // Check for existing bookings for the specified period and carLocationId
         
             foreach ($result as $row) {
                 $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));
                 $end_date = date('Y-m-d', strtotime($_SESSION['end_date']));
                 $carLocationID = $row['carLocationId'];
         
-                // Überprüfen, ob es bereits Buchungen für den angegebenen Zeitraum und die carLocationId gibt
+                
                 $checkExistingBookingsSQL = "SELECT COUNT(*) as count FROM bookings 
                     WHERE carLocationId = :carLocationID 
                     AND (
@@ -153,17 +157,19 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                 }
             }
         
-            // Pagination-Logik
+             // Pagination logic
             $resultsPerPage = 9;
             $totalResults = count($finalResults);
             $totalPages = ceil($totalResults / $resultsPerPage);
         
+            // Determine the current page
             if (isset($_GET['page']) && is_numeric($_GET['page'])) {
                 $currentPage = (int)$_GET['page'];
             } else {
                 $currentPage = 1;
             }
-        
+
+         // Ensure the current page is within the valid range
             if ($currentPage > $totalPages) {
                 $currentPage = $totalPages;
             } elseif ($currentPage < 1) {
@@ -175,11 +181,20 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
             if(isset($_POST['searchOrt'])){
             $currentPage = isset($_POST['page']) ? (int)$_POST['page'] : 1; }
 
-        
+            // Set the start index for slicing the visible results
             $startIndex = ($currentPage - 1) * $resultsPerPage;
             $visibleResults = array_slice($finalResults, $startIndex, $resultsPerPage);
+
+            if (empty($finalResults)) {?>
+                <div class="no_result">
+                    <?php echo "Leider gibt es für ihre Suche in diesem Zeitraum keine Treffer"; ?>
+                </div>
+            <?php
+
+            } else {
         
-            foreach ($visibleResults as $row) { ?>
+            foreach ($visibleResults as $row) { 
+                // Output visible results?>
                 <div class="output">
                     <div class="output_img">
                         <img src="Bilder/bilder_db/<?php echo $row['img']; ?>">
@@ -196,7 +211,8 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                         </div>
                     </div>
                 </div>
-            <?php }
+            <?php } }
+            
 
         } else { ?>
             <div class="no_result">

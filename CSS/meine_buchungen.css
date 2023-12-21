@@ -1,15 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font styles*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
+/* Global styling for no borders and box model */
 *{
     margin: 0;
-    padding: 0;                             /*generell styling for no borders */
+    padding: 0;                             
     box-sizing: border-box;
 }
 
-/*Styling von Meine Buchungen*/
+/* Styling of "Meine Buchungen" */
 
-/* Background image styling for .img-container */
+/* Styling for the background image container */
 .img-container {
     background-image: url(CSS_Bilder/Leonardo_Diffusion_XL_car_rental_with_sun_in_the_background_2.jpg);
     background-repeat: no-repeat;

@@ -1,25 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* Import font styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
+/* Global styling for no borders and box model */
 *{
     margin: 0;
-    padding: 0;                                                                                     /* general formating für keine überflüssigen Ränder */
+    padding: 0;                                                                                     
     box-sizing: border-box;
 }
 
-/* styling of search filter for location and time */
+/* Styling of search filter for location and time */
 
 body {
     background-color: #24252a;
 }
 
+/* Styling for the filter container */
 .filter-container {
     display: flex;
     justify-content: center;
     padding-top: 30px;
 }
 
+/* Styling for the search filter */
 .suchfilter {
     height: 125px;
     width: 71%;
@@ -29,6 +32,7 @@ body {
     
 }
 
+/* Styling for the heading in the search filter */
 .suchfilter h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -37,6 +41,7 @@ body {
     text-decoration: none;
 }
 
+/* Styling for the rows within the search filter */
 .filter_row {
     display: flex;
     gap: 50px;
@@ -46,6 +51,7 @@ body {
     justify-content: center;
 }
 
+/* Styling for the filter bar within the search filter */
 .filter_bar {
     display: flex;
     gap: 20px;
@@ -53,6 +59,7 @@ body {
     align-items: center;
 }
 
+/* Styling for form controls in the search filter */
 .form-control {
     height:40px;
     font-family: "Poppins", sans-serif;
@@ -64,6 +71,7 @@ body {
     border-radius: 5px;
 }
 
+/* Styling for form select in the search filter */
 .form-select {
     height: 40px;
     font-family: "Poppins", sans-serif;
@@ -74,6 +82,7 @@ body {
     text-align: center;
 }
 
+/* Styling for buttons in the search filter */
 .button_filter {
     padding: 5px 18px;
     background-color: rgba(0,134,169,1);
@@ -89,10 +98,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Styling for hover effect on buttons in the search filter */
 .button_filter:hover {
     background-color: rgba(0,134,169,0.7);
 }
 
+/* Styling for reset button in the search filter */
 .button_reset {
     padding: 5px 18px;
     background-color: rgba(255, 151, 77, 1);
@@ -108,14 +119,16 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Styling for hover effect on reset button in the search filter */
 .button_reset:hover {
     background-color: rgba(255, 151, 77, 0.7);
 }
 
-/* end of search filter */
+/* End of search filter */
 
-/* begin of big filter */
+/* Begin of big filter */
 
+/* Styling for big filter */
 .filter-container-2 {
     display: flex;
     justify-content: center;
@@ -123,6 +136,7 @@ body {
     padding-top: 10px;
 }
 
+/* Styling for extended search filter */
 .suchfilter-extended {
     height: auto;
     width: 71%;
@@ -133,6 +147,7 @@ body {
     
 }
 
+/* Styling for rows in extended search filter */
 .filter-row-2 {
     display: flex;
     gap: 50px;
@@ -142,6 +157,7 @@ body {
     padding-bottom: 10px;
 }
 
+/* Styling for filter bar in extended search filter */
 .filter-row-filter {
     display: flex;
     gap: 50px;
@@ -150,6 +166,7 @@ body {
     justify-content: center;
 }
 
+/* Styling for heading in extended search filter */
 .filter-bar-2 h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -158,6 +175,7 @@ body {
     text-decoration: none;
 }
 
+/* Styling for filter bar in extended search filter */
 .filter-bar-2 {
     display: flex;
     gap: 10px;
@@ -165,6 +183,7 @@ body {
     align-items: center;
 }
 
+/* Styling for image container */
 .img-container {
     background-image: url(CSS_Bilder/Mieten_IMG.jpg);
     background-repeat: no-repeat;
@@ -173,12 +192,13 @@ body {
     height: auto;
 }
 
-
+/* Styling for filter heading */
 .filter-heading {
     text-align: center;
     padding-top:20px;
 }
 
+/* Styling for filter heading text */
 .filter-heading h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -188,6 +208,7 @@ body {
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
+/* Styling for form select in the extended search filter */
 .form-select-2 {
     height: 30px;
     font-family: "Poppins", sans-serif;
@@ -198,6 +219,7 @@ body {
     border-radius: 5px;
 }
 
+/* Styling for sorting form select in the extended search filter */
 .form-select-sort {
     height: 30px;
     font-family: "Poppins", sans-serif;
@@ -208,13 +230,14 @@ body {
     border-radius: 5px;
 }
 
+/* Styling for arrow icon */
 .arrow {
-    color: #333; /* Farbe des Pfeils anpassen */
-    font-size: 12px; /* Größe des Pfeils anpassen */
-    margin-left: 5px; /* Abstand zwischen Text und Pfeil anpassen */
+    color: #333;      /* Adjust color of arrow */
+    font-size: 12px;    /* Adjust size of arrow */
+    margin-left: 5px;   /* Adjust distance between text and arrow */
   }
 
-
+/* Styling for form input in the extended search filter */
 .form-input-2 {
     height: 30px;
     width: 75px;
@@ -227,6 +250,7 @@ body {
     border-radius: 5px;
 }
 
+/* Styling for buttons in the extended search filter */
 .filter-bar-2 button {
     color: black;
     font-family: "Poppins", sans-serif;
@@ -234,6 +258,7 @@ body {
     font-size: 15px; 
 }
 
+/* Styling for row containing buttons in the extended search filter */
 .filter-row-button {
     display: flex;
     width: 100%;
@@ -241,6 +266,7 @@ body {
     justify-content: center;
 }
 
+/* Styling for top border row in the extended search filter */
 .filter-row-3 {
     display: flex;
     gap: 50px;
@@ -253,6 +279,7 @@ body {
     border-width: 2px;
 }
 
+/* Styling for bottom border row in the extended search filter */
 .filter-row-4 {
     display: flex;
     gap: 50px;
@@ -265,6 +292,7 @@ body {
     border-width: 2px;
 }
 
+/* Styling for "Show More" button */
 .button-more {
     width: 40px;
     background-color: rgba(0, 0, 0, 0);
@@ -273,32 +301,38 @@ body {
     cursor: pointer;
 }
 
+/* Styling for down arrow icon */
 .fa-chevron-down {
     font-size: 25px;
     color: rgba(0,134,169,1);
     transition:0.5s;
 }
 
+/* Styling for hover effect on down arrow icon */
 .fa-chevron-down:hover {
     transform:scale(1.4);
     z-index:1;
 }
 
+/* Styling for hidden filter section */
 #filter2 {
     display: none;
 }
 
+/* Styling for up arrow icon */
 .fa-chevron-up {
     font-size: 25px;
     color: rgba(0,134,169,1);
     transition:0.5s;
 }
 
+/* Styling for hover effect on up arrow icon */
 .fa-chevron-up:hover {
     transform:scale(1.4);
     z-index:1;
 }
 
+/* Styling for output container */
 .container-output {
     display: grid;
     gap: 50px;
@@ -306,11 +340,11 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 30px;
-    grid-template-columns: repeat(3, 1fr); /* Drei Spalten mit gleicher Breite */
+    grid-template-columns: repeat(3, 1fr); /* Three columns with the same width */
     box-sizing: border-box;
 }
 
-
+/* Styling for output box */
 .output {
     width: 450px;
     height: 400px;
@@ -319,16 +353,19 @@ body {
     
 }
 
+/* Styling for output image container */
 .output_img {
     width: 450px;
     height: 300px;
 }
 
+/* Styling for output image */
 .output_img img{
     width: 450px;
     height: 100%;
 }
 
+/* Styling for output text */
 .output_text {
     color: #edf0f1;
     font-family: "Poppins", sans-serif;
@@ -338,6 +375,7 @@ body {
     padding-top: 10px;
 }
 
+/* Styling for background of output container */
 .output_background {
     background-color: rgb(36, 37, 42, 1);
     width: 100%;
@@ -345,12 +383,14 @@ body {
     
 }
 
+/* Styling for text and button container */
 .button_text {
     display: flex;
     justify-content: space-between;
     height: 100px;
 }
 
+/* Styling for output button container */
 .output_button {
     margin-left: auto;
     height: 100px; 
@@ -359,6 +399,7 @@ body {
     padding-right: 15px;
 }
 
+/* Styling for output button */
 .output_button button {
     width: 110px;
     height: 30px;
@@ -374,11 +415,13 @@ body {
     transition:0.4s;
 }
 
+/* Styling for hover effect on output button */
 .output_button button:hover {
     background-color: rgba(255, 151, 77, 0.7);
     transform:scale(1.15);
 }
 
+/* Styling for no result message */
 .no_result {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -386,10 +429,11 @@ body {
     font-size: 30px;
     width: 700px;
     text-align: center;
-    margin-left: calc((1536px - 700px - 2 * 30px) / 2); /* Berechnet den linken Rand, um das Element zu zentrieren */
-    margin-right: calc((1536px - 700px - 2 * 30px) / 2); /* Berechnet den rechten Rand, um das Element zu zentrieren */
+    margin-left: calc((1536px - 700px - 2 * 30px) / 2); /* Calculate left margin to center the element */
+    margin-right: calc((1536px - 700px - 2 * 30px) / 2); /*  Calculate right margin to center the element */
 }
 
+/* Styling for "container-anzeigen" */
 .container-anzeigen {
     width: 100%;
     height: 60px;
@@ -397,6 +441,7 @@ body {
     display: flex;
 }
 
+/* Styling for "Show More" button */
 .button_showmore {
     padding: 5px 18px;
     background-color: rgba(0,134,169,1);
@@ -412,10 +457,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Styling for hover effect on "Show More" button */
 .button_showmore:hover {
     background-color: rgba(0,134,169,0.7);
 }
 
+/* Styling for "Show Less" button */
 .button_showless {
     padding: 5px 18px;
     background-color: rgba(255, 151, 77, 1);
@@ -431,10 +478,12 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
 }
 
+/* Styling for hover effect on "Show Less" button */
 .button_showless:hover {
     background-color: rgba(255, 151, 77, 0.7);
 }
 
+/* Styling for pagination container */
 .pagination {
     text-align: center;
     width: auto;
@@ -444,11 +493,12 @@ body {
     padding-bottom: 20px;
 }
 
+/* Styling for pagination links */
 .pagination a {
     width: 35px;
     height: 35px;
     display: inline-block;
-    margin: 0 5px; /* Beispielabstand von 5px zwischen den Zahlen */
+    margin: 0 5px; /* Example spacing of 5px between the numbers */
     border: 1px solid #ccc;
     text-decoration: none;
     color: rgba(255, 255, 255, 0.3);

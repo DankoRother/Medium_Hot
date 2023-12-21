@@ -1,29 +1,33 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* Import font style */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-.divForBackground{                                  /* Design and structuring for the background*/
+/* Styling for the background container */
+.divForBackground{                               
     height: 600px;
     width: 100%;
     background-image: url(CSS_Bilder/loginhafen.jpg);
-    background-size: cover; /* Skaliert das Bild, um die gesamte Hintergrundfläche zu bedecken */
-    background-position: center center; /* Zentriert das Bild horizontal und vertikal */
+    background-size: cover; /* Scales the image to cover the entire background area */
+    background-position: center center; /* Centers the image horizontally and vertically */
 }
 
+/* Styling for the headline section */
 .headline {
     text-align: center;
     padding-top:10px;
 }
 
+/* Styling for the headline 3 text */
 .headline h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                                                                /* font styling */
+    font-size: 50px;                                                             
     color: white;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
+/* Styling for the big object container */
 .big-object-container {
     height: 600px;
     width: 100%;
@@ -32,6 +36,7 @@
     padding-top: 40px;
 }
 
+/* Styling for the object container */
 .object-container {
     background-color: rgb(36, 37, 42, 0.9);
     height: 250px;
@@ -39,12 +44,14 @@
     border-radius: 15px;
 }
 
+/* Styling for the text container */
 .text-container{
     height: 175px;
     text-align: center;
     padding-top: 70px;
 }
 
+/* Styling for the text container text */
 .text-container h3 {
     font-family: "Poppins", sans-serif;
     font-size: 35px;
@@ -52,6 +59,7 @@
     color: white;
 }
 
+/* Styling for the container */
 .buttom-container {
     height: 75px;
     display: flex;
@@ -71,6 +79,7 @@
     text-align: right;
 }
 
+/* Styling for the home button */
 .home-button {
     border-radius: 5px;
     border-style: none;
@@ -82,6 +91,7 @@
     transition: all 0.3s ease 0s;
 }
 
+/* Styling for the book button */
 .book-button {
     margin-left: auto;
     border-radius: 5px;
@@ -94,14 +104,16 @@
     transition: all 0.3s ease 0s;
 }
 
+/* Hover effect for the book button */
 .book-button:hover {
-    background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
+    background-color: rgba(0,134,160,0.7);      
     text-decoration: none;
     transform:scale(1.1);
 }
 
+/* Hover effect for the home button */
 .home-button:hover {
-    background-color: rgba(0,134,160,0.7);      /*Hover effect for the button*/
+    background-color: rgba(0,134,160,0.7);     
     text-decoration: none;
     transform:scale(1.1);
 }

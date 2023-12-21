@@ -255,6 +255,7 @@
     color: white;
 }
 
+/* Styling for test class */
 .test{
     font-family: "Poppins", sans-serif;
     font-size: 17px;
@@ -264,6 +265,7 @@
     color: white;
 }
 
+/* Styling for a container displaying book errors */
 .book-error {
     width: 240px;
     height: 40px;
@@ -279,6 +281,7 @@
     z-index: 4;
 }
 
+/* Styling for heading in the book error container */
 .book-error h3 {
     font-family: "Poppins", sans-serif;
     font-size: 17px;
@@ -287,10 +290,12 @@
     text-align: center;
 }
 
+/* Styling for a danger sign in the book error container */
 .dang-sign {
     font-size: 20px;
 }
 
+/* Styling for a container displaying book success */
 .book-success {
     width: 300px;
     height: 40px;
@@ -305,6 +310,7 @@
     padding-right: 5px;
 }
 
+/* Styling for heading in the book success container */
 .book-success h3 {
     font-family: "Poppins", sans-serif;
     font-size: 5px;
@@ -313,6 +319,7 @@
     text-align: center;
 }
 
+/* Styling for a second type of book error container */
 .book-error-2{
     width: 240px;
     height: 60px;
@@ -328,6 +335,7 @@
     z-index: 4;
 }
 
+/* Styling for heading in the second book error container */
 .book-error-2 h3 {
     font-family: "Poppins", sans-serif;
     font-size: 17px;

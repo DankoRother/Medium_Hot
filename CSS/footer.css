@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import font styles*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
+/* General styling to reset margin, padding, and set box-sizing */
 *{
     margin: 0;
-    padding: 0;                                         /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                                         
     box-sizing: border-box;
 }
 
-/* Styling Footer*/
+/* Footer styling */
 
 .footer {
     background-color: #0b0c0e;
@@ -15,28 +16,28 @@
 }
 
 .footer_container {
-    max-width: 1170px;                          /*Größe vom Inhalt des Footers*/
+    max-width: 1170px;                          /* Size of the content within the footer */
     margin: auto;
 }
 
 ul {
-    list-style: none;                           /*Entfernen vom Link Styling*/
+    list-style: none;                           /* Remove default list styling for links */
 }
 
 .footer-row {
     display: flex;
-    flex-wrap: wrap;                            /*Alle Elemente werden nebeneinander dargestellt*/
+    flex-wrap: wrap;                            /* Display elements side by side */
 }
 
 .footer-col {
-    width: 25%;                                 /*Größe der einzelnen Blöcke im Footer*/
+    width: 25%;                                 /* Size of each block in the footer */
     padding: 0 15px;
 }
 
 .footer-col h4 {
     font-size: 18px;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;                             /*Schriftformatierung */
+    font-weight: 500;                             /* Font styling */
     color: #edf0f1;
     margin-bottom: 35px;
     position:  relative;
@@ -47,14 +48,14 @@ ul {
     position: absolute;
     left: 0;
     bottom: -10px;
-    background-color: #0088a9;                   /*Strich unter Überschriften im Footer*/
+    background-color: #0088a9;                   /* Line below footer headings */
     height: 2px;
     box-sizing: border-box;
     width: 50px;
 }
 
 .footer-col ul li:not(:last-child) {
-    margin-bottom: 10px;                            /*Abstand zwischen links*/
+    margin-bottom: 10px;                            /* Spacing between links */
 }
 
 
@@ -62,7 +63,7 @@ ul {
     font-size: 16px;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    color: #edf0f1;                                /*Schriftformatierung*/
+    color: #edf0f1;                                /* Font styling */
     text-decoration: none;
     display: block;
     transition: all 0.3s ease;
@@ -70,7 +71,7 @@ ul {
 
 .footer-col ul li a:hover{
     color: #0088a9;                                 
-    padding-left: 8px;                              /*Blauer Hover Effekt im Footer*/
+    padding-left: 8px;                                /* Blue hover effect in the footer */
 }
 
 .footer-col .social-links a {
@@ -78,7 +79,7 @@ ul {
     height: 40px;
     width: 40px;
     background-color: rgba(255,255,255,0.2);
-    margin:0 10px 10px 0;                               /*Formatierung Social Links Icons*/
+    margin:0 10px 10px 0;                               /* Social Links Icons styling */
     text-align: center;
     line-height: 40px;
     border-radius: 50%;
@@ -88,31 +89,31 @@ ul {
 
 .footer-col .social-links a:hover {
     color:black;
-    background-color: #edf0f1;                         /*Hover effekt social media icons*/
+    background-color: #edf0f1;                         /* Hover effect for social media icons */
 }
 
 .footer2 {
-    width: 100%;                                        /*Unterer Footer*/
+    width: 100%;                                        /* Second Footer */
     background-color: black;
 }
 
 .pay-img {
     display: flex;
     width: 100%;                                    
-    height: 50px;                                       /*Positionierung Zahlungsmöglichkeiten Bilder*/
+    height: 50px;                                        /* Size of payment method images */
     justify-content: center;
     padding: 0;
 }
 
 .pay-img img{
     height: 50px;
-    width:  50px;                                       /*Größe der Bilder Zahlungsmethoden */
+    width:  50px;                                         /* Size of payment method images */
     margin-right: 5px;
 }
 
 .pay-text {
     text-align: center;
-    width: 100%;                                        /*Zentrierung Zahlungsmöglichkeiten Headline*/
+    width: 100%;                                        /* Centering of payment methods headline */
     height: 35px;
     padding: 8px 0;
 }
@@ -120,19 +121,18 @@ ul {
 .pay-text h4 {
     font-size: 18px;
     font-family: "Poppins", sans-serif;
-    font-weight: 500;                                  /*Schriftformatierung */
+    font-weight: 500;                                  /* Font styling */
     color: #edf0f1;
 }
 
 .stylep {
     height: 25px;
-    text-align: center;                                 /*Rechte Text*/
+    text-align: center;                                 /* Text for the legal sentence */
 }
 
 .stylep p {
     font-size: 12px;
-    font-family: "Poppins", sans-serif;                 /*Styling Text*/
+    font-family: "Poppins", sans-serif;                 /* Styling of legal text*/
     font-weight: 500;
     color: #edf0f1;
 }
-/*Ende Styling Footer*/

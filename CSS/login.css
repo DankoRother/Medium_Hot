@@ -1,34 +1,42 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font style */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
- *{
+
+/* General styling to eliminate unnecessary margins and paddings */
+*{
     margin: 0;
-    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                             
     box-sizing: border-box;
 }
 
+/* Styling the body with a background image */
 body {
     background-image: url(CSS_Bilder/loginhafen.jpg);
     width: 100%;
     background-size: cover;
 }
+
+/* Styling for login heading (h1) */
 h1.login {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /*Schriftformatierung */
+    font-size: 50px;                                    
     color: #edf0f1;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
+
+/* Styling for login link (a) */
 a.login {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 25px;                                    /*Schriftformatierung */
+    font-size: 25px;                                   
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
 
+/* Styling for login heading (h3) */
 h3.login {
     margin-top: 15%;
     margin-left: 20%;
@@ -40,7 +48,7 @@ h3.login {
 
 }
 
-
+/* Styling for flexible container */
 container.flex {
     margin-left: 20%;
     margin-right: 20%;
@@ -50,6 +58,7 @@ container.flex {
     padding-top: 8%;
 }
 
+/* Styling for rounded corners container */
 div.roundedcorners {
     width: 18%;
     background-color: rgb(36, 37, 42, 0.9);
@@ -59,6 +68,8 @@ div.roundedcorners {
     flex-direction: row;
     height: 260px;
 }
+
+/* Styling for error message container */
 div.error {
     margin-left: 0%;
     margin-top: 2%;
@@ -66,10 +77,12 @@ div.error {
     width: 400%;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 15px;                                    /*Schriftformatierung */
+    font-size: 15px;                                    
     text-decoration: none;
     color: #ff974d;
 }
+
+/* Styling for login form */
 form {
     margin-left:2.5%;
     box-sizing: border-box;
@@ -81,11 +94,13 @@ form {
     text-align: left;
 }
 
+/* Styling for form label */
 label.label {
     margin-top: 9%;
     color: white;
 }
 
+/* Styling for text input */
 input[type=text] {
     box-sizing: border-box;
     width: 250%;
@@ -97,6 +112,7 @@ input[type=text] {
     margin-top: 5%;
 }
 
+/* Styling for login button */
 input[type=submit].login {
     text-align: center;
     background-color: #0088a9;
@@ -114,6 +130,7 @@ input[type=submit].login {
     display: block; 
 }
 
+/* Styling for disabled login button */
 input.login:disabled {
     background-color: #7ea2ab;
     text-align: center;
@@ -130,6 +147,8 @@ input.login:disabled {
     margin-bottom: 0%;
     display: block; 
 }
+
+/* Styling for login button */
 button.login{
     text-align: center;
     background-color: #ff974d;

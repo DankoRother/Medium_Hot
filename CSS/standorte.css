@@ -1,12 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
+/* Global reset for margin, padding, and box-sizing */
 *{
     margin: 0;
-    padding: 0;                                         /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                                         
     box-sizing: border-box;
 }
 
+/* Styling for the Germany map */
 .ger-map {
     text-align:center;
     position: relative;
@@ -14,6 +16,7 @@
     max-width: 570px;
 }
 
+/* Styling for the Germany map image */
 .ger-map img {
     display: inline-block;
     width: 570px;
@@ -25,6 +28,7 @@
     padding-bottom: 40px;
 }
 
+/* Styling for a single pin */
 .pin {
     background-color: #0088a9;
     position: absolute;
@@ -33,10 +37,12 @@
     border-radius: 50%;
 }
 
+/* Hover effect of pin */
 .pin:hover {
     cursor: pointer;
 }
 
+/* Styling for the pin icon */
 .pin::before {
     content: '';
     background-color: #0088a9;
@@ -51,6 +57,7 @@
         pulse 1.3s ease-in-out infinite;
 }
 
+/* Styling for the text inside the pin */
 .pin span {
     display: inline-block;
     white-space: nowrap;
@@ -66,6 +73,7 @@
     font-weight: 500;
 }
 
+/* Pulse effect of pin */
 @keyframes pulse {
     100% {
         opacity: 0;
@@ -75,10 +83,11 @@
     }       
 }
 
+/* Styling for the heading within the map container */
 .map-heading h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /* Schriftformatierung */
+    font-size: 50px;                                   
     color: #000000;
     text-decoration: none;
     text-align: center;
@@ -87,6 +96,8 @@
 .map-heading {
     padding: 20px 0;
 }
+
+/* Positioning of all 14 pins */
 
 .hamburg {
     top: 20.5%;
