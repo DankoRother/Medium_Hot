@@ -125,9 +125,8 @@ input.editButton:disabled {
     width: 80%;
 }
 input.submitButton {
-    background-color: #0088a9;
     text-align: center;
-    width: 80%;
+    background-color: #0088a9;
     border: none;
     color: #edf0f1;
     padding-left: 5px;
@@ -139,14 +138,13 @@ input.submitButton {
     cursor: pointer;
     border-radius: 5px; 
     justify-self: right;
+    width: 80%;
     display: none;
-    margin-top: 7.5%;
 }
 
 input.submitButton:disabled {
-    background-color: #7ea2ab;
     text-align: center;
-    width: 80%;
+    background-color: #7ea2ab;
     border: none;
     color: #edf0f1;
     padding-left: 5px;
@@ -155,9 +153,9 @@ input.submitButton:disabled {
     padding-right: 5px;
     font-family: "Poppins";
     font-size: 10px;
-    cursor: not-allowed;
+    cursor: pointer;
     border-radius: 5px; 
     justify-self: right;
+    width: 80%;
     display: none;
-    margin-top: 7.5%;
 }

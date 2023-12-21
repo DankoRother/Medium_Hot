@@ -138,7 +138,7 @@ if ($result) {
         <td class="secondTd">
             <h3 class="accountData" id="birthdayData"><?php echo($loggedInBirthday);?></h3>
         </td>
-        <td class="thirdTd"></td>
+        <td class="thirdTd"><input type="submit" class="submitButton" id="backButton" onclick="back(event)" value="Zurück"></td>
     </tr>
 </table>
 

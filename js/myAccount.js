@@ -44,24 +44,46 @@ function validateInput(edittableData) {
 
 function editData(edittableData) {
     event.preventDefault();
+    var backButton = document.getElementById("backButton");
     var inputElement = document.getElementById(edittableData);
     var dataDisplayElement = document.getElementById(edittableData + "Data");
     var buttonElement = document.getElementById("edit" + edittableData);
     var buttonSubmitElement = document.getElementById("submit" + edittableData);
     var otherEditButtons = document.querySelectorAll('input[type=submit]:not(#' + edittableData + ')');
+    currentEdittedData = edittableData;
     inputElement.addEventListener('input', function() {
         validateInput(edittableData);
     });
 
     otherEditButtons.forEach(function(button) {
         button.disabled = true;
-    });        
+    });
+    buttonSubmitElement.disabled = false;        
     inputElement.style.display = "block";
     dataDisplayElement.style.display = "none";
     buttonElement.style.display = "none";
     buttonSubmitElement.style.display = "block";
+    backButton.style.display = "block";
+    backButton.disabled = false;
 }
-
+var currentEdittedData;
+function back(event){
+    var currentInputElement = document.getElementById(currentEdittedData);
+    var currentDisplayElement = document.getElementById(currentEdittedData + "Data");
+    var currentEditButton = document.getElementById("edit" + currentEdittedData);
+    var currentSubmitButton = document.getElementById("submit" + currentEdittedData);
+    event.preventDefault();
+    var backButton = document.getElementById("backButton");
+    var editButtons = document.querySelectorAll('input[type=submit]');
+    editButtons.forEach(function(button) {
+        button.disabled = false;
+    });
+    currentEditButton.style.display = "block";
+    currentSubmitButton.style.display = "none";
+    backButton.style.display = "none";
+    currentDisplayElement.style.display = "block";
+    currentInputElement.style.display = "none";
+}
 function submitData(edittableData) {
     event.preventDefault();
     var edittedField;
