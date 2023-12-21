@@ -11,58 +11,55 @@
     <link rel="stylesheet" href="CSS/bookSuccess.css"> 
 </head>
 
-<?php include 'header.php'; ?>
+<?php 
+// Including the 'header.php' file
+include 'header.php'; 
 
-<?php include 'dbConfig.php';?> 
+// Including the 'dbConfig.php' file for database configuration
+include 'dbConfig.php';
 
-<?php $selectedCarId = $_SESSION['selected_car_id']; 
-    
-        // Verwende vorbereitete Anweisungen, um SQL-Injektion zu verhindern
-        $sqlLocation = "SELECT vendordetails.vendor_name, cardetails.*, location.location, carlocation.carLocationId
-                        FROM vendordetails
-                        INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
-                        INNER JOIN carlocation ON carlocation.carId = cardetails.carId
-                        INNER JOIN location ON location.locationId = carlocation.locationId
-                        WHERE carlocation.carLocationId = :selectedCarId";
-    
-        $stmt = $conn->prepare($sqlLocation);
-    
-        // Binden der Parameter
-        $stmt->bindParam(':selectedCarId', $selectedCarId, PDO::PARAM_INT);
-    
-        $stmt->execute();
-    
-        $result = $stmt->fetchAll(PDO::FETCH_ASSOC); 
-        
-        unset($_SESSION['selected_car_id']);    ?>
+// Including the 'PHP_Funktionen/selectedCarAbfrage.php' file for car information retrieval
+include 'PHP_Funktionen/selectedCarAbfrage.php' ?>
 
 
-<?php if (!empty($result)) {
-    $row = $result[0]; // Erster Datensatz
+<?php 
+// Checking if the $result variable is not empty
+if (!empty($result)) {
+    // Getting the first row from the result set
+    $row = $result[0]; 
  ?>
+  <!-- Container for the background -->
 <div class="divForBackground">
+     <!-- Headline section -->
     <div class="headline">
         <h3>Gute Fahrt!</h3>
     </div>
+    <!-- Container for the main content -->
     <div class="big-object-container">
         <div class="object-container">
+            <!-- Container for text information -->
             <div class="text-container">
                 <h3>Ihre Buchung vom <span class="highlight"><?php echo $_SESSION['start_date']?>
                         </span> bis zum <span class="highlight"><?php echo $_SESSION['end_date']?>
                         </span> in <span class="highlight"><?php echo $row['location']?>
                         </span> war erfolgreich!</h3>
             </div>
+             <!-- Container for car image -->
             <div class="img-car">
                 <img src="Bilder/bilder_db/<?php echo $row['img']?>">
             </div>
+            <!-- Container for car information -->
             <div class="text-car">
                 <h3><?php echo $row['vendor_name']. " " . $row['name'] . " " . $row['name_extension'] ?></h3>
             </div>
+            <!-- Container for buttons -->
             <div class="buttom-container">
                 <div class="bottom">
+                    <!-- Back to homepage button -->
                     <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
                 </div>    
                 <div class="bottom-book">
+                    <!-- Button to go to bookings page -->
                     <a href="meine_buchungen.php"><button class="book-button">Zu ihren Buchungen</button></a>
                 </div>  
             </div>
@@ -71,6 +68,7 @@
 </div>
 <?php } ?>
 
+<!-- Include footer section -->
 <?php include 'footer.php'; ?>
 
 </html>
