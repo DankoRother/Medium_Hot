@@ -70,7 +70,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
 
      // SQL query to fetch results based on filters and conditions
     $sqlLocation = "SELECT carlocation.carLocationId, vendordetails.vendor_name, cardetails.img, cardetails.name, cardetails.name_extension, 
-                    cardetails.carId, cardetails.type, cardetails.price
+                    carlocation.carId, cardetails.type, cardetails.price, carlocation.locationId
                     FROM vendordetails
                     INNER JOIN cardetails ON vendordetails.vendorId = cardetails.vendorId
                     INNER JOIN carlocation ON carlocation.carId = cardetails.carId
@@ -129,7 +129,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
         if ($resultCount > 0) {
             $finalResults = array();
             // Check for existing bookings for the specified period and carLocationId
-        
+           
             foreach ($result as $row) {
                 $start_date = date('Y-m-d', strtotime($_SESSION['start_date']));
                 $end_date = date('Y-m-d', strtotime($_SESSION['end_date']));
@@ -153,9 +153,23 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                 $resultCheck = $checkExistingBookingsSQ->fetchColumn();
         
                 if ($resultCheck == 0) {
-                    $finalResults[] = $row;
+                    // Überprüfen, ob diese Kombination bereits in den finalen Ergebnissen vorhanden ist
+                    $combinationKey = $row['carId'] . '_' . $row['locationId'];
+            
+                    $index = array_search($row['carId'] . '_' . $row['locationId'], array_column($finalResults, 'carId_locationId'));
+
+                    if ($index === false) {
+                        // Kombination noch nicht vorhanden, füge sie hinzu
+                        $row['availableCount'] = 1;
+                        $row['carId_locationId'] = $row['carId'] . '_' . $row['locationId']; // Neues Feld für den eindeutigen Schlüssel
+                        $finalResults[] = $row;
+                    } else {
+                        // Kombination bereits vorhanden, erhöhe die Anzahl der verfügbaren Autos
+                        $finalResults[$index]['availableCount']++;
+                    }
                 }
             }
+            
         
              // Pagination logic
             $resultsPerPage = 9;
@@ -202,6 +216,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                     <div class="button_text">
                         <div class="output_text">
                             <?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['type'] . "<br>" . $row['price'] . " €/Tag"; ?>
+                            <br>Verfügbar: <?php echo $row['availableCount']; ?> Stück
                         </div>
                         <div class="output_button">
                             <form action="Produktdetails.php" method="post">
