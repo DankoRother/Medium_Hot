@@ -178,6 +178,14 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
         
             $startIndex = ($currentPage - 1) * $resultsPerPage;
             $visibleResults = array_slice($finalResults, $startIndex, $resultsPerPage);
+
+            if (empty($finalResults)) {?>
+                <div class="no_result">
+                    <?php echo "Leider gibt es für ihre Suche in diesem Zeitraum keine Treffer"; ?>
+                </div>
+            <?php
+
+            } else {
         
             foreach ($visibleResults as $row) { ?>
                 <div class="output">
@@ -196,7 +204,8 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                         </div>
                     </div>
                 </div>
-            <?php }
+            <?php } }
+            
 
         } else { ?>
             <div class="no_result">
