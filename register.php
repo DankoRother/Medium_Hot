@@ -9,8 +9,10 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Linking to the external stylesheet and jQuery library -->
-    <link rel="stylesheet" href="CSS/register.css">      
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script> 
+    <link rel="stylesheet" href="CSS/register.css">   
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>   
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> 
 </head>
 
 <body>
@@ -48,7 +50,7 @@
                 <input class="input" type="text" id="nachname" name="nachname" style="order: 4; display: none" >
                 <label class="label" for="nachname" style="order: 5; display: none" hidden>Nachname:</label>
                 
-                <input class="datum" type="date" id="geburtsdatum" name="geburtsdatum" style="display: none; order: 2;">
+                <input class="input" type="text" id="geburtsdatum" name="geburtsdatum" style="display: none; order: 2;">
                 <label class="label" for="geburtsdatum" style="order: 3; display: none">Geburtsdatum:</label>
                 
                 <!-- Submit button (initially hidden) -->

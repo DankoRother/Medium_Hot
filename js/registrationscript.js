@@ -1,3 +1,12 @@
+$(function() {
+    $("#geburtsdatum").datepicker({
+        dateFormat: "dd.mm.yy", // Display format for the user
+        changeMonth: true,
+        changeYear: true,
+        yearRange: "-100:+0",
+        maxDate: 0,
+    });
+});
 document.getElementById("username").addEventListener("input", validateUsername);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passwort").addEventListener("input", validatePassword);
@@ -215,8 +224,7 @@ function validateNachname() {
 }
 
 function validateGeburtsdatum() {
-    var geburtsdatum = "";
-    geburtsdatum = document.getElementById("geburtsdatum").value;
+    var geburtsdatum = document.getElementById("geburtsdatum").value;
     var errorElement = document.getElementById("geburtstagError");
     var geburtsdatumElement = document.getElementById("geburtsdatum");
 
@@ -225,7 +233,8 @@ function validateGeburtsdatum() {
     var minDate = new Date('1900-01-01');
     var maxDate = new Date('2024-12-31');
 
-    if (/^(19\d{2}|20[0-1][0-9]|202[0-4])-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/.test(geburtsdatum)) {
+    // Adjusted regular expression to match "dd.mm.yy" format
+    if (/^(0[1-9]|[12][0-9]|3[01])\.(0[1-9]|1[0-2])\.\d{4}$/.test(geburtsdatum)) {
         errorElement.style.color = "#0088a9";
         geburtsdatumElement.style.borderColor = "#0088a9";
         geburtstagCondition = true;
@@ -238,6 +247,7 @@ function validateGeburtsdatum() {
     enablesecondbutton();
 }
 
+
 function enablesecondbutton() {
     if(vornameCondition && nachnameCondition && geburtstagCondition) {
     secondButtonId.disabled = false;
@@ -246,10 +256,13 @@ else{
     secondButtonId.disabled = true;
 }
 }
-
 function submitForm(event) {
     event.preventDefault(); // Prevent the default form submission
 
+    // Convert the displayed date format to "dd-mm-yyyy"
+    var formattedDate = $.datepicker.formatDate("dd-mm-yy", $("#geburtsdatum").datepicker("getDate"));
+    // Set the converted date to the hidden input field for submission
+    $("#geburtsdatum").val(formattedDate);
     $.ajax({
         url: 'php_funktionen/registerfunction.php', // Corrected URL
         method: 'POST',
