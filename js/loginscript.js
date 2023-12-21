@@ -6,7 +6,7 @@ function loginFormSubmit(event) {
     console.log($('#loginForm').serialize());
 
     $.ajax({
-        url: 'PHP_Funktionen/loginfunction.php',
+        url: 'PHP_Funktionen/loginfunction.php', // Corrected URL
         method: 'POST',
         data: $('#loginForm').serialize(),
         dataType: 'json',
@@ -26,8 +26,9 @@ function loginFormSubmit(event) {
                     if(selectedCarId > 0) {
                         window.location.href = 'produktdetails.php';
                     } else {
-                    window.location.href = 'home.php';
-            }}, 700);
+                        window.location.href = 'home.php';
+                    }
+                }, 700);
             } else {
                 console.error('Login error:', response.message);
                 if (response.message == "Incorrect username or password") {
@@ -41,8 +42,11 @@ function loginFormSubmit(event) {
         }
     });
 }
+
+// Event listeners for input validation
 document.getElementById("loginUsername").addEventListener("input", validateUsername);
 document.getElementById("loginPassword").addEventListener("input", validatePassword);
+
 function validateUsername() {
     var usernameInput = document.getElementById("loginUsername").value;
     var usernameElement = document.getElementById("loginUsername");
@@ -74,11 +78,11 @@ function validatePassword() {
 }
 
 var loginButtonId = document.getElementById("loginButton");
+
 function enableLogin() {
     if(usernameCondition && passwordCondition) {
-    loginButtonId.disabled = false;
-}
-else{
-    loginButtonId.disabled = true;
-}
+        loginButtonId.disabled = false;
+    } else {
+        loginButtonId.disabled = true;
+    }
 }

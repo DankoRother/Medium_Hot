@@ -1,11 +1,11 @@
 <?php
 session_start();
-include("../dbConfig.php");
+include("../dbConfig.php"); // Include the database configuration file
 
-if (isset($_POST)) {
+if (isset($_POST)) { // Check if POST data is set
     $usernameInput = $_POST['username'];
     $emailInput = $_POST['email'];
-    $passwordInput = password_hash($_POST['passwort'], PASSWORD_DEFAULT);
+    $passwordInput = password_hash($_POST['passwort'], PASSWORD_DEFAULT); // Hash the password
     $vornameInput = $_POST['vorname'];
     $nachnameInput = $_POST['nachname'];
     $geburtstagInput = $_POST['geburtsdatum'];
@@ -57,17 +57,21 @@ if (isset($_POST)) {
                 $response = ['status' => 'success'];
                 error_log(json_encode($response));
                 echo json_encode($response);
+                
+                // Retrieve the userId associated with the inserted username
                 $stmt2 = $conn->prepare("SELECT userId FROM user WHERE username = :username");
                 $stmt2->bindParam(':username', $usernameInput);
                 $stmt2->execute();
                 $user = $stmt2->fetch(PDO::FETCH_ASSOC);
+                
                 if ($user) {
-                    // Assuming userId is an integer; change the type accordingly if it's different
+                    // Get userID to log the user in.
                     $_SESSION['logged_in_userID'] = (int) $user['userId'];
                 } else {
                     // Handle the case when the username is not found
                     $_SESSION['logged_in_userID'] = null;
                 }
+                
                 exit();
             } else {
                 $response = ['status' => 'error', 'message' => 'Error inserting data'];

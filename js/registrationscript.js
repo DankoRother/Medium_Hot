@@ -82,47 +82,6 @@ function loadInput(inputElement) {
     }
 }
 
-
-function validateUsername() {               
-    //revert styling changes from incorrect input
-    var username = document.getElementById("username").value;                   
-    var errorElement = document.getElementById("error1");
-    var usernameElement = document.getElementById("username");
-    if(document.getElementById("error2").style.marginTop!="12%") {
-        document.getElementById("error2").style.marginTop="15%";
-    }
-    document.getElementById("error1").textContent="Username darf nicht leer sein";
-    if (username === "") {
-        errorElement.style.color = "#ff974d";
-        condition1 = false;             
-        usernameElement.style.borderColor = "#ff974d";
-    } else {
-        errorElement.style.color = "#0088a9";
-        usernameElement.style.borderColor = "#0088a9";
-        condition1 = true;
-    }
-    enablebutton();
-}
-
-function validateEmail() {
-    //revert styling changes from incorrect input
-    var email = document.getElementById("email").value;
-    var errorElement = document.getElementById("error2");
-    var emailElement = document.getElementById("email");
-    document.getElementById("error2").style.marginTop="12%";
-    document.getElementById("error3").style.marginTop="8%";
-    document.getElementById("error2").textContent="Geben Sie eine gültige E-Mail ein";
-    if (!/^.+@.+\..{2,3}$/.test(email)) {
-        errorElement.style.color = "#ff974d";
-        emailElement.style.borderColor = "#ff974d";
-        condition2 = false;
-    } else {
-        errorElement.style.color = "#0088a9";
-        emailElement.style.borderColor = "#0088a9";
-        condition2 = true;
-    }
-    enablebutton();
-}
 function validatePassword() {
     var password = document.getElementById("passwort").value;
     var errorElement = document.getElementById("error3");
@@ -148,16 +107,80 @@ else{
     firstButtonId.disabled = true;
 }
 }
+// Function to validate the username input
+function validateUsername() {
+    var username = document.getElementById("username").value;
+    var errorElement = document.getElementById("error1");
+    var usernameElement = document.getElementById("username");
 
+    // Additional validation for maximum length
+    if (username.length > 32) {
+        errorElement.textContent = "Username darf maximal 32 Zeichen haben";
+        errorElement.style.color = "#ff974d";
+        usernameElement.style.borderColor = "#ff974d";
+        condition1 = false;
+    } else if (document.getElementById("error2").style.marginTop !== "12%") {
+        document.getElementById("error2").style.marginTop = "15%";
+    } else if (username === "") {
+        errorElement.textContent = "Username darf nicht leer sein";
+        errorElement.style.color = "#ff974d";
+        usernameElement.style.borderColor = "#ff974d";
+        condition1 = false;
+    } else {
+        errorElement.style.color = "#0088a9";
+        usernameElement.style.borderColor = "#0088a9";
+        condition1 = true;
+    }
+    enablebutton();
+}
+
+// Function to validate the email input
+function validateEmail() {
+    var email = document.getElementById("email").value;
+    var errorElement = document.getElementById("error2");
+    var emailElement = document.getElementById("email");
+
+    // Additional validation for maximum length
+    if (email.length > 32) {
+        errorElement.textContent = "Email darf maximal 32 Zeichen haben";
+        errorElement.style.color = "#ff974d";
+        emailElement.style.borderColor = "#ff974d";
+        condition2 = false;
+    } else {
+        document.getElementById("error2").style.marginTop = "12%";
+        document.getElementById("error3").style.marginTop = "8%";
+        document.getElementById("error2").textContent = "Geben Sie eine gültige E-Mail ein";
+
+        if (!/^.+@.+\..{2,3}$/.test(email)) {
+            errorElement.style.color = "#ff974d";
+            emailElement.style.borderColor = "#ff974d";
+            condition2 = false;
+        } else {
+            errorElement.style.color = "#0088a9";
+            emailElement.style.borderColor = "#0088a9";
+            condition2 = true;
+        }
+    }
+    enablebutton();
+}
+
+// Function to validate the Vorname input
 function validateVorname() {
     var vorname = document.getElementById("vorname").value;
     var errorElement = document.getElementById("vornameError");
     var vornameElement = document.getElementById("vorname");
 
-    if (vorname === "") {
+    // Additional validation for maximum length
+    if (vorname.length > 32) {
+        errorElement.textContent = "Vorname darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
-        vornameCondition = false;
         vornameElement.style.borderColor = "#ff974d";
+        vornameCondition = false;
+    } else if (vorname === "") {
+        errorElement.textContent = "Vorname darf nicht leer sein";
+        errorElement.style.color = "#ff974d";
+        vornameElement.style.borderColor = "#ff974d";
+        vornameCondition = false;
     } else {
         errorElement.style.color = "#0088a9";
         vornameElement.style.borderColor = "#0088a9";
@@ -166,15 +189,23 @@ function validateVorname() {
     enablesecondbutton();
 }
 
+// Function to validate the Nachname input
 function validateNachname() {
     var nachname = document.getElementById("nachname").value;
     var errorElement = document.getElementById("nachnameError");
     var nachnameElement = document.getElementById("nachname");
 
-    if (nachname === "") {
+    // Additional validation for maximum length
+    if (nachname.length > 32) {
+        errorElement.textContent = "Nachname darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
-        nachnameCondition = false;
         nachnameElement.style.borderColor = "#ff974d";
+        nachnameCondition = false;
+    } else if (nachname === "") {
+        errorElement.textContent = "Nachname darf nicht leer sein";
+        errorElement.style.color = "#ff974d";
+        nachnameElement.style.borderColor = "#ff974d";
+        nachnameCondition = false;
     } else {
         errorElement.style.color = "#0088a9";
         nachnameElement.style.borderColor = "#0088a9";
