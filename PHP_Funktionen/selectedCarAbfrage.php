@@ -21,7 +21,4 @@ $stmt->execute();
 
 // Fetch the result set into an associative array
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Unset the selected_car_id from the session to clear it after use
-unset($_SESSION['selected_car_id']);
 ?>

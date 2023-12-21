@@ -347,10 +347,14 @@ body {
 /* Styling for output box */
 .output {
     width: 450px;
-    height: 400px;
+    height: 415px;
     background-color: rgba(0,134,169,1);
     box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.5);
     
+}
+
+.thickness {
+    font-weight: 600;
 }
 
 /* Styling for output image container */

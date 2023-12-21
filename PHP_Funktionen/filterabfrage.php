@@ -216,10 +216,13 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
                     <div class="button_text">
                         <div class="output_text">
                             <?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] . "<br>" . $row['type'] . "<br>" . $row['price'] . " €/Tag"; ?>
-                            <br>Verfügbar: <?php echo $row['availableCount']; ?> Stück
+                            <br><span class="thickness">Verfügbar: <?php echo $row['availableCount']; ?> <?php  if($row['availableCount'] == 1){
+                                echo "Fahrzeug";
+                            } else {echo "Fahrzeuge";}?></span>
                         </div>
                         <div class="output_button">
                             <form action="Produktdetails.php" method="post">
+                                <input type="hidden" name="number" value="<?php echo $row['availableCount']; ?>">
                                 <input type="hidden" name="carId" value="<?php echo $row['carLocationId']; ?>">
                                 <button type="submit">Jetzt Mieten</button>
                             </form>
