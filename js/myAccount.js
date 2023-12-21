@@ -98,15 +98,50 @@ function back(event) {
     currentDisplayElement.style.display = "block";
     currentInputElement.style.display = "none";
 }
+// edittedField and changedData needed to keep submitFinal working across the two functions
+var edittedField;
+var changedData;
+function submitFinal(event){
+    event.preventDefault();
+    var passwordForValidation = document.getElementById('submitpasswortcheck').value;
+    // Make an AJAX request to the server
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "PHP_Funktionen/editAccount.php", true);
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
 
+    // Prepare the data to send to the server
+    var data = "field=" + edittedField + "&value=" + encodeURIComponent(changedData) + "&validationPassword=" + encodeURIComponent(passwordForValidation);
+    // Send the request
+    xhr.send(data);
+
+    // Handle the server response
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Handle the response from the server
+            console.log(xhr.responseText);
+    
+            // Check if the response indicates an error
+            if (xhr.responseText.includes("bereits vergeben")) {
+                // Add code here to inform the user about the specific error
+                alert(xhr.responseText);
+                window.location.href = "/medium_hot/myAccount.php";
+            } else if(xhr.responseText.includes("Falsches")) {
+                alert("Falsches Passwort!");
+                window.location.href = "/medium_hot/myAccount.php";
+            } else {
+                // Add code here for a successful update
+                alert("Account wurde erfolgreich bearbeitet!");
+                window.location.href = "/medium_hot/myAccount.php";
+            }
+        }
+    };
+}
 // Function to submit the edited data to the server
 function submitData(edittableData) {
     // Prevent the default form submission
     event.preventDefault();
 
     // Map the edittableData to the corresponding field in the server
-    var edittedField;
-    
     if (edittableData === "username") {
         edittedField = "username";
     } else if (edittableData === "email") {
@@ -123,34 +158,23 @@ function submitData(edittableData) {
 
     // Get the input element and the changed data
     var inputElement = document.getElementById(edittableData);
-    var changedData = inputElement.value;
+    changedData = inputElement.value;
+    //Show only Password Check
+    showPasswordCheck();
+}
 
-    // Make an AJAX request to the server
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "PHP_Funktionen/editAccount.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+function showPasswordCheck() {
+    // Hide all table rows
+    var finalSubmitElement = document.getElementById('finalSubmit');
+    finalSubmitElement.disabled = false;
+    var tableRows = document.querySelectorAll('table tr');
+    tableRows.forEach(function(row) {
+        row.style.display = 'none';
+    });
 
-    // Prepare the data to send to the server
-    var data = "field=" + edittedField + "&value=" + encodeURIComponent(changedData);
-
-    // Send the request
-    xhr.send(data);
-
-    // Handle the server response
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-            // Handle the response from the server
-            console.log(xhr.responseText);
-    
-            // Check if the response indicates an error
-            if (xhr.responseText.includes("bereits vergeben")) {
-                // Add code here to inform the user about the specific error
-                alert(xhr.responseText);
-            } else {
-                // Add code here for a successful update
-                alert("Account wurde erfolgreich bearbeitet!");
-                window.location.href = "myAccount.php";
-            }
-        }
-    };
+    // Show the row with id "passwordCheck"
+    var passwordCheckRow = document.getElementById('passwordCheck');
+    if (passwordCheckRow) {
+        passwordCheckRow.style.display = 'table-row';
+    }
 }

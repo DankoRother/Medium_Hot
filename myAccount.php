@@ -140,9 +140,18 @@ if ($result) {
                         <label class="label">Geburtsdatum:</label>
                     </td>
                     <td class="secondTd">
-                        <h3 class="accountData" id="birthdayData"><?php echo($loggedInBirthday);?></h3>
+                        <h3 class="accountData" id="birthdayData"><?php echo date('d.m.Y', strtotime($loggedInBirthday));?></h3>
                     </td>
                     <td class="thirdTd"><input type="submit" class="submitButton" id="backButton" onclick="back(event)" value="Zurück"></td>
+                </tr>
+                <tr id="passwordCheck" style="display: none">
+                    <td class="firstTd" style="width:15%"></td>
+                    <td class="secondTd" style="width:75%">
+                    
+                        <input type="text" class="FinalInput" id="submitpasswortcheck" placeholder="Ihr Passwort" style="display: block; justify-content: center;">
+                        <input type="submit" class="finalSubmit" id="finalSubmit" onclick="submitFinal(event)" value="Bestätigen">
+                    </td>
+                    <td class="thirdTd" style="width:15%"></td>
                 </tr>
             </table>
             <br>

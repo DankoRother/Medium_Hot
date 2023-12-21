@@ -86,7 +86,26 @@ label.label {
     color: #0088a9;
     text-align: left;
 }
-
+input[type="submit"].finalSubmit {
+    box-sizing: border-box;
+    text-align: center;
+    width: 50%;
+    background-color: #0088a9;
+    border: none;
+    color: #edf0f1;
+    padding-left: 22px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-right: 22px;
+    font-family: "Poppins";
+    font-size: 22px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 20%; 
+    margin-top: 5%; 
+    display: block; 
+    justify-self: center;
+}   
 input[type=text] {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -98,7 +117,18 @@ input[type=text] {
     border-radius: 5px;
     align-self: center;
 }
-
+input[type=text].FinalInput {
+    padding-left: 2%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    box-sizing: border-box;
+    width: 80%;   
+    border: 2px solid #0088a9;
+    border-radius: 5px;
+    align-self: center;
+    margin-left: 5%;
+}
 /* Keep styling similar to other sites and make the function and status of each button obvious */
 input.editButton {
     text-align: center;
