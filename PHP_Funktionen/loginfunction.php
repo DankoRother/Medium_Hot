@@ -1,5 +1,5 @@
 <?php
-include("../dbConfig.php");
+include("../dbConfig.php"); // Include the database configuration file
 session_start();
 
 // Add content type header

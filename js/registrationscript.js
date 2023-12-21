@@ -1,9 +1,12 @@
+// Event listeners for input validation
 document.getElementById("username").addEventListener("input", validateUsername);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passwort").addEventListener("input", validatePassword);
 document.getElementById("vorname").addEventListener("input", validateVorname);
 document.getElementById("nachname").addEventListener("input", validateNachname);
 document.getElementById("geburtsdatum").addEventListener("keyup", validateGeburtsdatum);
+
+// Variables to store input conditions and values
 var firstButtonId = document.getElementById("weiterButton");
 var secondButtonId = document.getElementById("submitButton");
 var condition1;
@@ -20,19 +23,18 @@ var nachnameInput;
 var geburtsdatumInput;
 var inputElement = "";
 
+// Function to change the value of an input element
 function changeInputValue(inputId, newValue) {
-    // Get the input element by ID
     var inputElement = document.getElementById(inputId);
 
-    // Check if the input element exists
     if (inputElement) {
-        // Set the value of the input element
         inputElement.value = newValue;
     } else {
         console.error('Input element with ID ' + inputId + ' not found.');
     }
 }
 
+// Function to switch from the first step to the second step of the registration form
 function hideFirstShowSecond() {
     var geburtsdatumElement = document.getElementById("geburtsdatum");
     document.getElementById("weiterButton").style.display = 'none';
@@ -41,37 +43,40 @@ function hideFirstShowSecond() {
     document.getElementById("firstErrors").style.display = 'none';
     document.getElementById("secondErrors").style.display = 'block';
     document.getElementById("backButton").style.display = 'block';
-    //document.getElementById("backButtonText").style.display = 'block';
-    // Hide "Username, E-Mail, and Passwort" labels, inputs, and errorhandlers
+
+    // Hide "Username, E-Mail, and Passwort" labels, inputs, and error handlers
     document.querySelectorAll('.label[for^="username"], .input[name="username"], .label[for^="email"], .input[name="email"], .label[for^="passwort"], .input[name="passwort"], .errorHandlingMajor#firstErrors .button[name="weiterButton"]').forEach(function (element){
         element.style.display = 'none';
     });
-    // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and errorhandlers
+
+    // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and error handlers
     document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtsdatum"], .input.date[name="geburtsdatum"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
         element.style.display = 'block';
     });
 }
 
+// Function to switch from the second step back to the first step of the registration form
 function hideSecondShowFirst() {
     var geburtsdatumElement = document.getElementById("geburtsdatum");
     document.getElementById("weiterButton").style.display = 'block';
-    secondButtonId.style.display = 'none';  // Corrected this line
+    secondButtonId.style.display = 'none';
     geburtsdatumElement.style.display = 'none';
     document.getElementById("firstErrors").style.display = 'block';
     document.getElementById("secondErrors").style.display = 'none';
     document.getElementById("backButton").style.display = 'none';
 
-    // Hide "Username, E-Mail, and Passwort" labels, inputs, and errorhandlers
+    // Hide "Username, E-Mail, and Passwort" labels, inputs, and error handlers
     document.querySelectorAll('.label[for^="username"], .input[name="username"], .label[for^="email"], .input[name="email"], .label[for^="passwort"], .input[name="passwort"], .errorHandlingMajor#firstErrors .button[name="weiterButton"]').forEach(function (element){
         element.style.display = 'block';
     });
 
-    // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and errorhandlers
+    // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and error handlers
     document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtsdatum"], .input.date[name="geburtsdatum"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
         element.style.display = 'none';
     });
 }
 
+// Function to load the value of an input element
 function loadInput(inputElement) {
     var element = document.getElementById(inputElement);
     if (element) {
@@ -81,21 +86,25 @@ function loadInput(inputElement) {
         return null;
     }
 }
-
-
-function validateUsername() {               
-    //revert styling changes from incorrect input
-    var username = document.getElementById("username").value;                   
+// Function to validate the username input
+function validateUsername() {
+    var username = document.getElementById("username").value;
     var errorElement = document.getElementById("error1");
     var usernameElement = document.getElementById("username");
-    if(document.getElementById("error2").style.marginTop!="12%") {
-        document.getElementById("error2").style.marginTop="15%";
-    }
-    document.getElementById("error1").textContent="Username darf nicht leer sein";
-    if (username === "") {
+
+    // Additional validation for maximum length
+    if (username.length > 32) {
+        errorElement.textContent = "Username darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
-        condition1 = false;             
         usernameElement.style.borderColor = "#ff974d";
+        condition1 = false;
+    } else if (document.getElementById("error2").style.marginTop !== "12%") {
+        document.getElementById("error2").style.marginTop = "15%";
+    } else if (username === "") {
+        errorElement.textContent = "Username darf nicht leer sein";
+        errorElement.style.color = "#ff974d";
+        usernameElement.style.borderColor = "#ff974d";
+        condition1 = false;
     } else {
         errorElement.style.color = "#0088a9";
         usernameElement.style.borderColor = "#0088a9";
@@ -104,60 +113,53 @@ function validateUsername() {
     enablebutton();
 }
 
+// Function to validate the email input
 function validateEmail() {
-    //revert styling changes from incorrect input
     var email = document.getElementById("email").value;
     var errorElement = document.getElementById("error2");
     var emailElement = document.getElementById("email");
-    document.getElementById("error2").style.marginTop="12%";
-    document.getElementById("error3").style.marginTop="8%";
-    document.getElementById("error2").textContent="Geben Sie eine gültige E-Mail ein";
-    if (!/^.+@.+\..{2,3}$/.test(email)) {
+
+    // Additional validation for maximum length
+    if (email.length > 32) {
+        errorElement.textContent = "Email darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
         emailElement.style.borderColor = "#ff974d";
         condition2 = false;
     } else {
-        errorElement.style.color = "#0088a9";
-        emailElement.style.borderColor = "#0088a9";
-        condition2 = true;
-    }
-    enablebutton();
-}
-function validatePassword() {
-    var password = document.getElementById("passwort").value;
-    var errorElement = document.getElementById("error3");
-    var passwordElement = document.getElementById("passwort");
+        document.getElementById("error2").style.marginTop = "12%";
+        document.getElementById("error3").style.marginTop = "8%";
+        document.getElementById("error2").textContent = "Geben Sie eine gültige E-Mail ein";
 
-    if (password.length < 8) {
-        errorElement.style.color = "#ff974d";
-        passwordElement.style.borderColor = "#ff974d";
-        condition3 = false;
-    } else {
-        errorElement.style.color = "#0088a9";
-        passwordElement.style.borderColor = "#0088a9";
-        condition3 = true;
+        if (!/^.+@.+\..{2,3}$/.test(email)) {
+            errorElement.style.color = "#ff974d";
+            emailElement.style.borderColor = "#ff974d";
+            condition2 = false;
+        } else {
+            errorElement.style.color = "#0088a9";
+            emailElement.style.borderColor = "#0088a9";
+            condition2 = true;
+        }
     }
     enablebutton();
 }
 
-function enablebutton() {
-    if(condition1 && condition2 && condition3) {
-    firstButtonId.disabled = false;
-}
-else{
-    firstButtonId.disabled = true;
-}
-}
-
+// Function to validate the Vorname input
 function validateVorname() {
     var vorname = document.getElementById("vorname").value;
     var errorElement = document.getElementById("vornameError");
     var vornameElement = document.getElementById("vorname");
 
-    if (vorname === "") {
+    // Additional validation for maximum length
+    if (vorname.length > 32) {
+        errorElement.textContent = "Vorname darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
-        vornameCondition = false;
         vornameElement.style.borderColor = "#ff974d";
+        vornameCondition = false;
+    } else if (vorname === "") {
+        errorElement.textContent = "Vorname darf nicht leer sein";
+        errorElement.style.color = "#ff974d";
+        vornameElement.style.borderColor = "#ff974d";
+        vornameCondition = false;
     } else {
         errorElement.style.color = "#0088a9";
         vornameElement.style.borderColor = "#0088a9";
@@ -166,15 +168,23 @@ function validateVorname() {
     enablesecondbutton();
 }
 
+// Function to validate the Nachname input
 function validateNachname() {
     var nachname = document.getElementById("nachname").value;
     var errorElement = document.getElementById("nachnameError");
     var nachnameElement = document.getElementById("nachname");
 
-    if (nachname === "") {
+    // Additional validation for maximum length
+    if (nachname.length > 32) {
+        errorElement.textContent = "Nachname darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
-        nachnameCondition = false;
         nachnameElement.style.borderColor = "#ff974d";
+        nachnameCondition = false;
+    } else if (nachname === "") {
+        errorElement.textContent = "Nachname darf nicht leer sein";
+        errorElement.style.color = "#ff974d";
+        nachnameElement.style.borderColor = "#ff974d";
+        nachnameCondition = false;
     } else {
         errorElement.style.color = "#0088a9";
         nachnameElement.style.borderColor = "#0088a9";
@@ -183,9 +193,9 @@ function validateNachname() {
     enablesecondbutton();
 }
 
+// Function to validate the Geburtsdatum input
 function validateGeburtsdatum() {
-    var geburtsdatum = "";
-    geburtsdatum = document.getElementById("geburtsdatum").value;
+    var geburtsdatum = document.getElementById("geburtsdatum").value;
     var errorElement = document.getElementById("geburtstagError");
     var geburtsdatumElement = document.getElementById("geburtsdatum");
 
@@ -201,21 +211,22 @@ function validateGeburtsdatum() {
     } else {
         errorElement.style.color = "#ff974d";
         geburtstagCondition = false;
-        geburtsdatumElement.style.borderColor = "#ff974d";        
+        geburtsdatumElement.style.borderColor = "#ff974d";
     }
-    
+
     enablesecondbutton();
 }
 
+// Function to enable or disable the second button based on input conditions
 function enablesecondbutton() {
-    if(vornameCondition && nachnameCondition && geburtstagCondition) {
-    secondButtonId.disabled = false;
-}
-else{
-    secondButtonId.disabled = true;
-}
+    if (vornameCondition && nachnameCondition && geburtstagCondition) {
+        secondButtonId.disabled = false;
+    } else {
+        secondButtonId.disabled = true;
+    }
 }
 
+// Function to submit the form data via AJAX
 function submitForm(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -227,42 +238,42 @@ function submitForm(event) {
         success: function(response) {
             if (response && response.status === 'success') {
                 console.log('Data inserted successfully');
-                document.getElementById("vornameError").style.color="rgb(0, 0, 0, 0)";
-                document.getElementById("geburtstagError").style.color="rgb(0, 0, 0, 0)";
-                document.getElementById("nachnameError").style.color="#0088a9";
-                document.getElementById("nachnameError").style.textAlign="center";
-                document.getElementById("nachnameError").textContent="Erfolgreich Registriert!..."
+                document.getElementById("vornameError").style.color = "rgb(0, 0, 0, 0)";
+                document.getElementById("geburtstagError").style.color = "rgb(0, 0, 0, 0)";
+                document.getElementById("nachnameError").style.color = "#0088a9";
+                document.getElementById("nachnameError").style.textAlign = "center";
+                document.getElementById("nachnameError").textContent = "Erfolgreich Registriert!...";
                 setTimeout(function() {
                     window.location.href = 'home.php'; // Redirect on success
-            }, 1200);
+                }, 1200);
 
             } else {
                 console.error('AJAX error: Unexpected response', response);
                 // Check for specific error messages and redirect accordingly
                 if (response && response.message == 'email_exists') {
                     hideSecondShowFirst();
-                    document.getElementById("error2").textContent="E-Mail existiert bereits <br>";
-                    document.getElementById("error2").style.color="#ff974d";
-                    document.getElementById("error3").style.marginTop="13%";
-                    document.getElementById("email").style.borderColor="#ff974d";
+                    document.getElementById("error2").textContent = "E-Mail existiert bereits <br>";
+                    document.getElementById("error2").style.color = "#ff974d";
+                    document.getElementById("error3").style.marginTop = "13%";
+                    document.getElementById("email").style.borderColor = "#ff974d";
                 } else if (response && response.message == 'username_exists') {
                     hideSecondShowFirst();
-                    document.getElementById("error1").textContent="Username existiert bereits";
-                    document.getElementById("error1").style.color="#ff974d"
-                    document.getElementById("username").style.borderColor="#ff974d";
-                    document.getElementById("error2").style.marginTop="17%";
+                    document.getElementById("error1").textContent = "Username existiert bereits";
+                    document.getElementById("error1").style.color = "#ff974d";
+                    document.getElementById("username").style.borderColor = "#ff974d";
+                    document.getElementById("error2").style.marginTop = "17%";
                 } else if (response && response.message == 'both_exist') {
                     hideSecondShowFirst();
-                    document.getElementById("error2").textContent="E-Mail existiert bereits <br>";
-                    document.getElementById("error2").style.color="#ff974d";
-                    document.getElementById("error2").style.marginTop="17%";
-                    document.getElementById("error3").style.marginTop="13%";
-                    document.getElementById("error1").textContent="Username existiert bereits";
-                    document.getElementById("error1").style.color="#ff974d"
-                    document.getElementById("username").style.borderColor="#ff974d";
-                    document.getElementById("error2").textContent="E-Mail existiert bereits";
-                    document.getElementById("error2").style.color="#ff974d"
-                    document.getElementById("email").style.borderColor="#ff974d";
+                    document.getElementById("error2").textContent = "E-Mail existiert bereits <br>";
+                    document.getElementById("error2").style.color = "#ff974d";
+                    document.getElementById("error2").style.marginTop = "17%";
+                    document.getElementById("error3").style.marginTop = "13%";
+                    document.getElementById("error1").textContent = "Username existiert bereits";
+                    document.getElementById("error1").style.color = "#ff974d";
+                    document.getElementById("username").style.borderColor = "#ff974d";
+                    document.getElementById("error2").textContent = "E-Mail existiert bereits";
+                    document.getElementById("error2").style.color = "#ff974d";
+                    document.getElementById("email").style.borderColor = "#ff974d";
 
                 } else {
                     console.error('Unknown error:', response);
@@ -273,4 +284,4 @@ function submitForm(event) {
             console.error('AJAX error:', status, error);
         }
     });
-}    
+}
