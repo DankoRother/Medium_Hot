@@ -19,29 +19,29 @@ $_SESSION['selected_car_id'] = 0; ?>
        <!-- <td width="10%" style="background-color: #ffffff;"></td> -->
         <td width="50%" style="background-color: #24252a;">
             <div align="center" class="dividiediv">
-                <h1>Impressum</h1>
+                <h1 style="text-align: center">Impressum</h1>
+                <h3 style="text-align: center">der</h3>
+                <h2 style="text-align: center"> CarSBA GmbH </h2>
+                <h3 style="text-align: center"> Willy-Brandt Straße 75 <br>
+                 20459 Hamburg <br>
+                Registergericht: Amtsgericht Hamburg <br>
+                HRB-Nr. 21423187 <br>
+                USt.-Ident.-Nr. DE 112 214 187
                 <br>
-                <h2> CarSBA GmbH </h2>
-                <h3> Willy-Brandt Straße 75 <br>
-                 20459 Hamburg </h3>
-                <br>
-                <br>
-                <h3> 
+                <br> 
                 E-Mail: gerion.gutzeit@carsba.de <br>
                 Tel: (+49) 0171 4411144 
                 <br>
                 <br>
-                vertreten durch den Vorstand: <br>
-                Luis Loeck, Vorsitzender<br>
+                </h3>
+                <h2>
+                Vertreten durch den Vorstand: </h2><br>
+                <h3>Luis Loeck, Vorsitzender<br>
                 Linus Karanikas, stv. Vorsitzender<br>
                 Jason Wagner <br>
                 Gerion Gutzeit <br>
-                Danko Rother <br>
+                Danko Rother <br> </h3>
                 <br>
-                <br>
-                Registergericht: Amtsgericht Hamburg <br>
-                HRB-Nr. 21423187 <br>
-                USt.-Ident.-Nr. DE 112 214 187 <br><br><br>
                 </h3>
                 <h2>Verbraucherinformation gemäß Verordnung EU Nr. 524/2013</h2>
                 <h3>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit. Die Plattform finden Sie unter http://ec.europa.eu/consumers/odr/ <br><br>
