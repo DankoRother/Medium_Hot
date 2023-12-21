@@ -124,13 +124,14 @@ function submitFinal(event){
             if (xhr.responseText.includes("bereits vergeben")) {
                 // Add code here to inform the user about the specific error
                 alert(xhr.responseText);
+                window.location.href = "/medium_hot/myAccount.php";
             } else if(xhr.responseText.includes("Falsches")) {
                 alert("Falsches Passwort!");
-                window.location.href = "myAccount.php";
+                window.location.href = "/medium_hot/myAccount.php";
             } else {
                 // Add code here for a successful update
                 alert("Account wurde erfolgreich bearbeitet!");
-                window.location.href = "myAccount.php";
+                window.location.href = "/medium_hot/myAccount.php";
             }
         }
     };
