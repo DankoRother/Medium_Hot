@@ -49,7 +49,7 @@ if (isset($_POST['filtern']) || isset($_SESSION['location']) || isset($_POST['se
         $conditions[] = "cardetails.drive = :drive";
     }
     if (!empty($min_age)) {
-        $conditions[] = "cardetails.min_age >= :min_age";
+        $conditions[] = "cardetails.min_age <= :min_age";
     }
     if (!empty($trunk)) {
         $conditions[] = "cardetails.trunk >= :trunk";

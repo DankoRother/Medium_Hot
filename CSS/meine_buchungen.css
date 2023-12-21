@@ -27,6 +27,7 @@
 
 .suchfilter {
     height: auto;
+    min-height: 400px;
     width: 71%;
     border-radius: 15px;
     z-index: 2;
@@ -152,7 +153,8 @@
     width: 90%;
     margin-left: auto;
     margin-right: auto;
-    padding-top: 20px;
+    padding-top: 60px;
+    
 }
 
 .pagination a {
