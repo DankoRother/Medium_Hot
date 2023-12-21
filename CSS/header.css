@@ -1,18 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import font style*/
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 
+/* General styling to reset margin, padding, and set box-sizing */
 *{
     margin: 0;
-    padding: 0;                                         /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                                        
     box-sizing: border-box;
 }
 
-/* Anfang Styling Header */
+/* Header styling begins */
 
 li, a, button {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 20px;                                    /*Schriftformatierung */
+    font-size: 20px;                                    /* Font styling */
     color: #edf0f1;
     text-decoration: none;
     cursor: pointer;
@@ -27,21 +28,21 @@ body {
 header {
     display: flex;
     justify-content: flex-start;
-    padding: 10px 5%;                                       /*Formatierung Hauptheader*/
+    padding: 10px 5%;                               /* Main header formatting */
     align-items: center;
     background-color: #24252a;
     height: 120px;
 }
 
 .logo {
-    cursor:pointer;                                 /* Wenn man auf Logo geht kommt pointer */
+    cursor:pointer;                                 /* Cursor becomes pointer when hovering over the logo */
 }
 
 .nav__links {
     list-style: none;
 }
 
-.nav__links li {                                    /* formatierung Links */
+.nav__links li {                                    /* Formatting for navigation links */
     display: inline-block;
     padding: 0px 20px;
 }
@@ -49,15 +50,15 @@ header {
 .nav__links li a {
     transition: all 0.3s ease 0s;
 }
-                                                    /* Hover Effekt für die Nav Links */
-.nav__links li a:hover {
+                                                    
+.nav__links li a:hover {                            /* Hover effect for navigation links */
     color:#0088a9;
 }
 
 .log {
     padding: 5px 18px;
     background-color: rgba(0,134,169,1);
-    border: none;                               /* Login Button Hover Effekt */
+    border: none;                                   /* Login button hover effect */
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
@@ -66,7 +67,7 @@ header {
 .log-out {
     padding: 5px 18px;
     background-color: rgba(255, 151, 77, 1);
-    border: none;                               /* Login Button Hover Effekt */
+    border: none;                                   /* Logout button hover effect */
     border-radius: 5px;
     cursor: pointer;
     transition: all 0.3s ease 0s;
@@ -81,43 +82,40 @@ header {
 }
 
 #autoleft {
-    margin-left: auto;                  /*Packt Meine Buchungen und Login auf die Rechteseite */
+    margin-left: auto;                  /* Places "Meine Buchungen" and "Login" on the right side */
 }
 
 #f1 {
-    margin-left:20px;                   /*Formatierung für Nav Links*/
+    margin-left:20px;                   /* Formatting for navigation links */
 }
 
 .boximg {
     transition:0.5s;
-}                                           /*Vergrößerungs Hover Effekt für IMG */
+}                                           /* Enlargement hover effect for images */
 .boximg:hover{
     transform:scale(1.08);
     z-index:1;
 }
 
 .boxtext {
-    transition: all .2s ease-in-out;        /* Vergößerungs Hover Effekt für Text */
+    transition: all .2s ease-in-out;        /* Enlargement hover effect for text */
 }
 .boxtext:hover{
     transform: scale(1.08);
 }
   
-                                                        /* Das ist dein normales Styling für das Band-Element */
- 
+                                                       
+/* Normal styling for the band element */
 #float {
     height: 40px;
-    width: 100%;                            /*formatierung vom oberen header mit floating element */
+    width: 100%;                            /* Formatting for the floating element in the upper header */
     background-image: url(Bilder/Highway.png);
 }
 
 #band  {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 18px;                            /* formatierung vom schwebenden Text */
+    font-size: 18px;                           /* Formatting for the floating text */
     color: #edf0f1;
     text-decoration: none;
 }
-
-
-/*Ende Header Styling*/

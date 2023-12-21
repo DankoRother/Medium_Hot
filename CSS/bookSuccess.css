@@ -1,16 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                       /* import font style */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                                   /* Import font style */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
 
-
-.divForBackground{                                  /* Design and structuring for the background*/
+/* Design and structuring for the background */
+.divForBackground{                                                                                             
     height: 825px;
     width: 100%;
     background-image: url(CSS_Bilder/detailsback.jpg);
-    background-size: cover; /* Skaliert das Bild, um die gesamte Hintergrundfläche zu bedecken */
-    background-position: center center; /* Zentriert das Bild horizontal und vertikal */
+    background-size: cover;                           /* Scales the image to cover the entire background */                                                         
+    background-position: center center;               /* Centers the image horizontally and vertically */                                                
 }
 
+/* Container for large objects, centered */
 .big-object-container {
     height: 825px;
     width: 100%;
@@ -19,20 +20,23 @@
     padding-top: 40px;
 }
 
+/* Centered text for the headline */
 .headline {
     text-align: center;
     padding-top:10px;
 }
 
+/* Styling for the headline 3 text */
 .headline h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                                                                /* font styling */
+    font-size: 50px;                                                                                           
     color: white;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
 }
 
+/* Container for objects with a background color and border radius */
 .object-container {
     background-color: rgb(36, 37, 42, 0.9);
     height: 530px;
@@ -40,12 +44,14 @@
     border-radius: 15px;
 }
 
+/* Container for text with some padding */
 .text-container{
     height: 75px;
     text-align: center;
     padding-top: 20px;
 }
 
+/* Styling for the text inside the container */
 .text-container h3 {
     font-family: "Poppins", sans-serif;
     font-size: 20px;
@@ -53,12 +59,14 @@
     color: white;
 }
 
+/* Styling of the container content */
 .buttom-container {
     height: 75px;
     display: flex;
     justify-content: center;
 }
 
+/* Styling for car images */
 .img-car {
     height: 300px;
     width: 100%;
@@ -67,12 +75,14 @@
     
 }
 
+/* Styling for the image inside the car container */
 .img-car img {
     height: 100%;
     width: 450px;
     box-shadow: 5px 8px 8px rgba(0, 0, 0, 0.5);
 }
 
+/* Container for text related to the car */
 .text-car {
     height: 80px;
     display: flex;
@@ -80,6 +90,7 @@
     padding-top: 20px;
 }
 
+/* Styling for the text related to the car */
 .text-car h3{
     font-family: "Poppins", sans-serif;
     font-size: 25px;
@@ -87,16 +98,19 @@
     color: white;
 }
 
+/* Styling for highlighted text */
 .highlight {
     color: #0088a9;
 }
 
+/* Styling for the bottom section of the container */
 .bottom {
     width: 50%;
     padding-top: 10px;
     padding-left: 35px;
 }
 
+/* Styling for the bottom section with right alignment */
 .bottom-book {
     width: 50%;
     padding-top: 10px;
@@ -104,6 +118,7 @@
     text-align: right;
 }
 
+/* Styling for home button */
 .home-button {
     border-radius: 5px;
     border-style: none;
@@ -115,6 +130,7 @@
     transition: all 0.3s ease 0s;
 }
 
+/* Styling for book button */
 .book-button {
     margin-left: auto;
     border-radius: 5px;
