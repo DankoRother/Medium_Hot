@@ -13,12 +13,13 @@ $_SESSION['selected_car_id'] = 0; ?>
 </head>
 
 <body style="background-color: #ffffff;">
-<?php include 'header.php'; ?>                                                  <!-- Header-->
+<?php include 'header.php'; ?>                                                  <!-- include Header-->
 <table width="100%">
     <tr>
        <!-- <td width="10%" style="background-color: #ffffff;"></td> -->
         <td width="50%" style="background-color: #24252a;">
             <div align="center" class="dividiediv">
+                <!-- Datasecurity text -->
                 <h1 style="text-align: center">Datenschutz</h1><br><br>
                 <h3 style="text-align: block">Die Autovermietung "CarSBA" nimmt den Schutz Ihrer personenbezogenen Daten ernst. 
                 Nachfolgend möchten wir Sie darüber informieren, welche Daten wir erheben, wie wir sie verwenden und schützen.</h3><br><br>
@@ -52,7 +53,7 @@ $_SESSION['selected_car_id'] = 0; ?>
     </tr>
 </table>
 
-<?php include 'footer.php'; ?>      
+<?php include 'footer.php'; //include footer?>      
 </body>
 
 </html>

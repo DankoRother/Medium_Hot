@@ -13,7 +13,7 @@ $_SESSION['selected_car_id'] = 0; ?>
 </head>
 
 <body style="background-color: #ffffff;">
-<?php include 'header.php'; ?>                                                  <!-- Header-->
+<?php include 'header.php'; ?>                                                  <!--include Header-->
 <table width="100%">
     <tr>
        <!-- <td width="10%" style="background-color: #ffffff;"></td> -->
@@ -26,6 +26,7 @@ $_SESSION['selected_car_id'] = 0; ?>
            <!-- <td width="10%" style="background-color: #ffffff;"></td>-->
     </tr>
     <tr>
+        <!-- AGB Text -->
         <td class="center_text">
         <div class="agb_2">
                 <h2>1. Vertragsgegenstand</h2>
@@ -50,7 +51,7 @@ $_SESSION['selected_car_id'] = 0; ?>
         </td>
     </tr>
 </table>
-<?php include 'footer.php'; ?>                                                  <!--Footer-->
+<?php include 'footer.php'; ?>                                                  <!--include Footer-->
 </body>
 
 </html>

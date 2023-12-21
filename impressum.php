@@ -13,12 +13,13 @@ $_SESSION['selected_car_id'] = 0; ?>
 </head>
 
 <body style="background-color: #ffffff;">
-<?php include 'header.php'; ?>                                                  <!-- Header-->
+<?php include 'header.php'; ?>                                                  <!-- include Header-->
 <table width="100%">
     <tr>
        <!-- <td width="10%" style="background-color: #ffffff;"></td> -->
         <td width="50%" style="background-color: #24252a;">
             <div align="center" class="dividiediv">
+                <!-- Impressum text -->
                 <h1 style="text-align: center">Impressum</h1>
                 <h3 style="text-align: center">der</h3>
                 <h2 style="text-align: center"> CarSBA GmbH </h2>
@@ -56,7 +57,7 @@ $_SESSION['selected_car_id'] = 0; ?>
            <!-- <td width="10%" style="background-color: #ffffff;"></td>-->
     </tr>
 </table>
-<?php include 'footer.php'; ?>      
+<?php include 'footer.php'; //include footer ?>      
 </body>
 
 </html>
