@@ -12,7 +12,7 @@ if (isset($_SESSION['logged_in_userID'])) {
     // Retrieve the field and value from the AJAX request
     $field = $_POST['field'];
     $value = $_POST['value'];
-    if($field == 'passwort') {
+    if($field == 'password') {
         $value = password_hash($value, PASSWORD_DEFAULT);
     }
     // Check if the new value already exists for email or username

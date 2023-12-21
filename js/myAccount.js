@@ -1,46 +1,42 @@
-function validateInput(edittableData) {
+function validateInput(currentEdittedData) {
     event.preventDefault();
-    var edittedDataElement = document.getElementById(edittableData);
+    var edittedDataElement = document.getElementById(currentEdittedData);
     var inputtedData = edittedDataElement.value;
-    var submitButton = document.getElementById("submit" + edittableData);
-    if (edittableData === "passwort") {
-        if (inputtedData.length < 8 || inputtedData.length > 50) {
+    var submitButton = document.getElementById("submit" + currentEdittedData);
+    submitButton.disabled = true;
+    if (currentEdittedData == "passwort") {
+        if (inputtedData.length < 8) {
             edittedDataElement.style.borderColor = "#ff974d";
-            submitButton.disabled = true;
+        } else if (inputtedData.length > 50) {
+            edittedDataElement.style.borderColor = "#ff974d";
         } else {
             edittedDataElement.style.borderColor = "#0088a9";
             submitButton.disabled = false;
         }
-    } else if(edittableData === "email"){
-        var email = document.getElementById("email").value;
-        var errorElement = document.getElementById("error2");
-        var emailElement = document.getElementById("email");
-    
+    } else if (currentEdittedData === "email") {
         // Additional validation for maximum length
         if (inputtedData.length > 32) {
             edittedDataElement.style.borderColor = "#ff974d";
-            submitButton.disabled = true;
         } else {
             if (!/^.+@.+\..{2,3}$/.test(inputtedData)) {
                 edittedDataElement.style.borderColor = "#0088a9";
-                submitButton.disabled = false;
             } else {
                 edittedDataElement.style.borderColor = "#0088a9";
                 submitButton.disabled = false;
             }
         }
-        enablebutton();
-    } {
-        if (inputtedData.length > 32) {
+    } else {
+        if (inputtedData.length == 0) {
             edittedDataElement.style.borderColor = "#ff974d";
-            submitButton.disabled = true;
+        } else if (inputtedData.length > 32) {
+            edittedDataElement.style.borderColor = "#ff974d";
         } else {
             edittedDataElement.style.borderColor = "#0088a9";
-            editCondition = true;
             submitButton.disabled = false;
         }
     }
 }
+
 
 function editData(edittableData) {
     event.preventDefault();
@@ -51,14 +47,14 @@ function editData(edittableData) {
     var buttonSubmitElement = document.getElementById("submit" + edittableData);
     var otherEditButtons = document.querySelectorAll('input[type=submit]:not(#' + edittableData + ')');
     currentEdittedData = edittableData;
+
     inputElement.addEventListener('input', function() {
-        validateInput(edittableData);
+        validateInput(currentEdittedData);
     });
 
     otherEditButtons.forEach(function(button) {
         button.disabled = true;
     });
-    buttonSubmitElement.disabled = false;        
     inputElement.style.display = "block";
     dataDisplayElement.style.display = "none";
     buttonElement.style.display = "none";
@@ -66,6 +62,7 @@ function editData(edittableData) {
     backButton.style.display = "block";
     backButton.disabled = false;
 }
+
 var currentEdittedData;
 function back(event){
     var currentInputElement = document.getElementById(currentEdittedData);

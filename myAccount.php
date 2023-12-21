@@ -77,7 +77,7 @@ if ($result) {
         </td>
         <td class="thirdTd">
             <input type="submit" class="editButton" id="editusername" onclick="editData('username')" value="Bearbeiten">
-            <input type="submit" class="submitButton" id="submitusername" onclick="submitData('username')" value="Absenden">
+            <input type="submit" class="submitButton" id="submitusername" onclick="submitData('username')" value="Absenden" disabled>
         </td>
     </tr>
     <tr>
@@ -90,7 +90,7 @@ if ($result) {
         </td>
         <td class="thirdTd">
             <input type="submit" class="editButton" id="editemail" onclick="editData('email')" value="Bearbeiten">
-            <input type="submit" class="submitButton" id="submitemail" onclick="submitData('email')" value="Absenden">
+            <input type="submit" class="submitButton" id="submitemail" onclick="submitData('email')" value="Absenden" disabled>
         </td>
     </tr>
     <tr>
@@ -99,10 +99,11 @@ if ($result) {
         </td>
         <td class="secondTd">
             <h3 class="accountData" id="passwortData">*********</h3>
-        </td>
+            <input class="input" type="text" id="passwort" name="passwort" style="display: none">
+                </td>
         <td class="thirdTd">
             <input type="submit" class="editButton" id="editpasswort" onclick="editData('passwort')" value="Bearbeiten">
-            <input type="submit" class="submitButton" id="submitpasswort" onclick="submitData('passwort')" value="Absenden">
+            <input type="submit" class="submitButton" id="submitpasswort" onclick="submitData('passwort')" value="Absenden" disabled>
         </td>
     </tr>
     <tr>
@@ -115,7 +116,7 @@ if ($result) {
         </td>
         <td class="thirdTd">
             <input type="submit" class="editButton" id="editvorname" onclick="editData('vorname')" value="Bearbeiten">
-            <input type="submit" class="submitButton" id="submitvorname" onclick="submitData('vorname')" value="Absenden">
+            <input type="submit" class="submitButton" id="submitvorname" onclick="submitData('vorname')" value="Absenden" disabled>
         </td>
     </tr>
     <tr>
@@ -128,7 +129,7 @@ if ($result) {
         </td>
         <td class="thirdTd">
             <input type="submit" class="editButton" id="editnachname" onclick="editData('nachname')" value="Bearbeiten">
-            <input type="submit" class="submitButton" id="submitnachname" onclick="submitData('nachname')" value="Absenden">
+            <input type="submit" class="submitButton" id="submitnachname" onclick="submitData('nachname')" value="Absenden" disabled>
         </td>
     </tr>
     <tr>
