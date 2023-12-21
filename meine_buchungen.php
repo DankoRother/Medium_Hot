@@ -1,9 +1,9 @@
 <?php session_start();
 
 if (!isset($_SESSION['logged_in_userID'])) {
-    // Wenn nicht, leite zur Login-Seite weiter
+    // if is not set header to login page
     header("Location: login.php");
-    exit(); // Beende das Skript nach der Weiterleitung
+    exit(); // end script
 }?>
 
 
@@ -19,19 +19,27 @@ if (!isset($_SESSION['logged_in_userID'])) {
     </head>
 
     <body>
+        <!-- Include the header -->
         <?php include 'header.php'; ?>
+        <!-- Include the database connection -->
         <?php include 'dbConfig.php' ?>
+        <!-- Include sql statement -->
         <?php include 'PHP_Funktionen/bookabfrage.php' ?>
 
-
+<!-- Container for the background image -->
         <div class="img-container">
+             <!-- Container for bookings -->
             <div class="filter-container">
+                <!-- Booking container -->
                 <div class="suchfilter">
+                    <!-- Heading for booking section -->
                     <div class="filter-heading">
                         <h2>Meine Buchungen</h2>
                     </div>
+                     <!-- Booking table container -->
                     <div class="booking-table">
                         <table>
+                            <!-- Table header -->
                             <thead>
                                 <tr>
                                     <th>Buchungsnummer</th>
@@ -40,8 +48,9 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                     <th>Buchungszeitraum</th>
                                 </tr>
                             </thead>
+                            <!-- Table body -->
                             <tbody>
-                        <?php 
+                        <?php  // Loop through visible results
                         if ($visibleResults > 0) {
 
                                 foreach ($visibleResults as $row) {
@@ -49,24 +58,26 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                     $originalDateStart = $row['start'];
                                     $originalDateEnd = $row['end'];
 
-                                    // Umwandlung in DateTime-Objekt
+                                    // change to DateTime-Object
                                     $dateTimeStart = new DateTime($originalDateStart);
                                     $dateTimeEnd = new DateTime($originalDateEnd);
 
-                                    // Formatierung in MM-DD-YYYY
+                                    // change into MM-DD-YYYY
                                     $formattedDateStart = $dateTimeStart->format('m/d/Y');
                                     $formattedDateEnd = $dateTimeEnd->format('m/d/Y'); 
                                     
                                     $uniqueId = 'hidden_row_' . $row['bookingId'];?>
-
+                                <!-- Main row with booking details, clickable to show/hide additional details -->
                                     <tr class="mainline" onclick="showHideRow('<?php echo $uniqueId; ?>')">
                                         <td><?php echo $row['bookingId']?></td> <!-- Booking Number -->
                                         <td><?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] ?></td> <!-- Vendor Name, Name and Extension -->
                                         <td><?php echo $row['price']?></td> <!-- Price -->
-                                        <td><?php echo $formattedDateStart . " bis " . $formattedDateEnd . " in " . $row['location']?></td> <!-- Start Date bis End Date in Location -->
+                                        <td><?php echo $formattedDateStart . " bis " . $formattedDateEnd . " in " . $row['location']?></td> <!-- Start Date to End Date at Location -->
                                     </tr>
+                                    <!-- Additional details row, initially hidden -->
                                     <tr id="<?php echo $uniqueId; ?>" class="hidden_row" style="display: none;">
                                         <td colspan=4>
+                                            <!-- Details about the booked vehicle -->
                                             <div class="textfeld">
                                                 <div><?php if($row['gear'] == "manually"){echo "Schaltgetriebe";}else {echo "Automatik";};?></div>
                                                 <div><?php echo $row['drive'] ?></div>
@@ -79,11 +90,13 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                             </div>
                                         </td>
                                     </tr>
+                                    <!-- Displayed when there are no bookings -->
                                     <?php }} else { ?> <tr><td colspan=4><div class="zeroresults"><h3>Noch keine Buchungen vorhanden!<h3></div></td></tr> <?php
                                         }?>
                             </tbody>
                         </table>
                     </div>
+                    <!-- Pagination section -->
                     <?php 
                     echo '<div class="pagination">';
                         for ($i = 1; $i <= $totalPages; $i++) {
@@ -95,7 +108,7 @@ if (!isset($_SESSION['logged_in_userID'])) {
                 </div>
             </div>
         </div>
-
+<!-- Include the footer -->
         <?php include 'footer.php'; ?>
 
     </body>
