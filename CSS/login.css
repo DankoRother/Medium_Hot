@@ -102,6 +102,8 @@ label.label {
 
 /* Styling for text input */
 input[type=text] {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
     box-sizing: border-box;
     width: 250%;
     padding-right: 5%;

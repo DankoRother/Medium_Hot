@@ -20,6 +20,11 @@ if ($_SESSION['logged_in_userID'] > 0) {
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/logout-screen.css"> 
+        <!-- Redirect to home after a while-->
+        <script> setTimeout(function() {
+            window.location.href = "home.php";
+            }, 3000); </script>');
+        </script>
     </head>
 
      <!-- Include the header -->

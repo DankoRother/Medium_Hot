@@ -7,6 +7,7 @@
     padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
     box-sizing: border-box;
 }
+/* table styling to display the account data and buttons in a row */
 table {
     margin-left: 3%;
     margin-right: 3%;
@@ -17,6 +18,7 @@ table {
 tr {
     box-sizing: border-box;
 }
+/* Table dimensions to fit the width of each element */
 
 td.firstTd {
     height: 15%;
@@ -47,10 +49,11 @@ h1.register {
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
+/* div to stay in line with the other pages */
 div.roundedcorners {
-    width: 32%;
+    width: 30%;
     background-color: rgb(36, 37, 42, 0.9);
-    margin-left: 34%;
+    margin-left: 35%;
     border-radius: 15px;
     margin-bottom: 30px;
     display: flex;
@@ -71,6 +74,7 @@ form {
     display: flex;
     flex-direction: column;
 }
+/* Keep styling similar to other sites */
 h3.accountData {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
@@ -84,14 +88,18 @@ label.label {
 }
 
 input[type=text] {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 20px;
     box-sizing: border-box;
-    width: 60%;
-    font-size: 20px;    
+    width: 70%;
+    font-size: 17px;    
     border: 2px solid #0088a9;
     border-radius: 5px;
     align-self: center;
 }
 
+/* Keep styling similar to other sites and make the function and status of each button obvious */
 input.editButton {
     text-align: center;
     background-color: #ff974d;
@@ -102,11 +110,11 @@ input.editButton {
     padding-bottom: 4px;
     padding-right: 5px;
     font-family: "Poppins";
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 5px; 
     justify-self: right;
-    width: 80%;
+    width: 100%;
 }
 input.editButton:disabled {
     text-align: center;
@@ -118,11 +126,11 @@ input.editButton:disabled {
     padding-bottom: 4px;
     padding-right: 5px;
     font-family: "Poppins";
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 5px; 
     justify-self: right;
-    width: 80%;
+    width: 100%;
 }
 input.submitButton {
     text-align: center;
@@ -134,11 +142,11 @@ input.submitButton {
     padding-bottom: 4px;
     padding-right: 5px;
     font-family: "Poppins";
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 5px; 
     justify-self: right;
-    width: 80%;
+    width: 100%;
     display: none;
 }
 
@@ -152,10 +160,10 @@ input.submitButton:disabled {
     padding-bottom: 4px;
     padding-right: 5px;
     font-family: "Poppins";
-    font-size: 10px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 5px; 
     justify-self: right;
-    width: 80%;
+    width: 100%;
     display: none;
 }
