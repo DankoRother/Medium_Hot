@@ -80,5 +80,5 @@ if (isset($_POST['book'])) {
         // Display error message if the user is not logged in
         ?> <a href="login.php"><div class="book-error"><h3><span class="dang-sign">&#9888;</span> Bitte Logge dich ein!</h3></div></a> <?php
     }
-}
+}}
 ?>
