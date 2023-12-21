@@ -50,7 +50,7 @@
                 <input class="input" type="text" id="nachname" name="nachname" style="order: 4; display: none" >
                 <label class="label" for="nachname" style="order: 5; display: none" hidden>Nachname:</label>
                 
-                <input class="input" type="text" id="geburtsdatum" name="geburtsdatum" style="display: none; order: 2;">
+                <input class="input" type="text" id="geburtsdatum" name="geburtsdatum" style="display: none; order: 2;" placeholder="tt.mm.jjjj">
                 <label class="label" for="geburtsdatum" style="order: 3; display: none">Geburtsdatum:</label>
                 
                 <!-- Submit button (initially hidden) -->

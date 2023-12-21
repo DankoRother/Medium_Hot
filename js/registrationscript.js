@@ -1,12 +1,4 @@
-$(function() {
-    $("#geburtsdatum").datepicker({
-        dateFormat: "dd.mm.yy", // Display format for the user
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "-100:+0",
-        maxDate: 0,
-    });
-});
+
 document.getElementById("username").addEventListener("input", validateUsername);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passwort").addEventListener("input", validatePassword);
