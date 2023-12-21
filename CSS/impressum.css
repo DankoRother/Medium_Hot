@@ -1,11 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font styling */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
+
+/* General styling to reset margins and paddings */
 *{
     margin: 0;
-    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                             
     box-sizing: border-box;
 }
 
+/* Styling for the table */
 table {
     border-collapse: collapse;
     border-top: 10;
@@ -15,6 +18,7 @@ table {
     border-style: solid;
 }
 
+/* Styling for a specific div */
 div.dividiediv{
     text-align: left;
     padding-left: 15%; 
@@ -22,50 +26,56 @@ div.dividiediv{
     padding-top: 20px;
     padding-bottom: 50px;
 }
+
+/* Styling for heading level 1 */
 h1 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /*Schriftformatierung */
+    font-size: 50px;                                    
     color: #edf0f1;
     text-decoration: none;
 }
 
+/* Styling for heading level 2 */
 h2 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 30px;                                    /*Schriftformatierung */
+    font-size: 30px;                                    
     color: #edf0f1;
     text-decoration: none;
 }
 
+/* Styling for heading level 3 */
 h3 {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 18px;                                    /*Schriftformatierung */
+    font-size: 18px;                                    
     color: #edf0f1;
     text-decoration: none;
 
 }
 
-
-
+/* Styling for paragraphs */
 p {
     font-size: 16px;
     line-height: 2;
-    font-family: "Poppins", sans-serif;                 /*Styling Text*/
+    font-family: "Poppins", sans-serif;                 
     font-weight: 500;
     color: #edf0f1;
 }
 
+/* Additional styling for the specific section with class "agb" */
 .agb {
     padding-top: 20px;
     padding-bottom: 50px;
 }
 
+/* Styling for table cells */
 td {
     background-color: #24252a;
 }
 
+/* Additional styling for the specific section with class "agb_2" */
 .agb_2 {
     text-align: left;
     width: 50%;
@@ -73,6 +83,7 @@ td {
     background-color: #24252a;
 }
 
+/* Styling for a section with centered text */
 .center_text {
     background-color: #24252a;
     padding-left: 15%;
