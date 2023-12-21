@@ -1,34 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /*Import schriftart*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');                   /* Import font styles */
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css');
- *{
+ 
+/* Global reset for margin, padding, and box-sizing */
+*{
     margin: 0;
-    padding: 0;                             /*generelle Formatierung für keine überflüssigen Ränder */
+    padding: 0;                            
     box-sizing: border-box;
 }
+
+/* Styling for the main heading */
 h1 {
     text-align: center;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
-    font-size: 50px;                                    /*Schriftformatierung */
-    color: #edf0f1;
-    text-decoration: none;
-    text-shadow: 2px 2px 4px rgba(0,0,0,1);
-}
-a {
-    text-align: center;
-    font-family: "Poppins", sans-serif;
-    font-weight: 500;
-    font-size: 30px;                                    /*Schriftformatierung */
+    font-size: 50px;                                    
     color: #edf0f1;
     text-decoration: none;
     text-shadow: 2px 2px 4px rgba(0,0,0,1);
 }
 
+/* Styling for anchor links */
+a {
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 30px;                                    
+    color: #edf0f1;
+    text-decoration: none;
+    text-shadow: 2px 2px 4px rgba(0,0,0,1);
+}
+
+/* Styling for the body, setting background image and size */
 body {
     background-image: url(CSS_Bilder/loginhafen.jpg);
     width: 100%;
     background-size: cover;
 }
+
+/* Styling for the main container with rounded corners */
 div.roundedcorners {
     width: 28%;
     background-color: rgb(36, 37, 42, 0.9);
@@ -37,6 +46,8 @@ div.roundedcorners {
     margin-bottom: 100px;
     height: 170px;
 }
+
+/* Styling for the subheading */
 h3 {
     padding-top: 65px;
     font-family: "Poppins", sans-serif;
