@@ -14,8 +14,8 @@ if (!isset($_SESSION['logged_in_userID'])) {
         <title>Meine Buchungen</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/meine_buchungen.css">  
-        <script language="javascript" type="text/javascript" src="js/mieten.js"></script>                                             <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/meine_buchungen.css">  <!-- CSS Data Import -->
+        <script language="javascript" type="text/javascript" src="js/mieten.js"></script>          <!-- JS data Import -->                          
     </head>
 
     <body>
