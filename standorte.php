@@ -7,18 +7,25 @@ $_SESSION['selected_car_id'] = 0; ?>
         <title>Standorte</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/standorte.css">                                                 <!-- CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/standorte.css">                                                 <!-- CSS Data Import -->
     </head>
 
-    <body>
+   <!-- Including the header -->
+<body>
     <?php include 'header.php'; ?>
-   
+    
+    <!-- Heading for the map section -->
     <div class="map-heading">
         <h1>Unsere Standorte</h1>
     </div>
+    
+    <!-- Container for the map and location pins -->
     <div class="map-container">
+        <!-- Germany Map with location pins -->
         <div class="ger-map">
-            <img src="Bilder/karte.png" alt="map" >
+            <img src="Bilder/karte.png" alt="map">
+            
+            <!-- Pins representing different locations -->
             <div class="pin hamburg">
                 <span>Hamburg</span>
             </div>
@@ -64,6 +71,6 @@ $_SESSION['selected_car_id'] = 0; ?>
         </div>
     </div>
 
-
+    <!-- Including the footer -->
     <?php include 'footer.php'; ?>
-    </body>
+</body>
