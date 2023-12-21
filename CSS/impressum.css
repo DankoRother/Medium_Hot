@@ -70,9 +70,12 @@ td {
     text-align: left;
     width: 50%;
     padding-bottom: 40px;
+    background-color: #24252a;
 }
 
 .center_text {
+    background-color: #24252a;
+    padding-left: 15%;
     display: flex;
-    justify-content: center;
+    justify-content: left;
 }
