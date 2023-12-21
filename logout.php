@@ -22,22 +22,32 @@ if ($_SESSION['logged_in_userID'] > 0) {
         <link rel="stylesheet" href="CSS/logout-screen.css"> 
     </head>
 
+     <!-- Include the header -->
 <?php include 'header.php'; ?>
 
+<!-- Main content section -->
 <div class="divForBackground">
     <div class="headline">
         <h3>Logout</h3>
     </div>
+     <!-- Container for the logout success message and navigation buttons -->
     <div class="big-object-container">
         <div class="object-container">
+
+        <!-- Text container for logout message -->
             <div class="text-container">
                 <br>
                 <h3>Sie wurden erfolgreich ausgeloggt!</h3>
             </div>
+            <!-- Button container for navigation options -->
             <div class="buttom-container">
+
+            <!-- Back to homepage button -->
                 <div class="bottom">
                     <a href="home.php"><button class="home-button">Zurück zur Startseite</button></a>
-                </div>    
+                </div>  
+                
+                <!-- Login button -->
                 <div class="bottom-book">
                     <a href="login.php"><button class="book-button">Zum Login</button></a>
                 </div>  
@@ -46,6 +56,7 @@ if ($_SESSION['logged_in_userID'] > 0) {
     </div> 
 </div>
 
+<!-- Include the footer -->
 <?php include 'footer.php'; ?>
 
 </html>

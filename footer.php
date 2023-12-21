@@ -5,12 +5,14 @@
         <title></title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="CSS/footer.css">                                             <!--CSS Datei Import -->
+        <link rel="stylesheet" href="CSS/footer.css">                                             <!--CSS Data Import -->
     </head>
 <body>
+    <!-- Footer Section 1 -->
 <footer class="footer">
            <div class="footer_container">
                 <div class="footer-row">
+                    <!-- Column 1 -->
                     <div class="footer-col">
                         <h4>Unternehmen</h4>
                         <ul>
@@ -19,6 +21,7 @@
                             <li><a href="datenschutz.php">Datenschutz</a></li>
                         </ul>
                     </div>
+                     <!-- Column 2 -->
                     <div class="footer-col">
                         <h4>Über uns</h4>
                         <ul>
@@ -27,6 +30,7 @@
                             <li><a href="#">Über uns</a></li>
                         </ul>
                     </div>
+                    <!-- Column 3 -->
                     <div class="footer-col">
                         <h4>Hilfe</h4>
                         <ul>
@@ -34,6 +38,7 @@
                             <li><a href="#">FAQ</a></li>
                         </ul>
                     </div>
+                    <!-- Column 4 -->
                     <div class="footer-col">
                         <h4>Folg uns</h4>
                         <div class="social-links">
@@ -47,7 +52,9 @@
            </div>
         </footer>
 
+        <!-- Footer Section 2 -->
         <footer class="footer2">
+            <!-- Payment Methods -->
             <div class="pay-text">
                 <h4>Zahlungsmethoden</h4>  
             </div>
@@ -59,6 +66,7 @@
                 <p><img src="Bilder/visa.png"></p>
                 <p><img src="Bilder/paypal.png"></p>
             </div>
+             <!-- Copyright Notice -->
             <div class="stylep">
                 <p>&copy; 2023 CarSBA. Alle Rechte vorbehalten.</p>
             </div>

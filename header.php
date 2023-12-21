@@ -1,4 +1,5 @@
 <?php
+// PHP code to set login/logout button text and actions based on user session
 $loginButtonText;
 if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {   
     $loginButtonText = "Logout";
@@ -13,8 +14,12 @@ else {
     $class = "log";
 }
 ?>
-<?php include 'dbConfig.php'; ?>
-<?php include 'PHP_Funktionen/userabfrage.php'; ?>
+<?php 
+//include database configuration 
+include 'dbConfig.php'; 
+
+//include sql query for logged in user
+include 'PHP_Funktionen/userabfrage.php'; ?>
 <!DOCTYPE html>
     <head>
         <meta charset="utf-8">
@@ -45,9 +50,9 @@ else {
         }
         </script>
     </head>
-<!-- Beginn der Webseite -->
+ <!-- Beginning of the webpage -->
     <body>
-        <header>                                                                                <!--Nav Header-->
+        <header>     <!-- Navigation Header -->                                                                           <!--Nav Header-->
             <a href="home.php" class="boximg"><img class="logo" src="Bilder/LogoAuto.PNG" alt="logo" width=100px height=100px></a>   <!--Logo-->
             <nav id="f1">
                 <ul class="nav__links">
@@ -61,7 +66,7 @@ else {
             </nav>
             <nav id="autoleft">
                 <ul class="nav__links">
-                           <!--Hallo Message + Login created-->
+                               <!-- Hello Message + Login created -->
                 <?php if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) { 
                     ?><li class="boxtext"><a href="myAccount.php">Moin, <?php echo $result['first_name'] . "!"; }?></a></li>                   
                     <button class="<?php echo $class?>" <?php echo($loginButtonAction)?> enabled><?php echo $loginButtonText ?></button>
