@@ -50,8 +50,9 @@
                 <input class="input" type="text" id="nachname" name="nachname" style="order: 4; display: none" >
                 <label class="label" for="nachname" style="order: 5; display: none" hidden>Nachname:</label>
                 
-                <input class="input" type="text" id="geburtsdatum" name="geburtsdatum" style="display: none; order: 2;" placeholder="tt.mm.jjjj">
-                <label class="label" for="geburtsdatum" style="order: 3; display: none">Geburtsdatum:</label>
+                <input class="input" type="text" id="geburtstag" name="geburtstag" style="display: none; order: 2;" placeholder="TT.MM.JJJJ">
+                <!--Through jQuery datepicker or input="date", the validation function was made so you had to input manual keystrokes after picking the date in the datepicker, so I figured the datepicker was useless anyway as it's less efficient --> 
+                <label class="label" for="geburtstag" style="order: 3; display: none">Geburtsdatum:</label>
                 
                 <!-- Submit button (initially hidden) -->
                 <input id="submitButton" class="final" type="submit" style="order: 1; display: none; margin-left: 18%;" name="submit" value="Registrieren" disabled>
@@ -66,7 +67,7 @@
             <div class="errorHandlingMinor" id="error3" style="margin-top:8%; order: 3;">Passwort muss mindestens 8 Zeichen haben</div>
         </div>
 
-        <!-- Error handling for the second set of inputs (initially hidden) -->
+        <!-- Error handling for the second set of inputs (initially hidden), revealed by js function hideFirstShowSecond() -->
         <div class="errorHandlingMajor" id="secondErrors" style="display:none"> 
             <div class="errorHandlingMinor" id="vornameError" style="margin-top: 16%; order: 1;" >Vorname darf nicht leer sein</div>
             <div class="errorHandlingMinor" id="nachnameError" style="margin-top: 17%; order: 2; margin-right: 5%;" >Nachname darf nicht leer sein</div>

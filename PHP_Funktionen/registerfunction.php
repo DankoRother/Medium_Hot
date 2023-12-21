@@ -8,8 +8,11 @@ if (isset($_POST)) { // Check if POST data is set
     $passwordInput = password_hash($_POST['passwort'], PASSWORD_DEFAULT); // Hash the password
     $vornameInput = $_POST['vorname'];
     $nachnameInput = $_POST['nachname'];
-    $geburtstagInput = $_POST['geburtsdatum'];
-
+    $geburtstagInput = $_POST['geburtstag'];
+    $dateParts = explode('.', $geburtstagInput);
+    // Rearrange the parts to form the "yyyy-mm-dd" format
+    $geburtstagCorrected = $dateParts[2] . '-' . $dateParts[1] . '-' . $dateParts[0];
+        
     try {
         // Create a PDO database connection
         $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
@@ -48,16 +51,12 @@ if (isset($_POST)) { // Check if POST data is set
             $stmt->bindParam(1, $usernameInput);
             $stmt->bindParam(2, $emailInput);
             $stmt->bindParam(3, $passwordInput);
-            $stmt->bindParam(4, $geburtstagInput);
+            $stmt->bindParam(4, $geburtstagCorrected);
             $stmt->bindParam(5, $vornameInput);
             $stmt->bindParam(6, $nachnameInput);
 
             // Execute the statement
-            if ($stmt->execute()) {
-                $response = ['status' => 'success'];
-                error_log(json_encode($response));
-                echo json_encode($response);
-                
+            if ($stmt->execute()) {             
                 // Retrieve the userId associated with the inserted username
                 $stmt2 = $conn->prepare("SELECT userId FROM user WHERE username = :username");
                 $stmt2->bindParam(':username', $usernameInput);
@@ -71,7 +70,9 @@ if (isset($_POST)) { // Check if POST data is set
                     // Handle the case when the username is not found
                     $_SESSION['logged_in_userID'] = null;
                 }
-                
+                $response = ['status' => 'success'];   
+                error_log(json_encode($response));
+                echo json_encode($response);
                 exit();
             } else {
                 $response = ['status' => 'error', 'message' => 'Error inserting data'];

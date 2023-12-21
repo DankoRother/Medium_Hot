@@ -4,8 +4,8 @@ document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passwort").addEventListener("input", validatePassword);
 document.getElementById("vorname").addEventListener("input", validateVorname);
 document.getElementById("nachname").addEventListener("input", validateNachname);
-document.getElementById("geburtsdatum").addEventListener("input", validateGeburtsdatum);
-document.getElementById("geburtsdatum").addEventListener("change", validateGeburtsdatum);
+document.getElementById("geburtstag").addEventListener("input", validateGeburtsdatum);
+document.getElementById("geburtstag").addEventListener("change", validateGeburtsdatum);
 var firstButtonId = document.getElementById("weiterButton");
 var secondButtonId = document.getElementById("submitButton");
 var condition1;
@@ -36,7 +36,7 @@ function changeInputValue(inputId, newValue) {
 }
 
 function hideFirstShowSecond() {
-    var geburtsdatumElement = document.getElementById("geburtsdatum");
+    var geburtsdatumElement = document.getElementById("geburtstag");
     document.getElementById("weiterButton").style.display = 'none';
     secondButtonId.style.display = 'block';
     geburtsdatumElement.style.display = 'block';
@@ -49,7 +49,7 @@ function hideFirstShowSecond() {
         element.style.display = 'none';
     });
     // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and errorhandlers
-    document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtsdatum"], .input.date[name="geburtsdatum"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
+    document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtstag"], .input[name="geburtstag"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
         element.style.display = 'block';
     });
 }
@@ -69,7 +69,7 @@ function hideSecondShowFirst() {
     });
 
     // Unhide "Vorname, Nachname, and Geburtsdatum" labels, inputs, and errorhandlers
-    document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtsdatum"], .input.date[name="geburtsdatum"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
+    document.querySelectorAll('.label[for^="vorname"], .input[name="vorname"], .label[for^="nachname"], .input[name="nachname"], .label[for^="geburtstag"], .input[name="geburtstag"], .errorHandlingMajor#secondErrors .button[name="submitButton"]').forEach(function (element) {
         element.style.display = 'none';
     });
 }
@@ -217,9 +217,9 @@ function validateNachname() {
 }
 
 function validateGeburtsdatum() {
-    var geburtsdatum = document.getElementById("geburtsdatum").value;
+    var geburtsdatum = document.getElementById("geburtstag").value;
     var errorElement = document.getElementById("geburtstagError");
-    var geburtsdatumElement = document.getElementById("geburtsdatum");
+    var geburtsdatumElement = document.getElementById("geburtstag");
 
     // Add your validation logic for geburtsdatum as needed
     // For example, checking if it's a valid date
@@ -251,11 +251,6 @@ else{
 }
 function submitForm(event) {
     event.preventDefault(); // Prevent the default form submission
-
-    // Convert the displayed date format to "dd-mm-yyyy"
-    var formattedDate = $.datepicker.formatDate("dd-mm-yy", $("#geburtsdatum").datepicker("getDate"));
-    // Set the converted date to the hidden input field for submission
-    $("#geburtsdatum").val(formattedDate);
     $.ajax({
         url: 'php_funktionen/registerfunction.php', // Corrected URL
         method: 'POST',
@@ -300,7 +295,9 @@ function submitForm(event) {
                     document.getElementById("error2").textContent="E-Mail existiert bereits";
                     document.getElementById("error2").style.color="#ff974d"
                     document.getElementById("email").style.borderColor="#ff974d";
-
+                } else if (response && response.status === 'error') {
+                    console.error('Database Error:', response.message);
+                    // Handle the database error, e.g., display an error message to the user
                 } else {
                     console.error('Unknown error:', response);
                 }
