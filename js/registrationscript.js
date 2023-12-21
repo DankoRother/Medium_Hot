@@ -1,18 +1,11 @@
-$(function() {
-    $("#geburtsdatum").datepicker({
-        dateFormat: "dd.mm.yy", // Display format for the user
-        changeMonth: true,
-        changeYear: true,
-        yearRange: "-100:+0",
-        maxDate: 0,
-    });
-});
+
 document.getElementById("username").addEventListener("input", validateUsername);
 document.getElementById("email").addEventListener("input", validateEmail);
 document.getElementById("passwort").addEventListener("input", validatePassword);
 document.getElementById("vorname").addEventListener("input", validateVorname);
 document.getElementById("nachname").addEventListener("input", validateNachname);
-document.getElementById("geburtsdatum").addEventListener("keyup", validateGeburtsdatum);
+document.getElementById("geburtsdatum").addEventListener("input", validateGeburtsdatum);
+document.getElementById("geburtsdatum").addEventListener("change", validateGeburtsdatum);
 var firstButtonId = document.getElementById("weiterButton");
 var secondButtonId = document.getElementById("submitButton");
 var condition1;

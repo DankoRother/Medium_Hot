@@ -1,5 +1,6 @@
 <?php 
 // Get the age of the logged-in user
+if(isset($_SESSION['logged_in_userID'])) {
 $userID = $_SESSION['logged_in_userID'];
 $agestmt = $conn->prepare("SELECT TIMESTAMPDIFF(YEAR, age, CURDATE()) AS age FROM user WHERE userId = :userId");
 $agestmt->bindParam(':userId', $userID);
