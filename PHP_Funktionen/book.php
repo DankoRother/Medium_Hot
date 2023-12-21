@@ -1,4 +1,5 @@
 <?php 
+if(isset($_SESSION['logged_in_userID'])) {
 $userID = $_SESSION['logged_in_userID'];
 $agestmt = $conn->prepare("SELECT TIMESTAMPDIFF(YEAR, age, CURDATE()) AS age FROM user WHERE userId = :userId");
 $agestmt->bindParam(':userId', $userID);
@@ -8,6 +9,7 @@ if ($ageresult) {
     $loggedInAge = $ageresult['age'];
 } else {
     $loggedInAge = 0;
+}
 }
 if (isset($_POST['book'])) { 
         if (isset($_SESSION['logged_in_userID']) && $_SESSION['logged_in_userID'] > 0) {  
