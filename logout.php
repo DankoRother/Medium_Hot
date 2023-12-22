@@ -16,7 +16,7 @@ if ($_SESSION['logged_in_userID'] > 0) {
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">       
-        <title></title>                                                                         <!-- Standart HTML Settings -->
+        <title>Logout</title>                                                                         <!-- Standart HTML Settings -->
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="CSS/logout-screen.css"> 
