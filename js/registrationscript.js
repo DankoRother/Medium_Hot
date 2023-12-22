@@ -55,7 +55,7 @@ function hideFirstShowSecond() {
 }
 
 function hideSecondShowFirst() {
-    var geburtsdatumElement = document.getElementById("geburtsdatum");
+    var geburtsdatumElement = document.getElementById("geburtstag");
     document.getElementById("weiterButton").style.display = 'block';
     secondButtonId.style.display = 'none';  // Corrected this line
     geburtsdatumElement.style.display = 'none';
@@ -114,21 +114,22 @@ function validateUsername() {
     var username = document.getElementById("username").value;
     var errorElement = document.getElementById("error1");
     var usernameElement = document.getElementById("username");
-
+    if (document.getElementById("error2").style.marginTop !== "12%") {
+        document.getElementById("error2").style.marginTop = "15%";
+    }
     // Additional validation for maximum length
     if (username.length > 32) {
         errorElement.textContent = "Username darf maximal 32 Zeichen haben";
         errorElement.style.color = "#ff974d";
         usernameElement.style.borderColor = "#ff974d";
         condition1 = false;
-    } else if (document.getElementById("error2").style.marginTop !== "12%") {
-        document.getElementById("error2").style.marginTop = "15%";
     } else if (username === "") {
         errorElement.textContent = "Username darf nicht leer sein";
         errorElement.style.color = "#ff974d";
         usernameElement.style.borderColor = "#ff974d";
         condition1 = false;
     } else {
+        errorElement.textContent = "Username darf nicht leer sein";
         errorElement.style.color = "#0088a9";
         usernameElement.style.borderColor = "#0088a9";
         condition1 = true;
