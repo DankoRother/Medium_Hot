@@ -148,7 +148,7 @@ input.first {
     background-color: #0088a9;
     border: none;                                                                                                                                           
     color: #edf0f1;
-    padding: 8px 20px;
+    padding: 5px 20px;
     font-family: "Poppins";
     font-size: 20px;
     cursor: pointer;
@@ -165,8 +165,8 @@ input.final {
     border: none;
     color: #edf0f1;
     padding-left: 12px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-right: 25px;
     font-family: "Poppins";
     font-size: 20px;
@@ -182,7 +182,7 @@ input.first:disabled {
     background-color: #7ea2ab;
     border: none;                                                                                                                                           
     color: #edf0f1;
-    padding: 8px 20px;
+    padding: 5px 20px;
     font-family: "Poppins";
     font-size: 20px;
     cursor: pointer;
@@ -199,8 +199,8 @@ input.final:disabled {
     border: none;
     color: #edf0f1;
     padding-left: 12px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     padding-right: 20px;
     font-family: "Poppins";
     font-size: 20px;
