@@ -66,7 +66,18 @@ if (!empty($result)) {
         </div>
     </div> 
 </div>
-<?php } ?>
+<?php } else {?>
+        <div class="no_booking">
+            <h2>Keine laufende Buchung!</h2>
+        </div>
+
+        <script>
+        // JavaScript to send the user back to booking page
+        setTimeout(function() {
+            window.location.href = 'mieten.php';
+        }, 3000); // 3000 = 3 seconds
+    </script>
+    <?php } ?>
 
 <!-- Include footer section -->
 <?php include 'footer.php'; ?>

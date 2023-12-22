@@ -23,4 +23,6 @@ $stmt->execute();
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
 unset($_SESSION['available_number']);
+$_SESSION['selected_car_id'] = 0;
+
 ?>

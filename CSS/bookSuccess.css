@@ -154,3 +154,23 @@
     text-decoration: none;
     transform:scale(1.1);
 }
+
+/*Styling if you go directly to the product details page*/
+.no_booking{
+    height: 500px;
+    width: 100%;
+    text-align: center;
+    padding-top: 170px;
+    background-image: url(CSS_Bilder/detailsback.jpg);
+    background-size: cover; 
+    background-position: center center; 
+    
+}
+
+.no_booking h2 {
+    font-family: "Poppins", sans-serif;
+    font-size: 50px;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+    color: white;
+}

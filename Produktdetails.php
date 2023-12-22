@@ -104,7 +104,7 @@ if (!empty($result)) {
                 <div class="divDesignForLogin">
                    <form method="post"> 
                     <button type="submit" class="button" name="book"> <h3 class="h3ForLogin">Jetzt Buchen</h3></button>
-                   <form></form> 
+                   </form> 
                 </div>
 
             </div>
