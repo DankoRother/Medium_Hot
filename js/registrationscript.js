@@ -274,7 +274,7 @@ function submitForm(event) {
                 // Check for specific error messages and redirect accordingly
                 if (response && response.message == 'email_exists') {
                     hideSecondShowFirst();
-                    document.getElementById("error2").textContent="E-Mail existiert bereits <br>";
+                    document.getElementById("error2").textContent="E-Mail existiert bereits";
                     document.getElementById("error2").style.color="#ff974d";
                     document.getElementById("error3").style.marginTop="13%";
                     document.getElementById("email").style.borderColor="#ff974d";
