@@ -110,16 +110,17 @@ if (!empty($result)) {
             
 
         </div> <?php 
+        //If you go directly to this page
     } else {?>
         <div class="no_booking">
             <h2>Keine laufende Buchung!</h2>
         </div>
 
         <script>
-        // JavaScript zum Weiterleiten nach 5 Sekunden
+        // JavaScript to send the user back to booking page
         setTimeout(function() {
             window.location.href = 'mieten.php';
-        }, 3000); // 5000 Millisekunden entsprechen 5 Sekunden
+        }, 3000); // 3000 = 3 seconds
     </script>
     <?php } ?>
         <?php include 'footer.php'; ?>      <!-- Including the footer structure into the product details site -->       

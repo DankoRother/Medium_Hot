@@ -44,7 +44,7 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                 <tr>
                                     <th>Buchungsnummer</th>
                                     <th>Hersteller und Modell</th>
-                                    <th>Preis in €/Tag</th>
+                                    <th>Gesamtpreisreis in €</th>
                                     <th>Buchungszeitraum</th>
                                 </tr>
                             </thead>
@@ -65,13 +65,22 @@ if (!isset($_SESSION['logged_in_userID'])) {
                                     // change into MM-DD-YYYY
                                     $formattedDateStart = $dateTimeStart->format('m/d/Y');
                                     $formattedDateEnd = $dateTimeEnd->format('m/d/Y'); 
+
+                                    //count days
+                                    $dateDifference = $dateTimeStart->diff($dateTimeEnd);
+
+                                    //add 1 day 
+                                    $totalDays = $dateDifference->days + 1;
+
+                                    // calculate total price for the whole timeperiod
+                                    $totalPrice = $totalDays * $row['price'];
                                     
                                     $uniqueId = 'hidden_row_' . $row['bookingId'];?>
                                 <!-- Main row with booking details, clickable to show/hide additional details -->
                                     <tr class="mainline" onclick="showHideRow('<?php echo $uniqueId; ?>')">
                                         <td><?php echo $row['bookingId']?></td> <!-- Booking Number -->
                                         <td><?php echo $row['vendor_name'] . " " . $row['name'] . " " . $row['name_extension'] ?></td> <!-- Vendor Name, Name and Extension -->
-                                        <td><?php echo $row['price']?></td> <!-- Price -->
+                                        <td><?php echo $totalPrice;?></td> <!-- Price -->
                                         <td><?php echo $formattedDateStart . " bis " . $formattedDateEnd . " in " . $row['location']?></td> <!-- Start Date to End Date at Location -->
                                     </tr>
                                     <!-- Additional details row, initially hidden -->

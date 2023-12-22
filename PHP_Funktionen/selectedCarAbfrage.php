@@ -21,4 +21,6 @@ $stmt->execute();
 
 // Fetch the result set into an associative array
 $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+unset($_SESSION['available_number']);
 ?>

@@ -4,8 +4,8 @@
     padding-top: 20px;
     padding-bottom: 0px;
     background-image: url(CSS_Bilder/detailsback.jpg);
-    background-size: cover; /* Skaliert das Bild, um die gesamte Hintergrundfläche zu bedecken */
-    background-position: center center; /* Zentriert das Bild horizontal und vertikal */
+    background-size: cover; 
+    background-position: center center; 
 }
 
 
@@ -344,14 +344,15 @@
     text-align: center;
 }
 
+/*Styling if you go directly to the product details page*/
 .no_booking{
     height: 500px;
     width: 100%;
     text-align: center;
     padding-top: 170px;
     background-image: url(CSS_Bilder/detailsback.jpg);
-    background-size: cover; /* Skaliert das Bild, um die gesamte Hintergrundfläche zu bedecken */
-    background-position: center center; /* Zentriert das Bild horizontal und vertikal */
+    background-size: cover; 
+    background-position: center center; 
     
 }
 
